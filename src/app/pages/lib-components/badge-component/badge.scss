@@ -1,0 +1,6 @@
+@use "mozek-angular/src/styles" as moz;
+
+.codered {
+    font-family: "Courier Prime", monospace;
+    color: #{moz.moz-get-color(red, 600)};
+}

@@ -1,0 +1,313 @@
+<div id="utilities" class="first-sect section">
+    <div class="hero" [style.padding-top]="screen() === 'mobile' ? '3.5rem' : '4rem'">
+        <div class="hero-cap">
+            <h1 class="hero-title">Mozek Library Utilities</h1>
+            <p class="hero-subtitle">
+                A collection of utility classes to help you quickly style your components and layouts.
+            </p>
+        </div>
+    </div>
+    <div class="sect-title">
+        <div class="title">
+            <img src="assets/images/logo/mozek_vector_violet.svg" alt="Mozek Logo Point">
+            Spacing Utilities
+        </div>
+    </div>
+    <div class="shelf" [class.flex-col]="screen() !== 'desktop'">
+        <div class="library">
+            <div>
+                <h6 class="label">Scale Variables</h6>
+                <moz-card model="flavor" color="secondary">
+                    <div class="flex flex-col p-3">
+                        <div class="list-header">
+                            <div class="list">
+                                <p>Variables</p>
+                                <p>Value</p>
+                            </div>
+                        </div>
+                        @for (val of values; let i = $index; track val) {
+                            <div class="list" [style.border-color]="'var(--moz-color-secondary-lite)'">
+                                <div class="code-area highlight">
+                                    <p>{{i}}</p>
+                                </div>
+                                <div class="listlabel">
+                                    <p>{{val}}</p>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </moz-card>
+            </div>
+            <div>
+                <h6 class="label">Margin</h6>
+                @for (d of directions; track d) {
+                    <div class="list">
+                        <div class="listlabel">
+                            <img src="assets/images/logo/mozek_vector_violet.svg" alt="Mozek Logo Point">
+                            <p>Margin {{d.label}}</p>
+                        </div>
+                        <div class="code-area">
+                            <p>m{{d.prefix}}-<span class="secondary">[scale variable]</span></p>
+                        </div>
+                    </div>
+                }
+            </div>
+            <div>
+                <h6 class="label">Padding</h6>
+                @for (d of directions; track d) {
+                    <div class="list">
+                        <div class="listlabel">
+                            <img src="assets/images/logo/mozek_vector_violet.svg" alt="Mozek Logo Point">
+                            <p>Padding {{d.label}}</p>
+                        </div>
+                        <div class="code-area">
+                            <p>p{{d.prefix}}-<span class="secondary">[scale variable]</span></p>
+                        </div>
+                    </div>
+                }
+            </div>
+            <div>
+                <h6 class="label">Others</h6>
+                <div class="list">
+                    <div class="listlabel">
+                        <img src="assets/images/logo/mozek_vector_violet.svg" alt="Mozek Logo Point">
+                        <p>Gap</p>
+                    </div>
+                    <div class="code-area">
+                        <p>gap-<span class="secondary">[scale variable]</span></p>
+                    </div>
+                </div>
+                <div class="list">
+                    <div class="listlabel">
+                        <img src="assets/images/logo/mozek_vector_violet.svg" alt="Mozek Logo Point">
+                        <p>Border Radius</p>
+                    </div>
+                    <div class="code-area">
+                        <p>corner-<span class="secondary">[scale variable]</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="demo-container" [style.width]="screen() !== 'desktop' ? '100%' : '40rem'">
+            <div class="demo" [style.height]="screen() !== 'desktop' ? '40rem' : '85dvh'">
+                <div class="pt-2 px-2">
+                    <h6 class="demo-label">Demo</h6>
+                </div>
+                <div class="w-full h-full p-2 spacer">
+                    <div class="output">
+                        <div class="outer-demo">
+                            <div
+                                class="demo-sample"
+                                [class]="classInputDemo('spacing')"
+                            >
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-section">
+                    <span class="colo-blue">class</span><span class="colo-white">=</span>"&nbsp;
+                    <span class="spacer">
+                        <input type="text" placeholder="Test class name here ( Exp: mt-3 )" class="input" [(ngModel)]="spacingStyleInput" (input)="classInputDemo('spacing')">
+                    </span>&nbsp;"
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sect-title">
+        <div class="title">
+            <img src="assets/images/logo/mozek_vector_violet.svg" alt="Mozek Logo Point">
+            Flex Utilities
+        </div>
+    </div>
+    <div class="shelf">
+        <div class="library">
+            <div>
+                <h6 class="label">Flexbox</h6>
+                @for (flex of flexbox; track flex) {
+                    <div class="list">
+                        <div class="listlabel">
+                            <img src="assets/images/logo/mozek_vector_violet.svg" alt="Mozek Logo Point">
+                            <p>{{flex.label}}</p>
+                        </div>
+                        <div class="code-area">
+                            <p>{{flex.code}}</p>
+                        </div>
+                    </div>
+                }
+                <div class="list">
+                    <div class="listlabel py-1 items-center">
+                        <img src="assets/images/logo/mozek_vector_violet.svg" alt="Mozek Logo Point">
+                        <div>
+                            <p class="mb-1">Justify Content : Center</p>
+                            <p>Align Items : Center</p>
+                        </div>
+                    </div>
+                    <div class="code-area">
+                        <p>flex-center</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h6 class="label">Grid</h6>
+                <div class="list">
+                    <div class="listlabel">
+                        <img src="assets/images/logo/mozek_vector_violet.svg" alt="Mozek Logo Point">
+                        <p>Display : Grid</p>
+                    </div>
+                    <div class="code-area">
+                        <p>grid</p>
+                    </div>
+                </div>
+                <div class="list">
+                    <div class="listlabel">
+                        <img src="assets/images/logo/mozek_vector_violet.svg" alt="Mozek Logo Point">
+                        <p>Display : Grid</p>
+                        <p>*</p>
+                    </div>
+                    <div class="code-area">
+                        <p>grid-auto</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sect-title">
+        <div class="title">
+            <img src="assets/images/logo/mozek_vector_violet.svg" alt="Mozek Logo Point">
+            Positioning
+        </div>
+    </div>
+    <div class="shelf" [class.flex-col]="screen() !== 'desktop'">
+        <div class="library">
+            <div>
+                <h6 class="label">Positioning</h6>
+                @for (flex of positioning; track flex) {
+                    <div class="list">
+                        <div class="listlabel">
+                            <img src="assets/images/logo/mozek_vector_violet.svg" alt="Mozek Logo Point">
+                            <p>{{flex.label}}</p>
+                        </div>
+                        <div class="code-area">
+                            <p>{{flex.code}}</p>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="demo-container sect-position" [style.width]="screen() !== 'desktop' ? '100%' : '40rem'">
+            <div class="demo" [style.height]="screen() !== 'desktop' ? '40rem' : '85dvh'">
+                <div class="pt-2 px-2">
+                    <h6 class="demo-label">Demo</h6>
+                </div>
+                <div class="w-full h-full p-2 spacer">
+                    <div class="output">
+                        <div
+                            class="demo-sample"
+                            [class]="classInputDemo('position')"
+                        ></div>
+                        @for (item of [].constructor(10); let i = $index; track item) {
+                            <div class="sample-cardboard"
+                                [style.width]="sampleCardWidth(i)"
+                                [style]="'z-index:' + sampleZindex(i)"
+                            ></div>
+                        }
+                    </div>
+                </div>
+                <div class="input-section">
+                    <span class="colo-blue">class</span><span class="colo-white">=</span>"&nbsp;
+                    <span class="spacer">
+                        <input type="text" placeholder="Test class name here ( Exp: t-0 )" class="input" [(ngModel)]="positionStyleInput" (input)="classInputDemo('position')">
+                    </span>&nbsp;"
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sect-title">
+        <div class="title">
+            <img src="assets/images/logo/mozek_vector_violet.svg" alt="Mozek Logo Point">
+            Text Utilities
+        </div>
+    </div>
+    <div class="shelf flex-col">
+        <div class="library">
+            <div>
+                <h6 class="label">Text</h6>
+                @for (text of texts; track text) {
+                    <div class="list">
+                        <div class="listlabel">
+                            <img src="assets/images/logo/mozek_vector_violet.svg" alt="Mozek Logo Point">
+                            <p>{{text.label}}</p>
+                        </div>
+                        <div class="code-area">
+                            <p>{{text.code}}</p>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="demo-container sect-text">
+            <div class="demo">
+                <div class="pt-2 px-2">
+                    <h6 class="demo-label">Demo</h6>
+                </div>
+                <div class="w-full h-full p-2 spacer">
+                    <div class="output">
+                        <div class="outer-demo">
+                            <div
+                                class="demo-sample"
+                                [class]="classInputDemo('text')"
+                            >
+                                {{textWording()}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-section pb-0">
+                    <span class="colo-grey">&lt;</span><span class="colo-blue-dark">div</span>&nbsp;<span class="colo-blue">class</span><span class="colo-white">=</span>"&nbsp;
+                    <span class="spacer">
+                        <input type="text" placeholder="Test class name here ( Exp: text-right )" class="input" [(ngModel)]="textingStyleInput" (input)="classInputDemo('text')">
+                    </span>&nbsp;"<span class="colo-grey">&gt;</span>
+                </div>
+                <div class="input-section pt-1 pl-5 border-none">
+                    <span class="spacer">
+                        <input type="text" placeholder="Change wording" class="input" [(ngModel)]="textWordingCustom">
+                    </span>&nbsp;<span class="colo-grey">&lt;/</span><span class="colo-blue-dark">div</span><span class="colo-grey">&gt;</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="shelf">
+        <div class="library">
+            <div>
+                <h6 class="label">Font Size</h6>
+                @for (font of fontSizes; let i = $index; track font) {
+                    <div class="list">
+                        <div class="listlabel">
+                            <img src="assets/images/logo/mozek_vector_violet.svg" alt="Mozek Logo Point">
+                            <p>Header {{i + 1}}</p>
+                        </div>
+                        <div class="code-area">
+                            <p>&lt;{{font}}&gt;</p>
+                        </div>
+                        <div class="w-5 text-right font-1" [innerHTML]="sampleFontSize(font)"></div>
+                    </div>
+                }
+                <div class="list">
+                    <div class="listlabel">
+                        <img src="assets/images/logo/mozek_vector_violet.svg" alt="Mozek Logo Point">
+                        <p>Default Text Size</p>
+                    </div>
+                    <div class="flex flex-wrap gap-1" [style.width]="screen() === 'mobile' ? '48%' : '30%'">
+                        @for (font of defaultSizes; track font) {
+                            <div class="code-area">
+                                <p>&lt;{{font}}&gt;</p>
+                            </div>
+                        }
+                    </div>
+                    <div class="w-5 text-right font-1" [innerHTML]="sampleFontSize('p')"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

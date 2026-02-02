@@ -1,0 +1,25 @@
+<div id="component" class="first-sect section" [style.padding-top]="screen() === 'mobile' ? '3.5rem' : '4rem'">
+    <div class="dashboard">
+        <div class="dashboard-side">
+            <div class="sidebar scrollable">
+                <h5>Component</h5>
+                <br>
+                <br>
+                @for (component of components; track component) {
+                    <mozek-button
+                        model="flavor"
+                        color="grey"
+                        class="flex w-full mb-1 text-capitalize"
+                        style="height: fit-content;"
+                        (click)="navigateTo(component)"
+                    >
+                        {{ component.split('-').join(' ') }}
+                    </mozek-button>
+                }
+            </div>
+        </div>
+        <div class="dashboard-content scrollable">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

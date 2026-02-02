@@ -1,0 +1,127 @@
+@use "mozek-angular/src/styles" as moz;
+
+:host {
+    position: relative;
+    width: 100%; height: 100%;
+
+    .icon-btn {
+        width: auto; height: 100%;
+    }
+}
+
+.navbar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    display: flex;
+    color: var(--moz-color-text);
+    background-color: var(--moz-color-background);
+    box-shadow: 0 0 var(--moz-space-3) rgba(6, 170, 241, 0.2);
+    align-items: center;
+    z-index: 100;
+
+    .logo-sect {
+        width: fit-content; height: 60%;
+        cursor: pointer;
+        img { width: auto; height: 100%;}
+    }
+
+    .btn-group {
+        display: flex;
+        height: 75%;
+        padding: 0.3rem;
+        border: solid 0.1rem var(--moz-color-primary-lite);
+        border-radius: var(--moz-radius-pill);
+        background-color: #f5f5f5;
+        gap: var(--moz-space-1);
+
+        mozek-button { transition: all var(--moz-duration);}
+    }
+
+    .navmenu {
+        position: absolute;
+        top: 4rem; right: 0;
+        width: 100%; height: fit-content;
+        padding:  var(--moz-space-1) var(--moz-space-2);
+        transform-origin: calc(100% - var(--moz-space-2)) 0;
+        opacity: 0;
+        pointer-events: none;
+        transition: all var(--moz-duration-fast);
+
+        &.open {
+            height: fit-content;
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .icon-btn.closed {
+            width: auto; height: 0.6rem;
+        }
+
+        .list-menu {
+            width: 100%;
+            padding: 0.3rem var(--moz-space-1);
+            border-radius: var(--moz-space-1);
+            transition: all var(--moz-duration);
+            cursor: pointer;
+
+            &:hover { background-color: var(--moz-color-primary-lite);}
+        }
+
+        .menucard {
+            @include moz.root-shadow(3);
+
+            border: solid 0.1rem var(--moz-color-primary);
+        }
+    }
+}
+
+.footer {
+    width: 100%; height: fit-content;
+    padding: 0;
+    text-align: center;
+    color: var(--moz-color-text-secondary);
+    border-top: solid 0.2rem var(--moz-color-primary-lite);
+    background-color: color-mix(in srgb, var(--moz-color-primary) 10%, var(--moz-color-background));
+
+    .box {
+        flex: 1 1 13rem;
+        display: flex;
+        width: 100%; height: auto;
+        padding: var(--moz-space-5) var(--moz-space-2) var(--moz-space-4);
+        border: solid 0.05rem var(--moz-color-primary-lite);
+        justify-content: start;
+        flex-direction: column;
+        gap: var(--moz-space-2);
+        &:first-child { border-left: none;}
+
+        h6, p { width: fit-content}
+
+        .text-btn {
+            font-size: 0.9rem;
+            transition: all var(--moz-duration);
+            cursor: pointer;
+            &:hover { color: var(--moz-color-primary);}
+        }
+    }
+
+    footer {
+        display: flex;
+        width: 100%; height: fit-content;
+        padding: var(--moz-space-1) var(--moz-space-1) var(--moz-space-5);
+        border-top: solid 0.08rem var(--moz-color-primary-lite);
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: var(--moz-space-2);
+
+        @include moz.moz-typography('footer');
+
+        .copyright {
+            flex: 1 1 11rem;
+            text-align: right;
+
+            @media (max-width: 251px) {
+                text-align: center;
+            }
+        }
+    }
+}

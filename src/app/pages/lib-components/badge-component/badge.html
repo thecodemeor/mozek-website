@@ -1,0 +1,177 @@
+<div class="sect-title">
+    <div class="title container">
+        <img src="assets/images/logo/mozek_vector_grey.svg" alt="Mozek Logo Point">
+        Badge
+    </div>
+</div>
+
+<div class="component-tag">
+    <h3><span class="tag">&lt;</span>moz-badge<span class="tag">&gt;</span></h3>
+</div>
+
+<div class="sample">
+    <div class="title">
+        <img src="assets/images/logo/mozek_vector_grey.svg" alt="Mozek Logo Point">
+        Basic Badge
+    </div>
+    <div class="content">
+        <div class="sub-title">Color</div>
+        <div class="sample-box">
+            <moz-badge>Default</moz-badge>
+            <div class="flex w-full flex-wrap gap-2">
+                @for (badge of badges; track badge) {
+                    <moz-badge [color]="badge.color">{{ badge.color | titlecase }}</moz-badge>
+                }
+            </div>
+        </div>
+        <div class="sample-code">
+            <div class="open-code" (click)="openSource('color')">
+                Source Code 
+                <moz-icon [style.transform]="isOpen('color') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
+            </div>
+            <div class="code-space" [class.is-open]="isOpen('color')" [style.max-height]="isOpen('color') ? '20rem' : '0'">
+                @for (badge of badges; track badge) {
+                    <p class="code">
+                        <span class="tag">&lt;moz-badge</span> color=<span class="colo-orange">"{{ badge.color }}"</span><span class="tag">&gt;</span>
+                        {{ badge.color | titlecase }}
+                        <span class="tag">&lt;/moz-badge&gt;</span>
+                    </p>
+                }
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="sub-title">Number</div>
+        <div class="sample-box">
+            <div class="flex w-full flex-wrap gap-2">
+                @for (badge of badges; track badge) {
+                    <moz-badge [color]="badge.color">{{ badge.number | titlecase }}</moz-badge>
+                }
+            </div>
+        </div>
+        <div class="sample-code">
+            <div class="open-code" (click)="openSource('number')">
+                Source Code 
+                <moz-icon [style.transform]="isOpen('number') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
+            </div>
+            <div class="code-space" [class.is-open]="isOpen('number')" [style.max-height]="isOpen('number') ? '20rem' : '0'">
+                @for (badge of badges; track badge) {
+                    <p class="code">
+                        <span class="tag">&lt;moz-badge</span> color=<span class="colo-orange">"{{badge.color}}"</span><span class="tag">&gt;</span>
+                        {{ badge.number | titlecase }}
+                        <span class="tag">&lt;/moz-badge&gt;</span>
+                    </p>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="sample">
+    <div class="title">
+        <img src="assets/images/logo/mozek_vector_grey.svg" alt="Mozek Logo Point">
+        Icon
+    </div>
+    <div class="content">
+        <p class="pb-2">We provide four badge icon options: <span class="codered">check, pending, cancel and alert</span>.</p>
+        <div class="sample-box">
+            <div class="flex w-full flex-wrap gap-2">
+                @for (badge of badges; track badge) {
+                    <moz-badge [color]="badge.color" [icon]="badge.icon">
+                        @if(badge.color !== 'success' || badge.icon !== 'check') {
+                            {{ badge.icon | titlecase }}
+                        }
+                    </moz-badge>
+                }
+            </div>
+        </div>
+        <div class="sample-code">
+            <div class="open-code" (click)="openSource('icon')">
+                Source Code 
+                <moz-icon [style.transform]="isOpen('icon') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
+            </div>
+            <div class="code-space" [class.is-open]="isOpen('icon')" [style.max-height]="isOpen('icon') ? '60rem' : '0'">
+                @for (badge of badges; track badge) {
+                    <p class="code">
+                        <span class="tag">&lt;moz-badge</span> color=<span class="colo-orange">"{{badge.color}}"</span> icon=<span class="colo-orange">"{{badge.icon}}"</span><span class="tag">&gt;</span>
+                        @if(badge.color !== 'success' || badge.icon !== 'check') {
+                            {{ badge.icon | titlecase }}
+                        }
+                        <span class="tag">&lt;/moz-badge&gt;</span>
+                    </p>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="sample">
+    <div class="title">
+        <img src="assets/images/logo/mozek_vector_grey.svg" alt="Mozek Logo Point">
+        Dot & Pulse
+    </div>
+    <div class="content">
+        <div class="sample-box">
+            <div class="flex w-full flex-wrap gap-2">
+                @for (badge of badgextra; track badge) {
+                    <moz-badge [color]="badge.color" [dot]="badge.dot" [pulse]="badge.pulse">{{ badge.label | titlecase }}</moz-badge>
+                }
+            </div>
+        </div>
+        <div class="sample-code">
+            <div class="open-code" (click)="openSource('extra')">
+                Source Code 
+                <moz-icon [style.transform]="isOpen('extra') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
+            </div>
+            <div class="code-space" [class.is-open]="isOpen('extra')" [style.max-height]="isOpen('extra') ? '20rem' : '0'">
+                @for (badge of badgextra; track badge) {
+                    <p class="code">
+                        <span class="tag">&lt;moz-badge</span> color=<span class="colo-orange">"{{ badge.color }}"</span>@if(badge.dot){ dot}@if(badge.pulse){ pulse}<span class="tag">&gt;</span>
+                        {{ badge.label | titlecase }}
+                        <span class="tag">&lt;/moz-badge&gt;</span>
+                    </p>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="sample">
+    <div class="title">
+        <img src="assets/images/logo/mozek_vector_grey.svg" alt="Mozek Logo Point">
+        Notification
+    </div>
+    <div class="content">
+        <div class="sample-box">
+            <div class="flex w-full flex-wrap gap-2">
+                <moz-button>
+                    Button
+                    <moz-badge color="danger">10</moz-badge>
+                </moz-button>
+                <moz-button>
+                    Button
+                    <moz-badge color="danger" notification>10</moz-badge>
+                </moz-button>
+            </div>
+        </div>
+        <div class="sample-code">
+            <div class="open-code" (click)="openSource('noti')">
+                Source Code 
+                <moz-icon [style.transform]="isOpen('noti') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
+            </div>
+            <div class="code-space" [class.is-open]="isOpen('noti')" [style.max-height]="isOpen('noti') ? '20rem' : '0'">
+                    <p class="code">
+                        @for (item of [false, true]; track $index) {
+                            <span class="tag">&lt;moz-button</span> color=<span class="colo-orange">"danger"</span><span class="tag">&gt;</span>
+                            <br><span class="pl-4">Button</span>
+                            <br><span class="tag pl-4">&lt;moz-badge</span> color=<span class="colo-orange">"danger"</span>@if(item){ notification}<span class="tag">&gt;</span>
+                            10
+                            <span class="tag">&lt;/moz-badge&gt;</span>
+                            <br><span class="tag">&lt;/moz-button&gt;</span><br>
+                        }
+                    </p>
+            </div>
+        </div>
+    </div>
+</div>

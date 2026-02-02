@@ -1,0 +1,49 @@
+<div id="themes" class="first-sect section">
+    <div class="hero" [style.padding-top]="screen() === 'mobile' ? '3.5rem' : '4rem'">
+        <div class="hero-cap">
+            <h1 class="hero-title">Mozek Themes</h1>
+            <p>Design themes are the visual design atoms of the design system.</p>
+        </div>
+    </div>
+    <div class="sect-title">
+        <div class="title container">
+            <img src="assets/images/logo/mozek_vector_green.svg" alt="Mozek Logo Point">
+            Color Palette
+        </div>
+    </div>
+
+    <div class="shelf">
+        <div class="theme-card py-2 container" [class]="screen() === 'mobile' ? 'px-2' : 'px-4'">
+            <p class="paragraph">Mozek theme help maintain consistent use of color throughout your app. Mozek provides palettes for theme colors and primitives that you can use as a foundation for your design system.</p>
+            <p>In SCSS, colors are accessed using the:</p>
+            <div #copyTarget class="sample-code" (click)="copyText(copyTarget)">
+                @if (copied) { Copied! }
+                @else {
+                    #&#123;moz.moz-get-color(<span class="green">[color]</span>, <span class="green">[n]</span>)&#125;
+                }
+            </div>
+            <p class="paragraph">where <span class="code green">[color]</span> is the name of the palette and <span class="code green">[n]</span> is the numeric value of the desired swatch.</p>
+        </div>
+
+        <div class="theme-card container" [class]="screen() === 'mobile' ? 'px-2' : 'px-4'">
+            @for (theme of themes; track theme) {
+                <div class="theme" [class.mobile]="screen() === 'mobile' ? true : false">
+                    <div class="flex flex-col gap-1">
+                        <h6 class="label">{{ theme }}</h6>
+                        <p class="code">#&#123;moz.moz-get-color({{ theme }}, [n])&#125;</p>
+                    </div>
+                    <div class="flex flex-wrap gap-1">
+                        @for (hue of hues; track hue) {
+                            <div class="flex flex-col items-center gap-1">
+                                <div class="color-swatch" [style.background-color]="colorPalette(theme, hue)"></div>
+                                <p class="code">
+                                    <span>{{ hue }}</span>
+                                </p>
+                            </div>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

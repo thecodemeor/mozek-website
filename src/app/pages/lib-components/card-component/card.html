@@ -1,0 +1,191 @@
+<div class="sect-title">
+    <div class="title container">
+        <img src="assets/images/logo/mozek_vector_grey.svg" alt="Mozek Logo Point">
+        Card
+    </div>
+</div>
+
+<div class="component-tag">
+    <h3><span class="tag">&lt;</span>moz-card<span class="tag">&gt;</span></h3>
+</div>
+
+<div class="sample">
+    <div class="title">
+        <img src="assets/images/logo/mozek_vector_grey.svg" alt="Mozek Logo Point">
+        Model
+    </div>
+    @for (model of models1; track model) {
+        <div class="content">
+            <div class="sub-title">{{ model | titlecase }}</div>
+            <div class="sample-box">
+                <div class="flex w-full flex-wrap gap-2">
+                    <moz-card [model]="model" color="primary" style="width: 15rem;">
+                        <moz-card-media>
+                            <img src="https://www.klcc.com.my/investor-relations/reports/klccpstapledgroupiar2025.bitesite/img/hero-klcc-anim.jpg">
+                        </moz-card-media>
+                        <moz-card-body>
+                            Mozek Card Content<br>(Media)
+                        </moz-card-body>
+                    </moz-card>
+                    @for (color of colors; track color) {
+                        <moz-card [model]="model" [color]="color">
+                            <moz-card-header>Mozek Card Header</moz-card-header>
+                            <moz-card-body>Mozek Card Content ({{color | titlecase}})</moz-card-body>
+                            <moz-card-footer>Mozek Card Footer</moz-card-footer>
+                        </moz-card>
+                    }
+                </div>
+            </div>
+            <div class="sample-code">
+                <div class="open-code" (click)="openSource(model)">
+                    Source Code 
+                    <moz-icon [style.transform]="isOpen(model) ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
+                </div>
+                <div class="code-space" [class.is-open]="isOpen(model)" [style.max-height]="isOpen(model) ? '60rem' : '0'">
+                    <p class="code">
+                        <span class="tag">&lt;moz-card</span> model=<span class="colo-orange">"{{ model }}"</span> color=<span class="colo-orange">"primary"</span><span class="tag">&gt;</span>
+                        <br><span class="tag ml-4">&lt;moz-card-media&gt;</span>
+                            <span class="tag">&lt;img</span> src=<span class="colo-orange">"klcc"</span><span class="tag">&gt;</span>
+                        <span class="tag">&lt;/moz-card-media&gt;</span>
+                        <br><span class="tag ml-4">&lt;moz-card-body&gt;</span>Mozek Card Content<span class="tag">&lt;/moz-card-body&gt;</span>
+                        <br><span class="tag">&lt;/moz-card&gt;</span>
+                    </p>
+                    @for (color of colors; track color) {
+                        <p class="code">
+                            <span class="tag">&lt;moz-card</span> model=<span class="colo-orange">"{{ model }}"</span> color=<span class="colo-orange">"{{ color }}"</span><span class="tag">&gt;</span>
+                            <br><span class="tag ml-4">&lt;moz-card-header&gt;</span>Mozek Card Header<span class="tag">&lt;/moz-card-header&gt;</span>
+                            <br><span class="tag ml-4">&lt;moz-card-body&gt;</span>Mozek Card Content<span class="tag">&lt;/moz-card-body&gt;</span>
+                            <br><span class="tag ml-4">&lt;moz-card-footer&gt;</span>Mozek Card Footer<span class="tag">&lt;/moz-card-footer&gt;</span>
+                            <br><span class="tag">&lt;/moz-card&gt;</span>
+                        </p>
+                    }
+                </div>
+            </div>
+        </div>
+        @if(model === 'fill' || model === 'flavor') {
+            <div class="content">
+                <div class="sub-title">{{ model | titlecase }} (Advance)</div>
+                <div class="sample-box">
+                    <div class="flex w-full flex-wrap gap-2">
+                        <moz-card [model]="model" color="primary" style="width: 15rem;" advance>
+                            <moz-card-media>
+                                <img src="https://www.klcc.com.my/investor-relations/reports/klccpstapledgroupiar2025.bitesite/img/hero-klcc-anim.jpg">
+                            </moz-card-media>
+                            <moz-card-body>
+                                Mozek Card Content<br>(Media)
+                            </moz-card-body>
+                        </moz-card>
+                        @for (color of colors; track color) {
+                            <moz-card [model]="model" [color]="color" advance>
+                                <moz-card-header>Mozek Card Header</moz-card-header>
+                                <moz-card-body>Mozek Card Content ({{color | titlecase}})</moz-card-body>
+                                <moz-card-footer>Mozek Card Footer</moz-card-footer>
+                            </moz-card>
+                        }
+                    </div>
+                </div>
+                <div class="sample-code">
+                    <div class="open-code" (click)="openSource(model + '-advance')">
+                        Source Code 
+                        <moz-icon [style.transform]="isOpen(model + '-advance') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
+                    </div>
+                    <div class="code-space" [class.is-open]="isOpen(model + '-advance')" [style.max-height]="isOpen(model + '-advance') ? '50rem' : '0'">
+                        <p class="code">
+                            <span class="tag">&lt;moz-card</span> model=<span class="colo-orange">"{{ model }}"</span> color=<span class="colo-orange">"primary"</span> advance<span class="tag">&gt;</span>
+                            <br><span class="tag ml-4">&lt;moz-card-media&gt;</span>
+                                <span class="tag">&lt;img</span> src=<span class="colo-orange">"klcc"</span><span class="tag">&gt;</span>
+                            <span class="tag">&lt;/moz-card-media&gt;</span>
+                            <br><span class="tag ml-4">&lt;moz-card-body&gt;</span>Mozek Card Content<span class="tag">&lt;/moz-card-body&gt;</span>
+                            <br><span class="tag">&lt;/moz-card&gt;</span>
+                        </p>
+                        @for (color of colors; track color) {
+                            <p class="code">
+                                <span class="tag">&lt;moz-card</span> model=<span class="colo-orange">"{{ model }}"</span> color=<span class="colo-orange">"{{ color }}"</span> advance<span class="tag">&gt;</span>
+                                <br><span class="tag ml-4">&lt;moz-card-header&gt;</span>Mozek Card Header<span class="tag">&lt;/moz-card-header&gt;</span>
+                                <br><span class="tag ml-4">&lt;moz-card-body&gt;</span>Mozek Card Content<span class="tag">&lt;/moz-card-body&gt;</span>
+                                <br><span class="tag ml-4">&lt;moz-card-footer&gt;</span>Mozek Card Footer<span class="tag">&lt;/moz-card-footer&gt;</span>
+                                <br><span class="tag">&lt;/moz-card&gt;</span>
+                            </p>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    }
+    @for (model of models2; track model) {
+        <div class="content">
+            <div class="sub-title">{{ model | titlecase }}</div>
+            <div class="sample-box" [class.glass-background]="model === 'glass'">
+                <div class="flex w-full flex-wrap gap-2">
+                    <moz-card [model]="model" color="primary" style="width: 15rem;">
+                        <moz-card-media>
+                            <img src="https://www.klcc.com.my/investor-relations/reports/klccpstapledgroupiar2025.bitesite/img/hero-klcc-anim.jpg">
+                        </moz-card-media>
+                        <moz-card-body>
+                            Mozek Card Content<br>(Media)
+                        </moz-card-body>
+                    </moz-card>
+                    <moz-card [model]="model">
+                        <moz-card-header>Mozek Card Header</moz-card-header>
+                        <moz-card-body>Mozek Card Content</moz-card-body>
+                        <moz-card-footer>Mozek Card Footer</moz-card-footer>
+                    </moz-card>
+                </div>
+            </div>
+            <div class="sample-code">
+                <div class="open-code" (click)="openSource(model)">
+                    Source Code 
+                    <moz-icon [style.transform]="isOpen(model) ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
+                </div>
+                <div class="code-space" [class.is-open]="isOpen(model)" [style.max-height]="isOpen(model) ? '20rem' : '0'">
+                    <p class="code">
+                        <span class="tag">&lt;moz-card</span> model=<span class="colo-orange">"{{ model }}"</span><span class="tag">&gt;</span>
+                        <br><span class="tag ml-4">&lt;moz-card-media&gt;</span>
+                            <span class="tag">&lt;img</span> src=<span class="colo-orange">"klcc"</span><span class="tag">&gt;</span>
+                        <span class="tag">&lt;/moz-card-media&gt;</span>
+                        <br><span class="tag ml-4">&lt;moz-card-body&gt;</span>Mozek Card Content<span class="tag">&lt;/moz-card-body&gt;</span>
+                        <br><span class="tag">&lt;/moz-card&gt;</span>
+                    </p>
+                    <p class="code">
+                        <span class="tag">&lt;moz-card</span> model=<span class="colo-orange">"{{ model }}"</span><span class="tag">&gt;</span>
+                        <br><span class="tag ml-4">&lt;moz-card-header&gt;</span>Mozek Card Header<span class="tag">&lt;/moz-card-header&gt;</span>
+                        <br><span class="tag ml-4">&lt;moz-card-body&gt;</span>Mozek Card Content<span class="tag">&lt;/moz-card-body&gt;</span>
+                        <br><span class="tag ml-4">&lt;moz-card-footer&gt;</span>Mozek Card Footer<span class="tag">&lt;/moz-card-footer&gt;</span>
+                        <br><span class="tag">&lt;/moz-card&gt;</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<div class="sample">
+    <div class="title">
+        <img src="assets/images/logo/mozek_vector_grey.svg" alt="Mozek Logo Point">
+        Loading
+    </div>
+    <div class="content">
+        <div class="sub-title">Skeleton Loading</div>
+        <div class="sample-box glass-background">
+            <div class="flex w-full flex-wrap gap-2">
+                @for (model of models; track model) {
+                    <moz-card [model]="model" color="primary" loading></moz-card>
+                }
+            </div>
+        </div>
+        <div class="sample-code">
+            <div class="open-code" (click)="openSource('disabled')">
+                Source Code 
+                <moz-icon [style.transform]="isOpen('disabled') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
+            </div>
+            <div class="code-space" [class.is-open]="isOpen('disabled')" [style.max-height]="isOpen('disabled') ? '20rem' : '0'">
+                @for (model of models; track model) {
+                    <p class="code">
+                        <span class="tag">&lt;moz-card</span> model=<span class="colo-orange">"{{ model }}"</span> color=<span class="colo-orange">"primary"</span> loading<span class="tag">&gt;</span>
+                        <span class="tag">&lt;/moz-card&gt;</span>
+                    </p>
+                }
+            </div>
+        </div>
+    </div>
+</div>

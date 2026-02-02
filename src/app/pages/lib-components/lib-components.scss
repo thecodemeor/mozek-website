@@ -1,0 +1,207 @@
+@use "mozek-angular/src/styles" as moz;
+
+:host {
+    --moz-color-grey: #{moz.moz-get-color(grey, 500)};
+    --moz-color-grey-lite: #{moz.moz-get-color(grey, 200)};
+
+    width: 100%; height: fit-content;
+
+    .container {
+        margin: 0 auto;
+        max-width: 100%;
+        @media (min-width: 1400px) { max-width: 72rem;}
+    }
+
+    .section {
+        width: 100%; height: 100dvh;
+        border-bottom: solid 0.1rem var(--moz-color-primary-lite);
+        &:nth-last-child(1) { border: none;}
+    }
+
+    .sect-title {
+        display: flex;
+        width: 100%; height: 8rem;
+        padding: var(--moz-space-2) 0;
+        border-bottom: solid 0.15rem var(--moz-color-grey);
+        background-image: repeating-linear-gradient(
+            45deg, color-mix(in srgb, var(--moz-color-grey) 50%, white) 0px 0.1rem,
+            var(--moz-color-grey-lite) 0.1rem 0.5rem
+        );
+        justify-content: center;
+
+        .title {
+            @include moz.moz-typography('title-lg');
+            display: flex;
+            width: 80%; height: 100%;
+            border: solid 0.2rem var(--moz-color-grey);
+            border-radius: var(--moz-radius-lg);
+            background-color: var(--moz-color-background);
+            justify-content: center;
+            align-items: center;
+
+            font-weight: 800;
+            color: var(--moz-color-text);
+
+            img {
+                height: 3rem;
+                aspect-ratio: 1 / 1;
+                margin: 0 var(--moz-space-3) 0 0;
+            }
+        }
+        @media (max-width: 768px) {
+            .title {
+                flex-direction: column;
+                text-align: center;
+
+                img {
+                    height: 2.5rem;
+                    margin: 0 0 var(--moz-space-1) 0;
+                }
+            }
+        }
+    }
+
+    .font-1 { font-family: "Titan One", sans-serif;}
+}
+
+.dashboard {
+    display: flex;
+    width: 100%; height: 100%;
+    border-top: solid 0.1rem var(--moz-color-grey);
+
+    .dashboard-side {
+        width: 15rem; height: 100%;
+        padding: 0 var(--moz-space-2);
+        border-right: solid 0.2rem var(--moz-color-grey);
+        background-image: repeating-linear-gradient(
+            45deg, color-mix(in srgb, var(--moz-color-grey) 50%, white) 0px 0.1rem,
+            var(--moz-color-grey-lite) 0.1rem 0.5rem
+        );
+
+        .sidebar {
+            width: 100%; height: 100%;
+            padding: var(--moz-space-2);
+            border-right: solid 0.15rem var(--moz-color-grey);
+            border-left: solid 0.15rem var(--moz-color-grey);
+            background: var(--moz-color-background);
+            gap: var(--moz-space-1);
+
+            .sidebar-item {
+                width: 100%; height: 5rem;
+            }
+        }
+    }
+
+    .dashboard-content {
+        flex: 1 1 0;
+        width: 100%; height: 100%;
+    }
+}
+
+.component-tag {
+    width: 100%; height: fit-content;
+    padding: var(--moz-space-2) var(--moz-space-2) 0;
+
+    h3 {
+        font-family: "Courier Prime", monospace;
+        font-weight: 400;
+        color: #569dd6;
+    }
+    .tag { color: #808080;}
+}  
+
+.sample {
+    width: 100%; height: fit-content;
+    padding-bottom: var(--moz-space-5);
+    
+    .title {
+        @include moz.moz-typography('title-sm');
+        display: flex;
+        width: 100%; height: fit-content;
+        padding: var(--moz-space-2);
+        font-weight: 600;
+        border-bottom: solid 0.15rem var(--moz-color-grey);
+        gap: var(--moz-space-1);
+        
+        img {
+            height: 2rem;
+            aspect-ratio: 1 / 1;
+            margin: 0;
+        }
+    }
+
+    .sub-title {
+        @include moz.moz-typography('label-md');
+        display: flex;
+        width: 100%; height: fit-content;
+        padding: var(--moz-space-1) 0 var(--moz-space-2);
+        font-weight: 600;
+        color: var(--moz-color-text-secondary);
+    }
+
+    .content {
+        width: 100%; height: fit-content;
+        padding: var(--moz-space-2) var(--moz-space-2) var(--moz-space-2) var(--moz-space-5);
+
+        .sample-box {
+            display: flex;
+            width: 100%; height: fit-content;
+            margin-bottom: var(--moz-space-1);
+            padding: var(--moz-space-2) var(--moz-space-1);
+            border: solid 0.2rem var(--moz-color-grey);
+            border-radius: var(--moz-radius-default);
+            background: var(--moz-color-background);
+            flex-direction: column;
+            gap: var(--moz-space-1);
+        }
+
+        .sample-code {
+            width: 100%;
+            padding: var(--moz-space-1);
+            border: solid 0.2rem var(--moz-color-grey);
+            border-radius: var(--moz-radius-default);
+            background: var(--moz-color-grey-lite);
+
+            .open-code {
+                @include moz.root-button();
+                width: 100%; height: fit-content;
+                padding: var(--moz-space-1);
+                background: var(--moz-color-background);
+                border-radius: var(--moz-radius-sm);
+                gap: var(--moz-space-1);
+
+                moz-icon {
+                    transition: all var(--moz-duration);
+                }
+            }
+
+            .code-space {
+                max-height: 0;
+                padding: 0 var(--moz-space-1);
+                transform: translateY(-4px);
+                transition:
+                    max-height 300ms ease,
+                    opacity 200ms ease,
+                    transform 200ms ease;
+                opacity: 0;
+                overflow: hidden;
+
+                &.is-open {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+
+                .code {
+                    padding: 0.3rem 0;
+                    font-family: "Courier Prime", monospace;
+                    line-height: 1.3;
+                    &:nth-child(1) { margin-top: var(--moz-space-2);}
+                    &:nth-last-child(1) { margin-bottom: var(--moz-space-2);}
+
+                    .tag { color: #569dd6;}
+                    .colo-orange { color: #ce9178;}
+                }
+            }
+        }
+    }
+}

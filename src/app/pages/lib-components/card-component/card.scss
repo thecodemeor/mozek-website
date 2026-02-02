@@ -1,0 +1,8 @@
+@use "mozek-angular/src/styles" as moz;
+
+.glass-background {
+    background-image: repeating-linear-gradient(
+            45deg, color-mix(in srgb, var(--moz-color-grey) 50%, white) 0px 0.1rem,
+            var(--moz-color-grey-lite) 0.1rem 0.5rem
+        ) !important;
+}

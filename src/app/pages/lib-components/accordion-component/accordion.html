@@ -1,0 +1,131 @@
+<div class="sect-title">
+    <div class="title container">
+        <img src="assets/images/logo/mozek_vector_grey.svg" alt="Mozek Logo Point">
+        Accordion
+    </div>
+</div>
+
+<div class="component-tag">
+    <h3><span class="tag">&lt;</span>moz-accordion<span class="tag">&gt;</span></h3>
+</div>
+
+<div class="sample">
+    <div class="title">
+        <img src="assets/images/logo/mozek_vector_grey.svg" alt="Mozek Logo Point">
+        Basic
+    </div>
+    <div class="content">
+        <div class="sample-box">
+            <div class="flex w-full flex-wrap gap-2">
+                <moz-accordion>
+                    @for (item of ['1','2','3']; track $index) {
+                        <moz-accordion-item>
+                            <div mozAccordionHeader>Header {{item}}</div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </moz-accordion-item>
+                    }
+                </moz-accordion>
+            </div>
+        </div>
+        <div class="sample-code">
+            <div class="open-code" (click)="openSource('normal')">
+                Source Code 
+                <moz-icon [style.transform]="isOpen('normal') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
+            </div>
+            <div class="code-space" [class.is-open]="isOpen('normal')" [style.max-height]="isOpen('normal') ? '60rem' : '0'">
+                <p class="code">
+                    <span class="tag">&lt;moz-accordion</span><span class="tag">&gt;</span>
+                    <br><span class="ml-2">&#64;for (item of ['1','2','3']; track item) &#123;</span>
+                    <br><span class="tag ml-4">&lt;moz-accordion-item&gt;</span>
+                    <br><span class="tag ml-8">&lt;div</span> mozAccordionHeader<span class="tag">&gt;</span> Header {{'{'}}&#123;item&#125;{{'}'}}<span class="tag">&lt;/div&gt;</span>
+                    <br><span class="tag ml-8">&lt;p&gt;</span>Lorem ipsum dolor sit amet...<span class="tag">&lt;/p&gt;</span>
+                    <br><span class="tag ml-4">&lt;/moz-accordion-item&gt;</span>
+                    <br><span class="ml-2">&#125;</span>
+                    <br><span class="tag">&lt;/moz-accordion&gt;</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="sample">
+    <div class="title">
+        <img src="assets/images/logo/mozek_vector_grey.svg" alt="Mozek Logo Point">
+        Multi
+    </div>
+    <div class="content">
+        <div class="sample-box">
+            <div class="flex w-full flex-wrap gap-2">
+                <moz-accordion [multi]="true">
+                    @for (item of ['1','2','3']; track $index) {
+                        <moz-accordion-item>
+                            <div mozAccordionHeader>Header {{item}}</div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </moz-accordion-item>
+                    }
+                </moz-accordion>
+            </div>
+        </div>
+        <div class="sample-code">
+            <div class="open-code" (click)="openSource('multi')">
+                Source Code 
+                <moz-icon [style.transform]="isOpen('multi') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
+            </div>
+            <div class="code-space" [class.is-open]="isOpen('multi')" [style.max-height]="isOpen('multi') ? '60rem' : '0'">
+                <p class="code">
+                    <span class="tag">&lt;moz-accordion</span> [multi]="true"<span class="tag">&gt;</span>
+                    <br><span class="ml-2">&#64;for (item of ['1','2','3']; track item) &#123;</span>
+                    <br><span class="tag ml-4">&lt;moz-accordion-item&gt;</span>
+                    <br><span class="tag ml-8">&lt;div</span> mozAccordionHeader<span class="tag">&gt;</span> Header {{'{'}}&#123;item&#125;{{'}'}}<span class="tag">&lt;/div&gt;</span>
+                    <br><span class="tag ml-8">&lt;p&gt;</span>Lorem ipsum dolor sit amet...<span class="tag">&lt;/p&gt;</span>
+                    <br><span class="tag ml-4">&lt;/moz-accordion-item&gt;</span>
+                    <br><span class="ml-2">&#125;</span>
+                    <br><span class="tag">&lt;/moz-accordion&gt;</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="sample">
+    <div class="title">
+        <img src="assets/images/logo/mozek_vector_grey.svg" alt="Mozek Logo Point">
+        Disabled
+    </div>
+    <div class="content">
+        <div class="sample-box">
+            <div class="flex w-full flex-wrap gap-2">
+                <moz-accordion [multi]="true">
+                    <moz-accordion-item>
+                        <div mozAccordionHeader>Header 1</div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </moz-accordion-item>
+                    <moz-accordion-item disabled>
+                        <div mozAccordionHeader>Header 2</div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </moz-accordion-item>
+                </moz-accordion>
+            </div>
+        </div>
+        <div class="sample-code">
+            <div class="open-code" (click)="openSource('normal')">
+                Source Code 
+                <moz-icon [style.transform]="isOpen('normal') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
+            </div>
+            <div class="code-space" [class.is-open]="isOpen('normal')" [style.max-height]="isOpen('normal') ? '60rem' : '0'">
+                <p class="code">
+                    <span class="tag">&lt;moz-accordion</span> [multi]="true"<span class="tag">&gt;</span>
+                    <br><span class="tag ml-4">&lt;moz-accordion-item&gt;</span>
+                    <br><span class="tag ml-8">&lt;div</span> mozAccordionHeader<span class="tag">&gt;</span> Header 1<span class="tag">&lt;/div&gt;</span>
+                    <br><span class="tag ml-8">&lt;p&gt;</span>Lorem ipsum dolor sit amet...<span class="tag">&lt;/p&gt;</span>
+                    <br><span class="tag ml-4">&lt;/moz-accordion-item&gt;</span>
+                    <br><span class="tag ml-4">&lt;moz-accordion-item</span> disabled<span class="tag">&gt;</span>
+                    <br><span class="tag ml-8">&lt;div</span> mozAccordionHeader<span class="tag">&gt;</span> Header 2<span class="tag">&lt;/div&gt;</span>
+                    <br><span class="tag ml-8">&lt;p&gt;</span>Lorem ipsum dolor sit amet...<span class="tag">&lt;/p&gt;</span>
+                    <br><span class="tag ml-4">&lt;/moz-accordion-item&gt;</span>
+                    <br><span class="tag">&lt;/moz-accordion&gt;</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

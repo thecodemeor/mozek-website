@@ -1,0 +1,87 @@
+<div class="hero" [style.--moz-main-bg]="mainColor">
+    <div class="bg-icons">
+        @for (icon of icons; track icon) {
+            <div class="icon">
+                <moz-icon [color]="color" [size]="screen() === 'mobile' ? '20' : '30'">{{icon}}</moz-icon>
+            </div>
+        }
+    </div>
+    <div class="hero-cap" [style.padding-top]="screen() === 'mobile' ? '3.5rem' : '4rem'">
+        <div class="hero-text">
+            <h2>Mozek Icons</h2>
+            <p>Beautifully crafted icons for your projects</p>
+        </div>
+    </div>
+</div>
+
+<div class="actions-bar" [class.flex-col]="screen() !== 'desktop'" [style.--moz-main-bg]="mainColor">
+    <moz-input placeholder="Search Icon" [(ngModel)]="search" (ngModelChange)="filter($event)" [full]="screen() !== 'desktop'"></moz-input>
+    <div class="color-pick" [class.justify-center]="screen() !== 'desktop'">
+        @for (item of ['primary','secondary','success','warn','danger']; track item) {
+            <div
+                class="relative"
+                #trigger
+                (mouseenter)="showTip(item, trigger)"
+                (mouseleave)="hideTip()"
+            >
+                <button
+                    model="fill"
+                    class="colorpick-button"
+                    (click)="pickColor(item)"
+                    [style.background]="colorbutton(item)"
+                ></button>
+
+                @if (tipOpen === item) {
+                    <div class="tooltip" [class]="placement">
+                        <div class="blackcard">
+                            <p>{{ item }}</p>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+    </div>
+</div>
+
+<div class="container flex-col p-3 gap-2">
+    <div class="groups">
+        @for (icon of iconsDisplay; track icon) {
+            <div class="relative">
+                <moz-card model="flavor" [color]="color" class="card" (click)="copy(icon)" advance>
+                    <moz-card-header class="flex w-full justify-center">
+                        <moz-icon [color]="color" size="50">{{icon}}</moz-icon>
+                    </moz-card-header>
+                    <p class="label">{{labelString(icon)}}</p>
+                </moz-card>
+                
+                @if (tooltip === icon) {
+                    <div class="tooltip" [style.--moz-main-bg]="mainColor">
+                        <div class="blackcard" [style.background]="mainColor">
+                            <p>
+                                Copied<br>
+                                {{icon}}<br>
+                                to clipboard
+                            </p>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+    </div>
+</div>
+
+@if (false) {
+    <div class="dialog-colorpick dialog">
+        <moz-card model="outline" color="primary" class="dialog-box">
+            <moz-card-header>
+                <h6>Pick your color</h6>
+            </moz-card-header>
+            <moz-card-body>
+                <div class="flex item-center gap-1">
+                    <moz-input placeholder="#06aaf1" [(ngModel)]="color"></moz-input>
+                    <moz-button></moz-button>
+                </div>
+            </moz-card-body>
+        </moz-card>
+    </div>
+}

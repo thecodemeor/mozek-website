@@ -1,0 +1,109 @@
+<div class="sect-title">
+    <div class="title container">
+        <img src="assets/images/logo/mozek_vector_grey.svg" alt="Mozek Logo Point">
+        Button
+    </div>
+</div>
+
+<div class="component-tag">
+    <h3><span class="tag">&lt;</span>moz-button<span class="tag">&gt;</span></h3>
+</div>
+
+<div class="sample">
+    <div class="title">
+        <img src="assets/images/logo/mozek_vector_grey.svg" alt="Mozek Logo Point">
+        Model
+    </div>
+    @for (model of models; track model) {
+        <div class="content">
+            <div class="sub-title">{{ model | titlecase }}</div>
+            <div class="sample-box" [class.glass-background]="model === 'glass'">
+                <moz-button [model]="model">Default</moz-button>
+                <div class="flex w-full flex-wrap gap-2">
+                    @for (color of colors; track color) {
+                        <moz-button [model]="model" [color]="color">{{ color | titlecase }}</moz-button>
+                    }
+                </div>
+            </div>
+            <div class="sample-code">
+                <div class="open-code" (click)="openSource(model)">
+                    Source Code 
+                    <moz-icon [style.transform]="isOpen(model) ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
+                </div>
+                <div class="code-space" [class.is-open]="isOpen(model)" [style.max-height]="isOpen(model) ? '20rem' : '0'">
+                    @for (color of colors; track color) {
+                        <p class="code">
+                            <span class="tag">&lt;moz-button</span> model=<span class="colo-orange">"{{ model }}"</span> color=<span class="colo-orange">"{{ color }}"</span><span class="tag">&gt;</span>
+                            {{ color | titlecase }}
+                            <span class="tag">&lt;/moz-button&gt;</span>
+                        </p>
+                    }
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<div class="sample">
+    <div class="title">
+        <img src="assets/images/logo/mozek_vector_grey.svg" alt="Mozek Logo Point">
+        Disabled State
+    </div>
+    <div class="content">
+        <div class="sub-title">Disabled</div>
+        <div class="sample-box">
+            <div class="flex w-full flex-wrap gap-2">
+                @for (model of models; track model) {
+                    <moz-button [model]="model" disabled>{{ model | titlecase }}</moz-button>
+                }
+            </div>
+        </div>
+        <div class="sample-code">
+            <div class="open-code" (click)="openSource('disabled')">
+                Source Code 
+                <moz-icon [style.transform]="isOpen('disabled') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
+            </div>
+            <div class="code-space" [class.is-open]="isOpen('disabled')" [style.max-height]="isOpen('disabled') ? '20rem' : '0'">
+                @for (model of models; track model) {
+                    <p class="code">
+                        <span class="tag">&lt;moz-button</span> model=<span class="colo-orange">"{{ model }}"</span> disabled<span class="tag">&gt;</span>
+                        {{ model | titlecase }}
+                        <span class="tag">&lt;/moz-button&gt;</span>
+                    </p>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="sample">
+    <div class="title">
+        <img src="assets/images/logo/mozek_vector_grey.svg" alt="Mozek Logo Point">
+        Full Width
+    </div>
+    <div class="content">
+        <div class="sub-title">Width: 100%</div>
+        <div class="sample-box">
+            <div class="flex w-full flex-wrap gap-2">
+                @for (model of models; track model) {
+                    <moz-button [model]="model" color="primary" full>{{ model | titlecase }}</moz-button>
+                }
+            </div>
+        </div>
+        <div class="sample-code">
+            <div class="open-code" (click)="openSource('full')">
+                Source Code 
+                <moz-icon [style.transform]="isOpen('full') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
+            </div>
+            <div class="code-space" [class.is-open]="isOpen('full')" [style.max-height]="isOpen('full') ? '20rem' : '0'">
+                @for (model of models; track model) {
+                    <p class="code">
+                        <span class="tag">&lt;moz-button</span> model=<span class="colo-orange">"{{ model }}"</span> color=<span class="colo-orange">"primary"</span> full<span class="tag">&gt;</span>
+                        {{ model | titlecase }}
+                        <span class="tag">&lt;/moz-button&gt;</span>
+                    </p>
+                }
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,92 @@
+<div class="sect-title">
+    <div class="title container">
+        <img src="assets/images/logo/mozek_vector_grey.svg" alt="Mozek Logo Point">
+        Button Icon
+    </div>
+</div>
+
+<div class="component-tag">
+    <h3><span class="tag">&lt;</span>moz-button-icon<span class="tag">&gt;</span></h3>
+</div>
+
+<div class="sample">
+    <div class="title">
+        <img src="assets/images/logo/mozek_vector_grey.svg" alt="Mozek Logo Point">
+        Model
+    </div>
+    @for (model of models; track model) {
+        <div class="content">
+            <div class="sub-title">{{ model | titlecase }}</div>
+            <div class="sample-box">
+                <moz-button-icon [model]="model">
+                    <moz-icon>home</moz-icon>
+                </moz-button-icon>
+                <div class="flex w-full flex-wrap gap-2">
+                    @for (color of colors; track color) {
+                        <moz-button-icon [model]="model" [color]="color">
+                            <moz-icon>close_circle</moz-icon>
+                        </moz-button-icon>
+                    }
+                </div>
+            </div>
+            <div class="sample-code">
+                <div class="open-code" (click)="openSource(model)">
+                    Source Code 
+                    <moz-icon [style.transform]="isOpen(model) ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
+                </div>
+                <div class="code-space" [class.is-open]="isOpen(model)" [style.max-height]="isOpen(model) ? '60rem' : '0'">
+                    @for (color of colors; track color) {
+                        <p class="code">
+                            <span class="tag">&lt;moz-button-icon</span> model=<span class="colo-orange">"{{ model }}"</span> color=<span class="colo-orange">"{{ color }}"</span><span class="tag">&gt;</span>
+                            <br><span class="tag pl-4">&lt;moz-icon&gt;</span>
+                            close_circle
+                            <span class="tag">&lt;/moz-icon&gt;</span>
+                            <br><span class="tag">&lt;/moz-button-icon&gt;</span>
+                        </p>
+                    }
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<div class="sample">
+    <div class="title">
+        <img src="assets/images/logo/mozek_vector_grey.svg" alt="Mozek Logo Point">
+        Gap
+    </div>
+    @for (model of models; track model) {
+        <div class="content">
+            <div class="sub-title">{{ model | titlecase }}</div>
+            <div class="sample-box">
+                <moz-button-icon [model]="model" gap>
+                    <moz-icon>home</moz-icon>
+                </moz-button-icon>
+                <div class="flex w-full flex-wrap gap-2">
+                    @for (color of colors; track color) {
+                        <moz-button-icon [model]="model" [color]="color" gap>
+                            <moz-icon>close_circle</moz-icon>
+                        </moz-button-icon>
+                    }
+                </div>
+            </div>
+            <div class="sample-code">
+                <div class="open-code" (click)="openSource(model + 'gap')">
+                    Source Code 
+                    <moz-icon [style.transform]="isOpen(model + 'gap') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
+                </div>
+                <div class="code-space" [class.is-open]="isOpen(model + 'gap')" [style.max-height]="isOpen(model + 'gap') ? '60rem' : '0'">
+                    @for (color of colors; track color) {
+                        <p class="code">
+                            <span class="tag">&lt;moz-button-icon</span> model=<span class="colo-orange">"{{ model }}"</span> color=<span class="colo-orange">"{{ color }}"</span> gap<span class="tag">&gt;</span>
+                            <br><span class="tag pl-4">&lt;moz-icon&gt;</span>
+                            close_circle
+                            <span class="tag">&lt;/moz-icon&gt;</span>
+                            <br><span class="tag">&lt;/moz-button-icon&gt;</span>
+                        </p>
+                    }
+                </div>
+            </div>
+        </div>
+    }
+</div>

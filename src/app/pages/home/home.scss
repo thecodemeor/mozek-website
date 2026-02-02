@@ -1,0 +1,198 @@
+@use "mozek-angular/src/styles" as moz;
+
+:host {
+    width: 100%; height: fit-content;
+
+    .container {
+        margin: 0 auto;
+        max-width: 100%;
+        @media (min-width: 1400px) { max-width: 72rem;}
+    }
+
+    .section {
+        width: 100%; height: fit-content;
+        border-bottom: solid 0.1rem var(--moz-color-primary-lite);
+        &:nth-last-child(1) { border: none;}
+    }
+}
+
+.hero {
+    display: flex;
+    width: 100%; height: fit-content;
+    background-color: color-mix(in srgb, var(--moz-color-primary-lite) 30%, transparent 70%);
+    .hero-title {
+        flex: 1 1 0;
+        display: flex;
+        width: 100%; height: fit-content;
+        min-height: 13rem;
+        padding: 0 var(--moz-space-4) var(--moz-space-4) 0;
+        justify-content: center;
+        flex-direction: column;
+        gap: var(--moz-space-3);
+        p.description {
+            max-width: 30rem;
+            line-height: 1.3;
+        }
+    }
+    .hero-update {
+        position: relative;
+        width: 28rem;
+        min-height: 3rem;
+        .card-outer {
+            position: absolute;
+            top: 0; right: 0;
+            width: 100%;
+            padding: var(--moz-space-1);
+            border-radius: calc(var(--moz-radius-default) + var(--moz-space-2));
+            background-image: linear-gradient(-160deg, var(--moz-color-primary-lite), var(--moz-color-secondary-lite));
+            z-index: 20;
+            moz-card {
+                width: 100%; height: 100%;
+
+                .update-box {
+                    display: flex;
+                    width: 100%; height: fit-content;
+                    border-bottom: solid 0.1rem var(--moz-color-border);
+                    gap: var(--moz-space-2);
+
+                    .version {
+                        display: flex;
+                        width: fit-content; height: fit-content;
+                        padding: var(--moz-space-1);
+                        background-color: var(--moz-color-primary-lite);
+                        border-radius: var(--moz-radius-sm);
+                        flex-direction: column;
+                        align-items: center;
+                        gap: 0.3rem;
+
+                        &.latest { background-color: var(--moz-color-secondary-lite);}
+
+                        .date { @include moz.moz-typography('footer')}
+                    }
+                    .contents {
+                        flex: 1 1 0;
+                        width: 100%;
+
+                        .list-group {
+                            display: flex;
+                            width: 100%; height: fit-content;
+                            flex-direction: column;
+                            gap: 0.6rem;
+
+                            img { width: auto; height: 0.8rem;}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.about {
+    flex: 1 1 0;
+    position: relative;
+    width: 100%;
+    .bg-dot {
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        width: 100%; height: 100%;
+        background-image: radial-gradient(var(--moz-color-primary-lite) 0.15rem, transparent 1px);
+        background-size: 2rem 2rem;
+        mask-image: radial-gradient(
+            ellipse 80% 50% at 50% 0%,
+            #000 70%,
+            transparent 110%
+        );
+        -webkit-mask-image: radial-gradient(
+            ellipse 80% 50% at 50% 0%,
+            #000 70%,
+            transparent 110%
+        );
+        z-index: 0;
+    }
+    .about-1-sect {
+        flex: 1 1 0;
+        width: 100%; height: 100%;
+        padding: var(--moz-space-2) 0;
+
+        .card-about {
+            background-image: url('src/app/assets/images/isometric-device-set.jpg');
+            background-size: 40%;
+            background-repeat: no-repeat;
+            background-position: 120% 5rem;
+            background-color: #f0f1f3;
+
+            @media (max-width: 546px) { background-position: 120% 8rem;}
+            @media (max-width: 484px) { background-position: 120% 12rem;}
+        }
+
+        .list {
+            display: flex;
+            gap: var(--moz-space-2);
+
+            img { width: var(--moz-space-3); height: auto;}
+        }
+    }
+    .about-2-sect {
+        display: flex;
+        width: 28rem;
+        flex-direction: column;
+
+        .height-mobile { height: calc(60dvh - 3rem);}
+
+        .speed-action {
+            width: 100%;
+            height: fit-content;
+        }
+    }
+}
+
+.package {
+    display: flex;
+    width: 100%; height: fit-content;
+    padding: var(--moz-space-2) var(--moz-space-5);
+
+    .sect-1 {
+        flex: 1 1 0;
+        display: flex;
+        width: 100%; height: auto;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sect-2 {
+        flex: 2 1 0;
+        width: 100%; height: fit-content;
+
+        .intro {
+            display: flex;
+            flex-direction: column;
+            gap: var(--moz-space-2);
+
+            &.left {
+                text-align: start;
+                align-items: start;
+            }
+
+            &.right {
+                text-align: end;
+                align-items: end;
+            }
+
+            .description { width: 60%; line-height: 1.3;}
+        }
+
+        .features {
+            flex: 1 1 12rem;
+            width: 100%; height: auto;
+            cursor: pointer;
+
+            .features-image {
+                width: 100%; height: 6rem;
+                border: solid 0.1rem var(--moz-color-primary-lite);
+                border-radius: var(--moz-radius-default);
+                object-fit: cover;
+            }
+        }
+    }
+}

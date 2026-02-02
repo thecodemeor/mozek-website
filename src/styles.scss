@@ -1,1 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+@use "mozek-angular/src/styles" as moz;
+
+body, html {
+    font-family: "Google Sans", sans-serif;
+    color: var(--moz-color-text);
+
+    img {
+        user-select: none;
+        pointer-events: none;
+        -webkit-user-drag: none;
+    }
+}
+
+#home {
+    .hero-update {
+        moz-card {
+            .moz-card-content {
+                display: flex;
+                height: 100%;
+                padding: 0;
+            }
+        }
+    }
+}
+
+.dialog {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+}

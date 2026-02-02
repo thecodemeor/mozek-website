@@ -1,0 +1,115 @@
+<div id="tokens" class="first-sect section">
+    <div class="hero" [style.padding-top]="screen() === 'mobile' ? '3.5rem' : '4rem'">
+        <div class="hero-cap">
+            <h1 class="hero-title">Mozek Design Tokens</h1>
+            <p class="hero-subtitle">Design tokens are the visual design atoms of the design system.</p>
+        </div>
+    </div>
+    <div class="sect-title">
+        <div class="title container">
+            <img src="assets/images/logo/mozek_vector_orange.svg" alt="Mozek Logo Point">
+            Design Tokens
+        </div>
+    </div>
+    <div class="shelf">
+        <div class="token-card container" [class]="screen() === 'mobile' ? 'px-2' : 'px-4'">
+            <div class="action-bar">
+                <moz-button-icon model="text" (click)="copyText(copyTarget)" gap>
+                    @if (copied) {
+                        <moz-icon color="success">check_circle</moz-icon>
+                    }
+                    @else {
+                        <moz-icon>copy</moz-icon>
+                    }
+                </moz-button-icon>
+            </div>
+            <span #copyTarget>
+                <p>&#64;mixin moz-theme-light() &#123;</p>
+                <div class="code" [style.padding-left]="screen() === 'mobile' ? '1rem' : '2rem'">
+                    <p class="normal">Main Palette (build-time brand choices)</p>
+                    <p><span class="primary">--moz-color-primary:</span> #06aaf1;</p>
+                    <p><span class="primary">--moz-color-primary-lite:</span> #b8e8ff;</p>
+                    <p><span class="primary">--moz-color-primary-dark:</span> #025b8a;</p>
+                    <p><span class="primary">--moz-color-primary-mute:</span> #3dc5ff;</p>
+                    <br>
+                    <p><span class="primary">--moz-color-secondary:</span> #803bff;</p>
+                    <p><span class="primary">--moz-color-secondary-lite:</span> #d8cdff;</p>
+                    <p><span class="primary">--moz-color-secondary-dark:</span> #5601d6;</p>
+                    <br>
+                    <p class="normal">Standard Colors</p>
+                    <p><span class="primary">--moz-color-background:</span> #ffffff;</p>
+                    <p><span class="primary">--moz-color-default:</span> #000000;</p>
+                    <p><span class="primary">--moz-color-surface:</span> #fefefe;</p>
+                    <p><span class="primary">--moz-color-text:</span> #343434;</p>
+                    <p><span class="primary">--moz-color-border:</span> #34343426;</p>
+                    <br>
+                    <p class="normal">Feedback Colors</p>
+                    <p><span class="primary">--moz-color-success:</span> #4bb800;</p>
+                    <p><span class="primary">--moz-color-warning:</span> #ffbf00;</p>
+                    <p><span class="primary">--moz-color-danger:</span>  #d70000;</p>
+                </div>
+                <p>&#125;</p>
+                <br>
+                <p>&#64;mixin moz-theme-dark() &#123;</p>
+                <div class="code" [style.padding-left]="screen() === 'mobile' ? '1rem' : '2rem'">
+                    <p class="normal">Main Palette (build-time brand choices)</p>
+                    <p><span class="primary">--moz-color-primary:</span> #78d6ff;</p>
+                    <p><span class="primary">--moz-color-primary-lite:</span> #b8e8ff;</p>
+                    <p><span class="primary">--moz-color-primary-dark:</span> #06aaf1;</p>
+                    <p><span class="primary">--moz-color-primary-mute:</span> #aaaaaa;</p>
+                    <br>
+                    <p><span class="primary">--moz-color-secondary:</span> #9c73ff;</p>
+                    <p><span class="primary">--moz-color-secondary-lite:</span> #bca6ff;</p>
+                    <p><span class="primary">--moz-color-secondary-dark:</span> #7414ff;</p>
+                    <br>
+                    <p class="normal">Standard Colors</p>
+                    <p><span class="primary">--moz-color-background:</span> #050816;</p>
+                    <p><span class="primary">--moz-color-default:</span> #ffffff;</p>
+                    <p><span class="primary">--moz-color-surface:</span> #0b1020;</p>
+                    <p><span class="primary">--moz-color-text:</span> #f3f4f6;</p>
+                    <p><span class="primary">--moz-color-border:</span> #f3f4f626;</p>
+                    <br>
+                    <p class="normal">Feedback Colors</p>
+                    <p><span class="primary">--moz-color-success:</span> #76ff03;</p>
+                    <p><span class="primary">--moz-color-warning:</span> #ffdf1b;</p>
+                    <p><span class="primary">--moz-color-danger:</span>  #ff5757;</p>
+                </div>
+                <p>&#125;</p>
+                <br>
+                <p>:root &#123;</p>
+                <div class="code" [style.padding-left]="screen() === 'mobile' ? '1rem' : '2rem'">
+                    <p class="normal">Radius</p>
+                    <p><span class="primary">--moz-radius-sm:</span> 0.75rem;</p>
+                    <p><span class="primary">--moz-radius-default:</span> 1.25rem;</p>
+                    <p><span class="primary">--moz-radius-lg:</span> 1.75rem;</p>
+                    <p><span class="primary">--moz-radius-xl:</span> 2.25rem;</p>
+                    <p><span class="primary">--moz-radius-pill:</span> 9999px;</p>
+                    <br>
+                    <p class="normal">Motion</p>
+                    <p><span class="primary">--moz-duration-fast:</span> 0.1s;</p>
+                    <p><span class="primary">--moz-duration:</span> 0.3s;</p>
+                    <br>
+                    <p class="normal">Color Fade Percent</p>
+                    <p><span class="primary">--moz-fade-hover:</span> 10%;</p>
+                    <p><span class="primary">--moz-fade-border:</span> 20%;</p>
+                    <p><span class="primary">--moz-fade-hover-dark:</span> 30%;</p>
+                    <p><span class="primary">--moz-fade-outline:</span> 50%;</p>
+                    <p><span class="primary">--moz-fade-placeholder:</span> 60%;</p>
+                    <p><span class="primary">--moz-fade-border-dark:</span> 80%;</p>
+                    <br>
+                    <p class="normal">Typography</p>
+                    <p><span class="primary">--moz-font-family:</span> ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";</p>
+                    <p><span class="primary">--moz-font-size:</span> 1rem;</p>
+                    <p><span class="primary">--moz-line-height:</span> 1;</p>
+                    <br>
+                    <p class="normal">Font Weight</p>
+                    <p><span class="primary">--moz-font-weight-regular:</span> 400;</p>
+                    <p><span class="primary">--moz-font-weight-medium:</span> 500;</p>
+                    <p><span class="primary">--moz-font-weight-semibold:</span> 600;</p>
+                    <p><span class="primary">--moz-font-weight-bold:</span> 700;</p>
+                </div>
+                <p>&#125;</p>
+            </span>
+        </div>
+    </div>
+</div>
