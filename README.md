@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="./img/png/mozek_banner.png" width="400" alt="Mozek Logo Banner"/>
+    <img src="./src/app/assets/images/logo/mozek_banner.svg" width="400" alt="Mozek Logo Banner"/>
 
 # Mozek
 
