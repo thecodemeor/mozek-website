@@ -1,0 +1,39 @@
+[
+    {
+        "name": "Initial Release",
+        "version": "0.0.1",
+        "date": "Dec 2025",
+        "contents": [
+            "First stable public release of Mozek (Beta Version)",
+            "Complete SCSS token system (colors, spacing, typography)",
+            "Utility classes (margin, padding, flex, text helpers)",
+            "MozButton",
+            "MozCard",
+            "MozBadge",
+            "MozCurrency",
+            "MozDivider",
+            "MozInput",
+            "MozIcon",
+            "MozProgress",
+            "MozPaginantion",
+            "MozSwitch",
+            "MozButtonIcon",
+            "MozDatepicker",
+            "MozSelect",
+            "MozAccordion",
+            "MozCheckbox",
+            "MozRadio",
+            "Demo playground application for testing and development"
+        ]
+    },
+    {
+        "name": "Small Fix",
+        "version": "0.0.2",
+        "date": "Dec 2025",
+        "contents": [
+            "MozInput space fixed",
+            "MozButton color fixed",
+            "Add License and Code of Conduct"
+        ]
+    }
+]
