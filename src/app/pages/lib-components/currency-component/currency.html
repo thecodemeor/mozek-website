@@ -21,7 +21,7 @@
         <div class="content">
             <div class="sample-box">
                 <moz-currency>100</moz-currency>
-                <div class="flex w-full flex-wrap gap-10">
+                <div class="flex w-full flex-wrap" [class]="screen() === 'desktop' ? 'gap-10' : 'gap-2'">
                     <moz-currency currency="USD">240.5</moz-currency>
                     <moz-currency currency="RM" [value]="10.3"></moz-currency>
                 </div>
@@ -31,7 +31,7 @@
                     Source Code 
                     <moz-icon color="#ffffff" [style.transform]="isOpen('basic') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
                 </div>
-                <div class="code-space" [class.is-open]="isOpen('basic')" [style.max-height]="isOpen('basic') ? '6rem' : '0'">
+                <div class="code-space" [class.is-open]="isOpen('basic')" [style.max-height]="isOpen('basic') ? '50rem' : '0'">
                     <p class="code">
                         <mozek-code tag="moz-currency" inline>100</mozek-code><br>
                         <mozek-code tag="moz-currency" currency="USD" inline>240.5</mozek-code><br>
@@ -60,7 +60,7 @@
                 }
             </div>
             <div class="sample-box">
-                <div class="flex gap-10">
+                <div class="flex flex-wrap" [class]="screen() === 'desktop' ? 'gap-10' : 'gap-2'">
                     <moz-currency currency="JPY" symbol>100</moz-currency>
                     <moz-currency currency="USD" symbol>240</moz-currency>
                 </div>
@@ -70,7 +70,7 @@
                     Source Code 
                     <moz-icon color="#ffffff" [style.transform]="isOpen('symbols') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
                 </div>
-                <div class="code-space" [class.is-open]="isOpen('symbols')" [style.max-height]="isOpen('symbols') ? '5rem' : '0'">
+                <div class="code-space" [class.is-open]="isOpen('symbols')" [style.max-height]="isOpen('symbols') ? '50rem' : '0'">
                     <p class="code">
                         <mozek-code tag="moz-currency" currency="JPY" extra="symbol" inline>100</mozek-code><br>
                         <mozek-code tag="moz-currency" currency="USD" extra="symbol" inline>240.5</mozek-code><br>

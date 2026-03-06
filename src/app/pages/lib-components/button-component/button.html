@@ -34,7 +34,7 @@
                         Source Code 
                         <moz-icon color="#ffffff" [style.transform]="isOpen(model) ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
                     </div>
-                    <div class="code-space" [class.is-open]="isOpen(model)" [style.max-height]="isOpen(model) ? '12rem' : '0'">
+                    <div class="code-space" [class.is-open]="isOpen(model)" [style.max-height]="isOpen(model) ? '50rem' : '0'">
                         @for (color of colors; track color) {
                             <p class="code">
                                 <mozek-code tag="moz-button" [model]="model" [color]="color" inline>
@@ -69,7 +69,7 @@
                     Source Code 
                     <moz-icon color="#ffffff" [style.transform]="isOpen('disabled') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
                 </div>
-                <div class="code-space" [class.is-open]="isOpen('disabled')" [style.max-height]="isOpen('disabled') ? '15rem' : '0'">
+                <div class="code-space" [class.is-open]="isOpen('disabled')" [style.max-height]="isOpen('disabled') ? '50rem' : '0'">
                     @for (model of models; track model) {
                         <p class="code">
                             <mozek-code tag="moz-button" [model]="model" extra="disabled" inline>
@@ -104,7 +104,7 @@
                     Source Code 
                     <moz-icon color="#ffffff" [style.transform]="isOpen('full') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
                 </div>
-                <div class="code-space" [class.is-open]="isOpen('full')" [style.max-height]="isOpen('full') ? '15rem' : '0'">
+                <div class="code-space" [class.is-open]="isOpen('full')" [style.max-height]="isOpen('full') ? '50rem' : '0'">
                     @for (model of models; track model) {
                         <p class="code">
                             <mozek-code tag="moz-button" [model]="model" color="primary" extra="full" inline>

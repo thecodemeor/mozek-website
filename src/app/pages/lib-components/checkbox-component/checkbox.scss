@@ -11,12 +11,20 @@
     --moz-color-grey-lite: #{moz.moz-get-color(grey, 200)};
 }
 
-.bulb {
-    width: 2rem; height: 2rem;
-    border-radius: 50%;
-    background-color: var(--moz-color-grey);
-}
+.sample-checkbox-vertical {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--moz-space-2);
 
-.red { background-color: var(--moz-color-red);}
-.blue { background-color: var(--moz-color-blue);}
-.amber { background-color: var(--moz-color-amber);}
+    &.mobile-sample-checkbox {
+        flex-direction: column-reverse;
+    }
+
+    .sample-checkbox-image {
+        width: 6rem;
+        aspect-ratio: 1 / 1;
+    }
+}

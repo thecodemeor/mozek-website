@@ -36,7 +36,7 @@
                     Source Code 
                     <moz-icon color="#ffffff" [style.transform]="isOpen('model') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
                 </div>
-                <div class="code-space" [class.is-open]="isOpen('model')" [style.max-height]="isOpen('model') ? '19rem' : '0'">
+                <div class="code-space" [class.is-open]="isOpen('model')" [style.max-height]="isOpen('model') ? '50rem' : '0'">
                     @for (model of models; track model) {
                         <p class="code">
                             <mozek-code tag="moz-progress" [model]="model" inline></mozek-code>
@@ -73,7 +73,7 @@
                     Source Code 
                     <moz-icon color="#ffffff" [style.transform]="isOpen('size') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
                 </div>
-                <div class="code-space" [class.is-open]="isOpen('size')" [style.max-height]="isOpen('size') ? '11rem' : '0'">
+                <div class="code-space" [class.is-open]="isOpen('size')" [style.max-height]="isOpen('size') ? '50rem' : '0'">
                     @for (size of sizes; track size) {
                         <p class="code">
                             <mozek-code tag="moz-progress" model="line_spinner" color="primary" [size]="size" inline></mozek-code>
@@ -110,7 +110,7 @@
                     Source Code 
                     <moz-icon color="#ffffff" [style.transform]="isOpen('speed') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
                 </div>
-                <div class="code-space" [class.is-open]="isOpen('speed')" [style.max-height]="isOpen('speed') ? '11rem' : '0'">
+                <div class="code-space" [class.is-open]="isOpen('speed')" [style.max-height]="isOpen('speed') ? '50rem' : '0'">
                     @for (speed of speeds; track speed) {
                         <p class="code">
                             <mozek-code tag="moz-progress" model="cardio" color="primary" [speed]="speed" inline></mozek-code>

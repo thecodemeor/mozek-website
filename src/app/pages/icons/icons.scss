@@ -81,7 +81,6 @@
             gap: var(--moz-space-3);
 
             .title {
-                @include moz.moz-typography('title-lg');
                 display: flex;
                 width: 80%; height: fit-content;
                 padding: var(--moz-space-2);
@@ -94,8 +93,9 @@
                 flex-direction: column;
                 gap: var(--moz-space-3);
 
-                font-weight: 800;
+                font-weight: 800 !important;
                 color: var(--moz-color-text);
+                @include moz.moz-typography('title-lg');
 
                 img {
                     height: 3rem;

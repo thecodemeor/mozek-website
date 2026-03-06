@@ -124,7 +124,7 @@
                     Source Code 
                     <moz-icon color="#ffffff" [style.transform]="isOpen('basic') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
                 </div>
-                <div class="code-space" [class.is-open]="isOpen('basic')" [style.max-height]="isOpen('basic') ? '13rem' : '0'">
+                <div class="code-space" [class.is-open]="isOpen('basic')" [style.max-height]="isOpen('basic') ? '50rem' : '0'">
                     <p class="code">
                         <mozek-code tag="moz-divider" inline></mozek-code>
                     </p>
@@ -155,7 +155,7 @@
                     Source Code 
                     <moz-icon color="#ffffff" [style.transform]="isOpen('color') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
                 </div>
-                <div class="code-space" [class.is-open]="isOpen('color')" [style.max-height]="isOpen('color') ? '11rem' : '0'">
+                <div class="code-space" [class.is-open]="isOpen('color')" [style.max-height]="isOpen('color') ? '50rem' : '0'">
                     @for (color of colors; track color) {
                         <p class="code">
                             <mozek-code tag="moz-switch" [color]="color" inline></mozek-code>

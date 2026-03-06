@@ -39,11 +39,16 @@ export class Checkbox {
     public responsive = inject(ResponsiveService);
     screen = computed(() => this.responsive.breakpoint());
 
+    ready = false
+    ngOnInit() {
+        this.ready = true;
+    }
+
     checked = false;
     colors: MozColorName[] = [ 'primary', 'secondary', 'success', 'warn', 'danger',]
-    bulb1 = false;
-    bulb2 = false;
-    bulb3 = false;
+    food1 = false;
+    food2 = false;
+    food3 = false;
 
     openMap: Record<string, boolean> = {};
     openSource(key: string) {

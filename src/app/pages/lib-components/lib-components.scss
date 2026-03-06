@@ -155,7 +155,6 @@
     gap: var(--moz-space-3);
 
     .title {
-        @include moz.moz-typography('title-lg');
         display: flex;
         width: 80%; height: fit-content;
         padding: var(--moz-space-2);
@@ -167,8 +166,9 @@
         align-items: center;
         flex-direction: row;
 
-        font-weight: 800;
+        font-weight: 800 !important;
         color: var(--moz-color-text);
+        @include moz.moz-typography('title-lg');
 
         img {
             height: 3rem;
@@ -224,12 +224,13 @@
     background-color: var(--moz-color-primary-lite);
     
     .title {
-        @include moz.moz-typography('title-sm');
         display: flex;
         width: 100%; height: fit-content;
         padding: var(--moz-space-2);
-        font-weight: 600;
+        font-weight: 600 !important;
+        align-items: center;
         gap: var(--moz-space-1);
+        @include moz.moz-typography('title-sm');
         
         img {
             height: 2rem;
@@ -239,12 +240,12 @@
     }
 
     .sub-title {
-        @include moz.moz-typography('label-md');
         display: flex;
         width: 100%; height: fit-content;
         padding: var(--moz-space-2) var(--moz-space-3) var(--moz-space-1);
-        font-weight: 600;
+        font-weight: 600 !important;
         color: var(--moz-color-text-secondary);
+        @include moz.moz-typography('label-md');
     }
 
     .content {
@@ -274,14 +275,14 @@
             background: #1f1f1f;
 
             .open-code {
-                @include moz.root-button();
                 width: 100%; height: fit-content;
                 padding: var(--moz-space-1);
                 background: color-mix(in srgb, var(--moz-color-primary) 10%, #242424);
-                border: solid 0.1rem color-mix(in srgb, var(--moz-color-primary-lite) 20%, #454545);
-                border-radius: var(--moz-radius-sm);
+                border: solid 0.1rem color-mix(in srgb, var(--moz-color-primary-lite) 20%, #454545) !important;
+                border-radius: var(--moz-radius-sm) !important;
                 color: var(--moz-color-background);
                 gap: var(--moz-space-1);
+                @include moz.root-button();
 
                 moz-icon {
                     transition: all var(--moz-duration);
@@ -289,28 +290,28 @@
             }
 
             .code-space {
-                max-height: 0;
+                display: grid;
+                grid-template-rows: 0fr; 
                 padding: 0 var(--moz-space-4);
-                transform: translateY(-4px);
-                transition:
-                    max-height 300ms ease,
-                    opacity 200ms ease,
-                    transform 200ms ease;
                 opacity: 0;
                 overflow: hidden;
+                transition: all 200ms ease;
 
                 &.is-open {
                     opacity: 1;
                     transform: translateY(0);
+                    grid-template-rows: 1fr; 
                 }
 
                 .code {
+                    min-height: 0; 
                     padding: 0.3rem 0;
                     font-family: "Courier Prime", monospace;
                     line-height: 1.3;
                     color: var(--moz-color-background);
-                    &:nth-child(1) { margin-top: var(--moz-space-2);}
-                    &:nth-last-child(1) { margin-bottom: var(--moz-space-2);}
+                    
+                    &:nth-child(1) { margin-top: var(--moz-space-2); }
+                    &:nth-last-child(1) { margin-bottom: var(--moz-space-2); }
                 }
             }
         }

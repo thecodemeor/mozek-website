@@ -33,7 +33,7 @@
                     Source Code 
                     <moz-icon color="#ffffff" [style.transform]="isOpen('color') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
                 </div>
-                <div class="code-space" [class.is-open]="isOpen('color')" [style.max-height]="isOpen('color') ? '11rem' : '0'">
+                <div class="code-space" [class.is-open]="isOpen('color')" [style.max-height]="isOpen('color') ? '50rem' : '0'">
                     @for (badge of badges; track badge) {
                         <p class="code">
                             <mozek-code tag="moz-badge" [color]="badge.color" inline>
@@ -59,7 +59,7 @@
                     Source Code 
                     <moz-icon color="#ffffff" [style.transform]="isOpen('number') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
                 </div>
-                <div class="code-space" [class.is-open]="isOpen('number')" [style.max-height]="isOpen('number') ? '11rem' : '0'">
+                <div class="code-space" [class.is-open]="isOpen('number')" [style.max-height]="isOpen('number') ? '50rem' : '0'">
                     @for (badge of badges; track badge) {
                         <p class="code">
                             <mozek-code tag="moz-badge" [color]="badge.color" inline>
@@ -97,7 +97,7 @@
                     Source Code 
                     <moz-icon color="#ffffff" [style.transform]="isOpen('icon') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
                 </div>
-                <div class="code-space" [class.is-open]="isOpen('icon')" [style.max-height]="isOpen('icon') ? '11rem' : '0'">
+                <div class="code-space" [class.is-open]="isOpen('icon')" [style.max-height]="isOpen('icon') ? '50rem' : '0'">
                     @for (badge of badges; track badge) {
                         <p class="code">
                             <mozek-code tag="moz-badge" [color]="badge.color" [icon]="badge.icon" inline>
@@ -133,7 +133,7 @@
                     Source Code 
                     <moz-icon color="#ffffff" [style.transform]="isOpen('extra') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
                 </div>
-                <div class="code-space" [class.is-open]="isOpen('extra')" [style.max-height]="isOpen('extra') ? '9rem' : '0'">
+                <div class="code-space" [class.is-open]="isOpen('extra')" [style.max-height]="isOpen('extra') ? '50rem' : '0'">
                     @for (badge of badgextra; track badge) {
                         <p class="code">
                             <mozek-code tag="moz-badge" [color]="badge.color" [extra]="(badge.dot && badge.pulse) ? 'dot pulse' : badge.dot ? 'dot' : badge.pulse ? 'pulse' : ''" inline>
@@ -172,7 +172,7 @@
                     Source Code 
                     <moz-icon color="#ffffff" [style.transform]="isOpen('noti') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
                 </div>
-                <div class="code-space" [class.is-open]="isOpen('noti')" [style.max-height]="isOpen('noti') ? '12rem' : '0'">
+                <div class="code-space" [class.is-open]="isOpen('noti')" [style.max-height]="isOpen('noti') ? '50rem' : '0'">
                         <p class="code">
                             @for (item of [false, true]; track $index) {
                                 <mozek-code tag="moz-button">

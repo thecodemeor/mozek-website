@@ -24,7 +24,7 @@
                     <p>items = [{{items.join(', ')}}]</p>
                     <div class="flex flex-wrap justify-end gap-2">
                         @for (item of pagedItems; track $index) {
-                            <moz-card model="flavor" color="primary">
+                            <moz-card model="flavor" color="primary" [class.w-full]="screen() === 'mobile'">
                                 <div class="p-3">{{item}}</div>
                             </moz-card>
                         }
@@ -43,7 +43,7 @@
                     Source Code 
                     <moz-icon color="#ffffff" [style.transform]="isOpen('model') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
                 </div>
-                <div class="code-space" [class.is-open]="isOpen('model')" [style.max-height]="isOpen('model') ? '24rem' : '0'">
+                <div class="code-space" [class.is-open]="isOpen('model')" [style.max-height]="isOpen('model') ? '50rem' : '0'">
                     <p class="code">
                         <span class="comment">// HTML Example</span><br>
                         <span class="tag"><span class="symbol">&lt;</span>moz-{{title}}</span><br>

@@ -45,7 +45,7 @@
                         Source Code 
                         <moz-icon color="#ffffff" [style.transform]="isOpen(model) ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
                     </div>
-                    <div class="code-space" [class.is-open]="isOpen(model)" [style.max-height]="isOpen(model) ? '60rem' : '0'">
+                    <div class="code-space" [class.is-open]="isOpen(model)" [style.max-height]="isOpen(model) ? '100rem' : '0'">
                         <p class="code">
                             <mozek-code tag="moz-card" [model]="model" color="primary">
                                 <mozek-code tag="moz-card-media">
@@ -93,7 +93,7 @@
                             Source Code 
                             <moz-icon color="#ffffff" [style.transform]="isOpen(model + '-advance') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
                         </div>
-                        <div class="code-space" [class.is-open]="isOpen(model + '-advance')" [style.max-height]="isOpen(model + '-advance') ? '50rem' : '0'">
+                        <div class="code-space" [class.is-open]="isOpen(model + '-advance')" [style.max-height]="isOpen(model + '-advance') ? '100rem' : '0'">
                             <p class="code">
                                 <mozek-code tag="moz-card" [model]="model" color="primary" extra="advance">
                                     <mozek-code tag="moz-card-media">
@@ -141,7 +141,7 @@
                         Source Code 
                         <moz-icon color="#ffffff" [style.transform]="isOpen(model) ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
                     </div>
-                    <div class="code-space" [class.is-open]="isOpen(model)" [style.max-height]="isOpen(model) ? '18rem' : '0'">
+                    <div class="code-space" [class.is-open]="isOpen(model)" [style.max-height]="isOpen(model) ? '100rem' : '0'">
                         <p class="code">
                             <mozek-code tag="moz-card" [model]="model">
                                 <mozek-code tag="moz-card-media">
@@ -185,7 +185,7 @@
                     Source Code 
                     <moz-icon color="#ffffff" [style.transform]="isOpen('disabled') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
                 </div>
-                <div class="code-space" [class.is-open]="isOpen('disabled')" [style.max-height]="isOpen('disabled') ? '12rem' : '0'">
+                <div class="code-space" [class.is-open]="isOpen('disabled')" [style.max-height]="isOpen('disabled') ? '100rem' : '0'">
                     @for (model of models; track model) {
                         <p class="code">
                             <mozek-code tag="moz-card" [model]="model" color="primary" extra="loading" inline></mozek-code>

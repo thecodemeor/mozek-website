@@ -38,7 +38,7 @@
                         Source Code 
                         <moz-icon color="#ffffff" [style.transform]="isOpen(model) ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
                     </div>
-                    <div class="code-space" [class.is-open]="isOpen(model)" [style.max-height]="isOpen(model) ? '25rem' : '0'">
+                    <div class="code-space" [class.is-open]="isOpen(model)" [style.max-height]="isOpen(model) ? '50rem' : '0'">
                         @for (color of colors; track color) {
                             <p class="code">
                                 <mozek-code tag="moz-button-icon" [model]="model" [color]="color">
@@ -82,7 +82,7 @@
                         Source Code 
                         <moz-icon color="#ffffff" [style.transform]="isOpen(model + 'gap') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
                     </div>
-                    <div class="code-space" [class.is-open]="isOpen(model + 'gap')" [style.max-height]="isOpen(model + 'gap') ? '25rem' : '0'">
+                    <div class="code-space" [class.is-open]="isOpen(model + 'gap')" [style.max-height]="isOpen(model + 'gap') ? '50rem' : '0'">
                         @for (color of colors; track color) {
                             <p class="code">
                                 <mozek-code tag="moz-button-icon" [model]="model" [color]="color" extra="gap">

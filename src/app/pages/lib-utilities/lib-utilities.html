@@ -1,7 +1,7 @@
 <div id="utilities" class="first-sect section" [style.padding-top]="screen() === 'mobile' ? '3.5rem' : '4rem'">
     <div class="sect-title">
         <div class="title container">
-            <div class="flex items-center">
+            <div class="flex items-center gap-2" [class.flex-col]="screen() === 'mobile'">
                 <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
                 Mozek Library Utilities
             </div>
@@ -89,7 +89,7 @@
             </div>
         </div>
         <div class="demo-container" [style.width]="screen() !== 'desktop' ? '100%' : '40rem'">
-            <div class="demo" [style.height]="screen() !== 'desktop' ? '40rem' : '85dvh'">
+            <div class="demo" [style.height]="screen() !== 'desktop' ? '23rem' : '85dvh'">
                 <div class="pt-2 px-2">
                     <h6 class="demo-label">Demo</h6>
                 </div>
@@ -194,7 +194,7 @@
             </div>
         </div>
         <div class="demo-container sect-position" [style.width]="screen() !== 'desktop' ? '100%' : '40rem'">
-            <div class="demo" [style.height]="screen() !== 'desktop' ? '40rem' : '85dvh'">
+            <div class="demo" [style.height]="screen() !== 'desktop' ? '23rem' : '85dvh'">
                 <div class="pt-2 px-2">
                     <h6 class="demo-label">Demo</h6>
                 </div>

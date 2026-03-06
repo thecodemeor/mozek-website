@@ -12,8 +12,7 @@ import { MozButtonIcon, MozIcon, MozCard } from 'mozek-angular';
     standalone: true,
     imports: [
         MozButtonIcon,
-        MozIcon,
-        MozCard
+        MozIcon
     ],
     templateUrl: './get-started.html',
     styleUrl: './get-started.scss',
