@@ -12,12 +12,12 @@ import { Router } from '@angular/router';
 import updates from 'src/app/assets/documents/updates.json'
 
 import { ResponsiveService } from 'src/app/services/responsive.service';
-import { MozCard, MozCardMedia, MozCardBody, MozButton } from 'mozek-angular';
+import { MozCard, MozCardBody, MozButton } from 'mozek-angular';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [MozCard, MozCardMedia, MozCardBody, MozButton],
+  imports: [MozCard, MozCardBody, MozButton],
   templateUrl: './home.html',
   styleUrls: ['./home.scss'],
 })
@@ -71,17 +71,17 @@ export class Home implements AfterViewInit, OnDestroy {
   features = [
     {
       name: 'Components',
-      img: 'assets/images/components-bg.png',
+      img: 'assets/images/components-image.svg',
       url: 'components'
     },
     {
-      name: 'Utilities & Tokens',
-      img: 'assets/images/utilities-bg.png',
-      url: 'utilities'
+      name: 'Color Palette',
+      img: 'assets/images/color-palette-image.svg',
+      url: 'themes'
     },
     {
       name: 'Icons',
-      img: 'assets/images/icons-bg.png',
+      img: 'assets/images/icon-image.svg',
       url: 'icons'
     },
   ]

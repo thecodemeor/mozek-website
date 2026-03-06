@@ -5,13 +5,16 @@ import {
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { ResponsiveService } from 'src/app/services/responsive.service';
 import { MozBadge, MozButton, MozIcon } from 'mozek-angular';
+
+import { ResponsiveService } from 'src/app/services/responsive.service';
+import { MozekCode } from "src/app/assets/components/codesample";
 
 @Component({
     selector: 'app-lib-component',
     imports: [
         CommonModule,
+        MozekCode,
         MozBadge,
         MozButton,
         MozIcon
@@ -20,6 +23,9 @@ import { MozBadge, MozButton, MozIcon } from 'mozek-angular';
     styleUrls: ['./badge.scss', '../lib-components.scss'],
 })
 export class Badge {
+    title = 'badge'
+    description = 'A badge is a small component that displays a number or status indicator, often used to show notifications or highlight important information.'
+
     public responsive = inject(ResponsiveService);
     screen = computed(() => this.responsive.breakpoint());
 

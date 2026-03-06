@@ -1,0 +1,122 @@
+@use "mozek-angular/src/styles" as moz;
+
+:host {
+    --moz-color-orange: #{moz.moz-get-color(tangerine, 500)};
+    --moz-color-orange-lite: #{moz.moz-get-color(tangerine, 200)};
+    --moz-color-grey: #{moz.moz-get-color(grey, 500)};
+    --moz-color-grey-lite: #{moz.moz-get-color(grey, 200)};
+
+    --border-color: #eee;
+
+    width: 100%; height: fit-content;
+
+    .container {
+        margin: 0 auto;
+        max-width: 100%;
+        @media (min-width: 1400px) { max-width: 72rem;}
+    }
+
+    .section {
+        width: 100%; height: fit-content;
+        border-bottom: solid 0.1rem var(--moz-color-primary-lite);
+        &:nth-last-child(1) { border: none;}
+    }
+
+    .sect-title {
+        display: flex;
+        width: 100%; height: fit-content;
+        padding: var(--moz-space-4) 0 var(--moz-space-3);
+        border-bottom: solid 0.15rem var(--moz-color-primary-lite);
+        background-image: radial-gradient( color-mix(in srgb, var(--moz-color-primary) 30%, white) 0.08rem, transparent 1px);
+        background-size: 1rem 1rem;
+        background-color: color-mix(in srgb, var(--moz-color-primary-lite) 30%, white);
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: var(--moz-space-3);
+
+        .title {
+            @include moz.moz-typography('title-lg');
+            display: flex;
+            width: 80%; height: fit-content;
+            padding: var(--moz-space-2);
+            border: solid 0.12rem color-mix(in srgb, var(--moz-color-primary) 50%, white);
+            border-radius: var(--moz-radius-lg);
+            background-color: var(--moz-color-background);
+            outline: solid 0.6rem var(--moz-color-primary-lite);
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: var(--moz-space-3);
+
+            font-weight: 800;
+            color: var(--moz-color-text);
+
+            img {
+                height: 3rem;
+                aspect-ratio: 1 / 1;
+                margin: 0 var(--moz-space-3) 0 0;
+            }
+            p { color: var(--moz-color-grey);}
+        }
+        @media (max-width: 768px) {
+            .title {
+                flex-direction: column;
+                text-align: center;
+
+                img {
+                    height: 2.5rem;
+                    margin: 0 0 var(--moz-space-1) 0;
+                }
+            }
+        }
+    }
+}
+
+.shelf {
+    display: flex;
+    width: 100%; height: fit-content;
+    padding: var(--moz-space-5) 0;
+    background-size: 5rem 5rem;
+    background-image:
+                linear-gradient(to right, color-mix(in srgb, var(--moz-color-grey-lite) 80%, white) 1px, transparent 1px),
+                linear-gradient(to bottom, color-mix(in srgb, var(--moz-color-grey-lite) 80%, white) 1px, transparent 1px);
+
+        .guide-card {
+            display: flex;
+            width: 80%; height: fit-content;
+            padding: var(--moz-space-4);
+            border: solid 0.1rem var(--moz-color-primary);
+            border-radius: var(--moz-radius-lg);
+            background-color: var(--moz-color-background);
+            box-shadow: 0 0 0 0.8rem var(--moz-color-primary-lite);
+            flex-direction: column;
+            gap: var(--moz-space-1);
+
+            color: var(--moz-color-text);
+            
+            p { line-height: 1.3;}
+
+            .code-sect {
+                display: flex;
+                width: 100%; height: fit-content;
+                padding: var(--moz-space-2);
+                border: solid 0.1rem var(--moz-color-primary-lite);
+                border-radius: var(--moz-radius-default);
+                background-color: color-mix(in srgb, var(--moz-color-primary) 10%, white);
+                justify-content: space-between;
+                align-items: center;
+                gap: var(--moz-space-1);
+
+                .code {
+                    font-family: 'Courier New', Courier, monospace;
+                    color: var(--moz-color-text);
+                    font-weight: 600;
+                }
+            }
+        }
+}
+
+moz-button-icon {
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}

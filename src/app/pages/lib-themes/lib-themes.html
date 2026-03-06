@@ -1,14 +1,10 @@
-<div id="themes" class="first-sect section">
-    <div class="hero" [style.padding-top]="screen() === 'mobile' ? '3.5rem' : '4rem'">
-        <div class="hero-cap">
-            <h1 class="hero-title">Mozek Themes</h1>
-            <p>Design themes are the visual design atoms of the design system.</p>
-        </div>
-    </div>
+<div id="themes" class="first-sect section" [style.padding-top]="screen() === 'mobile' ? '3.5rem' : '4rem'">
     <div class="sect-title">
         <div class="title container">
-            <img src="assets/images/logo/mozek_vector_green.svg" alt="Mozek Logo Point">
-            Color Palette
+            <div class="flex items-center">
+                <img src="assets/images/logo/mozek_vector_violet.svg" alt="Mozek Logo Point">
+                Color Palettes
+            </div>
         </div>
     </div>
 
@@ -19,10 +15,10 @@
             <div #copyTarget class="sample-code" (click)="copyText(copyTarget)">
                 @if (copied) { Copied! }
                 @else {
-                    #&#123;moz.moz-get-color(<span class="green">[color]</span>, <span class="green">[n]</span>)&#125;
+                    #&#123;moz.moz-get-color(<span class="secondary">[color]</span>, <span class="secondary">[n]</span>)&#125;
                 }
             </div>
-            <p class="paragraph">where <span class="code green">[color]</span> is the name of the palette and <span class="code green">[n]</span> is the numeric value of the desired swatch.</p>
+            <p class="paragraph">where <span class="code secondary">[color]</span> is the name of the palette and <span class="code secondary">[n]</span> is the numeric value of the desired swatch.</p>
         </div>
 
         <div class="theme-card container" [class]="screen() === 'mobile' ? 'px-2' : 'px-4'">

@@ -1,0 +1,156 @@
+@use "mozek-angular/src/styles" as moz;
+
+:host {
+    --moz-color-orange: #{moz.moz-get-color(tangerine, 500)};
+    --moz-color-orange-lite: #{moz.moz-get-color(tangerine, 200)};
+    --moz-color-grey: #{moz.moz-get-color(grey, 500)};
+    --moz-color-grey-lite: #{moz.moz-get-color(grey, 200)};
+
+    --border-color: #eee;
+
+    width: 100%; height: fit-content;
+
+    .container {
+        margin: 0 auto;
+        max-width: 100%;
+        @media (min-width: 1400px) { max-width: 72rem;}
+    }
+
+    .section {
+        width: 100%; height: fit-content;
+        border-bottom: solid 0.1rem var(--moz-color-primary-lite);
+        &:nth-last-child(1) { border: none;}
+    }
+
+    .sect-title {
+        display: flex;
+        width: 100%; height: fit-content;
+        padding: var(--moz-space-4) 0 var(--moz-space-3);
+        border-bottom: solid 0.15rem var(--moz-color-primary-lite);
+        background-image: radial-gradient( color-mix(in srgb, var(--moz-color-primary) 30%, white) 0.08rem, transparent 1px);
+        background-size: 1rem 1rem;
+        background-color: color-mix(in srgb, var(--moz-color-primary-lite) 30%, white);
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: var(--moz-space-3);
+
+        .title {
+            @include moz.moz-typography('title-lg');
+            display: flex;
+            width: 80%; height: fit-content;
+            padding: var(--moz-space-2);
+            border: solid 0.12rem color-mix(in srgb, var(--moz-color-primary) 50%, white);
+            border-radius: var(--moz-radius-lg);
+            background-color: var(--moz-color-background);
+            outline: solid 0.6rem var(--moz-color-primary-lite);
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: var(--moz-space-3);
+
+            font-weight: 800;
+            color: var(--moz-color-text);
+
+            img {
+                height: 3rem;
+                aspect-ratio: 1 / 1;
+                margin: 0 var(--moz-space-3) 0 0;
+            }
+            p { color: var(--moz-color-grey);}
+        }
+        @media (max-width: 768px) {
+            .title {
+                flex-direction: column;
+                text-align: center;
+
+                img {
+                    height: 2.5rem;
+                    margin: 0 0 var(--moz-space-1) 0;
+                }
+            }
+        }
+    }
+}
+
+.shelf {
+    display: flex;
+    width: 100%; height: fit-content;
+    padding: var(--moz-space-5) 0;
+    background-size: 5rem 5rem;
+    background-image:
+                linear-gradient(to right, color-mix(in srgb, var(--moz-color-grey-lite) 80%, white) 1px, transparent 1px),
+                linear-gradient(to bottom, color-mix(in srgb, var(--moz-color-grey-lite) 80%, white) 1px, transparent 1px);
+
+    .card-outer {
+        width: 80%;
+        max-width: 72rem;
+        margin: auto;
+        padding: var(--moz-space-1);
+        border-radius: calc(var(--moz-radius-default) + var(--moz-space-2));
+        background-image: linear-gradient(-160deg, var(--moz-color-primary-lite), var(--moz-color-secondary-lite));
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+        z-index: 20;
+        .card-gradient {
+            position: relative;
+            border-radius: var(--moz-radius-default);
+            overflow: hidden;
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0; left: 0;
+                width: 100%; height: 100%;
+                border-radius: var(--moz-radius-default);
+                background-image: linear-gradient(-90deg, var(--moz-color-primary-lite), var(--moz-color-secondary-lite));
+                mask-image: radial-gradient(
+                    ellipse 80% 40% at 70% -20%,
+                    #000 70%,
+                    transparent 110%
+                );
+                -webkit-mask-image: radial-gradient(
+                    ellipse 80% 40% at 70% -20%,
+                    #000 70%,
+                    transparent 110%
+                );
+            }
+        }
+        moz-card {
+            width: 100%; height: 100%;
+
+            .update-box {
+                display: flex;
+                width: 100%; height: fit-content;
+                border-bottom: solid 0.15rem var(--moz-color-border);
+                gap: var(--moz-space-2);
+
+                .version {
+                    display: flex;
+                    width: fit-content; height: fit-content;
+                    padding: var(--moz-space-1);
+                    background-color: var(--moz-color-primary-lite);
+                    border-radius: var(--moz-radius-sm);
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 0.3rem;
+
+                    &.latest { background-color: var(--moz-color-secondary-lite);}
+
+                    .date { @include moz.moz-typography('footer')}
+                }
+                .contents {
+                    flex: 1 1 0;
+                    width: 100%;
+
+                    .list-group {
+                        display: flex;
+                        width: 100%; height: fit-content;
+                        flex-direction: column;
+                        gap: 0.6rem;
+
+                        img { width: auto; height: 0.8rem;}
+                    }
+                }
+            }
+        }
+    }
+}

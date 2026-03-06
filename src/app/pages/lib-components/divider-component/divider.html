@@ -1,0 +1,142 @@
+<div class="sect-title">
+    <div class="title container">
+        <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
+        {{title | titlecase}}
+    </div>
+    <div class="subtitle">
+        <h4><span class="tag">&lt;</span>moz-{{ title }}<span class="tag">&gt;</span></h4>
+        <p class="description-text">{{ descripition }}</p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="sample">
+        <div class="title">
+            <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
+            Color
+        </div>
+        <div class="description">
+            <p>Shows how the divider component can be styled using different color attributes.</p>
+        </div>
+        <div class="content">
+            <div class="sample-box">
+                <moz-divider></moz-divider>
+                @for (color of colors; track color) {
+                    <moz-divider [color]="color"></moz-divider>
+                }
+            </div>
+            <div class="sample-code">
+                <div class="open-code" (click)="openSource('model')">
+                    Source Code 
+                    <moz-icon color="#ffffff" [style.transform]="isOpen('model') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
+                </div>
+                <div class="code-space" [class.is-open]="isOpen('model')" [style.max-height]="isOpen('model') ? '13rem' : '0'">
+                    <p class="code">
+                        <mozek-code tag="moz-divider" inline></mozek-code>
+                    </p>
+                    @for (color of colors; track color) {
+                        <p class="code">
+                            <mozek-code tag="moz-divider" [color]="color" inline></mozek-code>
+                        </p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sample">
+        <div class="title">
+            <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
+            Depth &amp; Pill
+        </div>
+        <div class="description">
+            <p>Pill enables fully rounded edges for a softer, badge-like appearance, while Depth controls the divider's visual thickness from 1 to 5, where 1 is subtle and 5 provides the strongest emphasis.</p>
+        </div>
+        <div class="content">
+            <div class="sample-box">
+                <moz-divider color="primary" depth="5" pill>5-Pill</moz-divider>
+                <moz-divider color="primary" depth="4">4</moz-divider>
+                <moz-divider color="primary" depth="3" pill>3-Pill</moz-divider>
+                <moz-divider color="primary" depth="2">2</moz-divider>
+                <moz-divider color="primary" depth="1" pill>1-Pill</moz-divider>
+            </div>
+            <div class="sample-code">
+                <div class="open-code" (click)="openSource('depth')">
+                    Source Code 
+                    <moz-icon color="#ffffff" [style.transform]="isOpen('depth') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
+                </div>
+                <div class="code-space" [class.is-open]="isOpen('depth')" [style.max-height]="isOpen('depth') ? '9rem' : '0'">
+                    <p class="code">
+                        <mozek-code tag="moz-divider" color="primary" depth="5" extra="pill" inline>5-Pill</mozek-code><br>
+                        <mozek-code tag="moz-divider" color="primary" depth="4" inline>4</mozek-code><br>
+                        <mozek-code tag="moz-divider" color="primary" depth="3" extra="pill" inline>3-Pill</mozek-code><br>
+                        <mozek-code tag="moz-divider" color="primary" depth="2" inline>2</mozek-code><br>
+                        <mozek-code tag="moz-divider" color="primary" depth="1" extra="pill" inline>1-Pill</mozek-code>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sample">
+        <div class="title">
+            <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
+            Align &amp; Dashed
+        </div>
+        <div class="description">
+            <p>The Divider supports left, center, or right text alignment within its container, with center as the default. A dashed variant provides a lighter visual rhythm, making it ideal for separating sections in more complex layouts without heavy emphasis.</p>
+        </div>
+        <div class="content">
+            <div class="sample-box">
+                <moz-divider color="primary">Default</moz-divider>
+                <moz-divider color="primary" align="start">Start</moz-divider>
+                <moz-divider color="primary" align="center">Center</moz-divider>
+                <moz-divider color="primary" align="end">End</moz-divider>
+                <moz-divider color="primary" dashed>Dashed</moz-divider>
+            </div>
+            <div class="sample-code">
+                <div class="open-code" (click)="openSource('align')">
+                    Source Code 
+                    <moz-icon color="#ffffff" [style.transform]="isOpen('align') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
+                </div>
+                <div class="code-space" [class.is-open]="isOpen('align')" [style.max-height]="isOpen('align') ? '9rem' : '0'">
+                    <p class="code">
+                        <mozek-code tag="moz-divider" color="primary" inline>Default</mozek-code><br>
+                        <mozek-code tag="moz-divider" color="primary" align="start" inline>Start</mozek-code><br>
+                        <mozek-code tag="moz-divider" color="primary" align="center" inline>Center</mozek-code><br>
+                        <mozek-code tag="moz-divider" color="primary" align="end" inline>End</mozek-code><br>
+                        <mozek-code tag="moz-divider" color="primary" extra="dashed" inline>Dashed</mozek-code>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sample">
+        <div class="title">
+            <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
+            Orientation
+        </div>
+        <div class="description">
+            <p>The Divider supports both horizontal and vertical orientations, allowing flexible layout separation. By default, it is displayed horizontally, while the vertical option can be used to divide content side by side within a container.</p>
+        </div>
+        <div class="content">
+            <div class="sample-box">
+                <div style="height: 20rem;">
+                    <moz-divider color="primary" orientation="vertical"></moz-divider>
+                </div>
+            </div>
+            <div class="sample-code">
+                <div class="open-code" (click)="openSource('orientation')">
+                    Source Code 
+                    <moz-icon color="#ffffff" [style.transform]="isOpen('orientation') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
+                </div>
+                <div class="code-space" [class.is-open]="isOpen('orientation')" [style.max-height]="isOpen('orientation') ? '3rem' : '0'">
+                    <p class="code">
+                        <mozek-code tag="moz-divider" color="primary" orientation="vertical" inline></mozek-code>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

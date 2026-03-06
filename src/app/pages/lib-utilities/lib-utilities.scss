@@ -2,6 +2,8 @@
 
 :host {
     --border-color: #eee;
+    --moz-color-grey: #{moz.moz-get-color(grey, 500)};
+    --moz-color-grey-lite: #{moz.moz-get-color(grey, 200)};
 
     width: 100%; height: fit-content;
 
@@ -19,25 +21,30 @@
 
     .sect-title {
         display: flex;
-        width: 100%; height: 8rem;
-        padding: var(--moz-space-2) 0;
-        border-top: solid 0.15rem var(--moz-color-secondary);
-        border-bottom: solid 0.15rem var(--moz-color-secondary);
-        background-image: repeating-linear-gradient(
-            45deg, color-mix(in srgb, var(--moz-color-secondary) 50%, white) 0px 0.1rem,
-            var(--moz-color-secondary-lite) 0.1rem 0.5rem
-        );
+        width: 100%; height: fit-content;
+        padding: var(--moz-space-4) 0 var(--moz-space-3);
+        border-bottom: solid 0.15rem color-mix(in srgb, var(--moz-color-primary) 50%, white);
+        background-image: radial-gradient( color-mix(in srgb, var(--moz-color-primary) 30%, white) 0.08rem, transparent 1px);
+        background-size: 1rem 1rem;
+        background-color: color-mix(in srgb, var(--moz-color-primary-lite) 30%, white);
         justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: var(--moz-space-3);
 
         .title {
             @include moz.moz-typography('title-lg');
             display: flex;
-            width: 80%; height: 100%;
-            border: solid 0.2rem var(--moz-color-secondary);
+            width: 80%; height: fit-content;
+            padding: var(--moz-space-2);
+            border: solid 0.12rem color-mix(in srgb, var(--moz-color-primary) 50%, white);
             border-radius: var(--moz-radius-lg);
             background-color: var(--moz-color-background);
+            outline: solid 0.6rem var(--moz-color-primary-lite);
             justify-content: center;
             align-items: center;
+            flex-direction: column;
+            gap: var(--moz-space-3);
 
             font-weight: 800;
             color: var(--moz-color-text);
@@ -47,6 +54,7 @@
                 aspect-ratio: 1 / 1;
                 margin: 0 var(--moz-space-3) 0 0;
             }
+            p { color: var(--moz-color-grey);}
         }
         @media (max-width: 768px) {
             .title {
@@ -60,6 +68,69 @@
             }
         }
     }
+    
+    .subsect-title {
+        position: relative;
+        display: flex;
+        width: 100%; height: fit-content;
+        padding: var(--moz-space-2) 0;
+        background-color: var(--moz-color-primary-lite);
+        justify-content: center;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            width: 100%; height: 100%;
+            background-image: repeating-linear-gradient( 45deg, color-mix(in srgb, var(--moz-color-primary) 50%, white) 0px, color-mix(in srgb, var(--moz-color-primary) 50%, white) 1px, var(--moz-color-primary-lite) 1px, var(--moz-color-primary-lite) 8px);
+            mask-image: radial-gradient(
+                ellipse 8% 80% at 0% 50%,
+                #000 70%,
+                transparent 110%
+            );
+            -webkit-mask-image: radial-gradient(
+                ellipse 8% 80% at 0% 50%,
+                #000 70%,
+                transparent 110%
+            );
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            width: 100%; height: 100%;
+            background-image: repeating-linear-gradient( 45deg, color-mix(in srgb, var(--moz-color-primary) 50%, white) 0px, color-mix(in srgb, var(--moz-color-primary) 50%, white) 1px, var(--moz-color-primary-lite) 1px, var(--moz-color-primary-lite) 8px);
+            mask-image: radial-gradient(
+                ellipse 8% 80% at 100% 50%,
+                #000 70%,
+                transparent 110%
+            );
+            -webkit-mask-image: radial-gradient(
+                ellipse 8% 80% at 100% 50%,
+                #000 70%,
+                transparent 110%
+            );
+        }
+
+        .title {
+            @include moz.moz-typography('title-lg');
+            display: flex;
+            width: 80%; height: fit-content;
+            padding: var(--moz-space-2);
+            border: solid 0.12rem color-mix(in srgb, var(--moz-color-primary) 50%, white);
+            border-radius: var(--moz-radius-lg);
+            background-color: var(--moz-color-background);
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: var(--moz-space-3);
+            z-index: 10;
+
+            font-weight: 800;
+            color: var(--moz-color-text);
+        }
+    }
 
     .code-area {
         @include moz.root-border();
@@ -71,44 +142,16 @@
         border-color: #ddd;
 
         &.highlight {
-            border-color: var(--moz-color-secondary);
-            background-color: var(--moz-color-secondary-lite);
+            border-color: var(--moz-color-primary);
+            background-color: var(--moz-color-primary-lite);
         }
 
-        .secondary { color: var(--moz-color-secondary);}
         p { font-size: 0.8rem;}
     }
 
     .font-1 { font-family: "Titan One", sans-serif;}
 
     .w-5 { width: 5rem;}
-}
-
-.hero {
-    display: flex;
-    width: 100%; height: fit-content;
-    background-color: color-mix(in srgb, var(--moz-color-secondary-lite) 30%, transparent 70%);
-    background-image: repeating-linear-gradient(
-            45deg, color-mix(in srgb, var(--moz-color-secondary) 50%, white) 0px 0.1rem,
-            var(--moz-color-secondary-lite) 0.1rem 0.5rem
-        );
-    justify-content: center;
-    align-items: center;
-
-    .hero-cap {
-        display: flex;
-        width: 90%; height: fit-content;
-        padding: var(--moz-space-4);
-        border-left: solid 0.2rem var(--moz-color-secondary);
-        border-right: solid 0.2rem var(--moz-color-secondary);
-        background-color: var(--moz-color-background);
-        box-shadow: 0 -0.2rem 0 var(--moz-color-secondary);
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: var(--moz-space-2);
-        text-align: center;
-    }
 }
 
 .shelf {
@@ -209,8 +252,8 @@
                 .demo-sample {
                     flex: 1 1 auto;
                     width: 100%; height: auto;
-                    border: solid 0.1rem var(--moz-color-secondary);
-                    background: var(--moz-color-secondary-lite);
+                    border: solid 0.1rem var(--moz-color-primary);
+                    background: var(--moz-color-primary-lite);
                 }
             }
         }
@@ -266,9 +309,9 @@
 
                 position: absolute;
                 width: 80%; height: 80%;
-                border: solid 0.1rem var(--moz-color-secondary);
+                border: solid 0.1rem var(--moz-color-primary);
                 border-radius: var(--moz-radius-lg);
-                background: var(--moz-color-secondary-lite);
+                background: var(--moz-color-primary-lite);
                 z-index: 0;
             }
         }

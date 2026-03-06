@@ -1,0 +1,16 @@
+@use "mozek-angular/src/styles" as moz;
+
+.sample-radio-horizontal {
+    display: flex;
+    width: 100%;
+    max-width: 20rem;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: var(--moz-space-2);
+
+    svg {
+        height: 10rem;
+    }
+}

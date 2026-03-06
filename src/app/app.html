@@ -44,7 +44,7 @@
 <router-outlet/>
 @if(!removeFooter()) {
     <div class="footer">
-        <div class="flex flex-wrap">
+        <div class="flex flex-wrap z-10">
             @for (item of landingpage; track item) {
                 <div class="box">
                     <h6>{{item.title}}</h6>
@@ -55,7 +55,6 @@
             }
         </div>
         <footer>
-            <moz-switch></moz-switch>
             <span class="copyright">© 2024 Mozek. All rights reserved.</span>
         </footer>
     </div>

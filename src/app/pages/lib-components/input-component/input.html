@@ -1,0 +1,258 @@
+<div class="sect-title">
+    <div class="title container">
+        <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
+        {{title | titlecase}}
+    </div>
+    <div class="subtitle">
+        <h4><span class="tag">&lt;</span>moz-{{ title }}<span class="tag">&gt;</span></h4>
+        <p class="description-text">{{ descripition }}</p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="sample">
+        <div class="title">
+            <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
+            Model
+        </div>
+        <div class="description">
+            <p>Input component with model binding and validation.</p>
+        </div>
+        <div class="content">
+            <div class="sample-box">
+                <moz-input placeholder="default"></moz-input>
+                <div class="flex w-full flex-wrap gap-2">
+                    @for (model of models; track model) {
+                        <moz-input [model]="model" [placeholder]="model"></moz-input>
+                    }
+                </div>
+            </div>
+            <div class="sample-code">
+                <div class="open-code" (click)="openSource('model')">
+                    Source Code 
+                    <moz-icon color="#ffffff" [style.transform]="isOpen('model') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
+                </div>
+                <div class="code-space" [class.is-open]="isOpen('model')" [style.max-height]="isOpen('model') ? '8rem' : '0'">
+                    <p class="code">
+                        <mozek-code tag="moz-input" inline></mozek-code>
+                    </p>
+                    @for (model of models; track model) {
+                        <p class="code">
+                            <mozek-code tag="moz-input" [model]="model" [placeholder]="model" inline></mozek-code>
+                        </p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sample">
+        <div class="title">
+            <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
+            Label &amp; Placeholder
+        </div>
+        <div class="description">
+            <p>Input component with label and placeholder.</p>
+        </div>
+        <div class="content">
+            <div class="sample-box">
+                <div class="flex w-full flex-wrap gap-2">
+                    @for (model of models; track model) {
+                        <moz-input [model]="model" label="Input" placeholder="Write something..."></moz-input>
+                    }
+                </div>
+            </div>
+            <div class="sample-code">
+                <div class="open-code" (click)="openSource('label')">
+                    Source Code 
+                    <moz-icon color="#ffffff" [style.transform]="isOpen('label') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
+                </div>
+                <div class="code-space" [class.is-open]="isOpen('label')" [style.max-height]="isOpen('label') ? '6rem' : '0'">
+                    @for (model of models; track model) {
+                        <p class="code">
+                            <mozek-code tag="moz-input" [model]="model" label="Input" placeholder="Write something..." inline></mozek-code>
+                        </p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sample">
+        <div class="title">
+            <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
+            Hint
+        </div>
+        <div class="description">
+            <p>The Input component supports hint text to guide users with helpful information and error hints to display validation messages when input is invalid. Hints provide subtle guidance, while error hints clearly communicate issues that need correction.</p>
+        </div>
+        <div class="content">
+            <div class="sample-box">
+                <div class="flex w-full flex-wrap gap-2">
+                    @for (model of models; track model) {
+                        <moz-input [model]="model" label="Input" helper="This is a hint text"></moz-input>
+                    }
+                </div>
+                <div class="flex w-full flex-wrap gap-2">
+                    @for (model of models; track model) {
+                        <moz-input [model]="model" label="Input" error="Error"></moz-input>
+                    }
+                </div>
+            </div>
+            <div class="sample-code">
+                <div class="open-code" (click)="openSource('hint')">
+                    Source Code 
+                    <moz-icon color="#ffffff" [style.transform]="isOpen('hint') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
+                </div>
+                <div class="code-space" [class.is-open]="isOpen('hint')" [style.max-height]="isOpen('hint') ? '10rem' : '0'">
+                    @for (model of models; track model) {
+                        <p class="code">
+                            <mozek-code tag="moz-input" [model]="model" label="Input" helper="This is a hint text" inline></mozek-code>
+                        </p>
+                    }
+                    @for (model of models; track model) {
+                        <p class="code">
+                            <mozek-code tag="moz-input" [model]="model" label="Input" error="Error" inline></mozek-code>
+                        </p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sample">
+        <div class="title">
+            <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
+            Clearable &amp; Readonly
+        </div>
+        <div class="description">
+            <p>The Input component also supports a clearable option, which displays an “x” icon to quickly remove the entered text, and a readonly state, where the value is visible but cannot be edited by the user.</p>
+        </div>
+        <div class="content">
+            <div class="sample-box">
+                <div class="flex w-full flex-wrap gap-2">
+                    @for (model of models; track model) {
+                        <moz-input [model]="model" label="Input" clearable></moz-input>
+                    }
+                </div>
+                <div class="flex w-full flex-wrap gap-2">
+                    @for (model of models; track model) {
+                        <moz-input [model]="model" label="Input" readonly></moz-input>
+                    }
+                </div>
+            </div>
+            <div class="sample-code">
+                <div class="open-code" (click)="openSource('clearable')">
+                    Source Code 
+                    <moz-icon color="#ffffff" [style.transform]="isOpen('clearable') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
+                </div>
+                <div class="code-space" [class.is-open]="isOpen('clearable')" [style.max-height]="isOpen('clearable') ? '10rem' : '0'">
+                    @for (model of models; track model) {
+                        <p class="code">
+                            <mozek-code tag="moz-input" [model]="model" label="Input" extra="clearable" inline></mozek-code>
+                        </p>
+                    }
+                    @for (model of models; track model) {
+                        <p class="code">
+                            <mozek-code tag="moz-input" [model]="model" label="Input" extra="readonly" inline></mozek-code>
+                        </p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sample">
+        <div class="title">
+            <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
+            Disabled
+        </div>
+        <div class="description">
+            <p>Input component with disabled state.</p>
+        </div>
+        <div class="content">
+            <div class="sample-box">
+                <div class="flex w-full flex-wrap gap-2">
+                    @for (model of models; track model) {
+                        <moz-input [model]="model" label="Input" disabled></moz-input>
+                    }
+                </div>
+            </div>
+            <div class="sample-code">
+                <div class="open-code" (click)="openSource('disabled')">
+                    Source Code 
+                    <moz-icon color="#ffffff" [style.transform]="isOpen('disabled') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
+                </div>
+                <div class="code-space" [class.is-open]="isOpen('disabled')" [style.max-height]="isOpen('disabled') ? '6rem' : '0'">
+                    @for (model of models; track model) {
+                        <p class="code">
+                            <mozek-code tag="moz-input" [model]="model" label="Input" extra="disabled" inline></mozek-code>
+                        </p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sample">
+        <div class="title">
+            <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
+            Full Width
+        </div>
+        <div class="description">
+            <p>The Input component can be set to full width (100%), allowing it to stretch across its container for flexible and responsive layouts.</p>
+        </div>
+        <div class="content">
+            <div class="sample-box">
+                @for (model of models; track model) {
+                    <moz-input [model]="model" label="Input" full></moz-input>
+                }
+            </div>
+            <div class="sample-code">
+                <div class="open-code" (click)="openSource('full')">
+                    Source Code 
+                    <moz-icon color="#ffffff" [style.transform]="isOpen('full') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
+                </div>
+                <div class="code-space" [class.is-open]="isOpen('full')" [style.max-height]="isOpen('full') ? '6rem' : '0'">
+                    @for (model of models; track model) {
+                        <p class="code">
+                            <mozek-code tag="moz-input" [model]="model" label="Input" extra="full" inline></mozek-code>
+                        </p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sample">
+        <div class="title">
+            <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
+            Password Type
+        </div>
+        <div class="description">
+            <p>The Input component supports password type, which masks the entered text for privacy, and can include a toggle to show or hide the password as needed.</p>
+        </div>
+        <div class="content">
+            <div class="sample-box">
+                <div class="flex w-full flex-wrap gap-2">
+                    @for (model of models; track model) {
+                        <moz-input [model]="model" label="Input" type="password"></moz-input>
+                    }
+                </div>
+            </div>
+            <div class="sample-code">
+                <div class="open-code" (click)="openSource('type')">
+                    Source Code 
+                    <moz-icon color="#ffffff" [style.transform]="isOpen('type') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
+                </div>
+                <div class="code-space" [class.is-open]="isOpen('type')" [style.max-height]="isOpen('type') ? '6rem' : '0'">
+                    @for (model of models; track model) {
+                        <p class="code">
+                            <mozek-code tag="moz-input" [model]="model" label="Input" type="password" inline></mozek-code>
+                        </p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -11,7 +11,7 @@
 
     .section {
         width: 100%; height: fit-content;
-        border-bottom: solid 0.1rem var(--moz-color-primary-lite);
+        border-bottom: solid 0.15rem var(--moz-color-primary-lite);
         &:nth-last-child(1) { border: none;}
     }
 }
@@ -45,14 +45,38 @@
             padding: var(--moz-space-1);
             border-radius: calc(var(--moz-radius-default) + var(--moz-space-2));
             background-image: linear-gradient(-160deg, var(--moz-color-primary-lite), var(--moz-color-secondary-lite));
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
             z-index: 20;
+            .card-gradient {
+                position: relative;
+                border-radius: var(--moz-radius-default);
+                overflow: hidden;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0; left: 0;
+                    width: 100%; height: 100%;
+                    border-radius: var(--moz-radius-default);
+                    background-image: linear-gradient(-90deg, var(--moz-color-primary-lite), var(--moz-color-secondary-lite));
+                    mask-image: radial-gradient(
+                        ellipse 80% 40% at 70% -20%,
+                        #000 70%,
+                        transparent 110%
+                    );
+                    -webkit-mask-image: radial-gradient(
+                        ellipse 80% 40% at 70% -20%,
+                        #000 70%,
+                        transparent 110%
+                    );
+                }
+            }
             moz-card {
                 width: 100%; height: 100%;
 
                 .update-box {
                     display: flex;
                     width: 100%; height: fit-content;
-                    border-bottom: solid 0.1rem var(--moz-color-border);
+                    border-bottom: solid 0.15rem var(--moz-color-border);
                     gap: var(--moz-space-2);
 
                     .version {
@@ -164,6 +188,31 @@
         flex: 2 1 0;
         width: 100%; height: fit-content;
 
+        .sect-2-card {
+            display: flex;
+            width: 100%; height: fit-content;
+            padding: var(--moz-space-1);
+            border-radius: var(--moz-radius-lg);
+            background: var(--moz-color-background);
+            box-shadow: 
+                rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+                rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+
+            .sect-2-card-inner {
+                display: flex;
+                width: 100%; height: fit-content;
+                padding: var(--moz-space-2) var(--moz-space-3);
+                border-radius: var(--moz-radius-default);
+                background-image: linear-gradient(
+                    140deg,
+                    color-mix(in srgb, var(--moz-color-primary-lite) 30%, transparent 70%),
+                    color-mix(in srgb, var(--moz-color-primary-lite) 70%, transparent 30%) 40%,
+                ); 
+                flex-direction: column;
+                gap: var(--moz-space-2);
+            }
+        }
+
         .intro {
             display: flex;
             flex-direction: column;
@@ -184,13 +233,25 @@
 
         .features {
             flex: 1 1 12rem;
+            display: flex;
             width: 100%; height: auto;
+            padding: var(--moz-space-1);
+            border: solid 0.15rem var(--moz-color-primary);
+            border-radius: var(--moz-radius-default);
+            background: var(--moz-color-background);
+            text-align: center;
+            flex-direction: column;
+            gap: var(--moz-space-1);
             cursor: pointer;
 
-            .features-image {
+            .feature-title {
+                @include moz.moz-typography('subtitle');
+                width: 100%;
+                color: var(--moz-color-primary);
+            }
+
+            .feature-image {
                 width: 100%; height: 6rem;
-                border: solid 0.1rem var(--moz-color-primary-lite);
-                border-radius: var(--moz-radius-default);
                 object-fit: cover;
             }
         }

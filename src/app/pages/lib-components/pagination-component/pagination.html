@@ -1,0 +1,70 @@
+<div class="sect-title">
+    <div class="title container">
+        <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
+        {{title | titlecase}}
+    </div>
+    <div class="subtitle">
+        <h4><span class="tag">&lt;</span>moz-{{ title }}<span class="tag">&gt;</span></h4>
+        <p class="description-text">{{ descripition }}</p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="sample">
+        <div class="title">
+            <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
+            Basic
+        </div>
+        <div class="description">
+            <p>The basic pagination component with default styling and functionality.</p>
+        </div>
+        <div class="content">
+            <div class="sample-box">
+                <div class="small-view">
+                    <p>items = [{{items.join(', ')}}]</p>
+                    <div class="flex flex-wrap justify-end gap-2">
+                        @for (item of pagedItems; track $index) {
+                            <moz-card model="flavor" color="primary">
+                                <div class="p-3">{{item}}</div>
+                            </moz-card>
+                        }
+                    </div>
+                    <moz-pagination 
+                        [length]="items.length"
+                        [(pageIndex)]="pageIndex"
+                        [pageSize]="pageSize"
+                        (pageChange)="onPageChange($event)"
+                    >
+                    </moz-pagination>
+                </div>
+            </div>
+            <div class="sample-code">
+                <div class="open-code" (click)="openSource('model')">
+                    Source Code 
+                    <moz-icon color="#ffffff" [style.transform]="isOpen('model') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
+                </div>
+                <div class="code-space" [class.is-open]="isOpen('model')" [style.max-height]="isOpen('model') ? '24rem' : '0'">
+                    <p class="code">
+                        <span class="comment">// HTML Example</span><br>
+                        <span class="tag"><span class="symbol">&lt;</span>moz-{{title}}</span><br>
+                            <span class="blue ml-4"> [length]</span>=<span class="orange">"</span><span class="blue">items.length</span><span class="orange">"</span><br>
+                            <span class="blue ml-4"> [(pageIndex)]</span>=<span class="orange">"</span><span class="blue">pageIndex</span><span class="orange">"</span><br>
+                            <span class="blue ml-4"> [pageSize]</span>=<span class="orange">"</span><span class="blue">pageSize</span><span class="orange">"</span><br>
+                            <span class="blue ml-4"> (pageChange)</span>=<span class="orange">"</span><span class="yellow">onPageChange(</span><span class="blue">$event</span><span class="yellow">)</span><span class="orange">"</span><br>
+                        <span class="symbol">&gt;</span>
+                        <span class="tag"><span class="symbol">&lt;/</span>moz-{{title}}<span class="symbol">&gt;</span></span><br><br>
+                    </p>
+                    <p class="code">
+                        <span class="comment">// Typescript Example</span><br>
+                        <span class="blue">pageIndex</span> =<span class="yellow"> 0</span>;<br>
+                        <span class="blue">pageSize</span> =<span class="yellow"> 4</span>;<br>
+                        <span class="yellow">onPageChange</span><span class="pink">(<span class="blue">event</span>:<span class="neon-green"> MozPageChangeEvent</span>) &#123;</span><br>
+                            <span class="blue ml-4"><span class="tag">this</span>.pageIndex <span class="white"> =</span> event.pageIndex</span>;<br>
+                            <span class="blue ml-4"><span class="tag">this</span>.pageSize <span class="white"> =</span> event.pageSize</span>;<br>
+                        <span class="pink">&#125;</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+@use "mozek-angular/src/styles" as moz;
+
+:host {
+    --moz-color-red: #{moz.moz-get-color(red, 500)};
+    --moz-color-red-lite: #{moz.moz-get-color(red, 200)};
+    --moz-color-blue: #{moz.moz-get-color(blue, 500)};
+    --moz-color-blue-lite: #{moz.moz-get-color(blue, 200)};
+    --moz-color-amber: #{moz.moz-get-color(amber, 500)};
+    --moz-color-amber-lite: #{moz.moz-get-color(amber, 200)};
+    --moz-color-grey: #{moz.moz-get-color(grey, 500)};
+    --moz-color-grey-lite: #{moz.moz-get-color(grey, 200)};
+}
+
+.bulb {
+    width: 2rem; height: 2rem;
+    border-radius: 50%;
+    background-color: var(--moz-color-grey);
+}
+
+.red { background-color: var(--moz-color-red);}
+.blue { background-color: var(--moz-color-blue);}
+.amber { background-color: var(--moz-color-amber);}

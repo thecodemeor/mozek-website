@@ -42,6 +42,17 @@ import {
                 &:hover:not(:disabled) { background: var(--moz-btn-bg-lite, var(--moz-color-primary-lite));}
             }
 
+            /* Outline */
+            &.moz-btn--outline {
+                background: var(--moz-btn-bg, var(--moz-color-background));
+                color: var(--moz-color-text);
+                border: solid 0.1rem var(--moz-btn-bg, var(--moz-color-primary));
+                &:hover:not(:disabled) {
+                    color: white;
+                    background: var(--moz-btn-bg-lite, var(--moz-color-primary-lite));
+                }
+            }
+
             &.moz-btn-grey {
                 --moz-btn-bg: #96aebe;
                 --moz-btn-bg-lite: #dbe6ea;
@@ -80,7 +91,7 @@ export class MozekButton {
     private readonly el = inject(ElementRef<HTMLElement>);
     private readonly renderer = inject(Renderer2);
 
-    @Input() model: 'fill' | 'flavor' = 'fill';
+    @Input() model: 'fill' | 'flavor' | 'outline' = 'fill';
     @Input() color: 'primary' | 'secondary' | 'grey' = 'primary';
     @Input({ transform: booleanAttribute }) icon = false;
 

@@ -1,15 +1,15 @@
-<div id="utilities" class="first-sect section">
-    <div class="hero" [style.padding-top]="screen() === 'mobile' ? '3.5rem' : '4rem'">
-        <div class="hero-cap">
-            <h1 class="hero-title">Mozek Library Utilities</h1>
-            <p class="hero-subtitle">
-                A collection of utility classes to help you quickly style your components and layouts.
-            </p>
+<div id="utilities" class="first-sect section" [style.padding-top]="screen() === 'mobile' ? '3.5rem' : '4rem'">
+    <div class="sect-title">
+        <div class="title container">
+            <div class="flex items-center">
+                <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
+                Mozek Library Utilities
+            </div>
+            <p>A collection of utility classes to help you quickly style your components and layouts.</p>
         </div>
     </div>
-    <div class="sect-title">
+    <div class="subsect-title">
         <div class="title">
-            <img src="assets/images/logo/mozek_vector_violet.svg" alt="Mozek Logo Point">
             Spacing Utilities
         </div>
     </div>
@@ -17,7 +17,7 @@
         <div class="library">
             <div>
                 <h6 class="label">Scale Variables</h6>
-                <moz-card model="flavor" color="secondary">
+                <moz-card model="flavor" color="primary">
                     <div class="flex flex-col p-3">
                         <div class="list-header">
                             <div class="list">
@@ -26,7 +26,7 @@
                             </div>
                         </div>
                         @for (val of values; let i = $index; track val) {
-                            <div class="list" [style.border-color]="'var(--moz-color-secondary-lite)'">
+                            <div class="list" [style.border-color]="'var(--moz-color-primary-lite)'">
                                 <div class="code-area highlight">
                                     <p>{{i}}</p>
                                 </div>
@@ -43,11 +43,11 @@
                 @for (d of directions; track d) {
                     <div class="list">
                         <div class="listlabel">
-                            <img src="assets/images/logo/mozek_vector_violet.svg" alt="Mozek Logo Point">
+                            <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
                             <p>Margin {{d.label}}</p>
                         </div>
                         <div class="code-area">
-                            <p>m{{d.prefix}}-<span class="secondary">[scale variable]</span></p>
+                            <p>m{{d.prefix}}-<span class="primary">[scale variable]</span></p>
                         </div>
                     </div>
                 }
@@ -57,11 +57,11 @@
                 @for (d of directions; track d) {
                     <div class="list">
                         <div class="listlabel">
-                            <img src="assets/images/logo/mozek_vector_violet.svg" alt="Mozek Logo Point">
+                            <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
                             <p>Padding {{d.label}}</p>
                         </div>
                         <div class="code-area">
-                            <p>p{{d.prefix}}-<span class="secondary">[scale variable]</span></p>
+                            <p>p{{d.prefix}}-<span class="primary">[scale variable]</span></p>
                         </div>
                     </div>
                 }
@@ -70,20 +70,20 @@
                 <h6 class="label">Others</h6>
                 <div class="list">
                     <div class="listlabel">
-                        <img src="assets/images/logo/mozek_vector_violet.svg" alt="Mozek Logo Point">
+                        <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
                         <p>Gap</p>
                     </div>
                     <div class="code-area">
-                        <p>gap-<span class="secondary">[scale variable]</span></p>
+                        <p>gap-<span class="primary">[scale variable]</span></p>
                     </div>
                 </div>
                 <div class="list">
                     <div class="listlabel">
-                        <img src="assets/images/logo/mozek_vector_violet.svg" alt="Mozek Logo Point">
+                        <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
                         <p>Border Radius</p>
                     </div>
                     <div class="code-area">
-                        <p>corner-<span class="secondary">[scale variable]</span></p>
+                        <p>corner-<span class="primary">[scale variable]</span></p>
                     </div>
                 </div>
             </div>
@@ -114,9 +114,8 @@
             </div>
         </div>
     </div>
-    <div class="sect-title">
+    <div class="subsect-title">
         <div class="title">
-            <img src="assets/images/logo/mozek_vector_violet.svg" alt="Mozek Logo Point">
             Flex Utilities
         </div>
     </div>
@@ -127,7 +126,7 @@
                 @for (flex of flexbox; track flex) {
                     <div class="list">
                         <div class="listlabel">
-                            <img src="assets/images/logo/mozek_vector_violet.svg" alt="Mozek Logo Point">
+                            <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
                             <p>{{flex.label}}</p>
                         </div>
                         <div class="code-area">
@@ -137,7 +136,7 @@
                 }
                 <div class="list">
                     <div class="listlabel py-1 items-center">
-                        <img src="assets/images/logo/mozek_vector_violet.svg" alt="Mozek Logo Point">
+                        <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
                         <div>
                             <p class="mb-1">Justify Content : Center</p>
                             <p>Align Items : Center</p>
@@ -152,7 +151,7 @@
                 <h6 class="label">Grid</h6>
                 <div class="list">
                     <div class="listlabel">
-                        <img src="assets/images/logo/mozek_vector_violet.svg" alt="Mozek Logo Point">
+                        <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
                         <p>Display : Grid</p>
                     </div>
                     <div class="code-area">
@@ -161,7 +160,7 @@
                 </div>
                 <div class="list">
                     <div class="listlabel">
-                        <img src="assets/images/logo/mozek_vector_violet.svg" alt="Mozek Logo Point">
+                        <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
                         <p>Display : Grid</p>
                         <p>*</p>
                     </div>
@@ -172,9 +171,8 @@
             </div>
         </div>
     </div>
-    <div class="sect-title">
+    <div class="subsect-title">
         <div class="title">
-            <img src="assets/images/logo/mozek_vector_violet.svg" alt="Mozek Logo Point">
             Positioning
         </div>
     </div>
@@ -185,7 +183,7 @@
                 @for (flex of positioning; track flex) {
                     <div class="list">
                         <div class="listlabel">
-                            <img src="assets/images/logo/mozek_vector_violet.svg" alt="Mozek Logo Point">
+                            <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
                             <p>{{flex.label}}</p>
                         </div>
                         <div class="code-area">
@@ -223,9 +221,8 @@
             </div>
         </div>
     </div>
-    <div class="sect-title">
+    <div class="subsect-title">
         <div class="title">
-            <img src="assets/images/logo/mozek_vector_violet.svg" alt="Mozek Logo Point">
             Text Utilities
         </div>
     </div>
@@ -236,7 +233,7 @@
                 @for (text of texts; track text) {
                     <div class="list">
                         <div class="listlabel">
-                            <img src="assets/images/logo/mozek_vector_violet.svg" alt="Mozek Logo Point">
+                            <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
                             <p>{{text.label}}</p>
                         </div>
                         <div class="code-area">
@@ -284,7 +281,7 @@
                 @for (font of fontSizes; let i = $index; track font) {
                     <div class="list">
                         <div class="listlabel">
-                            <img src="assets/images/logo/mozek_vector_violet.svg" alt="Mozek Logo Point">
+                            <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
                             <p>Header {{i + 1}}</p>
                         </div>
                         <div class="code-area">
@@ -295,7 +292,7 @@
                 }
                 <div class="list">
                     <div class="listlabel">
-                        <img src="assets/images/logo/mozek_vector_violet.svg" alt="Mozek Logo Point">
+                        <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
                         <p>Default Text Size</p>
                     </div>
                     <div class="flex flex-wrap gap-1" [style.width]="screen() === 'mobile' ? '48%' : '30%'">

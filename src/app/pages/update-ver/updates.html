@@ -1,0 +1,45 @@
+<div id="get-started" class="first-sect section" [style.padding-top]="screen() === 'mobile' ? '3.5rem' : '4rem'">
+    <div class="sect-title">
+        <div class="title container">
+            <div class="flex items-center">
+                <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
+                Update
+            </div>
+        </div>
+    </div>
+    <div class="shelf">
+        <div class="card-outer">
+            <moz-card model="outline" color="primary">
+                <div class="flex flex-col w-full h-full px-1">
+                    <div class="flex flex-col w-full h-full card-gradient">
+                        <div class="flex flex-col w-full h-full z-10">
+                            <div class="flex flex-col w-full p-2 gap-4">
+                                <div class="flex w-full h-full pr-1 gap-4 flex-col">
+                                    @for (item of versionUpdates.slice(0, 5); track item; let i = $index) {
+                                        <div class="update-box">
+                                            <div class="version" [class.latest]="i === 0">
+                                                <h5>{{item.version}}</h5>
+                                                <p class="date">{{item.date}}</p>
+                                            </div>
+                                            <div class="contents">
+                                                <h5 class="mb-2">{{item.name}}</h5>
+                                                <div class="list-group">
+                                                    @for (content of item.contents; track content) {
+                                                        <div class="flex gap-1">
+                                                            <img [src]="'assets/images/logo/mozek_vector_' + (i === 0 ? 'violet' : 'blue') + '.svg'" alt="Mozek Logo as a Point">
+                                                            <p>{{content}}</p>
+                                                        </div>
+                                                    }
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </moz-card>
+        </div>
+    </div>
+</div>

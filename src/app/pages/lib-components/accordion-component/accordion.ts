@@ -5,13 +5,16 @@ import {
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { ResponsiveService } from 'src/app/services/responsive.service';
 import { MozAccordion, MozAccordionItem, MozIcon } from 'mozek-angular';
+
+import { ResponsiveService } from 'src/app/services/responsive.service';
+import { MozekCode } from "src/app/assets/components/codesample";
 
 @Component({
     selector: 'app-lib-component',
     imports: [
         CommonModule,
+        MozekCode,
         MozIcon,
         MozAccordion,
         MozAccordionItem
@@ -20,6 +23,9 @@ import { MozAccordion, MozAccordionItem, MozIcon } from 'mozek-angular';
     styleUrls: ['./accordion.scss', '../lib-components.scss'],
 })
 export class Accordion {
+    title = 'accordion'
+    description = 'A flexible UI component that allows content to expand and collapse, helping you organize information in a compact and readable way. Perfect for FAQs, menus, or any content-heavy layout.'
+
     public responsive = inject(ResponsiveService);
     screen = computed(() => this.responsive.breakpoint());
 

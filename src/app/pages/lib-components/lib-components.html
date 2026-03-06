@@ -1,25 +1,33 @@
 <div id="component" class="first-sect section" [style.padding-top]="screen() === 'mobile' ? '3.5rem' : '4rem'">
     <div class="dashboard">
-        <div class="dashboard-side">
-            <div class="sidebar scrollable">
+        <div class="dashboard-side scrollable" [class.drawer]="screen() !== 'desktop'" [style.transform]="screen() !== 'desktop' ? drawerTransform() : 'none'">
+            <div class="dashboard-title">
                 <h5>Component</h5>
-                <br>
-                <br>
+            </div>
+            <div class="dashboard-btns">
                 @for (component of components; track component) {
-                    <mozek-button
-                        model="flavor"
-                        color="grey"
-                        class="flex w-full mb-1 text-capitalize"
-                        style="height: fit-content;"
-                        (click)="navigateTo(component)"
-                    >
-                        {{ component.split('-').join(' ') }}
-                    </mozek-button>
+                    <div class="component-btn" [class.active]="componentActive() === component" (click)="navigateTo(component)">
+                        <p>{{ component.split('-').join(' ') }}</p>
+                        <div class="component-line">
+                            <div class="cl1"></div>
+                            <div class="cl2"></div>
+                        </div>
+                    </div>
                 }
             </div>
         </div>
         <div class="dashboard-content scrollable">
+            @if (screen() !== 'desktop') {
+                <div class="drawer-switch-button" (click)="toggleDrawer()">
+                    <moz-button model="flavor" color="primary" full>
+                        <moz-icon color="primary">menu_dots</moz-icon>
+                    </moz-button>
+                </div>
+            }
             <router-outlet></router-outlet>
+            @if (isDrawerOpen() === true) {
+                <div class="shade-layer" (click)="toggleDrawer()"></div>
+            }
         </div>
     </div>
 </div>

@@ -1,0 +1,150 @@
+<div class="sect-title">
+    <div class="title container">
+        <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
+        {{title | titlecase}}
+    </div>
+    <div class="subtitle">
+        <h4><span class="tag">&lt;</span>moz-{{ title }}<span class="tag">&gt;</span></h4>
+        <p class="description-text">{{description}}</p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="sample">
+        <div class="title">
+            <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
+            Basic
+        </div>
+        <div class="description">
+            <p>Showcases basic usage of the checkbox component with different colors and states.</p>
+        </div>
+        <div class="content">
+            <div class="sample-box">
+                <moz-checkbox>Checkbox</moz-checkbox>
+                <div class="flex w-full flex-wrap gap-2">
+                    @for (color of colors; track color) {
+                        <moz-checkbox [color]="color">Checkbox</moz-checkbox>
+                    }
+                </div>
+            </div>
+            <div class="sample-code">
+                <div class="open-code" (click)="openSource('basic')">
+                    Source Code 
+                    <moz-icon color="#ffffff" [style.transform]="isOpen('basic') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
+                </div>
+                <div class="code-space" [class.is-open]="isOpen('basic')" [style.max-height]="isOpen('basic') ? '14rem' : '0'">
+                    <p class="code">
+                        <mozek-code tag="moz-checkbox" checkbox inline>
+                            Checkbox
+                        </mozek-code>
+                    </p>
+                    @for (color of colors; track color) {
+                        <p class="code">
+                            <mozek-code tag="moz-checkbox" [color]="color" checkbox="checked" inline>Checkbox</mozek-code>
+                        </p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="sample">
+        <div class="title">
+            <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
+            Position
+        </div>
+        <div class="description">
+            <p>Demonstrates the position attribute to place the checkbox at the start or end of the label.</p>
+        </div>
+        <div class="content">
+            <div class="sample-box">
+                <div class="flex w-full flex-col gap-2">
+                    <moz-checkbox position="start">Start</moz-checkbox>
+                    <moz-checkbox position="end">End</moz-checkbox>
+                </div>
+            </div>
+            <div class="sample-code">
+                <div class="open-code" (click)="openSource('position')">
+                    Source Code 
+                    <moz-icon color="#ffffff" [style.transform]="isOpen('position') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
+                </div>
+                <div class="code-space" [class.is-open]="isOpen('position')" [style.max-height]="isOpen('position') ? '5rem' : '0'">
+                    <p class="code">
+                        <mozek-code tag="moz-checkbox" extra="disabled" position="start" inline>Start</mozek-code><br>
+                        <mozek-code tag="moz-checkbox" extra="disabled" position="end" inline>End</mozek-code>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="sample">
+        <div class="title">
+            <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
+            Disabled
+        </div>
+        <div class="description">
+            <p>Shows the disabled state of the checkbox, making it non-interactive and visually distinct.</p>
+        </div>
+        <div class="content">
+            <div class="sample-box">
+                <moz-checkbox disabled>Checkbox</moz-checkbox>
+            </div>
+            <div class="sample-code">
+                <div class="open-code" (click)="openSource('disabled')">
+                    Source Code 
+                    <moz-icon color="#ffffff" [style.transform]="isOpen('disabled') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
+                </div>
+                <div class="code-space" [class.is-open]="isOpen('disabled')" [style.max-height]="isOpen('disabled') ? '4rem' : '0'">
+                    <p class="code">
+                        <mozek-code tag="moz-checkbox" extra="disabled" inline>Checkbox</mozek-code>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="sample">
+        <div class="title">
+            <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
+            Group
+        </div>
+        <div class="description">
+            <p>Illustrates grouping multiple checkboxes together, allowing for related options to be selected as a set.</p>
+        </div>
+        <div class="content">
+            <div class="sample-box">
+                <div class="flex gap-2" [style.flex-direction]="screen() === 'mobile' ? 'column' : 'row'">
+                    <div class="pt-1 pb-2">
+                        {{bulb1}} - {{bulb2}} - {{bulb3}}
+                    </div>
+                    <moz-checkbox-group>
+                        <moz-checkbox color="primary" [(checked)]="bulb1">Red</moz-checkbox>
+                        <moz-checkbox color="primary" [(checked)]="bulb2">Blue</moz-checkbox>
+                        <moz-checkbox color="primary" [(checked)]="bulb3">Amber</moz-checkbox>
+                    </moz-checkbox-group>
+                    <div class="flex gap-3">
+                        @for (bulb of ['red', 'blue', 'amber']; track $index) {
+                            <div class="bulb" [class]="bulb"></div>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="sample-code">
+                <div class="open-code" (click)="openSource('group')">
+                    Source Code 
+                    <moz-icon color="#ffffff" [style.transform]="isOpen('group') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
+                </div>
+                <div class="code-space" [class.is-open]="isOpen('group')" [style.max-height]="isOpen('group') ? '10rem' : '0'">
+                    <p class="code">
+                        <mozek-code tag="moz-checkbox-group">
+                            @for (checkbox of ['', '', '']; track checkbox; let i = $index) {
+                                <mozek-code tag="moz-checkbox" color="primary" [checkbox]="'box' + (i + 1)" inline="">{{ checkbox }}</mozek-code><br>
+                            }
+                        </mozek-code>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

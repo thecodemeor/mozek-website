@@ -1,0 +1,286 @@
+<div class="sect-title">
+    <div class="title container">
+        <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
+        {{title | titlecase}}
+    </div>
+    <div class="subtitle">
+        <h4><span class="tag">&lt;</span>moz-{{ title }}<span class="tag">&gt;</span></h4>
+        <p class="description-text">{{ descripition }}</p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="sample">
+        <div class="title">
+            <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
+            Model
+        </div>
+        <div class="description">
+            <p>The Select component supports both single and multiple selection modes. In single selection mode, users can select only one option from the dropdown, while in multiple selection mode, users can select multiple options. The component provides a clear and intuitive interface for managing selections, making it easy for users to choose their desired options.</p>
+        </div>
+        <div class="content">
+            <div class="sample-box">
+                <div class="flex w-full flex-wrap gap-2">
+                    @for (model of models; track model) {
+                        <moz-select [model]="model">
+                            @for (item of ['1','2','3','4','5']; track $index) {
+                                <moz-option [value]="item">{{item}}</moz-option>
+                            }
+                        </moz-select>
+                    }
+                </div>
+            </div>
+            <div class="sample-code">
+                <div class="open-code" (click)="openSource('model')">
+                    Source Code 
+                    <moz-icon color="#ffffff" [style.transform]="isOpen('model') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
+                </div>
+                <div class="code-space" [class.is-open]="isOpen('model')" [style.max-height]="isOpen('model') ? '21rem' : '0'">
+                    @for (model of models; track model) {
+                        <p class="code">
+                            <mozek-code tag="moz-select" [model]="model">
+                                @for (item of ['1','2','3','4','5']; track $index) {
+                                    <mozek-code tag="moz-option" [value]="item" inline>{{item}}</mozek-code><br>
+                                }
+                            </mozek-code>
+                        </p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sample">
+        <div class="title">
+            <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
+            Label
+        </div>
+        <div class="description">
+            <p>Select component with label.</p>
+        </div>
+        <div class="content">
+            <div class="sample-box">
+                <div class="flex w-full flex-wrap gap-2">
+                    @for (model of models; track model) {
+                        <moz-select [model]="model" label="Select">
+                            @for (item of ['1','2','3','4','5']; track $index) {
+                                <moz-option [value]="item">{{item}}</moz-option>
+                            }
+                        </moz-select>
+                    }
+                </div>
+            </div>
+            <div class="sample-code">
+                <div class="open-code" (click)="openSource('label')">
+                    Source Code 
+                    <moz-icon color="#ffffff" [style.transform]="isOpen('label') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
+                </div>
+                <div class="code-space" [class.is-open]="isOpen('label')" [style.max-height]="isOpen('label') ? '21rem' : '0'">
+                    @for (model of models; track model) {
+                        <p class="code">
+                            <mozek-code tag="moz-select" [model]="model" label="Select">
+                                @for (item of ['1','2','3','4','5']; track $index) {
+                                    <mozek-code tag="moz-option" [value]="item" inline>{{item}}</mozek-code><br>
+                                }
+                            </mozek-code>
+                        </p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sample">
+        <div class="title">
+            <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
+            Hint &amp; Error
+        </div>
+        <div class="description">
+            <p>Hint and error states for the Select component.</p>
+        </div>
+        <div class="content">
+            <div class="sample-box">
+                <div class="flex w-full flex-wrap gap-2">
+                    @for (model of models; track model) {
+                        <moz-select [model]="model" hint="Must select an option.">
+                            @for (item of ['1','2','3']; track $index) {
+                                <moz-option [value]="item">{{item}}</moz-option>
+                            }
+                        </moz-select>
+                    }
+                </div>
+                <div class="flex w-full flex-wrap gap-2">
+                    @for (model of models; track model) {
+                        <moz-select [model]="model" error="Error">
+                            @for (item of ['1','2','3']; track $index) {
+                                <moz-option [value]="item">{{item}}</moz-option>
+                            }
+                        </moz-select>
+                    }
+                </div>
+            </div>
+            <div class="sample-code">
+                <div class="open-code" (click)="openSource('hint')">
+                    Source Code 
+                    <moz-icon color="#ffffff" [style.transform]="isOpen('hint') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
+                </div>
+                <div class="code-space" [class.is-open]="isOpen('hint')" [style.max-height]="isOpen('hint') ? '42rem' : '0'">
+                    @for (model of models; track model) {
+                        <p class="code">
+                            <mozek-code tag="moz-select" [model]="model" hint="Must select an option.">
+                                @for (item of ['1','2','3']; track $index) {
+                                    <mozek-code tag="moz-option" [value]="item" inline>{{item}}</mozek-code><br>
+                                }
+                            </mozek-code>
+                        </p>
+                    }
+                    @for (model of models; track model) {
+                        <p class="code">
+                            <mozek-code tag="moz-select" [model]="model" error="Error">
+                                @for (item of ['1','2','3']; track $index) {
+                                    <mozek-code tag="moz-option" [value]="item" inline>{{item}}</mozek-code><br>
+                                }
+                            </mozek-code>
+                        </p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sample">
+        <div class="title">
+            <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
+            No Options
+        </div>
+        <div class="description">
+            <p>The Select component also supports a no-options state, where no options are available for selection.</p>
+        </div>
+        <div class="content">
+            <div class="sample-box">
+                <div class="flex w-full flex-wrap gap-2">
+                   <moz-select label="Select"></moz-select>
+                </div>
+            </div>
+            <div class="sample-code">
+                <div class="open-code" (click)="openSource('no-option')">
+                    Source Code 
+                    <moz-icon color="#ffffff" [style.transform]="isOpen('no-option') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
+                </div>
+                <div class="code-space" [class.is-open]="isOpen('no-option')" [style.max-height]="isOpen('no-option') ? '4rem' : '0'">
+                    <p class="code">
+                        <mozek-code tag="moz-select" label="Select" inline></mozek-code>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sample">
+        <div class="title">
+            <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
+            Disabled
+        </div>
+        <div class="description">
+            <p>The Select component can be set to a disabled state, preventing user interaction and making it visually distinct.</p>
+        </div>
+        <div class="content">
+            <div class="sample-box">
+                <div class="flex w-full flex-wrap gap-2">
+                    @for (model of models; track model) {
+                        <moz-select [model]="model" disabled></moz-select>
+                    }
+                </div>
+            </div>
+            <div class="sample-code">
+                <div class="open-code" (click)="openSource('disabled')">
+                    Source Code 
+                    <moz-icon color="#ffffff" [style.transform]="isOpen('disabled') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
+                </div>
+                <div class="code-space" [class.is-open]="isOpen('disabled')" [style.max-height]="isOpen('disabled') ? '6rem' : '0'">
+                    @for (model of models; track model) {
+                        <p class="code">
+                            <mozek-code tag="moz-select" [model]="model" extra="disabled" inline></mozek-code>
+                        </p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sample">
+        <div class="title">
+            <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
+            Full Width
+        </div>
+        <div class="description">
+            <p>The Select component can be set to full width, allowing it to expand and fill the available horizontal space within its container.</p>
+        </div>
+        <div class="content">
+            <div class="sample-box">
+                @for (model of models; track model) {
+                    <moz-select [model]="model" label="Full Select" placeholder="Full" full>
+                        @for (item of ['1','2','3','4','5']; track $index) {
+                            <moz-option [value]="item">{{item}}</moz-option>
+                        }
+                    </moz-select>
+                }
+            </div>
+            <div class="sample-code">
+                <div class="open-code" (click)="openSource('full')">
+                    Source Code 
+                    <moz-icon color="#ffffff" [style.transform]="isOpen('full') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
+                </div>
+                <div class="code-space" [class.is-open]="isOpen('full')" [style.max-height]="isOpen('full') ? '21rem' : '0'">
+                    @for (model of models; track model) {
+                        <p class="code">
+                            <mozek-code tag="moz-select" [model]="model" label="Full Select" placeholder="Full" extra="full">
+                                @for (item of ['1','2','3','4','5']; track $index) {
+                                    <mozek-code tag="moz-option" [value]="item" inline>{{item}}</mozek-code><br>
+                                }
+                            </mozek-code>
+                        </p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sample">
+        <div class="title">
+            <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
+            Sample Example
+        </div>
+        <div class="description">
+            <p>The Select component can be used in various configurations to provide a flexible dropdown selection experience.</p>
+        </div>
+        <div class="content">
+            <div class="sample-box">
+                <div class="flex w-full flex-wrap gap-2">
+                    <moz-select placeholder="Anything">
+                        <moz-option value=""></moz-option>
+                        <moz-option value="1">1</moz-option>
+                        <moz-option value="2" disabled>2</moz-option>
+                        <moz-option value="3">3</moz-option>
+                    </moz-select>
+                </div>
+            </div>
+            <div class="sample-code">
+                <div class="open-code" (click)="openSource('type')">
+                    Source Code 
+                    <moz-icon color="#ffffff" [style.transform]="isOpen('type') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
+                </div>
+                <div class="code-space" [class.is-open]="isOpen('type')" [style.max-height]="isOpen('type') ? '12rem' : '0'">
+                    <p class="code">
+                        <mozek-code tag="moz-select" placeholder="Anything">
+                            <mozek-code tag="moz-option" value="" inline></mozek-code><br>
+                            <mozek-code tag="moz-option" value="1" inline>1</mozek-code><br>
+                            <mozek-code tag="moz-option" value="2" extra="disabled" inline>2</mozek-code><br>
+                            <mozek-code tag="moz-option" value="3" inline>3</mozek-code><br>
+                        </mozek-code>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

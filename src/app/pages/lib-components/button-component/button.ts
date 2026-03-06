@@ -5,8 +5,10 @@ import {
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { ResponsiveService } from 'src/app/services/responsive.service';
 import { MozButton, MozIcon } from 'mozek-angular';
+
+import { ResponsiveService } from 'src/app/services/responsive.service';
+import { MozekCode } from "src/app/assets/components/codesample";
 
 type MozButtonModel =
     | 'fill'
@@ -20,14 +22,18 @@ type MozButtonModel =
 @Component({
     selector: 'app-lib-component',
     imports: [
-        CommonModule,
-        MozButton,
-        MozIcon
-    ],
+    CommonModule,
+    MozButton,
+    MozIcon,
+    MozekCode
+],
     templateUrl: './button.html',
     styleUrls: ['./button.scss', '../lib-components.scss'],
 })
 export class Button {
+    title = 'button'
+    description = 'A button is a clickable element that triggers an action or event. It supports multiple styles (fill, outline, text, etc.), colors (primary, secondary, success, etc.), and can be disabled or have icons.'
+
     public responsive = inject(ResponsiveService);
     screen = computed(() => this.responsive.breakpoint());
 

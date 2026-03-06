@@ -3,6 +3,8 @@
 :host {
     --moz-color-orange: #{moz.moz-get-color(tangerine, 500)};
     --moz-color-orange-lite: #{moz.moz-get-color(tangerine, 200)};
+    --moz-color-grey: #{moz.moz-get-color(grey, 500)};
+    --moz-color-grey-lite: #{moz.moz-get-color(grey, 200)};
 
     --border-color: #eee;
 
@@ -22,25 +24,30 @@
 
     .sect-title {
         display: flex;
-        width: 100%; height: 8rem;
-        padding: var(--moz-space-2) 0;
-        border-top: solid 0.15rem var(--moz-color-orange);
-        border-bottom: solid 0.15rem var(--moz-color-orange);
-        background-image: repeating-linear-gradient(
-            45deg, color-mix(in srgb, var(--moz-color-orange) 50%, white) 0px 0.1rem,
-            var(--moz-color-orange-lite) 0.1rem 0.5rem
-        );
+        width: 100%; height: fit-content;
+        padding: var(--moz-space-4) 0 var(--moz-space-3);
+        border-bottom: solid 0.15rem var(--moz-color-primary-lite);
+        background-image: radial-gradient( color-mix(in srgb, var(--moz-color-primary) 30%, white) 0.08rem, transparent 1px);
+        background-size: 1rem 1rem;
+        background-color: color-mix(in srgb, var(--moz-color-primary-lite) 30%, white);
         justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: var(--moz-space-3);
 
         .title {
             @include moz.moz-typography('title-lg');
             display: flex;
-            width: 80%; height: 100%;
-            border: solid 0.2rem var(--moz-color-orange);
+            width: 80%; height: fit-content;
+            padding: var(--moz-space-2);
+            border: solid 0.12rem color-mix(in srgb, var(--moz-color-primary) 50%, white);
             border-radius: var(--moz-radius-lg);
             background-color: var(--moz-color-background);
+            outline: solid 0.6rem var(--moz-color-primary-lite);
             justify-content: center;
             align-items: center;
+            flex-direction: column;
+            gap: var(--moz-space-3);
 
             font-weight: 800;
             color: var(--moz-color-text);
@@ -50,6 +57,7 @@
                 aspect-ratio: 1 / 1;
                 margin: 0 var(--moz-space-3) 0 0;
             }
+            p { color: var(--moz-color-grey);}
         }
         @media (max-width: 768px) {
             .title {
@@ -63,67 +71,25 @@
             }
         }
     }
-
-    .font-1 { font-family: "Titan One", sans-serif;}
-
-    .w-5 { width: 5rem;}
-}
-
-.hero {
-    display: flex;
-    width: 100%; height: fit-content;
-    background-color: color-mix(in srgb, var(--moz-color-orange-lite) 30%, transparent 70%);
-    background-image: repeating-linear-gradient(
-            45deg, color-mix(in srgb, var(--moz-color-orange) 50%, white) 0px 0.1rem,
-            var(--moz-color-orange-lite) 0.1rem 0.5rem
-        );
-    justify-content: center;
-    align-items: center;
-
-    .hero-cap {
-        display: flex;
-        width: 90%; height: fit-content;
-        padding: var(--moz-space-4);
-        border-left: solid 0.2rem var(--moz-color-orange);
-        border-right: solid 0.2rem var(--moz-color-orange);
-        background-color: var(--moz-color-background);
-        box-shadow: 0 -0.2rem 0 var(--moz-color-orange);
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: var(--moz-space-2);
-        text-align: center;
-
-        .hero-title {
-            @include moz.moz-typography('heading-1');
-            font-weight: 800;
-            color: var(--moz-color-text);
-        }
-
-        .hero-subtitle {
-            @include moz.moz-typography('subtitle-lg');
-            color: var(--moz-color-text-secondary);
-        }
-    }
 }
 
 .shelf {
     display: flex;
     width: 100%; height: fit-content;
     padding: var(--moz-space-5) 0;
-    background-image: repeating-linear-gradient(
-            45deg, color-mix(in srgb, var(--moz-color-orange-lite) 50%, white) 0px 0.1rem,
-            transparent 0.1rem 0.5rem
-        );
+    background-size: 5rem 5rem;
+    background-image:
+                linear-gradient(to right, color-mix(in srgb, var(--moz-color-grey-lite) 80%, white) 1px, transparent 1px),
+                linear-gradient(to bottom, color-mix(in srgb, var(--moz-color-grey-lite) 80%, white) 1px, transparent 1px);
 
         .token-card {
             display: flex;
             width: 80%; height: fit-content;
             padding: var(--moz-space-1) 0 var(--moz-space-4) 0;
-            border: solid 0.1rem var(--moz-color-orange);
+            border: solid 0.1rem var(--moz-color-primary);
             border-radius: var(--moz-radius-lg);
             background-color: var(--moz-color-background);
-            box-shadow: 0 0 0 0.8rem var(--moz-color-orange-lite);
+            box-shadow: 0 0 0 0.8rem var(--moz-color-primary-lite);
             flex-direction: column;
             gap: var(--moz-space-1);
 

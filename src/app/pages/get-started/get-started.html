@@ -1,0 +1,57 @@
+<div id="get-started" class="first-sect section" [style.padding-top]="screen() === 'mobile' ? '3.5rem' : '4rem'">
+    <div class="sect-title">
+        <div class="title container">
+            <div class="flex items-center">
+                <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
+                Get Started
+            </div>
+        </div>
+    </div>
+    <div class="shelf">
+        <div class="guide-card container">
+            <p>
+                This guide explains how to set up your Angular project to begin using Mozek, a high-performance, signal-based component library.<br><br>
+                This guide assumes that the <span class="primary">Angular CLI</span> has already been installed.
+            </p><br><br>
+
+            <h5 class="mb-1">Install Mozek</h5>
+            <p>Add Angular Material to your application by running the following command:</p>
+            <div class="code-sect">
+                <p class="code" #copyNpm>npm install @mozek-angular</p>
+                <moz-button-icon model="text" (click)="copyText(copyNpm, 'copyNpm')" gap>
+                    @if (textCopied('copyNpm')) { <moz-icon color="success">check_circle</moz-icon>}
+                    @else { <moz-icon>copy</moz-icon>}
+                </moz-button-icon>
+            </div>
+            <p>You're done! Mozek is now configured to be used in your application.</p><br><br>
+            
+            <h5 class="mb-1">Import a Component</h5>
+            <p>To use a Mozek component, simply import it into your Angular component:</p>
+            <div class="code-sect">
+                <p class="code" #copyImport>import &#123; MozButton &#125; from 'mozek-angular';</p>
+                <moz-button-icon model="text" (click)="copyText(copyImport, 'copyImport')" gap>
+                    @if (textCopied('copyImport')) { <moz-icon color="success">check_circle</moz-icon>}
+                    @else { <moz-icon>copy</moz-icon>}
+                </moz-button-icon>
+            </div><br>
+            <p>Then, add the component to your template:</p>
+            <div class="code-sect">
+                <p class="code" #copyTag>&lt;moz-button&gt;Click Me&lt;/moz-button&gt;</p>
+                <moz-button-icon model="text" (click)="copyText(copyTag, 'copyTag')" gap>
+                    @if (textCopied('copyTag')) { <moz-icon color="success">check_circle</moz-icon>}
+                    @else { <moz-icon>copy</moz-icon>}
+                </moz-button-icon>
+            </div><br><br>
+            <h5 class="mb-1">Run Your Application</h5>
+            <p>To run your application, use the following command:</p>
+            <div class="code-sect">
+                <p class="code" #copyServe>ng serve</p>
+                <moz-button-icon model="text" (click)="copyText(copyServe, 'copyServe')" gap>
+                    @if (textCopied('copyServe')) { <moz-icon color="success">check_circle</moz-icon>}
+                    @else { <moz-icon>copy</moz-icon>}
+                </moz-button-icon>
+            </div>
+            <p>Open your browser and navigate to <span class="primary">http://localhost:4200</span> to see Mozek in action!</p>
+        </div>
+    </div>
+</div>

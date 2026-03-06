@@ -1,0 +1,123 @@
+<div class="sect-title">
+    <div class="title container">
+        <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
+        {{title | titlecase}}
+    </div>
+    <div class="subtitle">
+        <h4><span class="tag">&lt;</span>moz-{{ title }}<span class="tag">&gt;</span></h4>
+        <p class="description-text">{{ descripition }}</p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="sample">
+        <div class="title">
+            <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
+            Model
+        </div>
+        <div class="description">
+            <p>We provide nine progress model options: <span class="codered">Ring, Line Spinner, Hourglass, Zoomies, Line Wobble, Infinity, Cardio, Helix and Newton</span>.</p>
+        </div>
+        <div class="content">
+            <div class="sample-box">
+                <div class="grid-area">
+                    @for (model of models; track model) {
+                        <div class="flex flex-col items-center gap-2">
+                            <div class="model">
+                                <moz-progress [model]="model"></moz-progress>
+                            </div>
+                            <p class="primary">{{model}}</p>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="sample-code">
+                <div class="open-code" (click)="openSource('model')">
+                    Source Code 
+                    <moz-icon color="#ffffff" [style.transform]="isOpen('model') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
+                </div>
+                <div class="code-space" [class.is-open]="isOpen('model')" [style.max-height]="isOpen('model') ? '19rem' : '0'">
+                    @for (model of models; track model) {
+                        <p class="code">
+                            <mozek-code tag="moz-progress" [model]="model" inline></mozek-code>
+                        </p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sample">
+        <div class="title">
+            <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
+            Size
+        </div>
+        <div class="description">
+            <p>Specifies size range of: <span class="codered">20, 40, 60, 80 and 100</span>.</p>
+        </div>
+        <div class="content">
+            <div class="sample-box">
+                <div class="grid-area">
+                    @for (size of sizes; track size) {
+                        <div class="flex flex-col items-center gap-2">
+                            <div class="size">
+                                <moz-progress model="line_spinner" color="primary" [size]="size"></moz-progress>
+                            </div>
+                            <p class="primary">{{size}}</p>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="sample-code">
+                <div class="open-code" (click)="openSource('size')">
+                    Source Code 
+                    <moz-icon color="#ffffff" [style.transform]="isOpen('size') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
+                </div>
+                <div class="code-space" [class.is-open]="isOpen('size')" [style.max-height]="isOpen('size') ? '11rem' : '0'">
+                    @for (size of sizes; track size) {
+                        <p class="code">
+                            <mozek-code tag="moz-progress" model="line_spinner" color="primary" [size]="size" inline></mozek-code>
+                        </p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sample">
+        <div class="title">
+            <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
+            Speed
+        </div>
+        <div class="description">
+            <p>Controls the animation duration of the progress indicator, measured in seconds. A lower value results in a faster animation, while a higher value creates a slower transition. This allows precise control over how quickly the progress movement is displayed.</p>
+        </div>
+        <div class="content">
+            <div class="sample-box">
+                <div class="grid-area">
+                    @for (speed of speeds; track speed) {
+                        <div class="flex flex-col items-center gap-2">
+                            <div class="size">
+                                <moz-progress model="cardio" color="primary" [speed]="speed"></moz-progress>
+                            </div>
+                            <p class="primary">{{speed}}s</p>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="sample-code">
+                <div class="open-code" (click)="openSource('speed')">
+                    Source Code 
+                    <moz-icon color="#ffffff" [style.transform]="isOpen('speed') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
+                </div>
+                <div class="code-space" [class.is-open]="isOpen('speed')" [style.max-height]="isOpen('speed') ? '11rem' : '0'">
+                    @for (speed of speeds; track speed) {
+                        <p class="code">
+                            <mozek-code tag="moz-progress" model="cardio" color="primary" [speed]="speed" inline></mozek-code>
+                        </p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

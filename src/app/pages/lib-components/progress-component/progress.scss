@@ -1,0 +1,31 @@
+@use "mozek-angular/src/styles" as moz;
+
+.codered {
+    font-family: "Courier Prime", monospace;
+    color: #{moz.moz-get-color(red, 600)};
+}
+
+.grid-area {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    row-gap: var(--moz-space-4);
+    column-gap: var(--moz-space-2);
+
+    .model {
+        display: flex;
+        height: 4rem;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: var(--moz-space-2);
+    }
+
+    .size {
+        display: flex;
+        height: 7rem;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: var(--moz-space-2);
+    }
+}

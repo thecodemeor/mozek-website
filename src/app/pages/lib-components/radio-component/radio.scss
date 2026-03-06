@@ -1,0 +1,51 @@
+@use "mozek-angular/src/styles" as moz;
+
+:host {
+    .symbol { color: #808080;}
+    .tag { color: #569dd6;}
+    .orange { color: #ce9178;}
+    .blue { color: #9bdbfe;}
+    .yellow { color: #fef69b;}
+    .white { color: #ffffff;}
+
+    .comment {
+        width: 100%;
+        color: #6a9955;
+        line-height: 2;
+    }
+}
+
+.sample-radio-vertical {
+    display: flex;
+    width: 100%;
+    max-width: 20rem;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--moz-space-2);
+
+    &.mobile-sample-radio {
+        flex-direction: column-reverse;
+    }
+
+    .sample-radio-image {
+        width: 10rem;
+        aspect-ratio: 1 / 1;
+    }
+}
+
+.sample-radio-horizontal {
+    display: flex;
+    width: 100%;
+    max-width: 20rem;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: var(--moz-space-2);
+
+    .sample-radio-image {
+        width: 10rem;
+        aspect-ratio: 1 / 1;
+    }
+}

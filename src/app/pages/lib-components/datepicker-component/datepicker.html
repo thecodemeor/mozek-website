@@ -1,0 +1,129 @@
+<div class="sect-title">
+    <div class="title container">
+        <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
+        {{title | titlecase}}
+    </div>
+    <div class="subtitle">
+        <h4><span class="tag">&lt;</span>moz-{{ title }}<span class="tag">&gt;</span></h4>
+        <p class="description-text">{{ descripition }}</p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="sample">
+        <div class="title">
+            <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
+            Basic
+        </div>
+        <div class="description">
+            <p>Shows how the datepicker component can be used.</p>
+        </div>
+        <div class="content">
+            <div class="sample-box">
+                <p>Selected Date: {{ datepickerValue | date }}</p>
+                <moz-datepicker [(value)]="datepickerValue"></moz-datepicker>
+            </div>
+            <div class="sample-code">
+                <div class="open-code" (click)="openSource('basic')">
+                    Source Code 
+                    <moz-icon color="#ffffff" [style.transform]="isOpen('basic') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
+                </div>
+                <div class="code-space" [class.is-open]="isOpen('basic')" [style.max-height]="isOpen('basic') ? '6rem' : '0'">
+                    <p class="code">
+                        <mozek-code tag="p" inline>Selected Date: {{ '{' }}{{ '{' }} <span style="color: #9bdbfe;">datepickerValue</span> | <span style="color: #fcfe9b;">date</span> {{ '}' }}{{ '}' }}</mozek-code>
+                    </p>
+                    <p class="code">
+                        <mozek-code tag="moz-datepicker" dateValue="datepickerValue" inline></mozek-code>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sample">
+        <div class="title">
+            <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
+            Model
+        </div>
+        <div class="description">
+            <p>Shows how the datepicker component can be styled using different model attributes.</p>
+        </div>
+        <div class="content">
+            <div class="sample-box">
+                <div class="flex w-full flex-wrap gap-2">
+                    @for (item of models; track item) {
+                        <moz-datepicker [model]="item"></moz-datepicker>
+                    }
+                </div>
+            </div>
+            <div class="sample-code">
+                <div class="open-code" (click)="openSource('model')">
+                    Source Code 
+                    <moz-icon color="#ffffff" [style.transform]="isOpen('model') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
+                </div>
+                <div class="code-space" [class.is-open]="isOpen('model')" [style.max-height]="isOpen('model') ? '11rem' : '0'">
+                    <p class="code">
+                        <mozek-code tag="moz-datepicker" inline></mozek-code>
+                    </p>
+                    @for (item of models; track item) {
+                        <p class="code">
+                            <mozek-code tag="moz-datepicker" [model]="item" inline=""></mozek-code>
+                        </p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sample">
+        <div class="title">
+            <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
+            Label
+        </div>
+        <div class="description">
+            <p>Shows how the datepicker component can be labeled.</p>
+        </div>
+        <div class="content">
+            <div class="sample-box">
+                <moz-datepicker label="Date of Birth"></moz-datepicker>
+            </div>
+            <div class="sample-code">
+                <div class="open-code" (click)="openSource('label')">
+                    Source Code 
+                    <moz-icon color="#ffffff" [style.transform]="isOpen('label') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
+                </div>
+                <div class="code-space" [class.is-open]="isOpen('label')" [style.max-height]="isOpen('label') ? '7rem' : '0'">
+                    <p class="code">
+                        <mozek-code tag="moz-datepicker" label="Date of Birth" inline></mozek-code>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sample">
+        <div class="title">
+            <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
+            Disabled
+        </div>
+        <div class="description">
+            <p>Shows how the datepicker component can be disabled.</p>
+        </div>
+        <div class="content">
+            <div class="sample-box">
+                <moz-datepicker disabled></moz-datepicker>
+            </div>
+            <div class="sample-code">
+                <div class="open-code" (click)="openSource('disabled')">
+                    Source Code 
+                    <moz-icon color="#ffffff" [style.transform]="isOpen('disabled') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
+                </div>
+                <div class="code-space" [class.is-open]="isOpen('disabled')" [style.max-height]="isOpen('disabled') ? '7rem' : '0'">
+                    <p class="code">
+                        <mozek-code tag="moz-datepicker" extra="disabled" inline></mozek-code>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

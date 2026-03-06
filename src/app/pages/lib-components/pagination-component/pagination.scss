@@ -1,0 +1,30 @@
+@use "mozek-angular/src/styles" as moz;
+
+:host {
+    .symbol { color: #808080;}
+    .tag { color: #569dd6;}
+    .orange { color: #ce9178;}
+    .blue { color: #9bdbfe;}
+    .yellow { color: #fef69b;}
+    .neon-green { color: #00ffbb;}
+    .pink { color: #ff77ff;}
+    .white { color: #ffffff;}
+
+    .comment {
+        width: 100%;
+        color: #6a9955;
+        line-height: 2;
+    }
+}
+
+.small-view {
+    display: flex;
+    width: auto;
+    margin: auto;
+    padding: var(--moz-space-2);
+    border: solid 0.15rem var(--moz-color-primary-lite);
+    border-radius: var(--moz-radius-default);
+    background-color: var(--moz-space-2);
+    flex-direction: column;
+    gap: var(--moz-space-2);
+}

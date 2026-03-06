@@ -18,8 +18,7 @@ import {
 
     MozCard,
     MozCardHeader,
-    MozCardBody,
-    MozSwitch
+    MozCardBody
   ],
   templateUrl: './app.html',
   styleUrls: ['./app.scss'],
@@ -39,7 +38,6 @@ export class App {
       title: 'Mozek',
       link: [
         { name: 'Get Started', url: 'get-started' },
-        { name: 'Documentation', url: 'documentation'},
         { name: 'Updates', url: 'updates'}
       ]
     },

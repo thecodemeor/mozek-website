@@ -11,29 +11,33 @@
             <div #box1 class="hero-update" [class.w-full]="screen() !== 'desktop'">
                 <div class="card-outer" [style.height]="screen() !== 'desktop' ? '60dvh' : heightPx">
                     <moz-card model="outline" color="primary">
-                        <div class="flex flex-col w-full h-full scrollable">
-                            <div class="flex flex-col w-full py-3 px-2 gap-4">
-                                <h3>Update</h3>
-                                <div class="flex w-full h-full pr-1 gap-4 flex-col">
-                                    @for (item of versionUpdates.slice(0, 5); track item; let i = $index) {
-                                        <div class="update-box">
-                                            <div class="version" [class.latest]="i === 0">
-                                                <h5>{{item.version}}</h5>
-                                                <p class="date">{{item.date}}</p>
-                                            </div>
-                                            <div class="contents">
-                                                <h5 class="mb-2">{{item.name}}</h5>
-                                                <div class="list-group">
-                                                    @for (content of item.contents; track content) {
-                                                        <div class="flex gap-1">
-                                                            <img [src]="'assets/images/logo/mozek_vector_' + (i === 0 ? 'violet' : 'blue') + '.svg'" alt="Mozek Logo as a Point">
-                                                            <p>{{content}}</p>
+                        <div class="flex flex-col w-full h-full p-1">
+                            <div class="flex flex-col w-full h-full card-gradient">
+                                <div class="flex flex-col w-full h-full scrollable z-10">
+                                    <div class="flex flex-col w-full p-1 gap-4">
+                                        <h3 class="pt-1">Update</h3>
+                                        <div class="flex w-full h-full pr-1 gap-4 flex-col">
+                                            @for (item of versionUpdates.slice(0, 5); track item; let i = $index) {
+                                                <div class="update-box">
+                                                    <div class="version" [class.latest]="i === 0">
+                                                        <h5>{{item.version}}</h5>
+                                                        <p class="date">{{item.date}}</p>
+                                                    </div>
+                                                    <div class="contents">
+                                                        <h5 class="mb-2">{{item.name}}</h5>
+                                                        <div class="list-group">
+                                                            @for (content of item.contents; track content) {
+                                                                <div class="flex gap-1">
+                                                                    <img [src]="'assets/images/logo/mozek_vector_' + (i === 0 ? 'violet' : 'blue') + '.svg'" alt="Mozek Logo as a Point">
+                                                                    <p>{{content}}</p>
+                                                                </div>
+                                                            }
                                                         </div>
-                                                    }
+                                                    </div>
                                                 </div>
-                                            </div>
+                                            }
                                         </div>
-                                    }
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -75,7 +79,7 @@
                             <moz-button model="tonal" color="primary" (click)="navigateTo('https://www.npmjs.com/package/mozek-angular')" full>Get NPM</moz-button>
                         </div>
                         <div class="spacer w-full">
-                            <moz-button model="flavor" full>Get Start</moz-button>
+                            <moz-button model="flavor" (click)="navigateTo('get-started')" full>Get Start</moz-button>
                         </div>
                     </div>
                 </div>
@@ -90,28 +94,24 @@
             <img src="assets/images/isometric-computer-set.jpg" alt="">
         </div>
         <div class="sect-2">
-            <moz-card model="flavor" color="primary">
-                <div class="flex flex-col py-2 px-3 gap-2">
+            <div class="sect-2-card">
+                <div class="sect-2-card-inner">
                     <div class="intro" [class]="screen() !== 'desktop' ? 'left' : 'right'">
                         <h3>Original Recipe</h3>
                         <p class="description">Mozek is open and free to use. Build with it, explore it, and enjoy creating along the way.</p>
                     </div>
                     <div class="flex w-full flex-wrap gap-2">
                         @for (item of features; track item) {
-                            <moz-card model="outline" color="primary" class="features" (click)="navigateTo(item.url)" advance>
-                                <moz-card-media>
-                                    <img [src]="item.img" class="features-image" [alt]="item.name">
-                                </moz-card-media>
+                            <div class="features" (click)="navigateTo(item.url)">
+                                <h6 class="feature-title">{{item.name}}</h6>
                                 <moz-card-body>
-                                    <div class="pt-2">
-                                        <h6 class="w-full text-center">{{item.name}}</h6>
-                                    </div>
+                                    <img [src]="item.img" class="feature-image" [alt]="item.name">
                                 </moz-card-body>
-                            </moz-card>
+                            </div>
                         }
                     </div>
                 </div>
-            </moz-card>
+            </div>
         </div>
     </div>
 </div>
