@@ -1,3 +1,5 @@
+import { MozekApiTable } from 'src/app/assets/components/api-table';
+import { apiData } from 'src/app/assets/documents/api-data';
 import {
     Component,
     inject,
@@ -13,6 +15,7 @@ import { MozekCode } from "src/app/assets/components/codesample";
 @Component({
     selector: 'app-lib-component',
     imports: [
+        MozekApiTable,
         CommonModule,
         MozekCode,
         MozIcon,
@@ -23,6 +26,7 @@ import { MozekCode } from "src/app/assets/components/codesample";
     styleUrls: ['./accordion.scss', '../lib-components.scss'],
 })
 export class Accordion {
+    apiData = [...(apiData['MozAccordion'] || []), ...(apiData['MozAccordionItem'] || [])];
     title = 'accordion'
     description = 'A flexible UI component that allows content to expand and collapse, helping you organize information in a compact and readable way. Perfect for FAQs, menus, or any content-heavy layout.'
 

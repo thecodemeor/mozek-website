@@ -1,3 +1,5 @@
+import { MozekApiTable } from 'src/app/assets/components/api-table';
+import { apiData } from 'src/app/assets/documents/api-data';
 import {
     Component,
     inject,
@@ -20,6 +22,7 @@ type MozCardModel =
 @Component({
     selector: 'app-lib-component',
     imports: [
+        MozekApiTable,
         CommonModule,
         MozekCode,
         MozCard, MozCardBody, MozCardHeader, MozCardMedia, MozCardFooter,
@@ -29,6 +32,7 @@ type MozCardModel =
     styleUrls: ['./card.scss', '../lib-components.scss'],
 })
 export class Card {
+    apiData = apiData['MozCard'] || [];
     title = 'card'
     description = 'Cards are versatile UI components that group related content and actions, providing a structured layout for displaying information in a visually appealing way.'
     

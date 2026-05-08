@@ -1,0 +1,834 @@
+{
+  "MozButton": [
+    {
+      "name": "model",
+      "optional": false,
+      "type": "MozButtonModel",
+      "isOutput": false
+    },
+    {
+      "name": "color",
+      "optional": false,
+      "type": "MozColorName | string",
+      "isOutput": false
+    },
+    {
+      "name": "full",
+      "optional": false,
+      "type": "boolean",
+      "isOutput": false
+    },
+    {
+      "name": "disabled",
+      "optional": false,
+      "type": "boolean",
+      "isOutput": false
+    }
+  ],
+  "MozCard": [
+    {
+      "name": "model",
+      "optional": false,
+      "type": "MozCardModel$1",
+      "isOutput": false
+    },
+    {
+      "name": "color",
+      "optional": false,
+      "type": "MozColorName | string",
+      "isOutput": false
+    },
+    {
+      "name": "advance",
+      "optional": false,
+      "type": "boolean",
+      "isOutput": false
+    },
+    {
+      "name": "loading",
+      "optional": false,
+      "type": "boolean",
+      "isOutput": false
+    }
+  ],
+  "MozBadge": [
+    {
+      "name": "color",
+      "optional": false,
+      "type": "MozBadgeColor",
+      "isOutput": false
+    },
+    {
+      "name": "icon",
+      "optional": false,
+      "type": "MozBadgeIcon",
+      "isOutput": false
+    },
+    {
+      "name": "dot",
+      "optional": false,
+      "type": "boolean",
+      "isOutput": false
+    },
+    {
+      "name": "pulse",
+      "optional": false,
+      "type": "boolean",
+      "isOutput": false
+    },
+    {
+      "name": "notification",
+      "optional": false,
+      "type": "boolean",
+      "isOutput": false
+    },
+    {
+      "name": "contentLength",
+      "optional": false,
+      "type": "number",
+      "isOutput": false
+    },
+    {
+      "name": "position",
+      "optional": false,
+      "type": "string",
+      "isOutput": false
+    },
+    {
+      "name": "top",
+      "optional": false,
+      "type": "string",
+      "isOutput": false
+    },
+    {
+      "name": "right",
+      "optional": false,
+      "type": "string",
+      "isOutput": false
+    }
+  ],
+  "MozCurrency": [
+    {
+      "name": "value",
+      "optional": true,
+      "type": "number",
+      "isOutput": false
+    },
+    {
+      "name": "currency",
+      "optional": false,
+      "type": "string",
+      "isOutput": false
+    },
+    {
+      "name": "symbol",
+      "optional": false,
+      "type": "boolean",
+      "isOutput": false
+    },
+    {
+      "name": "displayValue",
+      "optional": false,
+      "type": "string",
+      "isOutput": false
+    },
+    {
+      "name": "symbolCurrency",
+      "optional": false,
+      "type": "Record<string, string>",
+      "isOutput": false
+    }
+  ],
+  "MozDivider": [
+    {
+      "name": "align",
+      "optional": false,
+      "type": "MozAlign",
+      "isOutput": false
+    },
+    {
+      "name": "color",
+      "optional": false,
+      "type": "MozColorName",
+      "isOutput": false
+    },
+    {
+      "name": "depth",
+      "optional": false,
+      "type": "MozDepth",
+      "isOutput": false
+    },
+    {
+      "name": "orientation",
+      "optional": false,
+      "type": "MozOrientation",
+      "isOutput": false
+    },
+    {
+      "name": "dashed",
+      "optional": false,
+      "type": "boolean",
+      "isOutput": false
+    },
+    {
+      "name": "pill",
+      "optional": false,
+      "type": "boolean",
+      "isOutput": false
+    }
+  ],
+  "MozInput": [
+    {
+      "name": "model",
+      "optional": false,
+      "type": "MozCardModel",
+      "isOutput": false
+    },
+    {
+      "name": "type",
+      "optional": false,
+      "type": "MozCardType",
+      "isOutput": false
+    },
+    {
+      "name": "label",
+      "optional": true,
+      "type": "string",
+      "isOutput": false
+    },
+    {
+      "name": "placeholder",
+      "optional": true,
+      "type": "string",
+      "isOutput": false
+    },
+    {
+      "name": "hint",
+      "optional": true,
+      "type": "string",
+      "isOutput": false
+    },
+    {
+      "name": "error",
+      "optional": true,
+      "type": "string",
+      "isOutput": false
+    },
+    {
+      "name": "clearable",
+      "optional": false,
+      "type": "boolean",
+      "isOutput": false
+    },
+    {
+      "name": "showPasswordToggle",
+      "optional": false,
+      "type": "boolean",
+      "isOutput": false
+    },
+    {
+      "name": "disabled",
+      "optional": false,
+      "type": "boolean",
+      "isOutput": false
+    },
+    {
+      "name": "readonly",
+      "optional": false,
+      "type": "boolean",
+      "isOutput": false
+    },
+    {
+      "name": "full",
+      "optional": false,
+      "type": "boolean",
+      "isOutput": false
+    },
+    {
+      "name": "prefixTpl",
+      "optional": true,
+      "type": "TemplateRef<any>",
+      "isOutput": false
+    },
+    {
+      "name": "suffixTpl",
+      "optional": true,
+      "type": "TemplateRef<any>",
+      "isOutput": false
+    },
+    {
+      "name": "inputEl",
+      "optional": false,
+      "type": "ElementRef<HTMLInputElement>",
+      "isOutput": false
+    },
+    {
+      "name": "id",
+      "optional": false,
+      "type": "string",
+      "isOutput": false
+    },
+    {
+      "name": "describedBy",
+      "optional": false,
+      "type": "string",
+      "isOutput": false
+    },
+    {
+      "name": "reveal",
+      "optional": false,
+      "type": "boolean",
+      "isOutput": false
+    }
+  ],
+  "MozIcon": [
+    {
+      "name": "model",
+      "optional": false,
+      "type": "MozIconModel",
+      "isOutput": false
+    },
+    {
+      "name": "color",
+      "optional": false,
+      "type": "MozColorName | string",
+      "isOutput": false
+    },
+    {
+      "name": "size",
+      "optional": false,
+      "type": "string | number",
+      "isOutput": false
+    },
+    {
+      "name": "iconName",
+      "optional": false,
+      "type": "string",
+      "isOutput": false
+    },
+    {
+      "name": "safeSvg",
+      "optional": true,
+      "type": "SafeHtml",
+      "isOutput": false
+    }
+  ],
+  "MozPagination": [
+    {
+      "name": "color",
+      "optional": false,
+      "type": "MozColorName | string",
+      "isOutput": false
+    },
+    {
+      "name": "length",
+      "optional": false,
+      "type": "number",
+      "isOutput": false
+    },
+    {
+      "name": "pageSize",
+      "optional": false,
+      "type": "number",
+      "isOutput": false
+    },
+    {
+      "name": "showFirstLast",
+      "optional": false,
+      "type": "boolean",
+      "isOutput": false
+    },
+    {
+      "name": "showPageSizeOptions",
+      "optional": false,
+      "type": "boolean",
+      "isOutput": false
+    },
+    {
+      "name": "pageSizeOptions",
+      "optional": false,
+      "type": "number[]",
+      "isOutput": false
+    },
+    {
+      "name": "ariaLabel",
+      "optional": false,
+      "type": "string",
+      "isOutput": false
+    },
+    {
+      "name": "pageIndexChange",
+      "optional": false,
+      "type": "EventEmitter<number>",
+      "isOutput": true
+    },
+    {
+      "name": "pageChange",
+      "optional": false,
+      "type": "EventEmitter<MozPageChangeEvent>",
+      "isOutput": true
+    },
+    {
+      "name": "totalPages",
+      "optional": false,
+      "type": "number",
+      "isOutput": false
+    },
+    {
+      "name": "viewItems",
+      "optional": false,
+      "type": "PaginationViewItem[]",
+      "isOutput": false
+    }
+  ],
+  "MozProgress": [
+    {
+      "name": "model",
+      "optional": false,
+      "type": "MozProgressModel",
+      "isOutput": false
+    },
+    {
+      "name": "color",
+      "optional": false,
+      "type": "'primary' | 'secondary' | 'default'",
+      "isOutput": false
+    },
+    {
+      "name": "size",
+      "optional": false,
+      "type": "'20' | '40' | '60' | '80' | '100'",
+      "isOutput": false
+    },
+    {
+      "name": "speed",
+      "optional": false,
+      "type": "string",
+      "isOutput": false
+    }
+  ],
+  "MozSwitch": [
+    {
+      "name": "disabled",
+      "optional": false,
+      "type": "boolean",
+      "isOutput": false
+    },
+    {
+      "name": "color",
+      "optional": false,
+      "type": "MozColorName",
+      "isOutput": false
+    },
+    {
+      "name": "changed",
+      "optional": false,
+      "type": "EventEmitter<boolean>",
+      "isOutput": true
+    },
+    {
+      "name": "role",
+      "optional": false,
+      "type": "string",
+      "isOutput": false
+    }
+  ],
+  "MozButtonIcon": [
+    {
+      "name": "model",
+      "optional": false,
+      "type": "MozButtonIconModel",
+      "isOutput": false
+    },
+    {
+      "name": "color",
+      "optional": false,
+      "type": "MozColorName",
+      "isOutput": false
+    },
+    {
+      "name": "gap",
+      "optional": false,
+      "type": "boolean",
+      "isOutput": false
+    },
+    {
+      "name": "disabled",
+      "optional": false,
+      "type": "boolean",
+      "isOutput": false
+    }
+  ],
+  "MozDatepicker": [
+    {
+      "name": "label",
+      "optional": true,
+      "type": "string",
+      "isOutput": false
+    },
+    {
+      "name": "model",
+      "optional": false,
+      "type": "'outline' | 'fill'",
+      "isOutput": false
+    },
+    {
+      "name": "min",
+      "optional": true,
+      "type": "Date",
+      "isOutput": false
+    },
+    {
+      "name": "max",
+      "optional": true,
+      "type": "Date",
+      "isOutput": false
+    },
+    {
+      "name": "disabled",
+      "optional": false,
+      "type": "boolean",
+      "isOutput": false
+    },
+    {
+      "name": "valueChange",
+      "optional": false,
+      "type": "EventEmitter<Date | null>",
+      "isOutput": true
+    },
+    {
+      "name": "open",
+      "optional": false,
+      "type": "boolean",
+      "isOutput": false
+    },
+    {
+      "name": "viewYear",
+      "optional": false,
+      "type": "number",
+      "isOutput": false
+    },
+    {
+      "name": "viewMonth",
+      "optional": false,
+      "type": "number",
+      "isOutput": false
+    },
+    {
+      "name": "weekdayLabels",
+      "optional": false,
+      "type": "string[]",
+      "isOutput": false
+    },
+    {
+      "name": "calendarCells",
+      "optional": false,
+      "type": "CalendarCell[]",
+      "isOutput": false
+    },
+    {
+      "name": "viewMode",
+      "optional": false,
+      "type": "ViewMode",
+      "isOutput": false
+    },
+    {
+      "name": "monthCells",
+      "optional": false,
+      "type": "MonthCell[]",
+      "isOutput": false
+    },
+    {
+      "name": "yearCells",
+      "optional": false,
+      "type": "YearCell[]",
+      "isOutput": false
+    },
+    {
+      "name": "yearPageStart",
+      "optional": false,
+      "type": "number",
+      "isOutput": false
+    }
+  ],
+  "MozOption": [
+    {
+      "name": "value",
+      "optional": false,
+      "type": "T",
+      "isOutput": false
+    },
+    {
+      "name": "disabled",
+      "optional": false,
+      "type": "boolean",
+      "isOutput": false
+    },
+    {
+      "name": "elementRef",
+      "optional": false,
+      "type": "ElementRef<any>",
+      "isOutput": false
+    },
+    {
+      "name": "role",
+      "optional": false,
+      "type": "string",
+      "isOutput": false
+    }
+  ],
+  "MozSelect": [
+    {
+      "name": "label",
+      "optional": true,
+      "type": "string",
+      "isOutput": false
+    },
+    {
+      "name": "placeholder",
+      "optional": false,
+      "type": "string",
+      "isOutput": false
+    },
+    {
+      "name": "error",
+      "optional": true,
+      "type": "string",
+      "isOutput": false
+    },
+    {
+      "name": "hint",
+      "optional": true,
+      "type": "string",
+      "isOutput": false
+    },
+    {
+      "name": "disabled",
+      "optional": false,
+      "type": "boolean",
+      "isOutput": false
+    },
+    {
+      "name": "model",
+      "optional": false,
+      "type": "'outline' | 'fill'",
+      "isOutput": false
+    },
+    {
+      "name": "changed",
+      "optional": false,
+      "type": "EventEmitter<T | null>",
+      "isOutput": true
+    },
+    {
+      "name": "optionList",
+      "optional": false,
+      "type": "QueryList<MozOption<T>>",
+      "isOutput": false
+    },
+    {
+      "name": "triggerRef",
+      "optional": false,
+      "type": "ElementRef<HTMLButtonElement>",
+      "isOutput": false
+    },
+    {
+      "name": "id",
+      "optional": false,
+      "type": "string",
+      "isOutput": false
+    },
+    {
+      "name": "open",
+      "optional": false,
+      "type": "boolean",
+      "isOutput": false
+    },
+    {
+      "name": "activeIndex",
+      "optional": false,
+      "type": "number",
+      "isOutput": false
+    }
+  ],
+  "MozAccordionItem": [
+    {
+      "name": "disabled",
+      "optional": false,
+      "type": "boolean",
+      "isOutput": false
+    },
+    {
+      "name": "expandedChange",
+      "optional": false,
+      "type": "EventEmitter<boolean>",
+      "isOutput": true
+    },
+    {
+      "name": "beforeExpanded",
+      "optional": false,
+      "type": "boolean",
+      "isOutput": false
+    },
+    {
+      "name": "afterExpanded",
+      "optional": false,
+      "type": "boolean",
+      "isOutput": false
+    },
+    {
+      "name": "panelId",
+      "optional": false,
+      "type": "string",
+      "isOutput": false
+    }
+  ],
+  "MozAccordion": [
+    {
+      "name": "multi",
+      "optional": false,
+      "type": "boolean",
+      "isOutput": false
+    },
+    {
+      "name": "items",
+      "optional": false,
+      "type": "QueryList<MozAccordionItem>",
+      "isOutput": false
+    }
+  ],
+  "MozCheckbox": [
+    {
+      "name": "value",
+      "optional": false,
+      "type": "any",
+      "isOutput": false
+    },
+    {
+      "name": "color",
+      "optional": false,
+      "type": "MozColorName",
+      "isOutput": false
+    },
+    {
+      "name": "position",
+      "optional": false,
+      "type": "'start' | 'end'",
+      "isOutput": false
+    },
+    {
+      "name": "change",
+      "optional": false,
+      "type": "EventEmitter<boolean>",
+      "isOutput": true
+    },
+    {
+      "name": "checkedChange",
+      "optional": false,
+      "type": "EventEmitter<boolean>",
+      "isOutput": true
+    },
+    {
+      "name": "focused",
+      "optional": false,
+      "type": "boolean",
+      "isOutput": false
+    }
+  ],
+  "MozCheckboxGroup": [
+    {
+      "name": "orientation",
+      "optional": false,
+      "type": "'horizontal' | 'vertical'",
+      "isOutput": false
+    },
+    {
+      "name": "valueChange",
+      "optional": false,
+      "type": "EventEmitter<any[]>",
+      "isOutput": true
+    },
+    {
+      "name": "boxes",
+      "optional": false,
+      "type": "QueryList<MozCheckbox>",
+      "isOutput": false
+    }
+  ],
+  "MozRadio": [
+    {
+      "name": "color",
+      "optional": false,
+      "type": "MozColorName",
+      "isOutput": false
+    },
+    {
+      "name": "position",
+      "optional": false,
+      "type": "'end' | 'start'",
+      "isOutput": false
+    },
+    {
+      "name": "name",
+      "optional": true,
+      "type": "string",
+      "isOutput": false
+    },
+    {
+      "name": "value",
+      "optional": false,
+      "type": "any",
+      "isOutput": false
+    },
+    {
+      "name": "tabStop",
+      "optional": false,
+      "type": "boolean",
+      "isOutput": false
+    },
+    {
+      "name": "change",
+      "optional": false,
+      "type": "EventEmitter<any>",
+      "isOutput": true
+    },
+    {
+      "name": "role",
+      "optional": false,
+      "type": "string",
+      "isOutput": false
+    }
+  ],
+  "MozRadioGroup": [
+    {
+      "name": "orientation",
+      "optional": false,
+      "type": "'horizontal' | 'vertical'",
+      "isOutput": false
+    },
+    {
+      "name": "name",
+      "optional": false,
+      "type": "string",
+      "isOutput": false
+    },
+    {
+      "name": "valueChange",
+      "optional": false,
+      "type": "EventEmitter<any>",
+      "isOutput": true
+    },
+    {
+      "name": "radios",
+      "optional": false,
+      "type": "QueryList<MozRadio>",
+      "isOutput": false
+    },
+    {
+      "name": "role",
+      "optional": false,
+      "type": "string",
+      "isOutput": false
+    }
+  ]
+}

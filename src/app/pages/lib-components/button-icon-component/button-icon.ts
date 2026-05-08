@@ -1,3 +1,5 @@
+import { MozekApiTable } from 'src/app/assets/components/api-table';
+import { apiData } from 'src/app/assets/documents/api-data';
 import {
     Component,
     inject,
@@ -22,6 +24,7 @@ type MozColorName =
 @Component({
     selector: 'app-lib-component',
     imports: [
+        MozekApiTable,
         CommonModule,
         MozekCode,
         MozButtonIcon,
@@ -31,6 +34,7 @@ type MozColorName =
     styleUrls: ['./button-icon.scss', '../lib-components.scss'],
 })
 export class ButtonIcon {
+    apiData = apiData['MozButtonIcon'] || [];
     title = 'button-icon'
     description = 'A button icon is a compact button that displays only an icon, often used in toolbars or navigation menus. It supports multiple models (text, tonal) and colors (primary, secondary, success, etc.).'
     

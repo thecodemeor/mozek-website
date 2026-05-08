@@ -1,3 +1,5 @@
+import { MozekApiTable } from 'src/app/assets/components/api-table';
+import { apiData } from 'src/app/assets/documents/api-data';
 import {
     Component,
     inject,
@@ -17,6 +19,7 @@ type MozInputModel =
 @Component({
     selector: 'app-lib-component',
     imports: [
+        MozekApiTable,
     CommonModule,
     MozekCode,
     MozIcon,
@@ -27,6 +30,7 @@ type MozInputModel =
     styleUrls: ['./select.scss', '../lib-components.scss'],
 })
 export class Select {
+    apiData = apiData['MozSelect'] || [];
     title = 'select';
     descripition = "The Mozek Select component provides a customizable dropdown menu for selecting options. It supports single and multiple selection modes, as well as various styling options to match your application's design. The component is designed to be responsive and accessible, ensuring a seamless user experience across different devices and for all users.";
 

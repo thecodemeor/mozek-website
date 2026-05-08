@@ -1,3 +1,5 @@
+import { MozekApiTable } from 'src/app/assets/components/api-table';
+import { apiData } from 'src/app/assets/documents/api-data';
 import {
     Component,
     inject,
@@ -13,6 +15,7 @@ import { MozekCode } from 'src/app/assets/components/codesample';
 @Component({
     selector: 'app-lib-component',
     imports: [
+        MozekApiTable,
     CommonModule,
     MozekCode,
     MozIcon,
@@ -23,6 +26,7 @@ import { MozekCode } from 'src/app/assets/components/codesample';
     styleUrls: ['./radio.scss', '../lib-components.scss'],
 })
 export class Radio {
+    apiData = apiData['MozRadio'] || [];
     title = 'radio';
     descripition = 'The Mozek Radio component allows users to select one option from a set of predefined choices. It is designed to be intuitive and easy to use, providing a clear visual indication of the selected option. The component supports various configurations, including different orientations (horizontal or vertical) and customizable styles, making it versatile for use in forms, surveys, and other interactive interfaces.';
 

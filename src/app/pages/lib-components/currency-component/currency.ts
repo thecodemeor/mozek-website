@@ -1,3 +1,5 @@
+import { MozekApiTable } from 'src/app/assets/components/api-table';
+import { apiData } from 'src/app/assets/documents/api-data';
 import {
     Component,
     inject,
@@ -13,6 +15,7 @@ import { MozekCode } from "src/app/assets/components/codesample";
 @Component({
     selector: 'app-lib-component',
     imports: [
+        MozekApiTable,
     CommonModule,
     MozIcon,
     MozekCode,
@@ -22,6 +25,7 @@ import { MozekCode } from "src/app/assets/components/codesample";
     styleUrls: ['./currency.scss', '../lib-components.scss'],
 })
 export class Currency {
+    apiData = apiData['MozCurrency'] || [];
     title = 'currency'
     description = 'The currency component is designed to display monetary values in a clear and consistent format. It supports various currencies, allowing users to easily identify the type of currency being represented. The component can display both the currency symbol and code, along with properly formatted numbers, making it ideal for financial applications, e-commerce platforms, and any interface that requires the presentation of monetary information.'
     

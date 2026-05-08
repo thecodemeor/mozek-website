@@ -1,3 +1,5 @@
+import { MozekApiTable } from 'src/app/assets/components/api-table';
+import { apiData } from 'src/app/assets/documents/api-data';
 import {
     Component,
     inject,
@@ -13,6 +15,7 @@ import { MozekCode } from "src/app/assets/components/codesample";
 @Component({
     selector: 'app-lib-component',
     imports: [
+        MozekApiTable,
         CommonModule,
         MozekCode,
         MozBadge,
@@ -23,6 +26,7 @@ import { MozekCode } from "src/app/assets/components/codesample";
     styleUrls: ['./badge.scss', '../lib-components.scss'],
 })
 export class Badge {
+    apiData = apiData['MozBadge'] || [];
     title = 'badge'
     description = 'A badge is a small component that displays a number or status indicator, often used to show notifications or highlight important information.'
 

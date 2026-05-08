@@ -1,3 +1,5 @@
+import { MozekApiTable } from 'src/app/assets/components/api-table';
+import { apiData } from 'src/app/assets/documents/api-data';
 import {
     Component,
     inject,
@@ -21,6 +23,7 @@ type MozColorName =
 @Component({
     selector: 'app-lib-component',
     imports: [
+        MozekApiTable,
     CommonModule,
     MozekCode,
     MozIcon,
@@ -30,6 +33,7 @@ type MozColorName =
     styleUrls: ['./divider.scss', '../lib-components.scss'],
 })
 export class Divider {
+    apiData = apiData['MozDivider'] || [];
     title = 'divider';
     descripition = 'The Mozek Divider component provides a visual separator between sections of content. It supports various styling options, including different thicknesses, colors, and orientations. The component is designed to be responsive and accessible, ensuring a consistent look and feel across devices and for all users.';
 

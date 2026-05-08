@@ -1,3 +1,5 @@
+import { MozekApiTable } from 'src/app/assets/components/api-table';
+import { apiData } from 'src/app/assets/documents/api-data';
 import {
     Component,
     inject,
@@ -22,6 +24,7 @@ type MozButtonModel =
 @Component({
     selector: 'app-lib-component',
     imports: [
+        MozekApiTable,
     CommonModule,
     MozButton,
     MozIcon,
@@ -31,6 +34,7 @@ type MozButtonModel =
     styleUrls: ['./button.scss', '../lib-components.scss'],
 })
 export class Button {
+    apiData = apiData['MozButton'] || [];
     title = 'button'
     description = 'A button is a clickable element that triggers an action or event. It supports multiple styles (fill, outline, text, etc.), colors (primary, secondary, success, etc.), and can be disabled or have icons.'
 

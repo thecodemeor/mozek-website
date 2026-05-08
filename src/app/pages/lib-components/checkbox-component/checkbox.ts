@@ -1,3 +1,5 @@
+import { MozekApiTable } from 'src/app/assets/components/api-table';
+import { apiData } from 'src/app/assets/documents/api-data';
 import {
     Component,
     inject,
@@ -23,6 +25,7 @@ type MozColorName =
 @Component({
     selector: 'app-lib-component',
     imports: [
+        MozekApiTable,
     CommonModule,
     MozCheckboxGroup,
     MozCheckbox,
@@ -33,6 +36,7 @@ type MozColorName =
     styleUrls: ['./checkbox.scss', '../lib-components.scss'],
 })
 export class Checkbox {
+    apiData = apiData['MozCheckbox'] || [];
     title = 'checkbox'
     description = 'The checkbox component allows users to select one or more options from a set. It can be used in forms, settings, and anywhere multiple selections are needed. The component supports various states, colors, and groupings for enhanced user interaction and visual appeal.'
 

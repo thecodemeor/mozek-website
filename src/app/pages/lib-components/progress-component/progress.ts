@@ -1,3 +1,5 @@
+import { MozekApiTable } from 'src/app/assets/components/api-table';
+import { apiData } from 'src/app/assets/documents/api-data';
 import {
     Component,
     inject,
@@ -24,6 +26,7 @@ type MozProgressModel =
 @Component({
     selector: 'app-lib-component',
     imports: [
+        MozekApiTable,
     CommonModule,
     MozekCode,
     MozIcon,
@@ -33,6 +36,7 @@ type MozProgressModel =
     styleUrls: ['./progress.scss', '../lib-components.scss'],
 })
 export class Progress {
+    apiData = apiData['MozProgress'] || [];
     title = 'progress';
     descripition = 'The Mozek Progress component provides a visual representation of ongoing processes or tasks. It offers various styles and customization options, allowing developers to choose the most suitable design for their applications. The component is designed to be responsive and accessible, ensuring a seamless user experience across different devices and for all users.';
 

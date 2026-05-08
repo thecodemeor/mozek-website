@@ -1,3 +1,5 @@
+import { MozekApiTable } from 'src/app/assets/components/api-table';
+import { apiData } from 'src/app/assets/documents/api-data';
 import {
     Component,
     inject,
@@ -12,6 +14,7 @@ import { ResponsiveService } from 'src/app/services/responsive.service';
 @Component({
     selector: 'app-lib-component',
     imports: [
+        MozekApiTable,
     CommonModule,
     MozIcon,
     MozPagination,
@@ -21,6 +24,7 @@ import { ResponsiveService } from 'src/app/services/responsive.service';
     styleUrls: ['./pagination.scss', '../lib-components.scss'],
 })
 export class Pagination {
+    apiData = apiData['MozPagination'] || [];
     title = 'pagination';
     descripition = 'The Mozek Pagination component provides a user-friendly interface for navigating through large sets of data or content. It allows users to easily switch between different pages of information, improving the overall user experience. The component is designed to be responsive and customizable, making it suitable for various applications and screen sizes.';
 

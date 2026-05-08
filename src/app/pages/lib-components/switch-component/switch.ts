@@ -1,3 +1,5 @@
+import { MozekApiTable } from 'src/app/assets/components/api-table';
+import { apiData } from 'src/app/assets/documents/api-data';
 import {
     Component,
     inject,
@@ -21,6 +23,7 @@ export type MozColorName =
 @Component({
     selector: 'app-lib-component',
     imports: [
+        MozekApiTable,
     CommonModule,
     MozekCode,
     MozIcon,
@@ -30,6 +33,7 @@ export type MozColorName =
     styleUrls: ['./switch.scss', '../lib-components.scss'],
 })
 export class Switch {
+    apiData = apiData['MozSwitch'] || [];
     title = 'switch';
     descripition = 'The Mozek Switch component is a versatile UI element that allows users to toggle between two states, such as on/off or enabled/disabled. It is designed with accessibility and responsiveness in mind, ensuring a seamless user experience across different devices and screen sizes. The switch can be customized with various colors and styles to fit the overall design of the application, making it an essential component for interactive interfaces.';
 

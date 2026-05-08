@@ -105,7 +105,6 @@
             top: 0; left: 0;
             width: 80%;
             transition: all 0.3s ease-out;
-            // transform: translateX(-100%);
             z-index: 100;
         }
     }
@@ -251,6 +250,7 @@
     .content {
         width: 100%; height: fit-content;
         padding: 0 var(--moz-space-1) var(--moz-space-1);
+        overflow-x: auto;
 
         .sample-box {
             display: flex;
@@ -273,6 +273,7 @@
             padding: var(--moz-space-1);
             border-radius: var(--moz-radius-default);
             background: #1f1f1f;
+            overflow-x: auto;
 
             .open-code {
                 width: 100%; height: fit-content;

@@ -1,3 +1,5 @@
+import { MozekApiTable } from 'src/app/assets/components/api-table';
+import { apiData } from 'src/app/assets/documents/api-data';
 import {
     Component,
     inject,
@@ -17,6 +19,7 @@ type MozInputModel =
 @Component({
     selector: 'app-lib-component',
     imports: [
+        MozekApiTable,
     CommonModule,
     MozekCode,
     MozIcon,
@@ -26,6 +29,7 @@ type MozInputModel =
     styleUrls: ['./input.scss', '../lib-components.scss'],
 })
 export class Input {
+    apiData = apiData['MozInput'] || [];
     title = 'input';
     descripition = 'The Mozek Input component is a versatile form control that allows users to enter and edit text. It supports various input types, including text, password, email, and more. The component is designed with accessibility in mind, providing features such as labels, placeholders, and error messages to enhance the user experience. Additionally, it offers customization options for styling and validation, making it a flexible choice for any form design.';
 

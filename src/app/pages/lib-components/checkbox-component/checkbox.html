@@ -144,4 +144,35 @@
             </div>
         </div>
     </div>
+
+    <div class="sample">
+        <div class="title">
+            <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
+            Usage Guide
+        </div>
+        <div class="description pb-0">
+            <p>1. Import the component in your module or standalone component:</p>
+            <div class="code-sect mb-2" style="background: rgba(0,0,0,0.5); padding: 1rem; border-radius: 8px; font-family: monospace; color: #fff;">
+                import {{ '{' }} MozCheckbox {{ '}' }} from 'mozek-angular';<br>
+                <br>
+                @Component({{ '{' }}<br>
+                &nbsp;&nbsp;imports: [MozCheckbox]<br>
+                {{ '}' }})
+            </div>
+            <p>2. Add the selector to your HTML template:</p>
+            <div class="code-sect mb-2" style="background: rgba(0,0,0,0.5); padding: 1rem; border-radius: 8px; font-family: monospace; color: #fff;">
+                &lt;moz-checkbox&gt;Content&lt;/moz-checkbox&gt;
+            </div>
+        </div>
+    </div>
+
+    <div class="sample">
+        <div class="title">
+            <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
+            API Reference
+        </div>
+        <div class="content p-2">
+            <mozek-api-table [data]="apiData"></mozek-api-table>
+        </div>
+    </div>
 </div>
