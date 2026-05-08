@@ -1,0 +1,47 @@
+<div id="core-concepts" class="first-sect section" [style.padding-top]="screen() === 'mobile' ? '3.5rem' : '4rem'">
+    <div class="sect-title">
+        <div class="title container">
+            <div class="flex items-center gap-2" [class.flex-col]="screen() === 'mobile'">
+                <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
+                Module 2: Core Concepts
+            </div>
+        </div>
+    </div>
+    <div class="shelf">
+        <div class="guide-card container">
+            <h3 class="mb-2">The Signal-Based Philosophy</h3>
+            <p>
+                Mozek is not just another UI library; it is designed from the ground up to embrace Angular's new reactive primitive: <strong>Signals</strong>.
+                But why does this matter to you as a developer?
+            </p>
+            <br>
+
+            <div class="prof-note mt-2 mb-4" style="background: rgba(var(--moz-color-primary-rgb), 0.1); padding: 1rem; border-radius: 8px; border-left: 4px solid var(--moz-color-primary);">
+                <strong>Professor's Note:</strong> Think of Signals as variables that can notify the framework when their value changes. This removes the need for Zone.js to guess when to re-render, making your apps lightning-fast.
+            </div>
+
+            <h5 class="mb-1">Signals vs. RxJS</h5>
+            <p>
+                Historically, Angular developers relied heavily on RxJS (Observables, BehaviorSubjects) to manage state. While incredibly powerful for handling asynchronous events (like HTTP requests or WebSockets), RxJS is often overkill for simple UI state (like "is this drawer open?").
+            </p>
+            <br>
+            <p>
+                Mozek uses Signals for synchronous UI state. This means:
+            </p>
+            <ul style="list-style-type: disc; margin-left: 2rem; margin-bottom: 2rem; line-height: 1.6;">
+                <li><strong>No more `async` pipes</strong> for simple component state.</li>
+                <li><strong>Glitches are gone</strong>: Signals ensure that dependencies are evaluated in the correct order.</li>
+                <li><strong>Fine-grained reactivity</strong>: Angular updates only the exact parts of the DOM that changed, not the entire component tree.</li>
+            </ul>
+
+            <h5 class="mb-1">How Mozek Uses Signals</h5>
+            <p>
+                Under the hood, almost every property in a Mozek component is backed by a Signal. When you bind an input to a Mozek component, we react to changes instantly without needing `ngOnChanges`.
+            </p>
+            <br>
+            <p>
+                This ensures that your components are always in sync, your code is easier to read, and your app's performance stays top-notch.
+            </p>
+        </div>
+    </div>
+</div>

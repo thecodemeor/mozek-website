@@ -32,23 +32,24 @@ export class App {
   private readonly router = inject(Router);
 
   readonly screen = computed(() => this.responsive.breakpoint());
-  readonly navtab = ['home', 'components', 'utilities', 'tokens'] ;
+  readonly navtab = ['home', 'installation', 'core-concepts', 'components'] ;
   readonly landingpage = [
     { 
-      title: 'Mozek',
+      title: 'Mozek Learning Hub',
       link: [
-        { name: 'Get Started', url: 'get-started' },
+        { name: 'Module 1: Installation', url: 'installation' },
+        { name: 'Module 2: Core Concepts', url: 'core-concepts'},
         { name: 'Updates', url: 'updates'}
       ]
     },
     { 
-      title: 'Resources',
+      title: 'Component Reference',
       link: [
-        { name: 'Components', url: 'components'},
+        { name: 'Module 3: Components', url: 'components'},
         { name: 'Icons', url: 'icons'},
-        { name: 'Themes', url: 'themes'},
-        { name: 'Utilities', url: 'utilities'},
-        { name: 'Tokens', url: 'tokens'}
+        { name: 'Module 5: Themes', url: 'themes'},
+        { name: 'Module 4: Utilities', url: 'utilities'},
+        { name: 'Module 4: Tokens', url: 'tokens'}
       ]
     },
     { 

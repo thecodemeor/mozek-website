@@ -7,7 +7,7 @@
             <div class="dashboard-btns">
                 @for (component of components; track component) {
                     <div class="component-btn" [class.active]="componentActive() === component" (click)="navigateTo(component)">
-                        <p>{{ component.split('-').join(' ') }}</p>
+                        <p>{{ humanize(component) }}</p>
                         <div class="component-line">
                             <div class="cl1"></div>
                             <div class="cl2"></div>

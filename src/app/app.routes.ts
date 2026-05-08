@@ -4,7 +4,8 @@ export const routes: Routes = [
     { path: '', pathMatch: 'full', redirectTo: 'home' },
 
     { path: 'home', loadComponent: () => import('./pages/home/home').then(m => m.Home) },
-    { path: 'get-started', loadComponent: () => import('./pages/get-started/get-started').then(m => m.GetStarted) },
+    { path: 'installation', loadComponent: () => import('./pages/installation/installation').then(m => m.Installation) },
+    { path: 'core-concepts', loadComponent: () => import('./pages/core-concepts/core-concepts').then(m => m.CoreConcepts) },
     { path: 'updates', loadComponent: () => import('./pages/update-ver/updates').then(m => m.Updates) },
     { path: 'components', loadComponent: () => import('./pages/lib-components/lib-components').then(m => m.LibComponents),
         children: [

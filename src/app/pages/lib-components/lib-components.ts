@@ -35,6 +35,10 @@ export class LibComponents implements OnInit {
         'input', 'pagination', 'progress', 'radio', 'select', 'switch'
     ];
 
+    humanize(component: string): string {
+        return component.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+    }
+
     componentActive = signal('');
 
     ngOnInit() {

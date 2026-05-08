@@ -1,0 +1,52 @@
+@use "mozek-angular/src/styles" as moz;
+
+:host {
+    width: 100%; height: fit-content;
+
+    .container {
+        margin: 0 auto;
+        max-width: 100%;
+        @media (min-width: 1400px) { max-width: 72rem;}
+    }
+}
+
+.sect-title {
+    display: flex;
+    width: 100%; height: fit-content;
+    padding: var(--moz-space-5);
+    background-color: var(--moz-color-primary-lite);
+
+    .title {
+        display: flex;
+        width: 100%; height: fit-content;
+        align-items: center;
+
+        font-weight: 500;
+        color: var(--moz-color-primary);
+        letter-spacing: -0.1rem;
+        @include moz.moz-typography('title-sm');
+
+        img { width: 2.2rem; height: auto;}
+    }
+}
+
+.shelf {
+    display: flex;
+    width: 100%; height: fit-content;
+    padding: var(--moz-space-3) var(--moz-space-5);
+
+    .guide-card {
+        display: flex;
+        width: 100%; height: fit-content;
+        padding: var(--moz-space-4);
+        background-color: var(--moz-color-background);
+        border: solid 1px var(--moz-color-border);
+        border-radius: var(--moz-radius-lg);
+        flex-direction: column;
+        box-shadow:
+            rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+            rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+
+        p { line-height: 1.6;}
+    }
+}

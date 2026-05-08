@@ -62,27 +62,21 @@ export class Home implements AfterViewInit, OnDestroy {
   }
 
   provided = [
-    'Mozek UI components, built specifically for Angular',
-    'A flexible theme color system',
-    'Design tokens and handy utility classes',
-    'Free to use, for everyone',
+    'Performance: Fine-grained reactivity ensures only what changes, updates.',
+    'Simplicity: No more async pipes for simple state management.',
+    'Developer Experience: Intuitive API designed specifically for Angular 18+.',
   ];
 
   features = [
     {
-      name: 'Components',
+      name: 'Deep Dive: Core Concepts',
       img: 'assets/images/components-image.svg',
-      url: 'components'
+      url: 'core-concepts'
     },
     {
-      name: 'Color Palette',
+      name: 'Component Reference',
       img: 'assets/images/color-palette-image.svg',
-      url: 'themes'
-    },
-    {
-      name: 'Icons',
-      img: 'assets/images/icon-image.svg',
-      url: 'icons'
+      url: 'components'
     },
   ]
 

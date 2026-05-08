@@ -8,16 +8,16 @@ import { ResponsiveService } from 'src/app/services/responsive.service';
 import { MozButtonIcon, MozIcon, MozCard } from 'mozek-angular';
 
 @Component({
-    selector: 'app-get-started',
+    selector: 'app-installation',
     standalone: true,
     imports: [
         MozButtonIcon,
         MozIcon
     ],
-    templateUrl: './get-started.html',
-    styleUrl: './get-started.scss',
+    templateUrl: './installation.html',
+    styleUrl: './installation.scss',
 })
-export class GetStarted {
+export class Installation {
     public responsive = inject(ResponsiveService);
     screen = computed(() => this.responsive.breakpoint());
 
