@@ -16,10 +16,11 @@ type MozProgressModel =
     | 'hourglass'
     | 'zoomies'
     | 'line_wobble'
-    | 'infinity'
     | 'cardio'
     | 'helix'
     | 'newton'
+    | 'mirage'
+    | 'blank'
 
 @Component({
     selector: 'app-lib-component',
@@ -39,7 +40,7 @@ export class Progress {
     public responsive = inject(ResponsiveService);
     screen = computed(() => this.responsive.breakpoint());
 
-    models: MozProgressModel[] = ['ring', 'line_spinner', 'hourglass', 'zoomies', 'line_wobble', 'infinity', 'cardio', 'helix', 'newton'];
+    models: MozProgressModel[] = ['ring', 'line_spinner', 'hourglass', 'zoomies', 'line_wobble', 'cardio', 'helix', 'newton', 'mirage', 'blank'];
     sizes: ('20' | '40' | '60' | '80' | '100')[] = ['20', '40', '60', '80', '100'];
     speeds = ['0.5', '1', '1.5', '2', '4'];
 
