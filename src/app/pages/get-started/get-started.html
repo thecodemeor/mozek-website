@@ -3,55 +3,73 @@
         <div class="title container">
             <div class="flex items-center gap-2" [class.flex-col]="screen() === 'mobile'">
                 <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
-                Get Started
+                Getting Started
             </div>
+            <p class="subtitle">Quickly integrate Mozek into your Angular application.</p>
         </div>
     </div>
     <div class="shelf">
         <div class="guide-card container">
-            <p>
-                This guide explains how to set up your Angular project to begin using Mozek, a high-performance, signal-based component library.<br><br>
-                This guide assumes that the <span class="primary">Angular CLI</span> has already been installed.
-            </p><br><br>
+            <div class="prose">
+                <p>
+                    Mozek is a modern, high-performance UI component library built entirely on Angular Signals.
+                    This guide will walk you through setting up Mozek in a new or existing Angular project.
+                </p>
 
-            <h5 class="mb-1">Install Mozek</h5>
-            <p>Add Angular Material to your application by running the following command:</p>
-            <div class="code-sect">
-                <p class="code" #copyNpm>npm install @mozek-angular</p>
+                <div class="note-box">
+                    <strong>Professor's Note:</strong> Before proceeding, ensure you have <a href="https://nodejs.org/" target="_blank">Node.js</a> installed and the <a href="https://angular.io/cli" target="_blank">Angular CLI</a> available in your environment.
+                </div>
+            </div>
+
+            <h5 class="section-heading">1. Install the Package</h5>
+            <p>Install the <code>mozek-angular</code> package via npm. This provides all the core components and styles you need.</p>
+            <div class="code-sect dark-code">
+                <p class="code" #copyNpm>npm install mozek-angular</p>
                 <moz-button-icon model="text" (click)="copyText(copyNpm, 'copyNpm')" gap>
                     @if (textCopied('copyNpm')) { <moz-icon color="success">check_circle</moz-icon>}
-                    @else { <moz-icon>copy</moz-icon>}
+                    @else { <moz-icon style="color: white;">copy</moz-icon>}
                 </moz-button-icon>
             </div>
-            <p>You're done! Mozek is now configured to be used in your application.</p><br><br>
-            
-            <h5 class="mb-1">Import a Component</h5>
-            <p>To use a Mozek component, simply import it into your Angular component:</p>
-            <div class="code-sect">
+
+            <h5 class="section-heading">2. Setup Styles</h5>
+            <p>Ensure that your application can load the required styles. If you are using SCSS, you can import Mozek styles in your global <code>styles.scss</code> file:</p>
+            <div class="code-sect dark-code">
+                <p class="code" #copyStyles>@use "mozek-angular/src/styles" as moz;</p>
+                <moz-button-icon model="text" (click)="copyText(copyStyles, 'copyStyles')" gap>
+                    @if (textCopied('copyStyles')) { <moz-icon color="success">check_circle</moz-icon>}
+                    @else { <moz-icon style="color: white;">copy</moz-icon>}
+                </moz-button-icon>
+            </div>
+
+            <h5 class="section-heading">3. Import a Component</h5>
+            <p>Mozek components are provided as <strong>Standalone Components</strong>. Import them directly into the components where they are needed.</p>
+            <div class="code-sect dark-code">
                 <p class="code" #copyImport>import &#123; MozButton &#125; from 'mozek-angular';</p>
                 <moz-button-icon model="text" (click)="copyText(copyImport, 'copyImport')" gap>
                     @if (textCopied('copyImport')) { <moz-icon color="success">check_circle</moz-icon>}
-                    @else { <moz-icon>copy</moz-icon>}
+                    @else { <moz-icon style="color: white;">copy</moz-icon>}
                 </moz-button-icon>
-            </div><br>
-            <p>Then, add the component to your template:</p>
-            <div class="code-sect">
-                <p class="code" #copyTag>&lt;moz-button&gt;Click Me&lt;/moz-button&gt;</p>
+            </div>
+
+            <p class="mt-2">Then, use the component in your template:</p>
+            <div class="code-sect dark-code">
+                <p class="code" #copyTag>&lt;moz-button model="fill" color="primary"&gt;Click Me&lt;/moz-button&gt;</p>
                 <moz-button-icon model="text" (click)="copyText(copyTag, 'copyTag')" gap>
                     @if (textCopied('copyTag')) { <moz-icon color="success">check_circle</moz-icon>}
-                    @else { <moz-icon>copy</moz-icon>}
+                    @else { <moz-icon style="color: white;">copy</moz-icon>}
                 </moz-button-icon>
-            </div><br><br>
-            <h5 class="mb-1">Run Your Application</h5>
-            <p>To run your application, use the following command:</p>
-            <div class="code-sect">
+            </div>
+
+            <h5 class="section-heading">4. Serve Your App</h5>
+            <p>Start your development server to see your new component in action.</p>
+            <div class="code-sect dark-code">
                 <p class="code" #copyServe>ng serve</p>
                 <moz-button-icon model="text" (click)="copyText(copyServe, 'copyServe')" gap>
                     @if (textCopied('copyServe')) { <moz-icon color="success">check_circle</moz-icon>}
-                    @else { <moz-icon>copy</moz-icon>}
+                    @else { <moz-icon style="color: white;">copy</moz-icon>}
                 </moz-button-icon>
             </div>
-            <p>Open your browser and navigate to <span class="primary">http://localhost:4200</span> to see Mozek in action!</p>
+            <p>Navigate to <span class="primary font-bold">http://localhost:4200</span> in your browser to view the application.</p>
         </div>
     </div>
 </div>
