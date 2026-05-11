@@ -13,7 +13,17 @@
     <div class="sample">
         <div class="title">
             <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
-            Model
+            Overview
+        </div>
+        <div class="description pb-0">
+            <p>The <code>moz-button</code> component allows users to take actions with a single click. It comes with a variety of visual models and color schemes to indicate its purpose and hierarchical importance on the page.</p>
+        </div>
+    </div>
+
+    <div class="sample">
+        <div class="title">
+            <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
+            Models (Live Preview & Variants)
         </div>
         <div class="description pb-0">
             <p>Each model has a distinct visual style and use case. Choose the appropriate model based on the context and desired visual hierarchy.</p>
@@ -51,7 +61,7 @@
     <div class="sample">
         <div class="title">
             <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
-            Disabled State
+            States (Disabled)
         </div>
         <div class="description">
             <p>Buttons in a disabled state are non-interactive and visually indicate that the action is not available.</p>
@@ -85,7 +95,7 @@
     <div class="sample">
         <div class="title">
             <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
-            Full Width
+            Sizes / Full Width
         </div>
         <div class="description pb-0">
             <p>Buttons with full width are useful for creating a consistent and visually appealing layout, especially in forms or when aligning buttons to the edges of their container.</p>
@@ -113,6 +123,50 @@
                         </p>
                     }
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sample">
+        <div class="title">
+            <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
+            API Reference Table
+        </div>
+        <div class="description pb-0">
+            <p>Properties and events available on the <code>moz-button</code> component.</p>
+        </div>
+        <div class="content">
+            <div class="api-table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>@Input() model: 'fill' | 'flavor' | 'outline' | 'text' | 'tonal' | 'elevated' | 'glass'</code></td>
+                            <td>Sets the visual variant of the button. Defaults to <code>'fill'</code>.</td>
+                        </tr>
+                        <tr>
+                            <td><code>@Input() color: 'primary' | 'secondary' | 'success' | 'warn' | 'danger'</code></td>
+                            <td>Sets the theme color for the button. Defaults to <code>'primary'</code>.</td>
+                        </tr>
+                        <tr>
+                            <td><code>@Input() disabled: boolean</code></td>
+                            <td>When true, the button is rendered non-interactive. Defaults to <code>false</code>.</td>
+                        </tr>
+                        <tr>
+                            <td><code>@Input() full: boolean</code></td>
+                            <td>When true, the button spans 100% width of its container. Defaults to <code>false</code>.</td>
+                        </tr>
+                        <tr>
+                            <td><code>@Output() click: MouseEvent</code></td>
+                            <td>Native click event emitted when the button is pressed.</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>

@@ -11,7 +11,7 @@ export const routes: Routes = [
             { path: '', redirectTo: 'button', pathMatch: 'full' },
             { path: 'accordion', loadComponent: () => import('./pages/lib-components/accordion-component/accordion').then(m => m.Accordion) },
             { path: 'badge', loadComponent: () => import('./pages/lib-components/badge-component/badge').then(m => m.Badge) },
-            { path: 'button', loadComponent: () => import('./pages/lib-components/button-component/button').then(m => m.Button) },
+            { path: 'button', loadComponent: () => import('./pages/lib-components/button-component/button').then(m => m.ButtonComponent) },
             { path: 'button-icon', loadComponent: () => import('./pages/lib-components/button-icon-component/button-icon').then(m => m.ButtonIcon) },
             { path: 'card', loadComponent: () => import('./pages/lib-components/card-component/card').then(m => m.Card) },
             { path: 'checkbox', loadComponent: () => import('./pages/lib-components/checkbox-component/checkbox').then(m => m.Checkbox) },
