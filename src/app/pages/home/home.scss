@@ -14,6 +14,10 @@
         border-bottom: solid 0.15rem var(--moz-color-primary-lite);
         &:nth-last-child(1) { border: none;}
     }
+
+    .bg-white {
+        background-color: var(--moz-color-background);
+    }
 }
 
 .hero {
@@ -37,6 +41,7 @@
     .hero-update {
         position: relative;
         width: 28rem;
+        height: 100%;
         min-height: 3rem;
         .card-outer {
             position: absolute;
@@ -45,7 +50,6 @@
             padding: var(--moz-space-1);
             border-radius: calc(var(--moz-radius-default) + var(--moz-space-2));
             background-image: linear-gradient(-160deg, var(--moz-color-primary-lite), var(--moz-color-secondary-lite));
-            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
             z-index: 20;
             .card-gradient {
                 position: relative;
@@ -76,6 +80,7 @@
                 .update-box {
                     display: flex;
                     width: 100%; height: fit-content;
+                    padding-bottom: var(--moz-space-2);
                     border-bottom: solid 0.15rem var(--moz-color-border);
                     gap: var(--moz-space-2);
 
@@ -144,6 +149,7 @@
             background-size: 40%;
             background-repeat: no-repeat;
             background-position: 120% 5rem;
+            border-color: var(--moz-color-primary);
             background-color: #f0f1f3;
 
             @media (max-width: 546px) { background-position: 120% 8rem;}
@@ -162,6 +168,7 @@
         width: 28rem;
         flex-direction: column;
 
+        .spacer { flex: 1; min-height: 2rem; }
         .height-mobile { height: calc(60dvh - 3rem);}
 
         .speed-action {
@@ -235,8 +242,8 @@
             flex: 1 1 12rem;
             display: flex;
             width: 100%; height: auto;
-            padding: var(--moz-space-1);
-            border: solid 0.15rem var(--moz-color-primary);
+            padding: var(--moz-space-1) var(--moz-space-1);
+            border: solid 1px var(--moz-color-primary);
             border-radius: var(--moz-radius-default);
             background: var(--moz-color-background);
             text-align: center;
@@ -246,8 +253,11 @@
 
             .feature-title {
                 width: 100%;
-                color: var(--moz-color-primary);
-                @include moz.moz-typography('title-sm');
+                padding: var(--moz-space-1) 0;
+                color: var(--moz-color-background);
+                border-radius: var(--moz-radius-sm);
+                background-color: var(--moz-color-primary);
+                @include moz.moz-typography('label-sm');
             }
 
             .feature-image {

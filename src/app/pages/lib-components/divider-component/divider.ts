@@ -31,7 +31,7 @@ type MozColorName =
 })
 export class Divider {
     title = 'divider';
-    descripition = 'The Mozek Divider component provides a visual separator between sections of content. It supports various styling options, including different thicknesses, colors, and orientations. The component is designed to be responsive and accessible, ensuring a consistent look and feel across devices and for all users.';
+    description = 'The Mozek Divider component provides a visual separator between sections of content. It supports various styling options, including different thicknesses, colors, and orientations. The component is designed to be responsive and accessible, ensuring a consistent look and feel across devices and for all users.';
 
     public responsive = inject(ResponsiveService);
     screen = computed(() => this.responsive.breakpoint());

@@ -24,7 +24,7 @@ import { MozekCode } from 'src/app/assets/components/codesample';
 })
 export class Radio {
     title = 'radio';
-    descripition = 'The Mozek Radio component allows users to select one option from a set of predefined choices. It is designed to be intuitive and easy to use, providing a clear visual indication of the selected option. The component supports various configurations, including different orientations (horizontal or vertical) and customizable styles, making it versatile for use in forms, surveys, and other interactive interfaces.';
+    description = 'The Mozek Radio component allows users to select one option from a set of predefined choices. It is designed to be intuitive and easy to use, providing a clear visual indication of the selected option. The component supports various configurations, including different orientations (horizontal or vertical) and customizable styles, making it versatile for use in forms, surveys, and other interactive interfaces.';
 
     public responsive = inject(ResponsiveService);
     screen = computed(() => this.responsive.breakpoint());

@@ -31,7 +31,7 @@ export type MozColorName =
 })
 export class Switch {
     title = 'switch';
-    descripition = 'The Mozek Switch component is a versatile UI element that allows users to toggle between two states, such as on/off or enabled/disabled. It is designed with accessibility and responsiveness in mind, ensuring a seamless user experience across different devices and screen sizes. The switch can be customized with various colors and styles to fit the overall design of the application, making it an essential component for interactive interfaces.';
+    description = 'The Mozek Switch component is a versatile UI element that allows users to toggle between two states, such as on/off or enabled/disabled. It is designed with accessibility and responsiveness in mind, ensuring a seamless user experience across different devices and screen sizes. The switch can be customized with various colors and styles to fit the overall design of the application, making it an essential component for interactive interfaces.';
 
     public responsive = inject(ResponsiveService);
     screen = computed(() => this.responsive.breakpoint());

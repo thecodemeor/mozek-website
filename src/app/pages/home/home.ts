@@ -5,7 +5,9 @@ import {
   OnDestroy,
   computed,
   ViewChild,
-  ElementRef
+  ElementRef,
+  NgZone,
+  signal
 } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -23,13 +25,14 @@ import { MozCard, MozCardBody, MozButton } from 'mozek-angular';
 })
 export class Home implements AfterViewInit, OnDestroy {
   private readonly router = inject(Router);
+  private readonly ngZone = inject(NgZone);
   
   public responsive = inject(ResponsiveService);
   screen = computed(() => this.responsive.breakpoint());
 
   @ViewChild('box1') box1!: ElementRef<HTMLDivElement>;
   @ViewChild('box2') box2!: ElementRef<HTMLDivElement>;
-  heightPx = '60dvh';
+  heightPx = signal('60dvh');
   private ro?: ResizeObserver;
   private rafId: number | null = null;
 
@@ -38,9 +41,11 @@ export class Home implements AfterViewInit, OnDestroy {
 
     this.rafId = requestAnimationFrame(() => {
       this.rafId = requestAnimationFrame(() => {
-        const h1 = this.box1.nativeElement.getBoundingClientRect().height ?? 0;
-        const h2 = this.box2.nativeElement.getBoundingClientRect().height ?? 0;
-        this.heightPx = `${h1 + h2}px`;
+        this.ngZone.run(() => {
+          const h1 = this.box1.nativeElement.getBoundingClientRect().height ?? 0;
+          const h2 = this.box2.nativeElement.getBoundingClientRect().height ?? 0;
+          this.heightPx.set(`${h1 + h2}px`);
+        });
       });
     });
   }
@@ -75,7 +80,7 @@ export class Home implements AfterViewInit, OnDestroy {
       url: 'components'
     },
     {
-      name: 'Color Palette',
+      name: 'Colors',
       img: 'assets/images/color-palette-image.svg',
       url: 'themes'
     },

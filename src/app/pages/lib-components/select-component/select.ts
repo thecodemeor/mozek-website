@@ -28,7 +28,7 @@ type MozInputModel =
 })
 export class Select {
     title = 'select';
-    descripition = "The Mozek Select component provides a customizable dropdown menu for selecting options. It supports single and multiple selection modes, as well as various styling options to match your application's design. The component is designed to be responsive and accessible, ensuring a seamless user experience across different devices and for all users.";
+    description = "The Mozek Select component provides a customizable dropdown menu for selecting options. It supports single and multiple selection modes, as well as various styling options to match your application's design. The component is designed to be responsive and accessible, ensuring a seamless user experience across different devices and for all users.";
 
     public responsive = inject(ResponsiveService);
     screen = computed(() => this.responsive.breakpoint());

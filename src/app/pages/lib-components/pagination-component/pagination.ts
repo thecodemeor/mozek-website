@@ -22,7 +22,7 @@ import { ResponsiveService } from 'src/app/services/responsive.service';
 })
 export class Pagination {
     title = 'pagination';
-    descripition = 'The Mozek Pagination component provides a user-friendly interface for navigating through large sets of data or content. It allows users to easily switch between different pages of information, improving the overall user experience. The component is designed to be responsive and customizable, making it suitable for various applications and screen sizes.';
+    description = 'The Mozek Pagination component provides a user-friendly interface for navigating through large sets of data or content. It allows users to easily switch between different pages of information, improving the overall user experience. The component is designed to be responsive and customizable, making it suitable for various applications and screen sizes.';
 
     public responsive = inject(ResponsiveService);
     screen = computed(() => this.responsive.breakpoint());

@@ -35,7 +35,7 @@ type MozProgressModel =
 })
 export class Progress {
     title = 'progress';
-    descripition = 'The Mozek Progress component provides a visual representation of ongoing processes or tasks. It offers various styles and customization options, allowing developers to choose the most suitable design for their applications. The component is designed to be responsive and accessible, ensuring a seamless user experience across different devices and for all users.';
+    description = 'The Mozek Progress component provides a visual representation of ongoing processes or tasks. It offers various styles and customization options, allowing developers to choose the most suitable design for their applications. The component is designed to be responsive and accessible, ensuring a seamless user experience across different devices and for all users.';
 
     public responsive = inject(ResponsiveService);
     screen = computed(() => this.responsive.breakpoint());

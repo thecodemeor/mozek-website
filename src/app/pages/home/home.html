@@ -9,9 +9,9 @@
                 </p>
             </div>
             <div #box1 class="hero-update" [class.w-full]="screen() !== 'desktop'">
-                <div class="card-outer" [style.height]="screen() !== 'desktop' ? '60dvh' : heightPx">
+                <div class="card-outer" [style.height]="screen() !== 'desktop' ? '60dvh' : heightPx()">
                     <moz-card model="outline" color="primary">
-                        <div class="flex flex-col w-full h-full p-1">
+                        <div class="flex flex-col w-full h-full p-1 bg-white">
                             <div class="flex flex-col w-full h-full card-gradient">
                                 <div class="flex flex-col w-full h-full scrollable z-10">
                                     <div class="flex flex-col w-full p-1 gap-4">
@@ -103,10 +103,10 @@
                     <div class="flex w-full flex-wrap gap-2">
                         @for (item of features; track item) {
                             <div class="features" (click)="navigateTo(item.url)">
-                                <h6 class="feature-title">{{item.name}}</h6>
                                 <moz-card-body>
                                     <img [src]="item.img" class="feature-image" [alt]="item.name">
                                 </moz-card-body>
+                                <h6 class="feature-title">{{item.name}}</h6>
                             </div>
                         }
                     </div>
