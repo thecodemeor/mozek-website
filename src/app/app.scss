@@ -79,62 +79,121 @@
 
 .footer {
     position: relative;
+    display: block;
     width: 100%; height: fit-content;
     padding: 0;
-    text-align: center;
-    color: var(--moz-color-text-secondary);
-    border-top: solid 0.2rem var(--moz-color-primary-lite);
+    border-top: solid 0.2rem var(--moz-color-primary);
 
-    &::before {
-        content: '';
+    .circle-background {
         position: absolute;
         top: 0; left: 0; right: 0; bottom: 0;
-        background-color: color-mix(in srgb, var(--moz-color-primary) 10%, var(--moz-color-background));
-        z-index: -1;
-    }
+        width: 100%; height: 100%;
+        background-color: color-mix(in srgb, var(--moz-color-primary) 20%, var(--moz-color-background) 80%);
+        overflow: hidden;
+        
+        .blue-blur {
+            position: absolute;
+            top: -2rem; left: -3%;
+            height: 60vh;
+            aspect-ratio: 1 / 1;
+            border-radius: 50%;
+            background-color: var(--moz-color-primary);
+            opacity: 0.25;
+            filter: blur(3rem);
+            animation: move-around1 10s infinite linear;
 
-    &::after {
-        content: '';
-        position: absolute;
-        top: 0; left: 0; right: 0; bottom: 0;
-        background-image: url(assets/images/logo/mozek_logo_vector.svg);
-        background-repeat: no-repeat;
-        background-size: 50%;
-        background-position: 130% 10%;
-        background-blend-mode: luminosity;
-        opacity: 0.05;
-        z-index: -1;
-    }
-
-    .box {
-        flex: 1 1 13rem;
-        display: flex;
-        width: 100%; height: auto;
-        padding: var(--moz-space-5) var(--moz-space-2) var(--moz-space-4);
-        border: solid 0.05rem var(--moz-color-primary-lite);
-        justify-content: start;
-        flex-direction: column;
-        gap: var(--moz-space-2);
-        &:first-child { border-left: none;}
-
-        h6, p { width: fit-content}
-
-        .text-btn {
-            font-size: 0.9rem;
-            transition: all var(--moz-duration);
-            cursor: pointer;
-            &:hover { color: var(--moz-color-primary);}
+            @keyframes move-around1 {
+                0% { transform: translate(0, 0); }
+                25% { transform: translate(-10rem, -8rem); }
+                50% { transform: translate(-20rem, 10rem); }
+                75% { transform: translate(-2rem, 8rem); }
+                100% { transform: translate(0, 0); }
+            }
+        }
+    
+        .violet-blur{
+            position: absolute;
+            top: 0; right: -40%;
+            height: 150vh;
+            aspect-ratio: 1 / 1;
+            border-radius: 50%;
+            background-color: var(--moz-color-secondary);
+            opacity: 0.25;
+            filter: blur(5rem);
+            animation: move-around2 15s infinite linear;
+            
+            @keyframes move-around2 {
+                0% { transform: translate(0, 0); }
+                25% { transform: translate(-14rem, 10rem); }
+                50% { transform: translate(15rem, 3rem); }
+                75% { transform: translate(-8rem, -5rem); }
+                100% { transform: translate(0, 0); }
+            }
         }
     }
 
-    footer {
+    .head-footer {
+        position: relative;
         display: flex;
         width: 100%; height: fit-content;
-        padding: var(--moz-space-1) var(--moz-space-1) var(--moz-space-5);
-        border-top: solid 0.08rem var(--moz-color-primary-lite);
+        max-width: 1000px;
+        margin: auto;
+        flex-wrap: wrap;
+        padding: var(--moz-space-3) 0 var(--moz-space-2);
+        z-index: 2;
+        
+            .space-logo {
+                width: fit-content; height: auto;
+                align-items: center;
+        
+                img {
+                    width: auto; height: 3rem;
+                    margin-bottom: var(--moz-space-2);
+                }
+        
+                p {
+                    @include moz.moz-typography('footer');
+                    width: fit-content;
+                }
+            }
+        
+            .short-link {
+                display: flex;
+                width: fit-content; height: auto;
+                gap: var(--moz-space-2);
+                
+                    .box {
+                        flex: 1 1 13rem;
+                        display: flex;
+                        width: 100%; height: auto;
+                        padding: 0 var(--moz-space-2) var(--moz-space-4);
+                        justify-content: start;
+                        flex-direction: column;
+                        gap: var(--moz-space-2);
+                        &:first-child { border-left: none;}
+                
+                        h6, p { width: fit-content; white-space: nowrap;}
+                
+                        .text-btn {
+                            font-size: 0.9rem;
+                            transition: all var(--moz-duration);
+                            cursor: pointer;
+                            &:hover { color: var(--moz-color-primary);}
+                        }
+                    }
+            }
+    }
+
+    footer {
+        position: relative;
+        display: flex;
+        width: 100%; height: fit-content;
+        padding: var(--moz-space-1) var(--moz-space-1);
+        border-top: solid 0.08rem var(--moz-color-primary);
         justify-content: space-between;
         flex-wrap: wrap;
         gap: var(--moz-space-2);
+        z-index: 3;
 
         @include moz.moz-typography('footer');
 

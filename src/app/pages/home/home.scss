@@ -23,7 +23,11 @@
 .hero {
     display: flex;
     width: 100%; height: fit-content;
-    background-color: color-mix(in srgb, var(--moz-color-primary-lite) 30%, transparent 70%);
+    background-image: linear-gradient(
+        140deg,
+        color-mix(in srgb, var(--moz-color-primary-lite) 30%, transparent 70%),
+        color-mix(in srgb, var(--moz-color-primary-lite) 70%, transparent 30%) 40%,
+    ); 
     .hero-title {
         flex: 1 1 0;
         display: flex;
@@ -158,10 +162,12 @@
 
         .list {
             display: flex;
+            align-items: center;
             gap: var(--moz-space-2);
 
             img { width: var(--moz-space-3); height: auto;}
         }
+
     }
     .about-2-sect {
         display: flex;
@@ -211,7 +217,7 @@
                 padding: var(--moz-space-2) var(--moz-space-3);
                 border-radius: var(--moz-radius-default);
                 background-image: linear-gradient(
-                    140deg,
+                    90deg,
                     color-mix(in srgb, var(--moz-color-primary-lite) 30%, transparent 70%),
                     color-mix(in srgb, var(--moz-color-primary-lite) 70%, transparent 30%) 40%,
                 ); 
@@ -243,12 +249,13 @@
             display: flex;
             width: 100%; height: auto;
             padding: var(--moz-space-1) var(--moz-space-1);
-            border: solid 1px var(--moz-color-primary);
+            border: solid 0.1rem var(--moz-color-primary);
             border-radius: var(--moz-radius-default);
             background: var(--moz-color-background);
             text-align: center;
             flex-direction: column;
             gap: var(--moz-space-1);
+            // corner-shape: squircle;
             cursor: pointer;
 
             .feature-title {

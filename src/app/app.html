@@ -44,15 +44,26 @@
 <router-outlet/>
 @if(!removeFooter()) {
     <div class="footer">
-        <div class="flex flex-wrap z-10">
-            @for (item of landingpage; track item) {
-                <div class="box">
-                    <h6>{{item.title}}</h6>
-                    @for (link of item.link; track link) {
-                        <p class="text-btn" (click)="navigateTo(link.url)">{{link.name}}</p>
-                    }
-                </div>
-            }
+        <div class="circle-background">
+            <div class="blue-blur"></div>
+            <div class="violet-blur"></div>
+        </div>
+        <div class="head-footer">
+            <div class="space-logo">
+                <img src="assets/images/logo/mozek_banner.svg" alt="Mozek Logo">
+                <p>Your showcase site for the Mozek UI Library.</p>
+            </div>
+            <span class="spacer"></span>
+            <div class="short-link">
+                @for (item of landingpage; track item) {
+                    <div class="box">
+                        <h6>{{item.title}}</h6>
+                        @for (link of item.link; track link) {
+                            <p class="text-btn" (click)="navigateTo(link.url)">{{link.name}}</p>
+                        }
+                    </div>
+                }
+            </div>
         </div>
         <footer>
             <span class="copyright">© 2024 Mozek. All rights reserved.</span>
