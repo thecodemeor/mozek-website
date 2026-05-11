@@ -1,7 +1,8 @@
 import {
-    Component,
-    inject,
-    computed
+  Component,
+  inject,
+  computed,
+  ChangeDetectionStrategy,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -10,39 +11,44 @@ import { MozIcon, MozRadioGroup, MozRadio } from 'mozek-angular';
 import { ResponsiveService } from 'src/app/services/responsive.service';
 import { MozekCode } from 'src/app/assets/components/codesample';
 
+/**
+ * RadioComponent
+ *
+ * A reusable page component to document and display the MozRadio library component.
+ *
+ * @example
+ * <moz-radio></moz-radio>
+ */
 @Component({
-    selector: 'app-lib-component',
-    imports: [
-    CommonModule,
-    MozekCode,
-    MozIcon,
-    MozRadioGroup,
-    MozRadio
-],
-    templateUrl: './radio.html',
-    styleUrls: ['./radio.scss', '../lib-components.scss'],
+  selector: 'app-lib-component',
+  standalone: true,
+  imports: [CommonModule, MozekCode, MozIcon, MozRadioGroup, MozRadio],
+  templateUrl: './radio.html',
+  styleUrls: ['./radio.scss', '../lib-components.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class Radio {
-    title = 'radio';
-    descripition = 'The Mozek Radio component allows users to select one option from a set of predefined choices. It is designed to be intuitive and easy to use, providing a clear visual indication of the selected option. The component supports various configurations, including different orientations (horizontal or vertical) and customizable styles, making it versatile for use in forms, surveys, and other interactive interfaces.';
+export class RadioComponent {
+  title = 'radio';
+  descripition =
+    'The Mozek Radio component allows users to select one option from a set of predefined choices. It is designed to be intuitive and easy to use, providing a clear visual indication of the selected option. The component supports various configurations, including different orientations (horizontal or vertical) and customizable styles, making it versatile for use in forms, surveys, and other interactive interfaces.';
 
-    public responsive = inject(ResponsiveService);
-    screen = computed(() => this.responsive.breakpoint());
+  public responsive = inject(ResponsiveService);
+  screen = computed(() => this.responsive.breakpoint());
 
-    ready = false
-    ngOnInit() {
-        this.ready = true;
-    }
-    moon: string = 'cresent'
-    planet: string = 'earth'
-    alien: string = 'zuzu'
-    property: string = 'condominium'
+  ready = false;
+  ngOnInit() {
+    this.ready = true;
+  }
+  moon: string = 'cresent';
+  planet: string = 'earth';
+  alien: string = 'zuzu';
+  property: string = 'condominium';
 
-    openMap: Record<string, boolean> = {};
-    openSource(key: string) {
-        this.openMap[key] = !this.openMap[key];
-    }
-    isOpen(key: string): boolean {
-        return !!this.openMap[key];
-    }
+  openMap: Record<string, boolean> = {};
+  openSource(key: string) {
+    this.openMap[key] = !this.openMap[key];
+  }
+  isOpen(key: string): boolean {
+    return !!this.openMap[key];
+  }
 }

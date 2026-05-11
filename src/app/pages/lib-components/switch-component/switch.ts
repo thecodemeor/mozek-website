@@ -1,7 +1,8 @@
 import {
-    Component,
-    inject,
-    computed
+  Component,
+  inject,
+  computed,
+  ChangeDetectionStrategy,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -11,39 +12,51 @@ import { ResponsiveService } from 'src/app/services/responsive.service';
 import { MozekCode } from 'src/app/assets/components/codesample';
 
 export type MozColorName =
-    | 'default'
-    | 'primary'
-    | 'secondary'
-    | 'success'
-    | 'warn'
-    | 'danger';
+  | 'default'
+  | 'primary'
+  | 'secondary'
+  | 'success'
+  | 'warn'
+  | 'danger';
 
+/**
+ * SwitchComponent
+ *
+ * A reusable page component to document and display the MozSwitch library component.
+ *
+ * @example
+ * <moz-switch></moz-switch>
+ */
 @Component({
-    selector: 'app-lib-component',
-    imports: [
-    CommonModule,
-    MozekCode,
-    MozIcon,
-    MozSwitch
-],
-    templateUrl: './switch.html',
-    styleUrls: ['./switch.scss', '../lib-components.scss'],
+  selector: 'app-lib-component',
+  standalone: true,
+  imports: [CommonModule, MozekCode, MozIcon, MozSwitch],
+  templateUrl: './switch.html',
+  styleUrls: ['./switch.scss', '../lib-components.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class Switch {
-    title = 'switch';
-    descripition = 'The Mozek Switch component is a versatile UI element that allows users to toggle between two states, such as on/off or enabled/disabled. It is designed with accessibility and responsiveness in mind, ensuring a seamless user experience across different devices and screen sizes. The switch can be customized with various colors and styles to fit the overall design of the application, making it an essential component for interactive interfaces.';
+export class SwitchComponent {
+  title = 'switch';
+  descripition =
+    'The Mozek Switch component is a versatile UI element that allows users to toggle between two states, such as on/off or enabled/disabled. It is designed with accessibility and responsiveness in mind, ensuring a seamless user experience across different devices and screen sizes. The switch can be customized with various colors and styles to fit the overall design of the application, making it an essential component for interactive interfaces.';
 
-    public responsive = inject(ResponsiveService);
-    screen = computed(() => this.responsive.breakpoint());
+  public responsive = inject(ResponsiveService);
+  screen = computed(() => this.responsive.breakpoint());
 
-    colors: MozColorName[] = ['primary', 'secondary', 'success', 'warn', 'danger'];
-    checked: boolean = false;
+  colors: MozColorName[] = [
+    'primary',
+    'secondary',
+    'success',
+    'warn',
+    'danger',
+  ];
+  checked: boolean = false;
 
-    openMap: Record<string, boolean> = {};
-    openSource(key: string) {
-        this.openMap[key] = !this.openMap[key];
-    }
-    isOpen(key: string): boolean {
-        return !!this.openMap[key];
-    }
+  openMap: Record<string, boolean> = {};
+  openSource(key: string) {
+    this.openMap[key] = !this.openMap[key];
+  }
+  isOpen(key: string): boolean {
+    return !!this.openMap[key];
+  }
 }

@@ -7,31 +7,3 @@
             var(--moz-color-grey-lite) 0.1rem 0.5rem
         ) !important;
 }
-.api-table-container {
-    overflow-x: auto;
-    margin-top: var(--moz-space-4, 1rem);
-
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        text-align: left;
-
-        th, td {
-            padding: var(--moz-space-2, 0.5rem) var(--moz-space-3, 0.75rem);
-            border-bottom: 1px solid var(--moz-color-grey-lite, #eee);
-        }
-
-        th {
-            font-weight: 600;
-            background-color: var(--moz-color-background-secondary, #f9f9f9);
-        }
-
-        code {
-            font-family: "Courier Prime", monospace;
-            color: var(--moz-color-primary, #007bff);
-            background-color: rgba(0, 0, 0, 0.04);
-            padding: 0.1rem 0.3rem;
-            border-radius: 4px;
-        }
-    }
-}
