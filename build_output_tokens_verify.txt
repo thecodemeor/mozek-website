@@ -1,0 +1,28 @@
+
+> mozek@0.0.0 build
+> ng build
+
+❯ Building...
+✔ Building...
+Application bundle generation failed. [3.355 seconds] - 2026-05-14T08:25:16.325Z
+
+▲ [WARNING] NG8113: All imports are unused [plugin angular-compiler]
+
+    src/app/pages/lib-tokens/lib-tokens.ts:13:4:
+      13 │     imports: [
+         ╵     ~~~~~~~
+
+
+✘ [ERROR] NG5002: Unexpected closing tag "span". It may happen when the tag has already been closed by another tag. For more info see https://www.w3.org/TR/html5/syntax.html#closing-elements-that-have-implied-end-tags [plugin angular-compiler]
+
+    src/app/pages/lib-tokens/lib-tokens.html:351:12:
+      351 │             </span>
+          ╵             ~~~~~~~
+
+  Error occurs in the template of component LibTokens.
+
+    src/app/pages/lib-tokens/lib-tokens.ts:17:17:
+      17 │     templateUrl: './lib-tokens.html',
+         ╵                  ~~~~~~~~~~~~~~~~~~~
+
+

@@ -8,7 +8,9 @@ import { CommonModule } from '@angular/common';
 import { MozAccordion, MozAccordionItem, MozIcon } from 'mozek-angular';
 
 import { ResponsiveService } from 'src/app/services/responsive.service';
+import { DocService } from 'src/app/services/doc.service';
 import { MozekCode } from "src/app/assets/components/codesample";
+import { MozekDividerFileCode } from "src/app/assets/components/codedividersample";
 
 @Component({
     selector: 'app-lib-component',
@@ -17,7 +19,8 @@ import { MozekCode } from "src/app/assets/components/codesample";
         MozekCode,
         MozIcon,
         MozAccordion,
-        MozAccordionItem
+        MozAccordionItem,
+        MozekDividerFileCode
     ],
     templateUrl: './accordion.html',
     styleUrls: ['./accordion.scss', '../lib-components.scss'],
@@ -27,6 +30,7 @@ export class Accordion {
     description = 'A flexible UI component that allows content to expand and collapse, helping you organize information in a compact and readable way. Perfect for FAQs, menus, or any content-heavy layout.'
 
     public responsive = inject(ResponsiveService);
+    public doc = inject(DocService);
     screen = computed(() => this.responsive.breakpoint());
 
     openMap: Record<string, boolean> = {};

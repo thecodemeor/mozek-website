@@ -1,11 +1,25 @@
 <div class="sect-title">
     <div class="title container">
         <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
-        {{title | titlecase}}
+        {{title | titlecase}} Component
     </div>
     <div class="subtitle">
         <h4><span class="tag">&lt;</span>moz-{{title}}<span class="tag">&gt;</span></h4>
         <p class="description-text">{{description}}</p>
+        
+        <div class="import-card mt-4">
+            <h6 class="mb-1 primary">How to Import</h6>
+            <div class="sample-code-guide">
+                <p class="code-guide" #copyImport>
+                    <span class="ts-pink">import</span>&nbsp;<span class="ts-yellow">&#123;</span>&nbsp;<span class="ts-blue">MozButton</span>&nbsp;<span class="ts-yellow">&#125;</span>&nbsp;<span class="ts-pink">from</span>&nbsp;<span class="ts-orange">'mozek-angular'</span>;<br><br>
+                    &#64;<span class="ts-emerald">Component</span><span class="ts-yellow">(</span><span class="ts-pink">&#123;</span><br>
+                    &nbsp;&nbsp;...<br>
+                    &nbsp;&nbsp;<span class="ts-blue">imports:</span>&nbsp;<span class="ts-lightblue">&#91;</span> <span class="ts-emerald">MozButton</span> <span class="ts-lightblue">&#93;</span><br>
+                    <span class="ts-pink">&#125;</span><span class="ts-yellow">)</span>
+                </p>
+            </div>
+            <p class="description-text mt-2">To use the <b class="primary">{{title | titlecase}}</b> component, simply import <code class="import-code">MozButton</code> into your standalone component's <code>imports</code> array.</p>
+        </div>
     </div>
 </div>
 
@@ -13,10 +27,20 @@
     <div class="sample">
         <div class="title">
             <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
-            Model
+            Model & Color
         </div>
         <div class="description pb-0">
-            <p>Each model has a distinct visual style and use case. Choose the appropriate model based on the context and desired visual hierarchy.</p>
+            <p>Choose from a variety of visual models to match your interface's hierarchy. From high-impact <b class="highlight">Fill</b> buttons to subtle <b class="highlight">Text</b> links, each style is optimized for clarity and tactile feedback.</p>
+            <div class="property-info">
+                <div class="info-item"><span>Property:</span> <p class="property">model</p></div>
+                <div class="info-item"><span>Type:</span> <code>fill</code><code>outline</code><code>tonal</code><code>elevated</code><code>flavor</code><code>glass</code><code>text</code></div>
+                <div class="info-item"><span>Default:</span> <code>fill</code></div>
+            </div>
+            <div class="property-info mt-1">
+                <div class="info-item"><span>Property:</span> <p class="property">color</p></div>
+                <div class="info-item"><span>Type:</span> <code>primary</code><code>secondary</code><code>success</code><code>warn</code><code>danger</code></div>
+                <div class="info-item"><span>Default:</span> <code>primary</code></div>
+            </div>
         </div>
         @for (model of models; track model) {
             <div class="content">
@@ -34,14 +58,20 @@
                         Source Code 
                         <moz-icon color="#ffffff" [style.transform]="isOpen(model) ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
                     </div>
-                    <div class="code-space" [class.is-open]="isOpen(model)" [style.max-height]="isOpen(model) ? '50rem' : '0'">
-                        @for (color of colors; track color) {
+                    <div class="code-space" [class.is-open]="isOpen(model)">
+                        <div class="code-wrapper" [class.has-padding]="isOpen(model)">
+                            <mozek-divider-file-code fileType="html"></mozek-divider-file-code>
                             <p class="code">
-                                <mozek-code tag="moz-button" [model]="model" [color]="color" inline>
-                                    {{ color | titlecase }}
-                                </mozek-code>
+                                <mozek-code tag="moz-button" [model]="model" inline>Default</mozek-code>
                             </p>
-                        }
+                            <p class="code">
+                                @for (color of colors; track color) {
+                                    <mozek-code tag="moz-button" [model]="model" [color]="color" inline>
+                                        {{ color | titlecase }}
+                                    </mozek-code><br>
+                                }
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -54,7 +84,12 @@
             Disabled State
         </div>
         <div class="description">
-            <p>Buttons in a disabled state are non-interactive and visually indicate that the action is not available.</p>
+            <p>Use the disabled state for actions that are currently unavailable. The component automatically adjusts its opacity and removes interaction while maintaining accessibility.</p>
+            <div class="property-info">
+                <div class="info-item"><span>Property:</span> <p class="property">disabled</p></div>
+                <div class="info-item"><span>Type:</span> <code>boolean</code></div>
+                <div class="info-item"><span>Default:</span> <code>false</code></div>
+            </div>
         </div>
         <div class="content">
             <div class="sample-box">
@@ -69,14 +104,17 @@
                     Source Code 
                     <moz-icon color="#ffffff" [style.transform]="isOpen('disabled') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
                 </div>
-                <div class="code-space" [class.is-open]="isOpen('disabled')" [style.max-height]="isOpen('disabled') ? '50rem' : '0'">
-                    @for (model of models; track model) {
+                <div class="code-space" [class.is-open]="isOpen('disabled')">
+                    <div class="code-wrapper" [class.has-padding]="isOpen('disabled')">
+                        <mozek-divider-file-code fileType="html"></mozek-divider-file-code>
                         <p class="code">
-                            <mozek-code tag="moz-button" [model]="model" extra="disabled" inline>
-                                {{ model | titlecase }}
-                            </mozek-code>
+                            @for (model of models; track model) {
+                                <mozek-code tag="moz-button" [model]="model" extra="disabled" inline>
+                                    {{ model | titlecase }}
+                                </mozek-code><br>
+                            }
                         </p>
-                    }
+                    </div>
                 </div>
             </div>
         </div>
@@ -88,7 +126,12 @@
             Full Width
         </div>
         <div class="description pb-0">
-            <p>Buttons with full width are useful for creating a consistent and visually appealing layout, especially in forms or when aligning buttons to the edges of their container.</p>
+            <p>Expand buttons to fill their container's width. This is particularly effective for primary actions on mobile devices or within structured form layouts.</p>
+            <div class="property-info">
+                <div class="info-item"><span>Property:</span> <p class="property">full</p></div>
+                <div class="info-item"><span>Type:</span> <code>boolean</code></div>
+                <div class="info-item"><span>Default:</span> <code>false</code></div>
+            </div>
         </div>
         <div class="content">
             <div class="sub-title">Width: 100%</div>
@@ -104,16 +147,20 @@
                     Source Code 
                     <moz-icon color="#ffffff" [style.transform]="isOpen('full') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
                 </div>
-                <div class="code-space" [class.is-open]="isOpen('full')" [style.max-height]="isOpen('full') ? '50rem' : '0'">
-                    @for (model of models; track model) {
+                <div class="code-space" [class.is-open]="isOpen('full')">
+                    <div class="code-wrapper" [class.has-padding]="isOpen('full')">
+                        <mozek-divider-file-code fileType="html"></mozek-divider-file-code>
                         <p class="code">
-                            <mozek-code tag="moz-button" [model]="model" color="primary" extra="full" inline>
-                                {{ model | titlecase }}
-                            </mozek-code>
+                            @for (model of models; track model) {
+                                <mozek-code tag="moz-button" [model]="model" color="primary" extra="full" inline>
+                                    {{ model | titlecase }}
+                                </mozek-code><br>
+                            }
                         </p>
-                    }
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
 </div>

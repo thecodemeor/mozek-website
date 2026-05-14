@@ -161,7 +161,7 @@ export class Icons implements OnInit {
     'chit_chat_square', 'chit_chat_round', 'checklist', 'battery',
     'battery_full', 'battery_low', 'battery_charging', 'bolt',
     'bolt_cirlce', 'gas_station', 'power_station', 'plug',
-    'power_button', 'cpu', 'mozitor', 'display', 'mouse', 'headphones',
+    'power_button', 'cpu', 'monitor', 'display', 'mouse', 'headphones',
     'game_controller', 'printer', 'speedometer', 'shop', 'charity',
     'credit_card', 'card_1', 'card_transfer', 'cash_1', 'cash_2',
     'coin', 'calculator', 'cart_1', 'cart_2', 'bill', 'bill_list',

@@ -1,0 +1,13 @@
+@use "../lib-components.scss";
+
+:host {
+    display: block;
+    width: 100%;
+}
+
+.position-sample-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: var(--moz-space-2);
+}

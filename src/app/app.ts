@@ -5,7 +5,7 @@ import { MozekButton } from 'src/app/assets/components/button';
 
 import {
   MozCard, MozCardHeader, MozCardBody,
-  MozSwitch 
+  MozSwitch, MozSnackbar, MozSnackbarQueue 
 } from 'mozek-angular';
 
 @Component({
@@ -18,7 +18,9 @@ import {
 
     MozCard,
     MozCardHeader,
-    MozCardBody
+    MozCardBody,
+    MozSnackbar,
+    MozSnackbarQueue
   ],
   templateUrl: './app.html',
   styleUrls: ['./app.scss'],

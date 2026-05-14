@@ -8,7 +8,9 @@ import { CommonModule } from '@angular/common';
 import { MozCard, MozCardBody, MozCardHeader, MozCardMedia, MozCardFooter, MozIcon } from 'mozek-angular';
 
 import { ResponsiveService } from 'src/app/services/responsive.service';
+import { DocService } from 'src/app/services/doc.service';
 import { MozekCode } from 'src/app/assets/components/codesample';
+import { MozekDividerFileCode } from "src/app/assets/components/codedividersample";
 
 type MozCardModel =
     | 'fill'
@@ -23,7 +25,8 @@ type MozCardModel =
         CommonModule,
         MozekCode,
         MozCard, MozCardBody, MozCardHeader, MozCardMedia, MozCardFooter,
-        MozIcon
+        MozIcon,
+        MozekDividerFileCode
     ],
     templateUrl: './card.html',
     styleUrls: ['./card.scss', '../lib-components.scss'],
@@ -33,6 +36,7 @@ export class Card {
     description = 'Cards are versatile UI components that group related content and actions, providing a structured layout for displaying information in a visually appealing way.'
     
     public responsive = inject(ResponsiveService);
+    public doc = inject(DocService);
     screen = computed(() => this.responsive.breakpoint());
 
     models: MozCardModel[] = ['fill', 'flavor', 'outline', 'glass', 'elevated'];

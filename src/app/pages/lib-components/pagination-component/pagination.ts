@@ -8,6 +8,8 @@ import { CommonModule } from '@angular/common';
 import { MozIcon, MozPagination, MozCard, MozPageChangeEvent } from 'mozek-angular';
 
 import { ResponsiveService } from 'src/app/services/responsive.service';
+import { DocService } from 'src/app/services/doc.service';
+import { MozekDividerFileCode } from "src/app/assets/components/codedividersample";
 
 @Component({
     selector: 'app-lib-component',
@@ -15,8 +17,9 @@ import { ResponsiveService } from 'src/app/services/responsive.service';
     CommonModule,
     MozIcon,
     MozPagination,
-    MozCard
-],
+    MozCard,
+        MozekDividerFileCode
+    ],
     templateUrl: './pagination.html',
     styleUrls: ['./pagination.scss', '../lib-components.scss'],
 })
@@ -25,6 +28,7 @@ export class Pagination {
     description = 'The Mozek Pagination component provides a user-friendly interface for navigating through large sets of data or content. It allows users to easily switch between different pages of information, improving the overall user experience. The component is designed to be responsive and customizable, making it suitable for various applications and screen sizes.';
 
     public responsive = inject(ResponsiveService);
+    public doc = inject(DocService);
     screen = computed(() => this.responsive.breakpoint());
 
     pageIndex = 0;

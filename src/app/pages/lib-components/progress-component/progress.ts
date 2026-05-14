@@ -8,7 +8,9 @@ import { CommonModule } from '@angular/common';
 import { MozIcon, MozProgress } from 'mozek-angular';
 
 import { ResponsiveService } from 'src/app/services/responsive.service';
+import { DocService } from 'src/app/services/doc.service';
 import { MozekCode } from 'src/app/assets/components/codesample';
+import { MozekDividerFileCode } from "src/app/assets/components/codedividersample";
 
 type MozProgressModel =
     | 'ring'
@@ -28,8 +30,9 @@ type MozProgressModel =
     CommonModule,
     MozekCode,
     MozIcon,
-    MozProgress
-],
+    MozProgress,
+        MozekDividerFileCode
+    ],
     templateUrl: './progress.html',
     styleUrls: ['./progress.scss', '../lib-components.scss'],
 })
@@ -38,6 +41,7 @@ export class Progress {
     description = 'The Mozek Progress component provides a visual representation of ongoing processes or tasks. It offers various styles and customization options, allowing developers to choose the most suitable design for their applications. The component is designed to be responsive and accessible, ensuring a seamless user experience across different devices and for all users.';
 
     public responsive = inject(ResponsiveService);
+    public doc = inject(DocService);
     screen = computed(() => this.responsive.breakpoint());
 
     models: MozProgressModel[] = ['ring', 'line_spinner', 'hourglass', 'zoomies', 'line_wobble', 'cardio', 'helix', 'newton', 'mirage', 'blank'];

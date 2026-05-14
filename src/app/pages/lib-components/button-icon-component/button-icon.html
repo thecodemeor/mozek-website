@@ -6,6 +6,20 @@
     <div class="subtitle">
         <h4><span class="tag">&lt;</span>moz-{{title}}<span class="tag">&gt;</span></h4>
         <p class="description-text">{{description}}</p>
+        
+        <div class="import-card mt-4">
+            <h6 class="mb-1 primary">How to Import</h6>
+            <div class="sample-code-guide">
+                <p class="code-guide" #copyImport>
+                    <span class="ts-pink">import</span>&nbsp;<span class="ts-yellow">&#123;</span>&nbsp;<span class="ts-blue">MozButtonIcon</span>&nbsp;<span class="ts-yellow">&#125;</span>&nbsp;<span class="ts-pink">from</span>&nbsp;<span class="ts-orange">'mozek-angular'</span>;<br><br>
+                    &#64;<span class="ts-emerald">Component</span><span class="ts-yellow">(</span><span class="ts-pink">&#123;</span><br>
+                    &nbsp;&nbsp;...<br>
+                    &nbsp;&nbsp;<span class="ts-blue">imports:</span>&nbsp;<span class="ts-lightblue">&#91;</span> <span class="ts-emerald">MozButtonIcon</span> <span class="ts-lightblue">&#93;</span><br>
+                    <span class="ts-pink">&#125;</span><span class="ts-yellow">)</span>
+                </p>
+            </div>
+            <p class="description-text mt-2">To use the <b class="primary">{{retitle(title) | titlecase}}</b> component, simply import <code class="import-code">MozButtonIcon</code> into your standalone component's <code>imports</code> array.</p>
+        </div>
     </div>
 </div>
 
@@ -17,6 +31,16 @@
         </div>
         <div class="description pb-0">
             <p>Demonstrates different visual styles of the button icon component based on the model attribute.</p>
+            <div class="property-info">
+                <div class="info-item"><span>Property:</span> <p class="property">model</p></div>
+                <div class="info-item"><span>Type:</span> <code>tonal</code><code>text</code></div>
+                <div class="info-item"><span>Default:</span> <code>text</code></div>
+            </div>
+            <div class="property-info mt-1">
+                <div class="info-item"><span>Property:</span> <p class="property">color</p></div>
+                <div class="info-item"><span>Type:</span> <code>primary</code><code>secondary</code><code>success</code><code>warn</code><code>danger</code></div>
+                <div class="info-item"><span>Default:</span> <code>default</code></div>
+            </div>
         </div>
         @for (model of models; track model) {
             <div class="content">
@@ -38,16 +62,26 @@
                         Source Code 
                         <moz-icon color="#ffffff" [style.transform]="isOpen(model) ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
                     </div>
-                    <div class="code-space" [class.is-open]="isOpen(model)" [style.max-height]="isOpen(model) ? '50rem' : '0'">
-                        @for (color of colors; track color) {
+                    <div class="code-space" [class.is-open]="isOpen(model)">
+                        <div class="code-wrapper" [class.has-padding]="isOpen(model)">
+                            <mozek-divider-file-code fileType="html"></mozek-divider-file-code>
                             <p class="code">
-                                <mozek-code tag="moz-button-icon" [model]="model" [color]="color">
+                                <mozek-code tag="moz-button-icon" [model]="model">
                                     <mozek-code tag="moz-icon" inline>
-                                        close_circle
+                                        home
                                     </mozek-code>
-                                </mozek-code>
+                                </mozek-code><br>
                             </p>
-                        }
+                            @for (color of colors; track color) {
+                                <p class="code">
+                                    <mozek-code tag="moz-button-icon" [model]="model" [color]="color">
+                                        <mozek-code tag="moz-icon" inline>
+                                            close_circle
+                                        </mozek-code>
+                                    </mozek-code>
+                                </p>
+                            }
+                        </div>
                     </div>
                 </div>
             </div>
@@ -61,6 +95,11 @@
         </div>
         <div class="description pb-0">
             <p>Illustrates the button icon component with added spacing (gap) between the icon and the button edges for improved aesthetics and clickability.</p>
+            <div class="property-info">
+                <div class="info-item"><span>Property:</span> <p class="property">gap</p></div>
+                <div class="info-item"><span>Type:</span> <code>boolean</code></div>
+                <div class="info-item"><span>Default:</span> <code>false</code></div>
+            </div>
         </div>
         @for (model of models; track model) {
             <div class="content">
@@ -82,16 +121,26 @@
                         Source Code 
                         <moz-icon color="#ffffff" [style.transform]="isOpen(model + 'gap') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
                     </div>
-                    <div class="code-space" [class.is-open]="isOpen(model + 'gap')" [style.max-height]="isOpen(model + 'gap') ? '50rem' : '0'">
-                        @for (color of colors; track color) {
+                    <div class="code-space" [class.is-open]="isOpen(model + 'gap')">
+                        <div class="code-wrapper" [class.has-padding]="isOpen(model + 'gap')">
+                            <mozek-divider-file-code fileType="html"></mozek-divider-file-code>
                             <p class="code">
-                                <mozek-code tag="moz-button-icon" [model]="model" [color]="color" extra="gap">
+                                <mozek-code tag="moz-button-icon" [model]="model" extra="gap">
                                     <mozek-code tag="moz-icon" inline>
-                                        close_circle
+                                        home
                                     </mozek-code>
-                                </mozek-code>
+                                </mozek-code><br>
                             </p>
-                        }
+                            @for (color of colors; track color) {
+                                <p class="code">
+                                    <mozek-code tag="moz-button-icon" [model]="model" [color]="color" extra="gap">
+                                        <mozek-code tag="moz-icon" inline>
+                                            close_circle
+                                        </mozek-code>
+                                    </mozek-code>
+                                </p>
+                            }
+                        </div>
                     </div>
                 </div>
             </div>

@@ -6,6 +6,7 @@ import { Component, Input, booleanAttribute } from '@angular/core';
     template: `
         <span class="tag"><span class="symbol">&lt;</span>{{ tag }}</span>
             @if(checkbox.length) { <span class="blue"> [(checked)]</span>=<span class="orange">"{{ checkbox }}"</span>}
+            @if(modelValue.length) { <span class="blue"> [(ngModel)]</span>=<span class="orange">"{{ modelValue }}"</span>}
             @if(img.length) { <span class="blue"> src</span>=<span class="orange">"{{ img }}"</span>}
             @if(model.length) { <span class="blue"> model</span>=<span class="orange">"{{ model }}"</span>}
             @if(color.length) { <span class="blue"> color</span>=<span class="orange">"{{ color }}"</span>}
@@ -18,15 +19,17 @@ import { Component, Input, booleanAttribute } from '@angular/core';
             @if(dateValue.length) { <span class="blue"> [(value)]</span>=<span class="orange">"{{ dateValue }}"</span>}
             @if(label.length) { <span class="blue"> label</span>=<span class="orange">"{{ label }}"</span>}
             @if(placeholder.length) { <span class="blue"> placeholder</span>=<span class="orange">"{{ placeholder }}"</span>}
-            @if(helper.length) { <span class="blue"> helper</span>=<span class="orange">"{{ helper }}"</span>}
+            @if(hint.length) { <span class="blue"> hint</span>=<span class="orange">"{{ hint }}"</span>}
             @if(error.length) { <span class="blue"> error</span>=<span class="orange">"{{ error }}"</span>}
             @if(type.length) { <span class="blue"> type</span>=<span class="orange">"{{ type }}"</span>}
             @if(size.length) { <span class="blue"> size</span>=<span class="orange">"{{ size }}"</span>}
             @if(speed.length) { <span class="blue"> speed</span>=<span class="orange">"{{ speed }}"</span>}
             @if(orientation.length) { <span class="blue"> orientation</span>=<span class="orange">"{{ orientation }}"</span>}
+            @if(function.length) { <span class="blue"> ({{ funcName1 }})</span>=<span class="orange">"<span class="yellow">{{ funcName2 }}(@if(funcName3) { <span class="orange">{{ funcName3 }}</span> })</span>"</span>}
 
             @if(radioCheck.length) { <span class="blue"> [checked]</span>=<span class="orange">"<span class="blue">{{ topic }}</span><span class="white"> === </span>{{ result }}"</span>}
             @if(multi) { <span class="blue"> [multi]</span>=<span class="orange">"true"</span>}
+            @if(items.length) { <span class="blue"> [items]</span>=<span class="orange">"{{ items }}"</span>}
             @if(extra.length) { <span class="blue"> {{ extra }}</span>}
         <span class="symbol">&gt;</span>
             <div [class.pl-4]="!inline" [style.display]="inline === true ? 'inline' : ''">
@@ -40,6 +43,7 @@ import { Component, Input, booleanAttribute } from '@angular/core';
         .symbol { color: #808080;}
         .tag { color: #569dd6;}
         .orange { color: #ce9178;}
+        .yellow { color: #ffffa2ff;}
         .blue { color: #9bdbfe;}
         .white { color: #ffffff;}
     `
@@ -59,23 +63,39 @@ export class MozekCode {
     @Input() extra = ''
     @Input() position = ''
     @Input() placeholder = ''
-    @Input() helper = ''
+    @Input() hint = ''
     @Input() error = ''
     @Input() type = ''
     @Input() size = ''
     @Input() speed = ''
+    @Input() items = ''
     @Input() checkbox = '';
+    @Input() modelValue = '';
     @Input() orientation = ''
     @Input() radioCheck = ''
+    @Input() function = ''
     @Input({ transform: booleanAttribute }) multi = false;
     @Input({ transform: booleanAttribute }) inline = false;
 
     
-        topic: string = '';
-        result: string = '';
+    topic: string = '';
+    result: string = '';
+    funcName1: string = '';
+    funcName2: string = '';
+    funcName3: string = '';
+    
     ngOnInit() {
-        const [topic, result] = this.radioCheck.split(',').map(s => s.trim());
-        this.topic = topic;
-        this.result = result;
+        if (this.radioCheck) {
+            const [topic, result] = this.radioCheck.split(',').map(s => s.trim());
+            this.topic = topic;
+            this.result = result;
+        }
+        
+        if (this.function) {
+            const parts = this.function.split(',');
+            this.funcName1 = parts[0]?.trim() || '';
+            this.funcName2 = parts[1]?.trim() || '';
+            this.funcName3 = parts.slice(2).join(',').trim();
+        }
     }
 }

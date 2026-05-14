@@ -117,3 +117,28 @@
 moz-button-icon {
     transition: transform 0.2s ease, opacity 0.2s ease;
 }
+
+.sample-code-guide {
+    width: 100%;
+    padding: 0.1rem;
+    border: solid 0.1rem var(--moz-color-primary);
+    border-radius: var(--moz-radius-default);
+    background: #1a1a1a;
+
+    .code-guide {
+        min-height: 0; 
+        padding: var(--moz-space-2);
+        font-family: "Courier Prime", monospace;
+        line-height: 1.5;
+        font-size: 0.9rem;
+        color: #d4d4d4;
+        
+        .css-violet { color: #bd93f9; }
+        .css-yellow { color: #ffff62; }
+        .css-pink { color: #ff79c6; }
+        .css-lightblue { color: #8be9fd; }
+        .css-orange { color: #ffb86c; }
+        .css-lightgreen { color: #50fa7b; }
+        .css-grey { color: #6272a4; }
+    }
+}

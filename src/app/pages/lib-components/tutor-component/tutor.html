@@ -1,0 +1,106 @@
+<div class="sect-title">
+    <div class="title container">
+        <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
+        {{title | titlecase}}
+    </div>
+    <div class="subtitle">
+        <h4><span class="tag">&lt;</span>moz-{{title}}<span class="tag">&gt;</span></h4>
+        <p class="description-text">{{description}}</p>
+        
+        <div class="import-card mt-4">
+            <h6 class="mb-1 primary">How to Import</h6>
+            <div class="sample-code-guide">
+                <p class="code-guide" #copyImport>
+                    <span class="ts-pink">import</span>&nbsp;<span class="ts-yellow">&#123;</span>&nbsp;<span class="ts-blue">MozTutor, MozTutorTrigger</span>&nbsp;<span class="ts-yellow">&#125;</span>&nbsp;<span class="ts-pink">from</span>&nbsp;<span class="ts-orange">'mozek-angular'</span>;<br><br>
+                    &#64;<span class="ts-emerald">Component</span><span class="ts-yellow">(</span><span class="ts-pink">&#123;</span><br>
+                    &nbsp;&nbsp;...<br>
+                    &nbsp;&nbsp;<span class="ts-blue">imports:</span>&nbsp;<span class="ts-lightblue">&#91;</span> <span class="ts-emerald">MozTutor, MozTutorTrigger</span> <span class="ts-lightblue">&#93;</span><br>
+                    <span class="ts-pink">&#125;</span><span class="ts-yellow">)</span>
+                </p>
+            </div>
+            <p class="description-text mt-2">To implement an onboarding step, use the <code class="import-code">moz-tutor</code> component to define your content and <code class="import-code">mozTutorFor</code> directive on the element you wish to highlight.</p>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <!-- Basic Usage -->
+    <div class="sample">
+        <div class="title">
+            <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
+            Guided Step
+        </div>
+        <div class="description">
+            <p>Define a tutorial step and trigger it programmatically or via user interaction. The target element will be highlighted while the rest of the screen is dimmed.</p>
+            <div class="property-info">
+                <div class="info-item"><span>Directive:</span> <p class="property">mozTutorFor</p></div>
+                <div class="info-item"><span>Value:</span> <code>MozTutor</code></div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="sample-box">
+                <div class="flex flex-col items-center gap-6">
+                    <moz-card model="fill" color="primary" advance
+                        class="parent-card"
+                        [mozTutorFor]="myTutor" 
+                        #tutorialTrigger="mozTutorTrigger">
+                        <moz-card-media>
+                            <img src="assets/images/logo/mozek_banner.svg" alt="Mozek Card Media">
+                        </moz-card-media>
+                        <moz-card-body>
+                            <div class="flex w-full flex-col gap-2 align-center">
+                                <h5 class="primary text-center">Mozek UI Library</h5>
+                                <p class="text-center">A complete set of UI components to build your application.</p>
+                            </div>
+                        </moz-card-body>
+                    </moz-card>
+
+                    <moz-button (click)="startTutorial()">Start Tutorial Step</moz-button>
+
+                    <moz-tutor #myTutor="mozTutor">
+                        <div class="tutor-step">
+                            <h4 class="primary font-bold mb-2">Welcome!</h4>
+                            <p class="mb-4">This is a guided tutorial step. You can explain features directly next to the elements they refer to.</p>
+                            <moz-button size="small" (click)="tutorialTrigger.close()">Got it!</moz-button>
+                        </div>
+                    </moz-tutor>
+                </div>
+            </div>
+            <div class="sample-code">
+                <div class="open-code" (click)="openSource('basic')">
+                    Source Code 
+                    <moz-icon color="#ffffff" [style.transform]="isOpen('basic') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
+                </div>
+                <div class="code-space" [class.is-open]="isOpen('basic')">
+                    <div class="code-wrapper" [class.has-padding]="isOpen('basic')">
+                        <mozek-divider-file-code fileType="html"></mozek-divider-file-code>
+                        <p class="code">
+                            <span class="tag"><span class="symbol">&lt;</span>moz-card</span>
+                                <span class="blue"> model</span>=<span class="orange">"fill" </span>
+                                <span class="blue">color</span>=<span class="orange">"primary"</span>
+                                <span class="blue"> advance</span><br>
+                                <span class="blue pl-2">[mozTutorFor]</span>=<span class="orange">"myTutor" </span><br>
+                                <span class="blue pl-2">#tutorialTrigger</span>=<span class="orange">"mozTutorTrigger"</span>
+                            <span class="symbol">&gt;</span><br>
+                                <span class="pl-4">...</span>
+                            <br><span class="tag"><span class="symbol">&lt;/</span>moz-card<span class="symbol">&gt;</span></span><br>
+                            <br>
+                            <span class="tag"><span class="symbol">&lt;</span>moz-tutor</span>
+                                <span class="blue"> #myTutor</span>=<span class="orange">"mozTutor"</span>
+                            <span class="symbol">&gt;</span><br>
+                                <span class="pl-4">...</span>
+                            <br><span class="tag"><span class="symbol">&lt;/</span>moz-tutor<span class="symbol">&gt;</span></span><br>
+                        </p>
+                        <mozek-divider-file-code fileType="typescript"></mozek-divider-file-code>
+                        <p class="code">
+                            &#64;<span class="ts-emerald">ViewChild</span><span class="ts-pink">(</span><span class="orange">'tutorialTrigger'</span><span class="ts-pink">)</span>&nbsp;<span class="blue">tutorialTrigger</span>!: <span class="ts-emerald">MozTutorTrigger</span>;<br><br>
+                            <span class="yellow">startTutorial</span><span class="ts-pink">()</span>&nbsp;<span class="ts-pink">&#123;</span><br>
+                            <span class="ts-lightblue pl-2">this</span>.<span class="blue">tutorialTrigger</span>.<span class="yellow">open</span><span class="ts-lightblue">()</span>;<br>
+                            <span class="ts-pink">&#125;</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

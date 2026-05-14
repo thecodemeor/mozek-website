@@ -1,0 +1,177 @@
+<div class="sect-title">
+    <div class="title container">
+        <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
+        {{title | titlecase}}
+    </div>
+    <div class="subtitle">
+        <h4><span class="tag">&lt;</span>moz-{{title}}<span class="tag">&gt;</span></h4>
+        <p class="description-text">{{description}}</p>
+        
+        <div class="import-card mt-4">
+            <h6 class="mb-1 primary">How to Import</h6>
+            <div class="sample-code-guide">
+                <p class="code-guide" #copyImport>
+                    <span class="ts-pink">import</span>&nbsp;<span class="ts-yellow">&#123;</span>&nbsp;<span class="ts-blue">MozSnackbarService</span>&nbsp;<span class="ts-yellow">&#125;</span>&nbsp;<span class="ts-pink">from</span>&nbsp;<span class="ts-orange">'mozek-angular'</span>;<br><br>
+                    &#64;<span class="ts-emerald">Component</span><span class="ts-yellow">(</span><span class="ts-pink">&#123;</span><br>
+                    &nbsp;&nbsp;...<br>
+                    &nbsp;&nbsp;<span class="ts-blue">providers:</span>&nbsp;<span class="ts-lightblue">&#91;</span> <span class="ts-emerald">MozSnackbarService</span> <span class="ts-lightblue">&#93;</span><br>
+                    <span class="ts-pink">&#125;</span><span class="ts-yellow">)</span>
+                </p>
+            </div>
+            <p class="description-text mt-2">The <b class="primary">{{title | titlecase}}</b> is managed via <code class="import-code">MozSnackbarService</code>. To use it, simply inject the service into your component.</p>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <!-- Basic Usage -->
+    <div class="sample">
+        <div class="title">
+            <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
+            Basic Snackbar
+        </div>
+        <div class="description">
+            <p>Trigger a simple notification with a message. By default, it appears in the top-right corner.</p>
+        </div>
+        <div class="content">
+            <div class="sample-box">
+                <moz-button (click)="showBasic('This is a simple message!')">Show Snackbar</moz-button>
+            </div>
+            <div class="sample-code">
+                <div class="open-code" (click)="openSource('basic')">
+                    Source Code 
+                    <moz-icon color="#ffffff" [style.transform]="isOpen('basic') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
+                </div>
+                <div class="code-space" [class.is-open]="isOpen('basic')">
+                    <div class="code-wrapper" [class.has-padding]="isOpen('basic')">
+                        <mozek-divider-file-code fileType="html"></mozek-divider-file-code>
+                        <p class="code">
+                            <mozek-code tag="moz-button" function="click, showBasic, 'This is a simple message!'" inline>Show Snackbar</mozek-code>
+                        </p>
+                        <mozek-divider-file-code fileType="typescript"></mozek-divider-file-code>
+                        <p class="code">
+                            <span class="ts-blue">public</span>&nbsp;<span class="ts-lightblue">snackbarService</span>&nbsp;=&nbsp;<span class="ts-yellow">inject</span><span class="ts-pink">(</span><span class="ts-emerald">MozSnackbarService</span><span class="ts-pink">)</span>
+                            <br><br>
+                            <span class="ts-yellow">showBasic</span><span class="ts-pink">(</span><span class="ts-blue">message:</span>&nbsp;<span class="ts-emerald">string</span><span class="ts-pink">)</span>&nbsp;<span class="ts-pink">&#123;</span><br>
+                            <span class="pl-2"><span class="ts-lightblue">this</span>.<span class="ts-blue">snackbarService</span>.<span class="ts-yellow">show</span><span class="ts-pink">(</span><span class="ts-blue">message</span><span class="ts-pink">)</span>&#59;</span><br>
+                            <span class="ts-pink">&#125;</span>&#59;
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Status Types -->
+    <div class="sample">
+        <div class="title">
+            <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
+            Status Types
+        </div>
+        <div class="description">
+            <p>Convey semantic meaning by specifying the snackbar type. This automatically adjusts the icon and color palette.</p>
+            <div class="property-info">
+                <div class="info-item"><span>Property:</span> <p class="property">type</p></div>
+                <div class="info-item"><span>Type:</span> <code>info</code><code>success</code><code>warning</code><code>error</code></div>
+                <div class="info-item"><span>Default:</span> <code>info</code></div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="sample-box">
+                <div class="flex flex-wrap gap-2">
+                    @for (type of types; track type) {
+                        <moz-button [color]="type === 'info' ? 'primary' : type === 'warning' ? 'warn' : type === 'error' ? 'danger' : type" (click)="showWithType('Status: ' + type, type)">
+                            {{ type | titlecase }}
+                        </moz-button>
+                    }
+                </div>
+            </div>
+            <div class="sample-code">
+                <div class="open-code" (click)="openSource('type')">
+                    Source Code 
+                    <moz-icon color="#ffffff" [style.transform]="isOpen('type') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
+                </div>
+                <div class="code-space" [class.is-open]="isOpen('type')">
+                    <div class="code-wrapper" [class.has-padding]="isOpen('type')">
+                        <mozek-divider-file-code fileType="html"></mozek-divider-file-code>
+                        <p class="code">
+                            <mozek-code tag="moz-button" model="fill" color="primary" function="click, showWithType, 'Status: ' + info, info" inline>Info</mozek-code><br>
+                            <mozek-code tag="moz-button" model="fill" color="success" function="click, showWithType, 'Status: ' + success, success" inline>Success</mozek-code><br>
+                            <mozek-code tag="moz-button" model="fill" color="warn" function="click, showWithType, 'Status: ' + warning, warning" inline>Warning</mozek-code><br>
+                            <mozek-code tag="moz-button" model="fill" color="danger" function="click, showWithType, 'Status: ' + error, error" inline>Error</mozek-code>
+                        </p>
+                        <mozek-divider-file-code fileType="typescript"></mozek-divider-file-code>
+                        <p class="code">
+                            <span class="ts-blue">public</span>&nbsp;<span class="ts-lightblue">snackbarService</span>&nbsp;=&nbsp;<span class="ts-yellow">inject</span><span class="ts-pink">(</span><span class="ts-emerald">MozSnackbarService</span><span class="ts-pink">)</span>
+                            <br><br>
+                            <span class="ts-yellow">showWithType</span><span class="ts-pink">(</span><span class="ts-blue">message:</span>&nbsp;<span class="ts-emerald">string</span>,&nbsp;<span class="ts-blue">type:</span>&nbsp;<span class="ts-emerald">MozSnackbarType</span><span class="ts-pink">)</span>&nbsp;<span class="ts-pink">&#123;</span><br>
+                            <span class="pl-2"><span class="ts-lightblue">this</span>.<span class="ts-blue">snackbarService</span>.<span class="ts-yellow">show</span><span class="ts-pink">(</span><span class="ts-blue">message</span>,&nbsp;<span class="ts-blue">type</span><span class="ts-pink">)</span>&#59;</span><br>
+                            <span class="ts-pink">&#125;</span>&#59;
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Positioning -->
+    <div class="sample">
+        <div class="title">
+            <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
+            Positioning
+        </div>
+        <div class="description">
+            <p>The snackbar can be positioned in any of the six standard viewport anchors.</p>
+            <div class="property-info">
+                <div class="info-item"><span>Property:</span> <p class="property">position</p></div>
+                <div class="info-item"><span>Type:</span> <code>top-right</code><code>top-left</code><code>bottom-right</code><code>bottom-left</code><code>top-center</code><code>bottom-center</code></div>
+                <div class="info-item"><span>Default:</span> <code>top-right</code></div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="sample-box">
+                <div class="position-sample-section">
+                    @for (pos of topPositions; track pos) {
+                        <moz-button model="flavor" color="primary" (click)="showAtPosition('Position: ' + pos, pos)">
+                            {{ pos }}
+                        </moz-button>
+                    }
+                </div>
+                <div class="position-sample-section">
+                    @for (pos of bottomPositions; track pos) {
+                        <moz-button model="flavor" color="primary" (click)="showAtPosition('Position: ' + pos, pos)">
+                            {{ pos }}
+                        </moz-button>
+                    }
+                </div>
+            </div>
+            <div class="sample-code">
+                <div class="open-code" (click)="openSource('pos')">
+                    Source Code 
+                    <moz-icon color="#ffffff" [style.transform]="isOpen('pos') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
+                </div>
+                <div class="code-space" [class.is-open]="isOpen('pos')">
+                    <div class="code-wrapper" [class.has-padding]="isOpen('pos')">
+                        <mozek-divider-file-code fileType="html"></mozek-divider-file-code>
+                        <p class="code">
+                            <mozek-code tag="moz-button" model="flavor" color="primary" function="click, showAtPosition, 'Status: ' + 'top-left', 'top-left'" inline>top-left</mozek-code><br>
+                            <mozek-code tag="moz-button" model="flavor" color="primary" function="click, showAtPosition, 'Status: ' + 'top-center', 'top-center'" inline>top-center</mozek-code><br>
+                            <mozek-code tag="moz-button" model="flavor" color="primary" function="click, showAtPosition, 'Status: ' + 'top-right', 'top-right'" inline>top-right</mozek-code><br>
+                            <mozek-code tag="moz-button" model="flavor" color="primary" function="click, showAtPosition, 'Status: ' + 'bottom-left', 'bottom-left'" inline>bottom-left</mozek-code><br>
+                            <mozek-code tag="moz-button" model="flavor" color="primary" function="click, showAtPosition, 'Status: ' + 'bottom-center', 'bottom-center'" inline>bottom-center</mozek-code><br>
+                            <mozek-code tag="moz-button" model="flavor" color="primary" function="click, showAtPosition, 'Status: ' + 'bottom-right', 'bottom-right'" inline>bottom-right</mozek-code><br>
+                        </p>
+                        <mozek-divider-file-code fileType="typescript"></mozek-divider-file-code>
+                        <p class="code">
+                            <span class="ts-blue">public</span>&nbsp;<span class="ts-lightblue">snackbarService</span>&nbsp;=&nbsp;<span class="ts-yellow">inject</span><span class="ts-pink">(</span><span class="ts-emerald">MozSnackbarService</span><span class="ts-pink">)</span>
+                            <br><br>
+                            <span class="ts-yellow">showAtPosition</span><span class="ts-pink">(</span><span class="ts-blue">message:</span>&nbsp;<span class="ts-emerald">string</span>,&nbsp;<span class="ts-blue">position:</span>&nbsp;<span class="ts-emerald">MozSnackbarPosition</span><span class="ts-pink">)</span>&nbsp;<span class="ts-pink">&#123;</span><br>
+                            <span class="pl-2"><span class="ts-lightblue">this</span>.<span class="ts-blue">snackbarService</span>.<span class="ts-yellow">show</span><span class="ts-pink">(</span><span class="ts-blue">message</span>,&nbsp;<span class="ts-orange">'info'</span>,&nbsp;<span class="ts-blue">position</span><span class="ts-pink">)</span>&#59;</span><br>
+                            <span class="ts-pink">&#125;</span>&#59;
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

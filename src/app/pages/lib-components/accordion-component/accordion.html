@@ -6,6 +6,20 @@
     <div class="subtitle">
         <h4><span class="tag">&lt;</span>moz-{{title}}<span class="tag">&gt;</span></h4>
         <p class="description-text">{{description}}</p>
+        
+        <div class="import-card mt-4">
+            <h6 class="mb-1 primary">How to Import</h6>
+            <div class="sample-code-guide">
+                <p class="code-guide" #copyImport>
+                    <span class="ts-pink">import</span>&nbsp;<span class="ts-yellow">&#123;</span>&nbsp;<span class="ts-blue">MozAccordion, MozAccordionItem</span>&nbsp;<span class="ts-yellow">&#125;</span>&nbsp;<span class="ts-pink">from</span>&nbsp;<span class="ts-orange">'mozek-angular'</span>;<br><br>
+                    &#64;<span class="ts-emerald">Component</span><span class="ts-yellow">(</span><span class="ts-pink">&#123;</span><br>
+                    &nbsp;&nbsp;...<br>
+                    &nbsp;&nbsp;<span class="ts-blue">imports:</span>&nbsp;<span class="ts-lightblue">&#91;</span> <span class="ts-emerald">MozAccordion, MozAccordionItem</span> <span class="ts-lightblue">&#93;</span><br>
+                    <span class="ts-pink">&#125;</span><span class="ts-yellow">)</span>
+                </p>
+            </div>
+            <p class="description-text mt-2">To use the <b class="primary">{{title | titlecase}}</b> component, simply import <code class="import-code">MozAccordion</code> and <code class="import-code">MozAccordionItem</code> into your standalone component's <code>imports</code> array.</p>
+        </div>
     </div>
 </div>
 
@@ -36,19 +50,22 @@
                     Source Code 
                     <moz-icon color="#ffffff" [style.transform]="isOpen('normal') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
                 </div>
-                <div class="code-space" [class.is-open]="isOpen('normal')" [style.max-height]="isOpen('normal') ? '50rem' : '0'">
-                    <p class="code">
-                        <mozek-code tag="moz-accordion">
-                            &#64;for (item of ['1','2','3']; track item) &#123;<br>
-                            <div class="pl-4">
-                                <mozek-code tag="moz-accordion-item">
-                                    <mozek-code tag="div" extra="mozAccordionHeader" inline>Header {{'{'}}&#123;item&#125;{{'}'}}</mozek-code><br>
-                                    <mozek-code tag="p" inline>Lorem ipsum dolor sit amet...</mozek-code><br>
-                                </mozek-code><br>
-                            </div>
-                            &#125;
-                        </mozek-code>
-                    </p>
+                <div class="code-space" [class.is-open]="isOpen('normal')">
+                    <div class="code-wrapper" [class.has-padding]="isOpen('normal')">
+                        <mozek-divider-file-code fileType="html"></mozek-divider-file-code>
+                        <p class="code">
+                            <mozek-code tag="moz-accordion">
+                                &#64;for (item of ['1','2','3']; track item) &#123;<br>
+                                <div class="pl-4">
+                                    <mozek-code tag="moz-accordion-item">
+                                        <mozek-code tag="div" extra="mozAccordionHeader" inline>Header {{'{'}}&#123;item&#125;{{'}'}}</mozek-code><br>
+                                        <mozek-code tag="p" inline>Lorem ipsum dolor sit amet...</mozek-code><br>
+                                    </mozek-code><br>
+                                </div>
+                                &#125;
+                            </mozek-code>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -61,6 +78,11 @@
         </div>
         <div class="description">
             <p>Multiple panels that can be opened or closed independently.</p>
+            <div class="property-info">
+                <div class="info-item"><span>Property:</span> <p class="property">multi</p></div>
+                <div class="info-item"><span>Type:</span> <code>boolean</code></div>
+                <div class="info-item"><span>Default:</span> <code>false</code></div>
+            </div>
         </div>
         <div class="content">
             <div class="sample-box">
@@ -80,19 +102,22 @@
                     Source Code 
                     <moz-icon color="#ffffff" [style.transform]="isOpen('multi') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
                 </div>
-                <div class="code-space" [class.is-open]="isOpen('multi')" [style.max-height]="isOpen('multi') ? '50rem' : '0'">
-                    <p class="code">
-                        <mozek-code tag="moz-accordion" multi>
-                            &#64;for (item of ['1','2','3']; track item) &#123;<br>
-                            <div class="pl-4">
-                                <mozek-code tag="moz-accordion-item">
-                                    <mozek-code tag="div" extra="mozAccordionHeader" inline>Header {{'{'}}&#123;item&#125;{{'}'}}</mozek-code><br>
-                                    <mozek-code tag="p" inline>Lorem ipsum dolor sit amet...</mozek-code><br>
-                                </mozek-code><br>
-                            </div>
-                            &#125;
-                        </mozek-code>
-                    </p>
+                <div class="code-space" [class.is-open]="isOpen('multi')">
+                    <div class="code-wrapper" [class.has-padding]="isOpen('multi')">
+                        <mozek-divider-file-code fileType="html"></mozek-divider-file-code>
+                        <p class="code">
+                            <mozek-code tag="moz-accordion" multi>
+                                &#64;for (item of ['1','2','3']; track item) &#123;<br>
+                                <div class="pl-4">
+                                    <mozek-code tag="moz-accordion-item">
+                                        <mozek-code tag="div" extra="mozAccordionHeader" inline>Header {{'{'}}&#123;item&#125;{{'}'}}</mozek-code><br>
+                                        <mozek-code tag="p" inline>Lorem ipsum dolor sit amet...</mozek-code><br>
+                                    </mozek-code><br>
+                                </div>
+                                &#125;
+                            </mozek-code>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -105,6 +130,11 @@
         </div>
         <div class="description">
             <p>A panel that is inactive and cannot be expanded or interacted with.</p>
+            <div class="property-info">
+                <div class="info-item"><span>Property:</span> <p class="property">disabled</p></div>
+                <div class="info-item"><span>Type:</span> <code>boolean</code></div>
+                <div class="info-item"><span>Default:</span> <code>false</code></div>
+            </div>
         </div>
         <div class="content">
             <div class="sample-box">
@@ -126,19 +156,22 @@
                     Source Code 
                     <moz-icon color="#ffffff" [style.transform]="isOpen('normal') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
                 </div>
-                <div class="code-space" [class.is-open]="isOpen('normal')" [style.max-height]="isOpen('normal') ? '50rem' : '0'">
-                    <p class="code">
-                        <mozek-code tag="moz-accordion" multi>
-                            <mozek-code tag="moz-accordion-item">
-                                <mozek-code tag="div" extra="mozAccordionHeader" inline>Header 1</mozek-code><br>
-                                <mozek-code tag="p" inline>Lorem ipsum dolor sit amet...</mozek-code><br>
-                            </mozek-code><br>
-                            <mozek-code tag="moz-accordion-item" extra="disabled">
-                                <mozek-code tag="div" extra="mozAccordionHeader" inline>Header 2</mozek-code><br>
-                                <mozek-code tag="p" inline>Lorem ipsum dolor sit amet...</mozek-code><br>
-                            </mozek-code><br>
-                        </mozek-code>
-                    </p>
+                <div class="code-space" [class.is-open]="isOpen('normal')">
+                    <div class="code-wrapper" [class.has-padding]="isOpen('normal')">
+                        <mozek-divider-file-code fileType="html"></mozek-divider-file-code>
+                        <p class="code">
+                            <mozek-code tag="moz-accordion" multi>
+                                <mozek-code tag="moz-accordion-item">
+                                    <mozek-code tag="div" extra="mozAccordionHeader" inline>Header 1</mozek-code><br>
+                                    <mozek-code tag="p" inline>Lorem ipsum dolor sit amet...</mozek-code><br>
+                                </mozek-code><br>
+                                <mozek-code tag="moz-accordion-item" extra="disabled">
+                                    <mozek-code tag="div" extra="mozAccordionHeader" inline>Header 2</mozek-code><br>
+                                    <mozek-code tag="p" inline>Lorem ipsum dolor sit amet...</mozek-code><br>
+                                </mozek-code><br>
+                            </mozek-code>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>

@@ -8,7 +8,9 @@ import { CommonModule } from '@angular/common';
 import { MozBadge, MozButton, MozIcon } from 'mozek-angular';
 
 import { ResponsiveService } from 'src/app/services/responsive.service';
+import { DocService } from 'src/app/services/doc.service';
 import { MozekCode } from "src/app/assets/components/codesample";
+import { MozekDividerFileCode } from "src/app/assets/components/codedividersample";
 
 @Component({
     selector: 'app-lib-component',
@@ -17,7 +19,8 @@ import { MozekCode } from "src/app/assets/components/codesample";
         MozekCode,
         MozBadge,
         MozButton,
-        MozIcon
+        MozIcon,
+        MozekDividerFileCode
     ],
     templateUrl: './badge.html',
     styleUrls: ['./badge.scss', '../lib-components.scss'],
@@ -27,6 +30,7 @@ export class Badge {
     description = 'A badge is a small component that displays a number or status indicator, often used to show notifications or highlight important information.'
 
     public responsive = inject(ResponsiveService);
+    public doc = inject(DocService);
     screen = computed(() => this.responsive.breakpoint());
 
     badges: any[] = [

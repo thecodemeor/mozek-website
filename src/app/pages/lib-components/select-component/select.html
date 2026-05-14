@@ -4,8 +4,22 @@
         {{title | titlecase}}
     </div>
     <div class="subtitle">
-        <h4><span class="tag">&lt;</span>moz-{{ title }}<span class="tag">&gt;</span></h4>
-        <p class="description-text">{{ description }}</p>
+        <h4><span class="tag">&lt;</span>moz-{{title}}<span class="tag">&gt;</span></h4>
+        <p class="description-text">{{description}}</p>
+        
+        <div class="import-card mt-4">
+            <h6 class="mb-1 primary">How to Import</h6>
+            <div class="sample-code-guide">
+                <p class="code-guide" #copyImport>
+                    <span class="ts-pink">import</span>&nbsp;<span class="ts-yellow">&#123;</span>&nbsp;<span class="ts-blue">MozSelect, MozOption</span>&nbsp;<span class="ts-yellow">&#125;</span>&nbsp;<span class="ts-pink">from</span>&nbsp;<span class="ts-orange">'mozek-angular'</span>;<br><br>
+                    &#64;<span class="ts-emerald">Component</span><span class="ts-yellow">(</span><span class="ts-pink">&#123;</span><br>
+                    &nbsp;&nbsp;...<br>
+                    &nbsp;&nbsp;<span class="ts-blue">imports:</span>&nbsp;<span class="ts-lightblue">&#91;</span> <span class="ts-emerald">MozSelect, MozOption</span> <span class="ts-lightblue">&#93;</span><br>
+                    <span class="ts-pink">&#125;</span><span class="ts-yellow">)</span>
+                </p>
+            </div>
+            <p class="description-text mt-2">To use the <b class="primary">{{title | titlecase}}</b> component, simply import <code class="import-code">MozSelect</code> and <code class="import-code">MozOption</code> into your standalone component's <code>imports</code> array.</p>
+        </div>
     </div>
 </div>
 
@@ -13,10 +27,58 @@
     <div class="sample">
         <div class="title">
             <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
+            Basic Usage
+        </div>
+        <div class="description">
+            <p>The <b class="highlight">Basic Select</b> component allows users to choose an option from a dropdown list. It supports <code>[(ngModel)]</code> for easy two-way data binding.</p>
+        </div>
+        <div class="content">
+            <div class="sample-box">
+                <div class="flex w-full flex-col gap-2">
+                    <moz-select [(ngModel)]="selectedFruit" label="Select Fruit">
+                        @for (fruit of fruits; track fruit) {
+                            <moz-option [value]="fruit">{{fruit}}</moz-option>
+                        }
+                    </moz-select>
+                    <p class="text-sm mt-2"><span class="primary">Selected Value:</span> {{ selectedFruit }}</p>
+                </div>
+            </div>
+            <div class="sample-code">
+                <div class="open-code" (click)="openSource('basic')">
+                    Source Code 
+                    <moz-icon color="#ffffff" [style.transform]="isOpen('basic') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
+                </div>
+                <div class="code-space" [class.is-open]="isOpen('basic')">
+                    <div class="code-wrapper" [class.has-padding]="isOpen('basic')">
+                        <mozek-divider-file-code fileType="html"></mozek-divider-file-code>
+                        <p class="code">
+                            <mozek-code tag="moz-select" modelValue="selectedFruit" label="Select Fruit">
+                                @for (fruit of fruits; track fruit) {
+                                    <mozek-code class="ml-4" tag="moz-option" [value]="fruit" inline>{{ fruit }}</mozek-code><br>
+                                }
+                            </mozek-code>
+                        </p>
+                        <mozek-divider-file-code fileType="typescript"></mozek-divider-file-code>
+                        <p class="code">
+                            <span class="ts-blue">selectedFruit</span>:&nbsp;<span class="ts-emerald">string</span>&nbsp;=&nbsp;<span class="ts-orange">'Apple'</span>&#59;<br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sample">
+        <div class="title">
+            <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
             Model
         </div>
         <div class="description">
             <p>The Select component supports both single and multiple selection modes. In single selection mode, users can select only one option from the dropdown, while in multiple selection mode, users can select multiple options. The component provides a clear and intuitive interface for managing selections, making it easy for users to choose their desired options.</p>
+            <div class="property-info">
+                <div class="info-item"><span>Property:</span> <p class="property">model</p></div>
+                <div class="info-item"><span>Type:</span> <code>outline</code><code>fill</code></div>
+                <div class="info-item"><span>Default:</span> <code>outline</code></div>
+            </div>
         </div>
         <div class="content">
             <div class="sample-box">
@@ -35,16 +97,19 @@
                     Source Code 
                     <moz-icon color="#ffffff" [style.transform]="isOpen('model') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
                 </div>
-                <div class="code-space" [class.is-open]="isOpen('model')" [style.max-height]="isOpen('model') ? '100rem' : '0'">
-                    @for (model of models; track model) {
-                        <p class="code">
-                            <mozek-code tag="moz-select" [model]="model">
-                                @for (item of ['1','2','3','4','5']; track $index) {
-                                    <mozek-code tag="moz-option" [value]="item" inline>{{item}}</mozek-code><br>
-                                }
-                            </mozek-code>
-                        </p>
-                    }
+                <div class="code-space" [class.is-open]="isOpen('model')">
+                    <div class="code-wrapper" [class.has-padding]="isOpen('model')">
+                        <mozek-divider-file-code fileType="html"></mozek-divider-file-code>
+                        @for (model of models; track model) {
+                            <p class="code">
+                                <mozek-code tag="moz-select" [model]="model">
+                                    @for (item of ['1','2','3','4','5']; track $index) {
+                                        <mozek-code tag="moz-option" [value]="item" inline>{{item}}</mozek-code><br>
+                                    }
+                                </mozek-code>
+                            </p>
+                        }
+                    </div>
                 </div>
             </div>
         </div>
@@ -75,16 +140,19 @@
                     Source Code 
                     <moz-icon color="#ffffff" [style.transform]="isOpen('label') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
                 </div>
-                <div class="code-space" [class.is-open]="isOpen('label')" [style.max-height]="isOpen('label') ? '100rem' : '0'">
-                    @for (model of models; track model) {
-                        <p class="code">
-                            <mozek-code tag="moz-select" [model]="model" label="Select">
-                                @for (item of ['1','2','3','4','5']; track $index) {
-                                    <mozek-code tag="moz-option" [value]="item" inline>{{item}}</mozek-code><br>
-                                }
-                            </mozek-code>
-                        </p>
-                    }
+                <div class="code-space" [class.is-open]="isOpen('label')">
+                    <div class="code-wrapper" [class.has-padding]="isOpen('label')">
+                        <mozek-divider-file-code fileType="html"></mozek-divider-file-code>
+                        @for (model of models; track model) {
+                            <p class="code">
+                                <mozek-code tag="moz-select" [model]="model" label="Select">
+                                    @for (item of ['1','2','3','4','5']; track $index) {
+                                        <mozek-code tag="moz-option" [value]="item" inline>{{item}}</mozek-code><br>
+                                    }
+                                </mozek-code>
+                            </p>
+                        }
+                    </div>
                 </div>
             </div>
         </div>
@@ -124,25 +192,28 @@
                     Source Code 
                     <moz-icon color="#ffffff" [style.transform]="isOpen('hint') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
                 </div>
-                <div class="code-space" [class.is-open]="isOpen('hint')" [style.max-height]="isOpen('hint') ? '100rem' : '0'">
-                    @for (model of models; track model) {
-                        <p class="code">
-                            <mozek-code tag="moz-select" [model]="model" hint="Must select an option.">
-                                @for (item of ['1','2','3']; track $index) {
-                                    <mozek-code tag="moz-option" [value]="item" inline>{{item}}</mozek-code><br>
-                                }
-                            </mozek-code>
-                        </p>
-                    }
-                    @for (model of models; track model) {
-                        <p class="code">
-                            <mozek-code tag="moz-select" [model]="model" error="Error">
-                                @for (item of ['1','2','3']; track $index) {
-                                    <mozek-code tag="moz-option" [value]="item" inline>{{item}}</mozek-code><br>
-                                }
-                            </mozek-code>
-                        </p>
-                    }
+                <div class="code-space" [class.is-open]="isOpen('hint')">
+                    <div class="code-wrapper" [class.has-padding]="isOpen('hint')">
+                        <mozek-divider-file-code fileType="html"></mozek-divider-file-code>
+                        @for (model of models; track model) {
+                            <p class="code">
+                                <mozek-code tag="moz-select" [model]="model" hint="Must select an option.">
+                                    @for (item of ['1','2','3']; track $index) {
+                                        <mozek-code tag="moz-option" [value]="item" inline>{{item}}</mozek-code><br>
+                                    }
+                                </mozek-code>
+                            </p>
+                        }
+                        @for (model of models; track model) {
+                            <p class="code">
+                                <mozek-code tag="moz-select" [model]="model" error="Error">
+                                    @for (item of ['1','2','3']; track $index) {
+                                        <mozek-code tag="moz-option" [value]="item" inline>{{item}}</mozek-code><br>
+                                    }
+                                </mozek-code>
+                            </p>
+                        }
+                    </div>
                 </div>
             </div>
         </div>
@@ -167,10 +238,13 @@
                     Source Code 
                     <moz-icon color="#ffffff" [style.transform]="isOpen('no-option') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
                 </div>
-                <div class="code-space" [class.is-open]="isOpen('no-option')" [style.max-height]="isOpen('no-option') ? '100rem' : '0'">
-                    <p class="code">
-                        <mozek-code tag="moz-select" label="Select" inline></mozek-code>
-                    </p>
+                <div class="code-space" [class.is-open]="isOpen('no-option')">
+                    <div class="code-wrapper" [class.has-padding]="isOpen('no-option')">
+                        <mozek-divider-file-code fileType="html"></mozek-divider-file-code>
+                        <p class="code">
+                            <mozek-code tag="moz-select" label="Select" inline></mozek-code>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -183,6 +257,11 @@
         </div>
         <div class="description">
             <p>The Select component can be set to a disabled state, preventing user interaction and making it visually distinct.</p>
+            <div class="property-info">
+                <div class="info-item"><span>Property:</span> <p class="property">disabled</p></div>
+                <div class="info-item"><span>Type:</span> <code>boolean</code></div>
+                <div class="info-item"><span>Default:</span> <code>false</code></div>
+            </div>
         </div>
         <div class="content">
             <div class="sample-box">
@@ -197,12 +276,15 @@
                     Source Code 
                     <moz-icon color="#ffffff" [style.transform]="isOpen('disabled') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
                 </div>
-                <div class="code-space" [class.is-open]="isOpen('disabled')" [style.max-height]="isOpen('disabled') ? '100rem' : '0'">
-                    @for (model of models; track model) {
-                        <p class="code">
-                            <mozek-code tag="moz-select" [model]="model" extra="disabled" inline></mozek-code>
-                        </p>
-                    }
+                <div class="code-space" [class.is-open]="isOpen('disabled')">
+                    <div class="code-wrapper" [class.has-padding]="isOpen('disabled')">
+                        <mozek-divider-file-code fileType="html"></mozek-divider-file-code>
+                        @for (model of models; track model) {
+                            <p class="code">
+                                <mozek-code tag="moz-select" [model]="model" extra="disabled" inline></mozek-code>
+                            </p>
+                        }
+                    </div>
                 </div>
             </div>
         </div>
@@ -231,16 +313,19 @@
                     Source Code 
                     <moz-icon color="#ffffff" [style.transform]="isOpen('full') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
                 </div>
-                <div class="code-space" [class.is-open]="isOpen('full')" [style.max-height]="isOpen('full') ? '100rem' : '0'">
-                    @for (model of models; track model) {
-                        <p class="code">
-                            <mozek-code tag="moz-select" [model]="model" label="Full Select" placeholder="Full" extra="full">
-                                @for (item of ['1','2','3','4','5']; track $index) {
-                                    <mozek-code tag="moz-option" [value]="item" inline>{{item}}</mozek-code><br>
-                                }
-                            </mozek-code>
-                        </p>
-                    }
+                <div class="code-space" [class.is-open]="isOpen('full')">
+                    <div class="code-wrapper" [class.has-padding]="isOpen('full')">
+                        <mozek-divider-file-code fileType="html"></mozek-divider-file-code>
+                        @for (model of models; track model) {
+                            <p class="code">
+                                <mozek-code tag="moz-select" [model]="model" label="Full Select" placeholder="Full" extra="full">
+                                    @for (item of ['1','2','3','4','5']; track $index) {
+                                        <mozek-code tag="moz-option" [value]="item" inline>{{item}}</mozek-code><br>
+                                    }
+                                </mozek-code>
+                            </p>
+                        }
+                    </div>
                 </div>
             </div>
         </div>
@@ -270,15 +355,18 @@
                     Source Code 
                     <moz-icon color="#ffffff" [style.transform]="isOpen('type') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
                 </div>
-                <div class="code-space" [class.is-open]="isOpen('type')" [style.max-height]="isOpen('type') ? '100rem' : '0'">
-                    <p class="code">
-                        <mozek-code tag="moz-select" placeholder="Anything">
-                            <mozek-code tag="moz-option" value="" inline></mozek-code><br>
-                            <mozek-code tag="moz-option" value="1" inline>1</mozek-code><br>
-                            <mozek-code tag="moz-option" value="2" extra="disabled" inline>2</mozek-code><br>
-                            <mozek-code tag="moz-option" value="3" inline>3</mozek-code><br>
-                        </mozek-code>
-                    </p>
+                <div class="code-space" [class.is-open]="isOpen('type')">
+                    <div class="code-wrapper" [class.has-padding]="isOpen('type')">
+                        <mozek-divider-file-code fileType="html"></mozek-divider-file-code>
+                        <p class="code">
+                            <mozek-code tag="moz-select" placeholder="Anything">
+                                <mozek-code tag="moz-option" value="" inline></mozek-code><br>
+                                <mozek-code tag="moz-option" value="1" inline>1</mozek-code><br>
+                                <mozek-code tag="moz-option" value="2" extra="disabled" inline>2</mozek-code><br>
+                                <mozek-code tag="moz-option" value="3" inline>3</mozek-code><br>
+                            </mozek-code>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>

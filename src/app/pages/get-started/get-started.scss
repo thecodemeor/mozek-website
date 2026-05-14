@@ -69,6 +69,21 @@
             }
         }
     }
+
+    .guide-title {
+        display: flex;
+        width: 100%;
+        color: var(--moz-color-primary);
+        border-bottom: solid 0.1rem var(--moz-color-primary);
+        padding-bottom: var(--moz-space-1);
+        align-items: center;
+        gap: var(--moz-space-1);
+
+        img {
+            height: 1.2rem;
+            width: auto;
+        }
+    }
 }
 
 .shelf {

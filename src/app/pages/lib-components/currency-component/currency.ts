@@ -8,7 +8,9 @@ import { CommonModule } from '@angular/common';
 import { MozIcon, MozCurrency } from 'mozek-angular';
 
 import { ResponsiveService } from 'src/app/services/responsive.service';
+import { DocService } from 'src/app/services/doc.service';
 import { MozekCode } from "src/app/assets/components/codesample";
+import { MozekDividerFileCode } from "src/app/assets/components/codedividersample";
 
 @Component({
     selector: 'app-lib-component',
@@ -16,8 +18,9 @@ import { MozekCode } from "src/app/assets/components/codesample";
     CommonModule,
     MozIcon,
     MozekCode,
-    MozCurrency
-],
+    MozCurrency,
+        MozekDividerFileCode
+    ],
     templateUrl: './currency.html',
     styleUrls: ['./currency.scss', '../lib-components.scss'],
 })
@@ -26,6 +29,7 @@ export class Currency {
     description = 'The currency component is designed to display monetary values in a clear and consistent format. It supports various currencies, allowing users to easily identify the type of currency being represented. The component can display both the currency symbol and code, along with properly formatted numbers, making it ideal for financial applications, e-commerce platforms, and any interface that requires the presentation of monetary information.'
     
     public responsive = inject(ResponsiveService);
+    public doc = inject(DocService);
     screen = computed(() => this.responsive.breakpoint());
 
     symbolsCurrency: any = {

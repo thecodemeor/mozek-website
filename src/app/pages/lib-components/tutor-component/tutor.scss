@@ -1,0 +1,23 @@
+@use "../lib-components.scss";
+
+:host {
+    display: block;
+    width: 100%;
+}
+
+.parent-card {
+    width: 80%;
+    max-width: 30rem;
+}
+
+.tutor-step {
+    padding: 1rem;
+    min-width: 200px;
+}
+
+.symbol { color: #808080;}
+.tag { color: #569dd6;}
+.orange { color: #ce9178;}
+.yellow { color: #ffffa2ff;}
+.blue { color: #9bdbfe;}
+.white { color: #ffffff;}

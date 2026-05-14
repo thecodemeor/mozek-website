@@ -1,0 +1,114 @@
+<div class="sect-title">
+    <div class="title container">
+        <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
+        {{title | titlecase}}
+    </div>
+    <div class="subtitle">
+        <h4><span class="tag">&lt;</span>moz-{{title}}<span class="tag">&gt;</span></h4>
+        <p class="description-text">{{description}}</p>
+        
+        <div class="import-card mt-4">
+            <h6 class="mb-1 primary">How to Import</h6>
+            <div class="sample-code-guide">
+                <p class="code-guide" #copyImport>
+                    <span class="ts-pink">import</span>&nbsp;<span class="ts-yellow">&#123;</span>&nbsp;<span class="ts-blue">MozBreadcrumbs</span>&nbsp;<span class="ts-yellow">&#125;</span>&nbsp;<span class="ts-pink">from</span>&nbsp;<span class="ts-orange">'mozek-angular'</span>;<br><br>
+                    &#64;<span class="ts-emerald">Component</span><span class="ts-yellow">(</span><span class="ts-pink">&#123;</span><br>
+                    &nbsp;&nbsp;...<br>
+                    &nbsp;&nbsp;<span class="ts-blue">imports:</span>&nbsp;<span class="ts-lightblue">&#91;</span> <span class="ts-emerald">MozBreadcrumbs</span> <span class="ts-lightblue">&#93;</span><br>
+                    <span class="ts-pink">&#125;</span><span class="ts-yellow">)</span>
+                </p>
+            </div>
+            <p class="description-text mt-2">To use the <b class="primary">{{title | titlecase}}</b> component, simply import <code class="import-code">MozBreadcrumbs</code> into your standalone component's <code>imports</code> array.</p>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <!-- Basic Breadcrumbs -->
+    <div class="sample">
+        <div class="title">
+            <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
+            Basic Breadcrumbs
+        </div>
+        <div class="description">
+            <p>
+                A standard breadcrumb trail with icons and labels. Each item can optionally include a URL for navigation.<br><br>
+                The navigation components in Mozek accept an array of objects. Each object must follow a specific schema containing three properties: <b class="highlight">label</b>, <b class="highlight">icon</b>, and <b class="highlight">url</b>.
+            </p>
+            <div class="property-info">
+                <div class="info-item"><span>Property:</span> <p class="property">&#123;<code>label:</code>, <code>icon:</code>, <code>url:</code>&#125;</p></div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="sample-box">
+                <moz-breadcrumbs [items]="basicItems"></moz-breadcrumbs>
+            </div>
+            <div class="sample-code">
+                <div class="open-code" (click)="openSource('basic')">
+                    Source Code 
+                    <moz-icon color="#ffffff" [style.transform]="isOpen('basic') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
+                </div>
+                <div class="code-space" [class.is-open]="isOpen('basic')">
+                    <div class="code-wrapper" [class.has-padding]="isOpen('basic')">
+                        <mozek-divider-file-code fileType="html"></mozek-divider-file-code>
+                        <p class="code">
+                            <mozek-code tag="moz-breadcrumbs" items="basicItems" inline></mozek-code>
+                        </p>
+                        <mozek-divider-file-code fileType="typescript"></mozek-divider-file-code>
+                        <p class="code">
+                            <span class="ts-blue">basicItems</span> = <span class="ts-pink">&#91;</span>
+                            <br>
+                            @for (item of basicItems; track item) {
+                                <span class="pl-2"><span class="ts-lightblue">&#123;</span> <span class="ts-blue">label:</span> <span class="ts-orange">'{{item.label}}'</span>, <span class="ts-blue">icon:</span> <span class="ts-orange">'{{item.icon}}'</span>, <span class="ts-blue">url:</span> <span class="ts-orange">'{{item.url}}'</span> <span class="ts-lightblue">&#125;</span>,</span><br>
+                            }
+                            <span class="ts-pink">&#93;</span>&#59;
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Auto-Collapsing -->
+    <div class="sample">
+        <div class="title">
+            <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
+            Auto-Collapsing
+        </div>
+        <div class="description">
+            <p>When the breadcrumb trail exceeds the container width, it automatically collapses intermediate steps into a menu, keeping only the first and last items visible.</p>
+        </div>
+        <div class="content">
+            <div class="sample-box">
+                <div class="resizable-box p-4 border rounded" [style.width]="currentWidth ? currentWidth + 'px' : '100%'">
+                    <p class="mb-2">Simulated Narrow Container (Drag handle to resize)</p>
+                    <moz-breadcrumbs [items]="collapsedItems" style="width: 100%;"></moz-breadcrumbs>
+                    <div class="resize-handle" (mousedown)="startResize($event)" [class.dragging]="isResizing"></div>
+                </div>
+            </div>
+            <div class="sample-code">
+                <div class="open-code" (click)="openSource('collapse')">
+                    Source Code 
+                    <moz-icon color="#ffffff" [style.transform]="isOpen('collapse') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
+                </div>
+                <div class="code-space" [class.is-open]="isOpen('collapse')">
+                    <div class="code-wrapper" [class.has-padding]="isOpen('collapse')">
+                        <mozek-divider-file-code fileType="html"></mozek-divider-file-code>
+                        <p class="code">
+                            <mozek-code tag="moz-breadcrumbs" items="collapsedItems" inline></mozek-code>
+                        </p>
+                        <mozek-divider-file-code fileType="typescript"></mozek-divider-file-code>
+                        <p class="code">
+                            <span class="ts-blue">collapsedItems</span> = <span class="ts-pink">&#91;</span>
+                            <br>
+                            @for (item of collapsedItems; track item) {
+                                <span class="pl-2"><span class="ts-lightblue">&#123;</span> <span class="ts-blue">label:</span> <span class="ts-orange">'{{item.label}}'</span>, <span class="ts-blue">icon:</span> <span class="ts-orange">'{{item.icon}}'</span><span class="ts-lightblue">&#125;</span>,</span><br>
+                            }
+                            <span class="ts-pink">&#93;</span>&#59;
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

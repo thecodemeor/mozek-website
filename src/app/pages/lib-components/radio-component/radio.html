@@ -1,11 +1,25 @@
 <div class="sect-title">
     <div class="title container">
         <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
-        {{title | titlecase}}
+        {{title | titlecase}} Component
     </div>
     <div class="subtitle">
-        <h4><span class="tag">&lt;</span>moz-{{ title }}<span class="tag">&gt;</span></h4>
-        <p class="description-text">{{ description }}</p>
+        <h4><span class="tag">&lt;</span>moz-{{title}}<span class="tag">&gt;</span></h4>
+        <p class="description-text">{{description}}</p>
+        
+        <div class="import-card mt-4">
+            <h6 class="mb-1 primary">How to Import</h6>
+            <div class="sample-code-guide">
+                <p class="code-guide" #copyImport>
+                    <span class="ts-pink">import</span>&nbsp;<span class="ts-yellow">&#123;</span>&nbsp;<span class="ts-blue">MozRadio, MozRadioGroup</span>&nbsp;<span class="ts-yellow">&#125;</span>&nbsp;<span class="ts-pink">from</span>&nbsp;<span class="ts-orange">'mozek-angular'</span>;<br><br>
+                    &#64;<span class="ts-emerald">Component</span><span class="ts-yellow">(</span><span class="ts-pink">&#123;</span><br>
+                    &nbsp;&nbsp;...<br>
+                    &nbsp;&nbsp;<span class="ts-blue">imports:</span>&nbsp;<span class="ts-lightblue">&#91;</span> <span class="ts-emerald">MozRadio, MozRadioGroup</span> <span class="ts-lightblue">&#93;</span><br>
+                    <span class="ts-pink">&#125;</span><span class="ts-yellow">)</span>
+                </p>
+            </div>
+            <p class="description-text mt-2">To use the <b class="primary">{{title | titlecase}}</b> component, simply import <code class="import-code">MozRadio</code> and <code class="import-code">MozRadioGroup</code> into your standalone component's <code>imports</code> array.</p>
+        </div>
     </div>
 </div>
 
@@ -13,7 +27,14 @@
     <div class="sample">
         <div class="title">
             <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
-            Basic
+            Basic Usage
+        </div>
+        <div class="description">
+            <p>The Radio Group allows users to select a single option from a set. It manages the selection state across all nested radio buttons with the same name.</p>
+            <div class="property-info">
+                <div class="info-item"><span>Property:</span> <h6>Name</h6></div>
+                <div class="info-item"><span>Type:</span> <code>string</code></div>
+            </div>
         </div>
         <div class="content">
             <div class="sample-box">
@@ -21,7 +42,7 @@
                     @if (ready) {
                         <moz-radio-group
                             name="moon"
-                            (valueChange)="moon = $event"
+                            [(ngModel)]="moon"
                         >
                             <moz-radio value="cresent" color="primary" [checked]="moon === 'cresent'">Cresent</moz-radio>
                             <moz-radio value="half" color="primary" [checked]="moon === 'half'">Half</moz-radio>
@@ -36,17 +57,21 @@
                     Source Code 
                     <moz-icon color="#ffffff" [style.transform]="isOpen('basic') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
                 </div>
-                <div class="code-space" [class.is-open]="isOpen('basic')" [style.max-height]="isOpen('basic') ? '50rem' : '0'">
-                    <p class="code">
-                        <span class="tag"><span class="symbol">&lt;</span>moz-{{title}}-group</span><br>
-                            <span class="blue ml-4"> name</span>=<span class="orange">"moon"</span><br>
-                            <span class="blue ml-4"> (valueChange)</span>=<span class="orange">"<span class="blue">moon <span class="white">=</span> $event</span>"</span><br>
-                        <span class="symbol">&gt;</span><br>
-                            <mozek-code class="ml-4" tag="moz-radio" color="primary" value="cresent" radioCheck="moon,cresent" inline>Cresent</mozek-code><br>
-                            <mozek-code class="ml-4" tag="moz-radio" color="primary" value="half" radioCheck="moon,half" inline>Half</mozek-code><br>
-                            <mozek-code class="ml-4" tag="moz-radio" color="primary" value="full" radioCheck="moon,full" inline>Full</mozek-code><br>
-                        <span class="tag"><span class="symbol">&lt;/</span>moz-{{title}}-group<span class="symbol">&gt;</span></span><br><br>
-                    </p>
+                <div class="code-space" [class.is-open]="isOpen('basic')">
+                    <div class="code-wrapper" [class.has-padding]="isOpen('basic')">
+                        <mozek-divider-file-code fileType="html"></mozek-divider-file-code>
+                        <p class="code">
+                            <mozek-code tag="moz-radio-group" name="moon" modelValue="moon">
+                                <mozek-code class="ml-4" tag="moz-radio" color="primary" value="cresent" radioCheck="moon,cresent" inline>Cresent</mozek-code><br>
+                                <mozek-code class="ml-4" tag="moz-radio" color="primary" value="half" radioCheck="moon,half" inline>Half</mozek-code><br>
+                                <mozek-code class="ml-4" tag="moz-radio" color="primary" value="full" radioCheck="moon,full" inline>Full</mozek-code><br>
+                            </mozek-code>
+                        </p>
+                        <mozek-divider-file-code fileType="typescript"></mozek-divider-file-code>
+                        <p class="code">
+                            <span class="ts-blue">moon:</span>&nbsp;<span class="ts-emerald">string</span> = <span class="ts-orange">'cresent'</span>;
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -55,19 +80,25 @@
     <div class="sample">
         <div class="title">
             <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
-            Orientation: Vertical
+            Orientation
         </div>
-        <div class="description">
-            <p>The Radio component supports vertical arrangements using the orientation property. By default, the radios are displayed vertically, stacking options from top to bottom.</p>
+        <div class="description pb-0">
+            <p>Radio groups can be arranged vertically or horizontally using the orientation property to fit different layout requirements.</p>
+            <div class="property-info">
+                <div class="info-item"><span>Property:</span> <h6>Orientation</h6></div>
+                <div class="info-item"><span>Type:</span> <code>vertical</code><code>horizontal</code></div>
+                <div class="info-item"><span>Default:</span> <code>vertical</code></div>
+            </div>
         </div>
         <div class="content">
+            <div class="sub-title">Vertical</div>
             <div class="sample-box">
                 <div class="sample-radio-vertical" [class.mobile-sample-radio]="screen() === 'mobile'">
                     @if (ready) {
                         <moz-radio-group
                             orientation="vertical"
                             name="planet"
-                            (valueChange)="planet = $event"
+                            [(ngModel)]="planet"
                         >
                             <moz-radio value="earth" color="secondary" [checked]="planet === 'earth'">Earth</moz-radio>
                             <moz-radio value="mars" color="secondary" [checked]="planet === 'mars'">Mars</moz-radio>
@@ -82,46 +113,41 @@
                     Source Code 
                     <moz-icon color="#ffffff" [style.transform]="isOpen('vertical') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
                 </div>
-                <div class="code-space" [class.is-open]="isOpen('vertical')" [style.max-height]="isOpen('vertical') ? '50rem' : '0'">
-                    <p class="code">
-                        <span class="tag"><span class="symbol">&lt;</span>moz-{{title}}-group</span><br>
-                            <span class="blue ml-4"> orientation</span>=<span class="orange">"vertical"</span><br>
-                            <span class="blue ml-4"> name</span>=<span class="orange">"planet"</span><br>
-                            <span class="blue ml-4"> (valueChange)</span>=<span class="orange">"<span class="blue">planet <span class="white">=</span> $event</span>"</span><br>
-                        <span class="symbol">&gt;</span><br>
-                            <mozek-code class="ml-4" tag="moz-radio" color="secondary" value="earth" radioCheck="planet,earth" inline>Earth</mozek-code><br>
-                            <mozek-code class="ml-4" tag="moz-radio" color="secondary" value="mars" radioCheck="planet,mars" inline>Mars</mozek-code><br>
-                            <mozek-code class="ml-4" tag="moz-radio" color="secondary" value="neptune" radioCheck="planet,neptune" inline>Neptune</mozek-code><br>
-                        <span class="tag"><span class="symbol">&lt;/</span>moz-{{title}}-group<span class="symbol">&gt;</span></span><br><br>
-                    </p>
+                <div class="code-space" [class.is-open]="isOpen('vertical')">
+                    <div class="code-wrapper" [class.has-padding]="isOpen('vertical')">
+                        <mozek-divider-file-code fileType="html"></mozek-divider-file-code>
+                        <p class="code">
+                            <span class="comment">// Vertical Orientation (Default)</span><br>
+                            <mozek-code tag="moz-radio-group" name="planet" modelValue="planet" orientation="vertical">
+                                <mozek-code class="ml-4" tag="moz-radio" color="secondary" value="earth" radioCheck="planet,earth" inline>Earth</mozek-code><br>
+                                <mozek-code class="ml-4" tag="moz-radio" color="secondary" value="mars" radioCheck="planet,mars" inline>Mars</mozek-code><br>
+                                <mozek-code class="ml-4" tag="moz-radio" color="secondary" value="neptune" radioCheck="planet,neptune" inline>Neptune</mozek-code><br>
+                            </mozek-code>
+                        </p>
+                        <mozek-divider-file-code fileType="typescript"></mozek-divider-file-code>
+                        <p class="code">
+                            <span class="ts-blue">planet:</span>&nbsp;<span class="ts-emerald">string</span> = <span class="ts-orange">'earth'</span>;
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="sample">
-        <div class="title">
-            <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
-            Orientation: Horizontal
-        </div>
-        <div class="description">
-            <p>The Radio component supports vertical arrangements using the orientation property. By default, the radios are displayed vertically, stacking options from top to bottom.</p>
-        </div>
         <div class="content">
+            <div class="sub-title">Horizontal</div>
             <div class="sample-box">
-                <div class="sample-radio-horizontal">
-                    <img [src]="'assets/images/sample-image/' + alien + '-alien.svg'" class="sample-radio-image" alt="Sample Alien">
+                <div class="sample-radio-horizontal" [class.mobile-sample-radio]="screen() === 'mobile'">
                     @if (ready) {
                         <moz-radio-group
                             orientation="horizontal"
                             name="alien"
-                            (valueChange)="alien = $event"
+                            [(ngModel)]="alien"
                         >
-                            <moz-radio value="zuzu" color="danger" [checked]="alien === 'zuzu'">Zuzu</moz-radio>
-                            <moz-radio value="noro" color="danger" [checked]="alien === 'noro'">Noro</moz-radio>
-                            <moz-radio value="lumi" color="danger" [checked]="alien === 'lumi'">Lumi</moz-radio>
+                            <moz-radio value="zuzu" color="secondary" [checked]="alien === 'zuzu'">Zuzu</moz-radio>
+                            <moz-radio value="lumi" color="secondary" [checked]="alien === 'lumi'">Lumi</moz-radio>
+                            <moz-radio value="noro" color="secondary" [checked]="alien === 'noro'">Noro</moz-radio>
                         </moz-radio-group>
                     }
+                    <img [src]="'assets/images/sample-image/' + alien + '-alien.svg'" class="sample-radio-image" alt="Sample Alien">
                 </div>
             </div>
             <div class="sample-code">
@@ -129,18 +155,22 @@
                     Source Code 
                     <moz-icon color="#ffffff" [style.transform]="isOpen('horizontal') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
                 </div>
-                <div class="code-space" [class.is-open]="isOpen('horizontal')" [style.max-height]="isOpen('horizontal') ? '50rem' : '0'">
-                    <p class="code">
-                        <span class="tag"><span class="symbol">&lt;</span>moz-{{title}}-group</span><br>
-                            <span class="blue ml-4"> orientation</span>=<span class="orange">"horizontal"</span><br>
-                            <span class="blue ml-4"> name</span>=<span class="orange">"alien"</span><br>
-                            <span class="blue ml-4"> (valueChange)</span>=<span class="orange">"<span class="blue">alien <span class="white">=</span> $event</span>"</span><br>
-                        <span class="symbol">&gt;</span><br>
-                            <mozek-code class="ml-4" tag="moz-radio" color="danger" value="zuzu" radioCheck="alien,zuzu" inline>Zuzu</mozek-code><br>
-                            <mozek-code class="ml-4" tag="moz-radio" color="danger" value="noro" radioCheck="alien,noro" inline>Noro</mozek-code><br>
-                            <mozek-code class="ml-4" tag="moz-radio" color="danger" value="lumi" radioCheck="alien,lumi" inline>Lumi</mozek-code><br>
-                        <span class="tag"><span class="symbol">&lt;/</span>moz-{{title}}-group<span class="symbol">&gt;</span></span><br><br>
-                    </p>
+                <div class="code-space" [class.is-open]="isOpen('horizontal')">
+                    <div class="code-wrapper" [class.has-padding]="isOpen('horizontal')">
+                        <mozek-divider-file-code fileType="html"></mozek-divider-file-code>
+                        <p class="code">
+                            <span class="comment">// Horizontal Orientation</span><br>
+                            <mozek-code tag="moz-radio-group" orientation="horizontal" name="alien" modelValue="alien">
+                                <mozek-code class="ml-4" tag="moz-radio" color="secondary" value="zuzu" radioCheck="alien,zuzu" inline>Zuzu</mozek-code><br>
+                                <mozek-code class="ml-4" tag="moz-radio" color="secondary" value="lumi" radioCheck="alien,lumi" inline>Lumi</mozek-code><br>
+                                <mozek-code class="ml-4" tag="moz-radio" color="secondary" value="noro" radioCheck="alien,noro" inline>Noro</mozek-code><br>
+                            </mozek-code>
+                        </p>
+                        <mozek-divider-file-code fileType="typescript"></mozek-divider-file-code>
+                        <p class="code">
+                            <span class="ts-blue">alien:</span>&nbsp;<span class="ts-emerald">string</span> = <span class="ts-orange">'zuzu'</span>;
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -149,10 +179,15 @@
     <div class="sample">
         <div class="title">
             <img src="assets/images/logo/mozek_vector_blue.svg" alt="Mozek Logo Point">
-            Disabled
+            Disabled State
         </div>
         <div class="description">
-            <p>The Radio component can be disabled at both the radio-group and individual radio level. Disabling the group will disable all radios within it, while disabling a single radio will only affect that specific option.</p>
+            <p>Radios can be disabled at the group level or individually, preventing user interaction while maintaining visual context.</p>
+            <div class="property-info">
+                <div class="info-item"><span>Property:</span> <p class="property">disabled</p></div>
+                <div class="info-item"><span>Type:</span> <code>boolean</code></div>
+                <div class="info-item"><span>Default:</span> <code>false</code></div>
+            </div>
         </div>
         <div class="content">
             <div class="sample-box">
@@ -160,7 +195,7 @@
                 <moz-radio-group
                     orientation="horizontal"
                     name="property"
-                    (valueChange)="property = $event"
+                    [(ngModel)]="property"
                     disabled
                 >
                     <moz-radio value="condominium" color="success" [checked]="property === 'condominium'">Condominium</moz-radio>
@@ -172,7 +207,7 @@
                 <moz-radio-group
                     orientation="horizontal"
                     name="property"
-                    (valueChange)="property = $event"
+                    [(ngModel)]="property"
                 >
                     <moz-radio value="condominium" color="success" [checked]="property === 'condominium'">Condominium</moz-radio>
                     <moz-radio value="bungalow" color="success" [checked]="property === 'bungalow'">Bungalow</moz-radio>
@@ -184,32 +219,31 @@
                     Source Code 
                     <moz-icon color="#ffffff" [style.transform]="isOpen('disabled') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
                 </div>
-                <div class="code-space" [class.is-open]="isOpen('disabled')" [style.max-height]="isOpen('disabled') ? '50rem' : '0'">
-                    <p class="code">
-                        <span class="comment">// Radio Group Disabled</span><br>
-                        <span class="tag"><span class="symbol">&lt;</span>moz-{{title}}-group</span><br>
-                            <span class="blue ml-4"> orientation</span>=<span class="orange">"horizontal"</span><br>
-                            <span class="blue ml-4"> name</span>=<span class="orange">"property"</span><br>
-                            <span class="blue ml-4"> (valueChange)</span>=<span class="orange">"<span class="blue">property <span class="white">=</span> $event</span>"</span><br>
-                            <span class="blue ml-4"> disabled</span><br>
-                        <span class="symbol">&gt;</span><br>
-                            <mozek-code class="ml-4" tag="moz-radio" color="success" value="condominium" radioCheck="property,condominium" inline>Condominium</mozek-code><br>
-                            <mozek-code class="ml-4" tag="moz-radio" color="success" value="bungalow" radioCheck="property,bungalow" inline>Bungalow</mozek-code><br>
-                            <mozek-code class="ml-4" tag="moz-radio" color="success" value="terraced" radioCheck="property,terraced" inline>Terraced</mozek-code><br>
-                        <span class="tag"><span class="symbol">&lt;/</span>moz-{{title}}-group<span class="symbol">&gt;</span></span><br><br>
-                    </p><br>
-                    <p class="code">
-                        <span class="comment">// Radio Disabled</span><br>
-                        <span class="tag"><span class="symbol">&lt;</span>moz-{{title}}-group</span><br>
-                            <span class="blue ml-4"> orientation</span>=<span class="orange">"horizontal"</span><br>
-                            <span class="blue ml-4"> name</span>=<span class="orange">"property"</span><br>
-                            <span class="blue ml-4"> (valueChange)</span>=<span class="orange">"<span class="blue">property <span class="white">=</span> $event</span>"</span><br>
-                        <span class="symbol">&gt;</span><br>
-                            <mozek-code class="ml-4" tag="moz-radio" color="success" value="condominium" radioCheck="property,condominium" inline>Condominium</mozek-code><br>
-                            <mozek-code class="ml-4" tag="moz-radio" color="success" value="bungalow" radioCheck="property,bungalow" inline>Bungalow</mozek-code><br>
-                            <mozek-code class="ml-4" tag="moz-radio" color="success" value="terraced" radioCheck="property,terraced" extra="disabled" inline>Terraced</mozek-code><br>
-                        <span class="tag"><span class="symbol">&lt;/</span>moz-{{title}}-group<span class="symbol">&gt;</span></span><br><br>
-                    </p>
+                <div class="code-space" [class.is-open]="isOpen('disabled')">
+                    <div class="code-wrapper" [class.has-padding]="isOpen('disabled')">
+                        <mozek-divider-file-code fileType="html"></mozek-divider-file-code>
+                        <p class="code">
+                        <p class="code">
+                            <span class="comment">// Radio Group Disabled</span><br>
+                            <mozek-code tag="moz-radio-group" orientation="horizontal" name="property" modelValue="property" extra="disabled">
+                                <mozek-code class="ml-4" tag="moz-radio" color="success" value="condominium" radioCheck="property,condominium" inline>Condominium</mozek-code><br>
+                                <mozek-code class="ml-4" tag="moz-radio" color="success" value="bungalow" radioCheck="property,bungalow" inline>Bungalow</mozek-code><br>
+                                <mozek-code class="ml-4" tag="moz-radio" color="success" value="terraced" radioCheck="property,terraced" inline>Terraced</mozek-code><br>
+                            </mozek-code>
+                        </p><br>
+                        <p class="code">
+                            <span class="comment">// Radio Disabled</span><br>
+                            <mozek-code tag="moz-radio-group" orientation="horizontal" name="property" modelValue="property">
+                                <mozek-code class="ml-4" tag="moz-radio" color="success" value="condominium" radioCheck="property,condominium" inline>Condominium</mozek-code><br>
+                                <mozek-code class="ml-4" tag="moz-radio" color="success" value="bungalow" radioCheck="property,bungalow" inline>Bungalow</mozek-code><br>
+                                <mozek-code class="ml-4" tag="moz-radio" color="success" value="terraced" radioCheck="property,terraced" extra="disabled" inline>Terraced</mozek-code><br>
+                            </mozek-code>
+                        </p>
+                        <mozek-divider-file-code fileType="typescript"></mozek-divider-file-code>
+                        <p class="code">
+                            <span class="ts-blue">property:</span>&nbsp;<span class="ts-emerald">string</span> = <span class="ts-orange">'condominium'</span>;
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>

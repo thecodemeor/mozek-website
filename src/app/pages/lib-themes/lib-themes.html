@@ -19,6 +19,16 @@
                 }
             </div>
             <p class="paragraph">where <span class="code secondary">[color]</span> is the name of the palette and <span class="code secondary">[n]</span> is the numeric value of the desired swatch.</p>
+
+            <p class="paragraph mt-2">Example usage in SCSS:</p>
+            <div class="sample-code-guide">
+                <p class="code-guide" #copyImport>
+                    .my-class&nbsp;&#123;<br>
+                    &nbsp;&nbsp;color: <span class="css-violet">#&#123;moz.moz-get-color(<span class="css-yellow">blue</span>, <span class="css-yellow">600</span>)&#125;</span>;<br>
+                    &nbsp;&nbsp;background-color: <span class="css-violet">#&#123;moz.moz-get-color(<span class="css-yellow">blue</span>, <span class="css-yellow">50</span>)&#125;</span>;<br>
+                    &#125;
+                </p>
+            </div>
         </div>
 
         <div class="theme-card container" [class]="screen() === 'mobile' ? 'px-2' : 'px-4'">

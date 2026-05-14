@@ -1,0 +1,30 @@
+@use "../lib-components.scss";
+
+:host {
+    display: block;
+    width: 100%;
+}
+
+.symbol {
+    color: #808080;
+}
+
+.tag {
+    color: #569dd6;
+}
+
+.orange {
+    color: #ce9178;
+}
+
+.yellow {
+    color: #ffffa2ff;
+}
+
+.blue {
+    color: #9bdbfe;
+}
+
+.white {
+    color: #ffffff;
+}

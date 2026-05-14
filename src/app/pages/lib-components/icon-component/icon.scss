@@ -1,0 +1,15 @@
+@use "../lib-components.scss";
+
+:host {
+    display: block;
+    width: 100%;
+}
+
+.caption {
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.text-grey {
+    color: var(--moz-color-grey);
+}

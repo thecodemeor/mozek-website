@@ -1,0 +1,47 @@
+@use "../lib-components.scss";
+
+:host {
+    display: block;
+    width: 100%;
+}
+
+.resizable-box {
+    overflow: hidden;
+    background: color-mix(in srgb, var(--moz-color-primary-lite) 30%, var(--moz-color-background) 70%) ;
+    position: relative;
+    user-select: none;
+}
+
+.resize-handle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 12px;
+    height: 100%;
+    cursor: col-resize;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    transition: background 0.2s;
+
+    &::after {
+        content: '';
+        width: 4px;
+        height: 40px;
+        border-radius: 4px;
+        background: color-mix(in srgb, var(--moz-color-primary) 30%, transparent);
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    &:hover, &.dragging {
+        background: color-mix(in srgb, var(--moz-color-primary) 5%, transparent);
+        
+        &::after {
+            background: var(--moz-color-primary);
+            height: 60px;
+            width: 6px;
+        }
+    }
+}

@@ -1,0 +1,291 @@
+
+> mozek@0.0.0 build
+> ng build
+
+❯ Building...
+✔ Building...
+Initial chunk files   | Names         |  Raw size | Estimated transfer size
+chunk-JML2MI24.js     | -             | 871.17 kB |                89.44 kB
+chunk-7SCUPGU3.js     | -             | 153.71 kB |                45.91 kB
+chunk-BSJGQLDG.js     | -             |  77.03 kB |                19.19 kB
+main-USS6V2CF.js      | main          |  36.88 kB |                 6.38 kB
+polyfills-5CFQRCPP.js | polyfills     |  34.59 kB |                11.33 kB
+styles-J2VNNVOM.css   | styles        |  13.61 kB |                 2.23 kB
+
+                      | Initial total |   1.19 MB |               174.49 kB
+
+Lazy chunk files      | Names         |  Raw size | Estimated transfer size
+chunk-4CTXUJLZ.js     | dialog        |  97.73 kB |                 8.77 kB
+chunk-EAVKGRIK.js     | snackbar      |  91.73 kB |                 7.48 kB
+chunk-UCJ2CNYM.js     | breadcrumbs   |  87.97 kB |                 7.13 kB
+chunk-J54NFS2M.js     | icon          |  86.82 kB |                 6.84 kB
+chunk-BFS25NJU.js     | menu          |  86.78 kB |                 6.77 kB
+chunk-V6KVFL5G.js     | tutor         |  86.47 kB |                 6.83 kB
+chunk-YBXDUYYU.js     | tooltip       |  86.46 kB |                 6.57 kB
+chunk-3N7QIDDN.js     | switch        |  75.80 kB |                 8.53 kB
+chunk-7P3BZZLG.js     | radio         |  74.69 kB |                 8.05 kB
+chunk-STHEVQH7.js     | select        |  73.91 kB |                 7.82 kB
+chunk-EM336YMG.js     | input         |  70.68 kB |                 7.59 kB
+chunk-N62MXYVP.js     | card          |  70.18 kB |                 7.31 kB
+chunk-GKOPNPYU.js     | badge         |  69.75 kB |                 7.35 kB
+chunk-P3YWDHDY.js     | checkbox      |  69.60 kB |                 7.34 kB
+chunk-B3ARHYUE.js     | divider       |  69.35 kB |                 7.20 kB
+...and 20 more lazy chunks files. Use "--verbose" to show all the files.
+
+Application bundle generation complete. [4.234 seconds] - 2026-05-14T07:35:04.485Z
+
+▲ [WARNING] NG8113: MozekCode is not used within the template of Tooltip [plugin angular-compiler]
+
+    src/app/pages/lib-components/tooltip-component/tooltip.ts:22:8:
+      22 │         MozekCode,
+         ╵         ~~~~~~~~~
+
+
+▲ [WARNING] Deprecation [plugin angular-sass]
+
+    src/app/app.scss:156:20:
+      156 │                     width: fit-content;
+          ╵                     ^
+
+
+  Sass's behavior for declarations that appear after nested
+  rules will be changing to match the behavior specified by CSS in an upcoming
+  version. To keep the existing behavior, move the declaration above the nested
+  rule. To opt into the new behavior, wrap the declaration in `& {}`.
+  
+  More info: https://sass-lang.com/d/mixed-decls
+
+
+▲ [WARNING] Deprecation [plugin angular-sass]
+
+    src/app/pages/lib-components/breadcrumbs-component/breadcrumbs.scss:1:8:
+      1 │ @import "../lib-components.scss";
+        ╵         ^
+
+
+  Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+  
+  More info and automated migrator: https://sass-lang.com/d/import
+
+
+▲ [WARNING] Deprecation [plugin angular-sass]
+
+    src/app/pages/lib-components/dialog-component/dialog.scss:1:8:
+      1 │ @import "../lib-components.scss";
+        ╵         ^
+
+
+  Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+  
+  More info and automated migrator: https://sass-lang.com/d/import
+
+
+▲ [WARNING] Deprecation [plugin angular-sass]
+
+    src/app/pages/lib-components/icon-component/icon.scss:1:8:
+      1 │ @import "../lib-components.scss";
+        ╵         ^
+
+
+  Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+  
+  More info and automated migrator: https://sass-lang.com/d/import
+
+
+▲ [WARNING] Deprecation [plugin angular-sass]
+
+    src/app/pages/lib-components/lib-components.scss:436:16:
+      436 │                 font-weight: 700;
+          ╵                 ^
+
+
+  Sass's behavior for declarations that appear after nested
+  rules will be changing to match the behavior specified by CSS in an upcoming
+  version. To keep the existing behavior, move the declaration above the nested
+  rule. To opt into the new behavior, wrap the declaration in `& {}`.
+  
+  More info: https://sass-lang.com/d/mixed-decls
+
+
+▲ [WARNING] Deprecation [plugin angular-sass]
+
+    src/app/pages/lib-components/lib-components.scss:436:16:
+      436 │                 font-weight: 700;
+          ╵                 ^
+
+
+  Sass's behavior for declarations that appear after nested
+  rules will be changing to match the behavior specified by CSS in an upcoming
+  version. To keep the existing behavior, move the declaration above the nested
+  rule. To opt into the new behavior, wrap the declaration in `& {}`.
+  
+  More info: https://sass-lang.com/d/mixed-decls
+
+
+▲ [WARNING] Deprecation [plugin angular-sass]
+
+    src/app/pages/lib-components/lib-components.scss:436:16:
+      436 │                 font-weight: 700;
+          ╵                 ^
+
+
+  Sass's behavior for declarations that appear after nested
+  rules will be changing to match the behavior specified by CSS in an upcoming
+  version. To keep the existing behavior, move the declaration above the nested
+  rule. To opt into the new behavior, wrap the declaration in `& {}`.
+  
+  More info: https://sass-lang.com/d/mixed-decls
+
+
+▲ [WARNING] Deprecation [plugin angular-sass]
+
+    src/app/pages/lib-components/lib-components.scss:436:16:
+      436 │                 font-weight: 700;
+          ╵                 ^
+
+
+  Sass's behavior for declarations that appear after nested
+  rules will be changing to match the behavior specified by CSS in an upcoming
+  version. To keep the existing behavior, move the declaration above the nested
+  rule. To opt into the new behavior, wrap the declaration in `& {}`.
+  
+  More info: https://sass-lang.com/d/mixed-decls
+
+
+▲ [WARNING] Deprecation [plugin angular-sass]
+
+    src/app/pages/lib-components/lib-components.scss:436:16:
+      436 │                 font-weight: 700;
+          ╵                 ^
+
+
+  Sass's behavior for declarations that appear after nested
+  rules will be changing to match the behavior specified by CSS in an upcoming
+  version. To keep the existing behavior, move the declaration above the nested
+  rule. To opt into the new behavior, wrap the declaration in `& {}`.
+  
+  More info: https://sass-lang.com/d/mixed-decls
+
+
+▲ [WARNING] Deprecation [plugin angular-sass]
+
+    src/app/pages/lib-components/lib-components.scss:436:16:
+      436 │                 font-weight: 700;
+          ╵                 ^
+
+
+  Sass's behavior for declarations that appear after nested
+  rules will be changing to match the behavior specified by CSS in an upcoming
+  version. To keep the existing behavior, move the declaration above the nested
+  rule. To opt into the new behavior, wrap the declaration in `& {}`.
+  
+  More info: https://sass-lang.com/d/mixed-decls
+
+
+▲ [WARNING] Deprecation [plugin angular-sass]
+
+    src/app/pages/lib-components/lib-components.scss:436:16:
+      436 │                 font-weight: 700;
+          ╵                 ^
+
+
+  Sass's behavior for declarations that appear after nested
+  rules will be changing to match the behavior specified by CSS in an upcoming
+  version. To keep the existing behavior, move the declaration above the nested
+  rule. To opt into the new behavior, wrap the declaration in `& {}`.
+  
+  More info: https://sass-lang.com/d/mixed-decls
+
+
+▲ [WARNING] Deprecation [plugin angular-sass]
+
+    src/app/pages/lib-components/lib-components.scss:436:16:
+      436 │                 font-weight: 700;
+          ╵                 ^
+
+
+  Sass's behavior for declarations that appear after nested
+  rules will be changing to match the behavior specified by CSS in an upcoming
+  version. To keep the existing behavior, move the declaration above the nested
+  rule. To opt into the new behavior, wrap the declaration in `& {}`.
+  
+  More info: https://sass-lang.com/d/mixed-decls
+
+
+▲ [WARNING] Deprecation [plugin angular-sass]
+
+    src/app/pages/lib-components/lib-components.scss:436:16:
+      436 │                 font-weight: 700;
+          ╵                 ^
+
+
+  Sass's behavior for declarations that appear after nested
+  rules will be changing to match the behavior specified by CSS in an upcoming
+  version. To keep the existing behavior, move the declaration above the nested
+  rule. To opt into the new behavior, wrap the declaration in `& {}`.
+  
+  More info: https://sass-lang.com/d/mixed-decls
+
+
+▲ [WARNING] Deprecation [plugin angular-sass]
+
+    src/app/pages/lib-components/menu-component/menu.scss:1:8:
+      1 │ @import "../lib-components.scss";
+        ╵         ^
+
+
+  Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+  
+  More info and automated migrator: https://sass-lang.com/d/import
+
+
+▲ [WARNING] Deprecation [plugin angular-sass]
+
+    src/app/pages/lib-components/snackbar-component/snackbar.scss:1:8:
+      1 │ @import "../lib-components.scss";
+        ╵         ^
+
+
+  Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+  
+  More info and automated migrator: https://sass-lang.com/d/import
+
+
+▲ [WARNING] Deprecation [plugin angular-sass]
+
+    src/app/pages/lib-components/snackbar-queue-component/snackbar-queue.scss:1:8:
+      1 │ @import "../lib-components.scss";
+        ╵         ^
+
+
+  Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+  
+  More info and automated migrator: https://sass-lang.com/d/import
+
+
+▲ [WARNING] Deprecation [plugin angular-sass]
+
+    src/app/pages/lib-components/tooltip-component/tooltip.scss:1:8:
+      1 │ @import "../lib-components.scss";
+        ╵         ^
+
+
+  Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+  
+  More info and automated migrator: https://sass-lang.com/d/import
+
+
+▲ [WARNING] Deprecation [plugin angular-sass]
+
+    src/app/pages/lib-components/tutor-component/tutor.scss:1:8:
+      1 │ @import "../lib-components.scss";
+        ╵         ^
+
+
+  Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+  
+  More info and automated migrator: https://sass-lang.com/d/import
+
+
+Output location: /Users/meorhakim/Desktop/mozek-website/dist/mozek
+

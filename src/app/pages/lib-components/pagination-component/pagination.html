@@ -4,8 +4,22 @@
         {{title | titlecase}}
     </div>
     <div class="subtitle">
-        <h4><span class="tag">&lt;</span>moz-{{ title }}<span class="tag">&gt;</span></h4>
-        <p class="description-text">{{ description }}</p>
+        <h4><span class="tag">&lt;</span>moz-{{title}}<span class="tag">&gt;</span></h4>
+        <p class="description-text">{{description}}</p>
+        
+        <div class="import-card mt-4">
+            <h6 class="mb-1 primary">How to Import</h6>
+            <div class="sample-code-guide">
+                <p class="code-guide" #copyImport>
+                    <span class="ts-pink">import</span>&nbsp;<span class="ts-yellow">&#123;</span>&nbsp;<span class="ts-blue">MozPagination</span>&nbsp;<span class="ts-yellow">&#125;</span>&nbsp;<span class="ts-pink">from</span>&nbsp;<span class="ts-orange">'mozek-angular'</span>;<br><br>
+                    &#64;<span class="ts-emerald">Component</span><span class="ts-yellow">(</span><span class="ts-pink">&#123;</span><br>
+                    &nbsp;&nbsp;...<br>
+                    &nbsp;&nbsp;<span class="ts-blue">imports:</span>&nbsp;<span class="ts-lightblue">&#91;</span> <span class="ts-emerald">MozPagination</span> <span class="ts-lightblue">&#93;</span><br>
+                    <span class="ts-pink">&#125;</span><span class="ts-yellow">)</span>
+                </p>
+            </div>
+            <p class="description-text mt-2">To use the <b class="primary">{{title | titlecase}}</b> component, simply import <code class="import-code">MozPagination</code> into your standalone component's <code>imports</code> array.</p>
+        </div>
     </div>
 </div>
 
@@ -17,11 +31,27 @@
         </div>
         <div class="description">
             <p>The basic pagination component with default styling and functionality.</p>
+            <div class="property-info">
+                <div class="info-item"><span>Property:</span> <p class="property">length</p></div>
+                <div class="info-item"><span>Type:</span> <code>number</code></div>
+            </div>
+            <div class="property-info mt-1">
+                <div class="info-item"><span>Property:</span> <p class="property">pageIndex</p></div>
+                <div class="info-item"><span>Type:</span> <code>number</code></div>
+            </div>
+            <div class="property-info mt-1">
+                <div class="info-item"><span>Property:</span> <p class="property">pageSize</p></div>
+                <div class="info-item"><span>Type:</span> <code>number</code></div>
+            </div>
+            <div class="property-info mt-1">
+                <div class="info-item"><span>Property:</span> <p class="property">pageChange</p></div>
+                <div class="info-item"><span>Type:</span> <code>(event: MozPageChangeEvent) => void</code></div>
+            </div>
         </div>
         <div class="content">
             <div class="sample-box">
                 <div class="small-view">
-                    <p>items = [{{items.join(', ')}}]</p>
+                    <p>Provided 20 items</p>
                     <div class="flex flex-wrap justify-end gap-2">
                         @for (item of pagedItems; track $index) {
                             <moz-card model="flavor" color="primary" [class.w-full]="screen() === 'mobile'">
@@ -43,26 +73,35 @@
                     Source Code 
                     <moz-icon color="#ffffff" [style.transform]="isOpen('model') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
                 </div>
-                <div class="code-space" [class.is-open]="isOpen('model')" [style.max-height]="isOpen('model') ? '50rem' : '0'">
-                    <p class="code">
-                        <span class="comment">// HTML Example</span><br>
-                        <span class="tag"><span class="symbol">&lt;</span>moz-{{title}}</span><br>
-                            <span class="blue ml-4"> [length]</span>=<span class="orange">"</span><span class="blue">items.length</span><span class="orange">"</span><br>
-                            <span class="blue ml-4"> [(pageIndex)]</span>=<span class="orange">"</span><span class="blue">pageIndex</span><span class="orange">"</span><br>
-                            <span class="blue ml-4"> [pageSize]</span>=<span class="orange">"</span><span class="blue">pageSize</span><span class="orange">"</span><br>
-                            <span class="blue ml-4"> (pageChange)</span>=<span class="orange">"</span><span class="yellow">onPageChange(</span><span class="blue">$event</span><span class="yellow">)</span><span class="orange">"</span><br>
-                        <span class="symbol">&gt;</span>
-                        <span class="tag"><span class="symbol">&lt;/</span>moz-{{title}}<span class="symbol">&gt;</span></span><br><br>
-                    </p>
-                    <p class="code">
-                        <span class="comment">// Typescript Example</span><br>
-                        <span class="blue">pageIndex</span> =<span class="yellow"> 0</span>;<br>
-                        <span class="blue">pageSize</span> =<span class="yellow"> 4</span>;<br>
-                        <span class="yellow">onPageChange</span><span class="pink">(<span class="blue">event</span>:<span class="neon-green"> MozPageChangeEvent</span>) &#123;</span><br>
-                            <span class="blue ml-4"><span class="tag">this</span>.pageIndex <span class="white"> =</span> event.pageIndex</span>;<br>
-                            <span class="blue ml-4"><span class="tag">this</span>.pageSize <span class="white"> =</span> event.pageSize</span>;<br>
-                        <span class="pink">&#125;</span>
-                    </p>
+                <div class="code-space" [class.is-open]="isOpen('model')">
+                    <div class="code-wrapper" [class.has-padding]="isOpen('model')">
+                        <mozek-divider-file-code fileType="html"></mozek-divider-file-code>
+                        <p class="code">
+                            <span class="tag"><span class="symbol">&lt;</span>moz-{{title}}</span><br>
+                                <span class="blue ml-4"> [length]</span>=<span class="orange">"</span><span class="blue">items.length</span><span class="orange">"</span><br>
+                                <span class="blue ml-4"> [(pageIndex)]</span>=<span class="orange">"</span><span class="blue">pageIndex</span><span class="orange">"</span><br>
+                                <span class="blue ml-4"> [pageSize]</span>=<span class="orange">"</span><span class="blue">pageSize</span><span class="orange">"</span><br>
+                                <span class="blue ml-4"> (pageChange)</span>=<span class="orange">"</span><span class="yellow">onPageChange(</span><span class="blue">$event</span><span class="yellow">)</span><span class="orange">"</span><br>
+                            <span class="symbol">&gt;</span>
+                            <span class="tag"><span class="symbol">&lt;/</span>moz-{{title}}<span class="symbol">&gt;</span></span><br><br>
+                        </p>
+                        <mozek-divider-file-code fileType="typescript"></mozek-divider-file-code>
+                        <p class="code">
+                            <span class="ts-blue">items</span> = <span class="ts-pink">&#91;</span>
+                            <br>
+                            @for (item of items; track item) {
+                                <span class="pl-2"><span class="ts-orange">'{{item}}'</span>,</span><br>
+                            }
+                            <span class="ts-pink">&#93;</span>&#59;
+                            <br><br>
+                            <span class="blue">pageIndex</span> =<span class="yellow"> 0</span>;<br>
+                            <span class="blue">pageSize</span> =<span class="yellow"> 4</span>;<br>
+                            <span class="yellow">onPageChange</span><span class="pink">(<span class="blue">event</span>:<span class="neon-green"> MozPageChangeEvent</span>) &#123;</span><br>
+                                <span class="blue ml-4"><span class="tag">this</span>.pageIndex <span class="white"> =</span> event.pageIndex</span>;<br>
+                                <span class="blue ml-4"><span class="tag">this</span>.pageSize <span class="white"> =</span> event.pageSize</span>;<br>
+                            <span class="pink">&#125;</span>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>

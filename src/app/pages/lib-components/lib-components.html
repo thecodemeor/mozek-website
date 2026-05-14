@@ -4,8 +4,12 @@
             <div class="dashboard-title">
                 <h5>Component</h5>
             </div>
-            <div class="dashboard-btns">
-                @for (component of components; track component) {
+            <div class="dashboard-btn">
+                <div class="search-container mb-2">
+                    <moz-icon color="grey">search</moz-icon>
+                    <input type="text" placeholder="Search..." (input)="onSearch($event)">
+                </div>
+                @for (component of filteredComponents(); track component) {
                     <div class="component-btn" [class.active]="componentActive() === component" (click)="navigateTo(component)">
                         <p>{{ component.split('-').join(' ') }}</p>
                         <div class="component-line">
@@ -29,5 +33,10 @@
                 <div class="shade-layer" (click)="toggleDrawer()"></div>
             }
         </div>
+    </div>
+    
+    <div class="copy-toast" [class.show]="doc.copied()">
+        <moz-icon color="success">check_circle</moz-icon>
+        <p>Copied to clipboard!</p>
     </div>
 </div>

@@ -24,9 +24,9 @@
     display: flex;
     width: 100%; height: fit-content;
     background-image: linear-gradient(
-        140deg,
+        -20deg,
         color-mix(in srgb, var(--moz-color-primary-lite) 30%, transparent 70%),
-        color-mix(in srgb, var(--moz-color-primary-lite) 70%, transparent 30%) 40%,
+        color-mix(in srgb, var(--moz-color-primary-lite) 70%, transparent 30%),
     ); 
     .hero-title {
         flex: 1 1 0;

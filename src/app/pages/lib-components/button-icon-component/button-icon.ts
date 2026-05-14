@@ -8,7 +8,9 @@ import { CommonModule } from '@angular/common';
 import { MozButtonIcon, MozIcon } from 'mozek-angular';
 
 import { ResponsiveService } from 'src/app/services/responsive.service';
+import { DocService } from 'src/app/services/doc.service';
 import { MozekCode } from 'src/app/assets/components/codesample';
+import { MozekDividerFileCode } from "src/app/assets/components/codedividersample";
 
 type MozButtonIconModel = 'tonal' | 'glass' | 'text';
 type MozColorName =
@@ -25,7 +27,8 @@ type MozColorName =
         CommonModule,
         MozekCode,
         MozButtonIcon,
-        MozIcon
+        MozIcon,
+        MozekDividerFileCode
     ],
     templateUrl: './button-icon.html',
     styleUrls: ['./button-icon.scss', '../lib-components.scss'],
@@ -35,6 +38,7 @@ export class ButtonIcon {
     description = 'A button icon is a compact button that displays only an icon, often used in toolbars or navigation menus. It supports multiple models (text, tonal) and colors (primary, secondary, success, etc.).'
     
     public responsive = inject(ResponsiveService);
+    public doc = inject(DocService);
     screen = computed(() => this.responsive.breakpoint());
 
     models: MozButtonIconModel[] = ['text', 'tonal'];

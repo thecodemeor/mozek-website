@@ -152,8 +152,8 @@
                 }
         
                 p {
-                    @include moz.moz-typography('footer');
                     width: fit-content;
+                    @include moz.moz-typography('footer');
                 }
             }
         

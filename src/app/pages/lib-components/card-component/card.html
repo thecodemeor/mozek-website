@@ -6,6 +6,20 @@
     <div class="subtitle">
         <h4><span class="tag">&lt;</span>moz-{{title}}<span class="tag">&gt;</span></h4>
         <p class="description-text">{{description}}</p>
+        
+        <div class="import-card mt-4">
+            <h6 class="mb-1 primary">How to Import</h6>
+            <div class="sample-code-guide">
+                <p class="code-guide" #copyImport>
+                    <span class="ts-pink">import</span>&nbsp;<span class="ts-yellow">&#123;</span>&nbsp;<span class="ts-blue">MozCard, MozCardHeader, MozCardBody, MozCardFooter, MozCardMedia</span>&nbsp;<span class="ts-yellow">&#125;</span>&nbsp;<span class="ts-pink">from</span>&nbsp;<span class="ts-orange">'mozek-angular'</span>;<br><br>
+                    &#64;<span class="ts-emerald">Component</span><span class="ts-yellow">(</span><span class="ts-pink">&#123;</span><br>
+                    &nbsp;&nbsp;...<br>
+                    &nbsp;&nbsp;<span class="ts-blue">imports:</span>&nbsp;<span class="ts-lightblue">&#91;</span> <span class="ts-emerald">MozCard, MozCardHeader, MozCardBody, MozCardFooter, MozCardMedia</span> <span class="ts-lightblue">&#93;</span><br>
+                    <span class="ts-pink">&#125;</span><span class="ts-yellow">)</span>
+                </p>
+            </div>
+            <p class="description-text mt-2">To use the <b class="primary">{{title | titlecase}}</b> component, simply import <code class="import-code">MozCard</code> and its sub-components into your standalone component's <code>imports</code> array.</p>
+        </div>
     </div>
 </div>
 
@@ -17,6 +31,16 @@
         </div>
         <div class="description pb-0">
             <p>Demonstrates various card models, each with unique styles and layouts, showcasing the versatility of the card component.</p>
+            <div class="property-info">
+                <div class="info-item"><span>Property:</span> <p class="property">model</p></div>
+                <div class="info-item"><span>Type:</span> <code>fill</code><code>outline</code><code>flavor</code><code>glass</code><code>elevated</code></div>
+                <div class="info-item"><span>Default:</span> <code>fill</code></div>
+            </div>
+            <div class="property-info mt-1">
+                <div class="info-item"><span>Property:</span> <p class="property">color</p></div>
+                <div class="info-item"><span>Type:</span> <code>primary</code><code>secondary</code><code>success</code><code>warn</code><code>danger</code></div>
+                <div class="info-item"><span>Default:</span> <code>primary</code></div>
+            </div>
         </div>
         @for (model of models1; track model) {
             <div class="content">
@@ -45,24 +69,27 @@
                         Source Code 
                         <moz-icon color="#ffffff" [style.transform]="isOpen(model) ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
                     </div>
-                    <div class="code-space" [class.is-open]="isOpen(model)" [style.max-height]="isOpen(model) ? '100rem' : '0'">
-                        <p class="code">
-                            <mozek-code tag="moz-card" [model]="model" color="primary">
-                                <mozek-code tag="moz-card-media">
-                                    <mozek-code tag="img" img="https://www.klcc.com.my/img/hero-klcc-anim.jpg"></mozek-code>
-                                </mozek-code><br>
-                                <mozek-code tag="moz-card-body" inline>Mozek Card Content(Media)</mozek-code><br>
-                            </mozek-code>
-                        </p>
-                        @for (color of colors; track color) {
+                    <div class="code-space" [class.is-open]="isOpen(model)">
+                        <div class="code-wrapper" [class.has-padding]="isOpen(model)">
+                            <mozek-divider-file-code fileType="html"></mozek-divider-file-code>
                             <p class="code">
-                                <mozek-code tag="moz-card" [model]="model" [color]="color">
-                                    <mozek-code tag="moz-card-header" inline>Mozek Card Header</mozek-code><br>
-                                    <mozek-code tag="moz-card-body" inline>Mozek Card Content</mozek-code><br>
-                                    <mozek-code tag="moz-card-footer" inline>Mozek Card Footer</mozek-code>
+                                <mozek-code tag="moz-card" [model]="model" color="primary">
+                                    <mozek-code tag="moz-card-media">
+                                        <mozek-code tag="img" img="https://www.klcc.com.my/img/hero-klcc-anim.jpg"></mozek-code>
+                                    </mozek-code><br>
+                                    <mozek-code tag="moz-card-body" inline>Mozek Card Content(Media)</mozek-code><br>
                                 </mozek-code>
                             </p>
-                        }
+                            @for (color of colors; track color) {
+                                <p class="code">
+                                    <mozek-code tag="moz-card" [model]="model" [color]="color">
+                                        <mozek-code tag="moz-card-header" inline>Mozek Card Header</mozek-code><br>
+                                        <mozek-code tag="moz-card-body" inline>Mozek Card Content</mozek-code><br>
+                                        <mozek-code tag="moz-card-footer" inline>Mozek Card Footer</mozek-code>
+                                    </mozek-code>
+                                </p>
+                            }
+                        </div>
                     </div>
                 </div>
             </div>
@@ -93,24 +120,27 @@
                             Source Code 
                             <moz-icon color="#ffffff" [style.transform]="isOpen(model + '-advance') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
                         </div>
-                        <div class="code-space" [class.is-open]="isOpen(model + '-advance')" [style.max-height]="isOpen(model + '-advance') ? '100rem' : '0'">
-                            <p class="code">
-                                <mozek-code tag="moz-card" [model]="model" color="primary" extra="advance">
-                                    <mozek-code tag="moz-card-media">
-                                        <mozek-code tag="img" img="https://www.klcc.com.my/img/hero-klcc-anim.jpg"></mozek-code>
-                                    </mozek-code><br>
-                                    <mozek-code tag="moz-card-body" inline>Mozek Card Content(Media)</mozek-code><br>
-                                </mozek-code>
-                            </p>
-                            @for (color of colors; track color) {
+                        <div class="code-space" [class.is-open]="isOpen(model + '-advance')">
+                            <div class="code-wrapper" [class.has-padding]="isOpen(model + '-advance')">
+                                <mozek-divider-file-code fileType="html"></mozek-divider-file-code>
                                 <p class="code">
-                                    <mozek-code tag="moz-card" [model]="model" [color]="color" extra="advance">
-                                        <mozek-code tag="moz-card-header" inline>Mozek Card Header</mozek-code><br>
-                                        <mozek-code tag="moz-card-body" inline>Mozek Card Content</mozek-code><br>
-                                        <mozek-code tag="moz-card-footer" inline>Mozek Card Footer</mozek-code>
+                                    <mozek-code tag="moz-card" [model]="model" color="primary" extra="advance">
+                                        <mozek-code tag="moz-card-media">
+                                            <mozek-code tag="img" img="https://www.klcc.com.my/img/hero-klcc-anim.jpg"></mozek-code>
+                                        </mozek-code><br>
+                                        <mozek-code tag="moz-card-body" inline>Mozek Card Content(Media)</mozek-code><br>
                                     </mozek-code>
                                 </p>
-                            }
+                                @for (color of colors; track color) {
+                                    <p class="code">
+                                        <mozek-code tag="moz-card" [model]="model" [color]="color" extra="advance">
+                                            <mozek-code tag="moz-card-header" inline>Mozek Card Header</mozek-code><br>
+                                            <mozek-code tag="moz-card-body" inline>Mozek Card Content</mozek-code><br>
+                                            <mozek-code tag="moz-card-footer" inline>Mozek Card Footer</mozek-code>
+                                        </mozek-code>
+                                    </p>
+                                }
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -141,22 +171,25 @@
                         Source Code 
                         <moz-icon color="#ffffff" [style.transform]="isOpen(model) ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
                     </div>
-                    <div class="code-space" [class.is-open]="isOpen(model)" [style.max-height]="isOpen(model) ? '100rem' : '0'">
-                        <p class="code">
-                            <mozek-code tag="moz-card" [model]="model">
-                                <mozek-code tag="moz-card-media">
-                                    <mozek-code tag="img" img="https://www.klcc.com.my/img/hero-klcc-anim.jpg"></mozek-code>
-                                </mozek-code><br>
-                                <mozek-code tag="moz-card-body" inline>Mozek Card Content(Media)</mozek-code><br>
-                            </mozek-code>
-                        </p>
-                        <p class="code">
-                            <mozek-code tag="moz-card" [model]="model">
-                                <mozek-code tag="moz-card-header" inline>Mozek Card Header</mozek-code><br>
-                                <mozek-code tag="moz-card-body" inline>Mozek Card Content</mozek-code><br>
-                                <mozek-code tag="moz-card-footer" inline>Mozek Card Footer</mozek-code>
-                            </mozek-code>
-                        </p>
+                    <div class="code-space" [class.is-open]="isOpen(model)">
+                        <div class="code-wrapper" [class.has-padding]="isOpen(model)">
+                            <mozek-divider-file-code fileType="html"></mozek-divider-file-code>
+                            <p class="code">
+                                <mozek-code tag="moz-card" [model]="model">
+                                    <mozek-code tag="moz-card-media">
+                                        <mozek-code tag="img" img="https://www.klcc.com.my/img/hero-klcc-anim.jpg"></mozek-code>
+                                    </mozek-code><br>
+                                    <mozek-code tag="moz-card-body" inline>Mozek Card Content(Media)</mozek-code><br>
+                                </mozek-code>
+                            </p>
+                            <p class="code">
+                                <mozek-code tag="moz-card" [model]="model">
+                                    <mozek-code tag="moz-card-header" inline>Mozek Card Header</mozek-code><br>
+                                    <mozek-code tag="moz-card-body" inline>Mozek Card Content</mozek-code><br>
+                                    <mozek-code tag="moz-card-footer" inline>Mozek Card Footer</mozek-code>
+                                </mozek-code>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -170,6 +203,11 @@
         </div>
         <div class="description pb-0">
             <p>Demonstrates the skeleton loading state of the card component, providing a visual placeholder while content is being fetched or processed.</p>
+            <div class="property-info">
+                <div class="info-item"><span>Property:</span> <p class="property">loading</p></div>
+                <div class="info-item"><span>Type:</span> <code>boolean</code></div>
+                <div class="info-item"><span>Default:</span> <code>false</code></div>
+            </div>
         </div>
         <div class="content">
             <div class="sub-title">Skeleton Loading</div>
@@ -185,12 +223,15 @@
                     Source Code 
                     <moz-icon color="#ffffff" [style.transform]="isOpen('disabled') ? 'rotate(180deg)' : 'rotate(0deg)'">arrow_alt_down</moz-icon>
                 </div>
-                <div class="code-space" [class.is-open]="isOpen('disabled')" [style.max-height]="isOpen('disabled') ? '100rem' : '0'">
-                    @for (model of models; track model) {
-                        <p class="code">
-                            <mozek-code tag="moz-card" [model]="model" color="primary" extra="loading" inline></mozek-code>
-                        </p>
-                    }
+                <div class="code-space" [class.is-open]="isOpen('disabled')">
+                    <div class="code-wrapper" [class.has-padding]="isOpen('disabled')">
+                        <mozek-divider-file-code fileType="html"></mozek-divider-file-code>
+                        @for (model of models; track model) {
+                            <p class="code">
+                                <mozek-code tag="moz-card" [model]="model" color="primary" extra="loading" inline></mozek-code>
+                            </p>
+                        }
+                    </div>
                 </div>
             </div>
         </div>

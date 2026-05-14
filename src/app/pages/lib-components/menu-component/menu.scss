@@ -1,0 +1,12 @@
+@use "../lib-components.scss";
+
+:host {
+    display: block;
+    width: 100%;
+}
+
+.menu-divider {
+    height: 1px;
+    background: var(--moz-color-border);
+    margin: 0.5rem 0;
+}
