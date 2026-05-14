@@ -11,16 +11,15 @@
     <div class="shelf">
         <div class="token-card container" [class]="screen() === 'mobile' ? 'px-2' : 'px-4'">
             <div class="action-bar">
-                <moz-button-icon model="text" (click)="copyText(copyTarget)" gap>
-                    @if (copied) {
+                <moz-button-icon model="text" (click)="doc.copy(copyTarget1.innerText)" gap>
+                    @if (doc.copied()) {
                         <moz-icon color="success">check_circle</moz-icon>
-                    }
-                    @else {
-                        <moz-icon>copy</moz-icon>
+                    } @else {
+                        <moz-icon>content_copy</moz-icon>
                     }
                 </moz-button-icon>
             </div>
-            <span #copyTarget>
+            <span #copyTarget1>
                 <p>&#64;mixin moz-theme-light() &#123;</p>
                 <div class="code" [style.padding-left]="screen() === 'mobile' ? '1rem' : '2rem'">
                     <p class="normal">Main Palette (build-time brand choices)</p>
@@ -85,6 +84,8 @@
                     <p class="normal">Motion</p>
                     <p><span class="primary">--moz-duration-fast:</span> 0.1s;</p>
                     <p><span class="primary">--moz-duration:</span> 0.3s;</p>
+                    <p><span class="primary">--moz-ease:</span> ease;</p>
+                    <p><span class="primary">--moz-ease-bounce:</span> cubic-bezier(0.34, 1.3, 0.64, 1);</p>
                     <br>
                     <p class="normal">Color Fade Percent</p>
                     <p><span class="primary">--moz-fade-hover:</span> 10%;</p>
@@ -106,6 +107,88 @@
                     <p><span class="primary">--moz-font-weight-bold:</span> 700;</p>
                 </div>
                 <p>&#125;</p>
+            </span>
+        </div>
+    </div>
+
+    <div class="shelf">
+        <div class="token-card container" [class]="screen() === 'mobile' ? 'px-2' : 'px-4'">
+            <div class="action-bar">
+                <moz-button-icon model="text" (click)="doc.copy(copyTarget2.innerText)" gap>
+                    @if (doc.copied()) {
+                        <moz-icon color="success">check_circle</moz-icon>
+                    } @else {
+                        <moz-icon>content_copy</moz-icon>
+                    }
+                </moz-button-icon>
+            </div>
+            <span #copyTarget2>
+                <div class="code" [style.padding-left]="screen() === 'mobile' ? '1rem' : '2rem'">
+                    <p class="normal">&#64;include moz.moz-typography(<b class="primary"> title-lg </b>);</p>
+                    <p class="pl-2"><span class="primary">font-size:</span> 2rem / 3rem <span class="footer">(max-width: 1024px)</span>;</p>
+                    <p class="pl-2"><span class="primary">line-height:</span> 2rem / 3rem <span class="footer">(max-width: 1024px)</span>;</p>
+                    <br>
+                    <p class="normal">&#64;include moz.moz-typography(<b class="primary"> title-md </b>);</p>
+                    <p class="pl-2"><span class="primary">font-size:</span> 1.75rem / 2.5rem <span class="footer">(max-width: 1024px)</span>;</p>
+                    <p class="pl-2"><span class="primary">line-height:</span> 1.75rem / 2.5rem <span class="footer">(max-width: 1024px)</span>;</p>
+                    <br>
+                    <p class="normal">&#64;include moz.moz-typography(<b class="primary"> title-sm </b>);</p>
+                    <p class="pl-2"><span class="primary">font-size:</span> 1.5rem / 2rem <span class="footer">(max-width: 1024px)</span>;</p>
+                    <p class="pl-2"><span class="primary">line-height:</span> 1.5rem / 2rem <span class="footer">(max-width: 1024px)</span>;</p>
+                    <br>
+                    <p class="normal">&#64;include moz.moz-typography(<b class="primary"> label-lg </b>);</p>
+                    <p class="pl-2"><span class="primary">font-size:</span> 1.25rem / 1.75rem <span class="footer">(max-width: 1024px)</span>;</p>
+                    <p class="pl-2"><span class="primary">line-height:</span> 1.25rem / 1.75rem <span class="footer">(max-width: 1024px)</span>;</p>
+                    <br>
+                    <p class="normal">&#64;include moz.moz-typography(<b class="primary"> label-md </b>);</p>
+                    <p class="pl-2"><span class="primary">font-size:</span> 1.125rem / 1.5rem <span class="footer">(max-width: 1024px)</span>;</p>
+                    <p class="pl-2"><span class="primary">line-height:</span> 1.125rem / 1.5rem <span class="footer">(max-width: 1024px)</span>;</p>
+                    <br>
+                    <p class="normal">&#64;include moz.moz-typography(<b class="primary"> label-sm </b>);</p>
+                    <p class="pl-2"><span class="primary">font-size:</span> 1rem / 1.25rem <span class="footer">(max-width: 1024px)</span>;</p>
+                    <p class="pl-2"><span class="primary">line-height:</span> 1rem / 1.25rem <span class="footer">(max-width: 1024px)</span>;</p>
+                    <br>
+                    <p class="normal">&#64;include moz.moz-typography(<b class="primary"> default </b>);</p>
+                    <p class="pl-2"><span class="primary">font-size:</span> 0.8rem / 1rem <span class="footer">(max-width: 1024px)</span>;</p>
+                    <p class="pl-2"><span class="primary">line-height:</span> 1rem;</p>
+                    <br>
+                    <p class="normal">&#64;include moz.moz-typography(<b class="primary"> caption </b>);</p>
+                    <p class="pl-2"><span class="primary">font-size:</span> 0.7rem / 0.8rem <span class="footer">(max-width: 1024px)</span>;</p>
+                    <p class="pl-2"><span class="primary">line-height:</span> 1rem;</p>
+                    <br>
+                    <p class="normal">&#64;include moz.moz-typography(<b class="primary"> footer </b>);</p>
+                    <p class="pl-2"><span class="primary">font-size:</span> 0.625rem / 0.725rem <span class="footer">(max-width: 1024px)</span>;</p>
+                    <p class="pl-2"><span class="primary">line-height:</span> 1rem;</p>
+                    <br><br>
+
+                    <p class="normal">&#64;include moz.root-button();</p>
+                    <p class="pl-2"><span class="primary">display:</span> flex;</p>
+                    <p class="pl-2"><span class="primary">justify-content:</span> center;</p>
+                    <p class="pl-2"><span class="primary">align-items:</span> center;</p>
+                    <p class="pl-2"><span class="primary">font:</span> inherit;</p>
+                    <p class="pl-2"><span class="primary">line-height:</span> 1;</p>
+                    <p class="pl-2"><span class="primary">text-decoration:</span> none;</p>
+                    <p class="pl-2"><span class="primary">user-select:</span> none;</p>
+                    <p class="pl-2"><span class="primary">-webkit-tap-highlight-color:</span> transparent;</p>
+                    <p class="pl-2"><span class="primary">cursor:</span> pointer;</p>
+                    <br><br>
+
+                    <p class="normal">&#64;include moz.root-border();</p>
+                    <p class="pl-2"><span class="primary">border-style:</span> solid;</p>
+                    <p class="pl-2"><span class="primary">border-color:</span> color-mix(in srgb, var(--moz-color-text) var(--moz-fade-border), white);</p>
+                    <p class="pl-2"><span class="primary">border-width:</span> 0.1rem;</p>
+                    <br><br>
+
+                    <p class="normal">&#64;include root-shadow(<b class="primary"> 1 </b>);</p>
+                    <p class="pl-2"><span class="primary">box-shadow:</span> rgba(0, 0, 0, 0.06) 0px 1px 3px, rgba(0, 0, 0, 0.12) 0px 1px 2px;</p>
+                    <br>
+                    <p class="normal">&#64;include root-shadow(<b class="primary"> 2 </b>);</p>
+                    <p class="pl-2"><span class="primary">box-shadow:</span> rgba(0, 0, 0, 0.08) 0px 3px 6px, rgba(0, 0, 0, 0.115) 0px 3px 6px;</p>
+                    <br>
+                    <p class="normal">&#64;include root-shadow(<b class="primary"> 3 </b>);</p>
+                    <p class="pl-2"><span class="primary">box-shadow:</span> rgba(0, 0, 0, 0.095) 0px 10px 20px, rgba(0, 0, 0, 0.115) 0px 6px 6px;</p>
+                    <br>
+                </div>
             </span>
         </div>
     </div>

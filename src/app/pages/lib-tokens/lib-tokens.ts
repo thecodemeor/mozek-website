@@ -5,6 +5,7 @@ import {
 } from '@angular/core';
 
 import { ResponsiveService } from 'src/app/services/responsive.service';
+import { DocService } from 'src/app/services/doc.service';
 import { MozButtonIcon, MozIcon } from 'mozek-angular';
 
 @Component({
@@ -19,20 +20,7 @@ import { MozButtonIcon, MozIcon } from 'mozek-angular';
 })
 export class LibTokens {
     public responsive = inject(ResponsiveService);
+    public doc = inject(DocService);
     screen = computed(() => this.responsive.breakpoint());
 
-    copied = false;
-    private resetTimer?: number;
-    copyText(el: HTMLElement) {
-        navigator.clipboard.writeText(el.innerText.trim());
-        this.copied = true;
-
-        if (this.resetTimer) {
-            clearTimeout(this.resetTimer);
-        }
-
-        this.resetTimer = window.setTimeout(() => {
-            this.copied = false;
-        }, 2000);
-    }
 }

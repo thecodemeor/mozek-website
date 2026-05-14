@@ -5,6 +5,7 @@ import {
 } from '@angular/core';
 
 import { ResponsiveService } from 'src/app/services/responsive.service';
+import { DocService } from 'src/app/services/doc.service';
 import colorPalette from 'src/app/pages/lib-themes/color-palette.json';
 
 @Component({
@@ -17,6 +18,7 @@ import colorPalette from 'src/app/pages/lib-themes/color-palette.json';
 })
 export class LibThemes {
     public responsive = inject(ResponsiveService);
+    public doc = inject(DocService);
     screen = computed(() => this.responsive.breakpoint());
 
     hues = [ '50', '100', '200', '300', '400', '500', '600', '700', '800', '900', '950'];
@@ -27,18 +29,4 @@ export class LibThemes {
         return colorPalette[color][hueKey];
     };
 
-    copied = false;
-    private resetTimer?: number;
-    copyText(el: HTMLElement) {
-        navigator.clipboard.writeText(el.innerText.trim());
-        this.copied = true;
-
-        if (this.resetTimer) {
-            clearTimeout(this.resetTimer);
-        }
-
-        this.resetTimer = window.setTimeout(() => {
-            this.copied = false;
-        }, 2000);
-    }
 }

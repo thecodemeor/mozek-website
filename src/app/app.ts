@@ -1,5 +1,5 @@
 import { Component, computed, inject, signal, ElementRef, ViewChild, HostListener } from '@angular/core';
-import { Router, RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet, NavigationStart, NavigationEnd, NavigationCancel, NavigationError } from '@angular/router';
 import { ResponsiveService } from 'src/app/services/responsive.service';
 import { MozekButton } from 'src/app/assets/components/button';
 
@@ -32,6 +32,22 @@ export class App {
 
   private readonly responsive = inject(ResponsiveService);
   private readonly router = inject(Router);
+  public isLoading = signal(false);
+
+  constructor() {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationStart) {
+        this.isLoading.set(true);
+      } else if (
+        event instanceof NavigationEnd ||
+        event instanceof NavigationCancel ||
+        event instanceof NavigationError
+      ) {
+        // Add a slight delay for a smoother visual transition
+        setTimeout(() => this.isLoading.set(false), 400);
+      }
+    });
+  }
 
   readonly screen = computed(() => this.responsive.breakpoint());
   readonly navtab = ['home', 'components', 'utilities', 'tokens'] ;

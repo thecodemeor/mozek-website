@@ -12,8 +12,8 @@
         <div class="theme-card py-2 container" [class]="screen() === 'mobile' ? 'px-2' : 'px-4'">
             <p class="paragraph">Mozek theme help maintain consistent use of color throughout your app. Mozek provides palettes for theme colors and primitives that you can use as a foundation for your design system.</p>
             <p>In SCSS, colors are accessed using the:</p>
-            <div #copyTarget class="sample-code" (click)="copyText(copyTarget)">
-                @if (copied) { Copied! }
+            <div #copyTarget class="sample-code" (click)="doc.copy(copyTarget.innerText)">
+                @if (doc.copied()) { Copied! }
                 @else {
                     #&#123;moz.moz-get-color(<span class="secondary">[color]</span>, <span class="secondary">[n]</span>)&#125;
                 }
