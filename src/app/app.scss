@@ -314,29 +314,26 @@
             height: 10rem;
             
             .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7 {
-                transform: scale(0);
-                transform-origin: 50%;
+                opacity: 0;
                 animation: pop-out 0.5s infinite cubic-bezier(0.4, 0, 0.2, 1);
             }
 
             .cls-1 { animation-delay: 0.05s; }
-            .cls-2 { animation-delay: 0.05s; }
-            .cls-3 { animation-delay: 0.10s; }
-            .cls-4 { animation-delay: 0.15s; }
-            .cls-5 { animation-delay: 0.20s; }
-            .cls-6 { animation-delay: 0.25s; }
-            .cls-7 { animation-delay: 0.30s; }
+            .cls-2 { animation-delay: 0.1s; }
+            .cls-3 { animation-delay: 0.15s; }
+            .cls-4 { animation-delay: 0.2s; }
+            .cls-5 { animation-delay: 0.25s; }
+            .cls-6 { animation-delay: 0.3s; }
+            .cls-7 { animation-delay: 0.35s; }
         }
     }
 }
 
 @keyframes pop-out {
-    0% { transform: scale(0); }
-    40% { transform: scale(1.05); }
-    50% { transform: scale(1); }
-    80% { transform: scale(1); }
-    85% { transform: scale(1.05); }
-    100% { transform: scale(0); }
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    85% { opacity: 1; }
+    100% { opacity: 0; }
 }
 
 @keyframes fadeIn {

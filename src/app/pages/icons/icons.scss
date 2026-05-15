@@ -52,25 +52,6 @@
         justify-content: center;
         align-items: center;
 
-        // .hero-text {
-        //     display: flex;
-        //     width: 60%; height: 100%;
-        //     padding: var(--moz-space-4);
-        //     border-left: solid 0.2rem var(--moz-main-bg);
-        //     border-right: solid 0.2rem var(--moz-main-bg);
-        //     background-color: var(--moz-color-background);
-        //     box-shadow: 0 -0.2rem 0 var(--moz-main-bg);
-        //     flex-direction: column;
-        //     justify-content: center;
-        //     align-items: center;
-        //     gap: var(--moz-space-2);
-        //     text-align: center;
-
-        //     @media (max-width: 768px) {
-        //         padding: var(--moz-space-2);
-        //     }
-        // }
-
         .sect-title {
             display: flex;
             width: 100%; height: fit-content;
@@ -123,11 +104,11 @@
     display: flex;
     width: 100%; height: fit-content;
     padding: var(--moz-space-2) var(--moz-space-3);
-    border-top: solid 0.15rem var(--moz-main-bg);
-    border-bottom: solid 0.15rem var(--moz-main-bg);
+    border-top: solid 0.15rem var(--moz-color-primary);
+    border-bottom: solid 0.15rem var(--moz-color-primary);
     background-image: repeating-linear-gradient(
-        45deg, color-mix(in srgb, var(--moz-main-bg) 50%, white) 0px 0.1rem,
-        color-mix(in srgb, var(--moz-main-bg) 35%, white) 0.1rem 0.5rem
+        45deg, color-mix(in srgb, var(--moz-color-primary) 50%, white) 0px 0.1rem,
+        color-mix(in srgb, var(--moz-color-primary) 35%, white) 0.1rem 0.5rem
     );
     justify-content: space-between;
     gap: var(--moz-space-1);
@@ -142,53 +123,6 @@
             border-radius: 50%;
             box-shadow: 0 0 0 0.2rem var(--moz-color-background);
             @include moz.root-button()
-        }
-    }
-
-    .relative {
-        .tooltip {
-            position: absolute;
-            pointer-events: none;
-            z-index: 10;
-            transition: all var(--moz-duration);
-    
-            .blackcard {
-                width: fit-content; height: fit-content;
-                padding: 0 var(--moz-space-3);
-                border-radius: var(--moz-radius-sm);
-                background: var(--moz-color-text);
-                white-space: nowrap;
-                p {
-                    text-align: center;
-                    color: var(--moz-color-background);
-                    text-transform: capitalize;
-                    @include moz.moz-typography('footer')
-                }
-            }
-
-            // Placement
-            &.top {
-                left: 50%;
-                top: 0;
-                transform: translateX(-50%);
-                animation: fadein 0.08s ease-in forwards;
-                opacity: 0;
-            }
-
-            &.topleft {
-                right: 0%;
-                top: 0;
-                transform: translateX(0);
-                animation: fadein 0.08s ease-in forwards;
-                opacity: 0;
-            }
-
-            @keyframes fadein {
-                to {
-                    top: calc(var(--moz-space-3) * -1);
-                    opacity: 1;
-                }
-            }
         }
     }
 }
@@ -212,35 +146,6 @@
         p.label {
             width: 100%;
             text-align: center;
-        }
-    }
-
-    .tooltip {
-        position: absolute;
-        top: 0; left: 0; right: 0;
-        display: flex;
-        width: 100%; height: fit-content;
-        justify-content: center;
-        opacity: 0;
-        animation: tooltip var(--moz-duration-fast) ease-in forwards;
-
-        @keyframes tooltip {
-            to {
-                top: calc(-4.5rem);
-                opacity: 1;
-            }
-        }
-
-        .blackcard {
-            width: fit-content; height: fit-content;
-            padding: var(--moz-space-1) var(--moz-space-3);
-            border: solid 0.1rem color-mix(in srgb, var(--moz-main-bg) 85%, black 15%);
-            border-radius: var(--moz-radius-sm);
-            p {
-                text-align: center;
-                color: var(--moz-color-background);
-                @include moz.moz-typography(footer)
-            }
         }
     }
 }
