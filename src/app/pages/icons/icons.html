@@ -19,9 +19,22 @@
     </div>
 </div>
 
-<div class="actions-bar" [class.flex-col]="screen() !== 'desktop'" [style.--moz-main-bg]="mainColor">
+<div class="actions-bar" [class.flex-col]="screen() !== 'desktop'" [style.--moz-main-bg]="mainColor" [style.top]="screen() === 'mobile' ? '3.5rem' : '4rem'">
     <moz-input placeholder="Search Icon" [(ngModel)]="search" (ngModelChange)="filter($event)" [full]="screen() !== 'desktop'"></moz-input>
     <div class="color-pick" [class.justify-center]="screen() !== 'desktop'">
+        @if (showScrollTop) {
+            <div class="relative" style="margin-right: var(--moz-space-2);">
+                <moz-button
+                    model="flavor"
+                    color="primary"
+                    (click)="scrollToTop()"
+                    mozTooltip="Scroll to Top"
+                >
+                    <moz-icon size="20" color="#000000" class="mr-1">arrow_alt_up</moz-icon>
+                    Scroll to Top
+                </moz-button>
+            </div>
+        }
         @for (item of ['primary','secondary','success','warn','danger']; track item) {
             <div class="relative">
                 <button

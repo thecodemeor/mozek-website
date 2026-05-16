@@ -12,23 +12,43 @@
         <div class="theme-card py-2 container" [class]="screen() === 'mobile' ? 'px-2' : 'px-4'">
             <p class="paragraph">Mozek theme help maintain consistent use of color throughout your app. Mozek provides palettes for theme colors and primitives that you can use as a foundation for your design system.</p>
             <p>In SCSS, colors are accessed using the:</p>
-            <div #copyTarget class="sample-code" (click)="doc.copy(copyTarget.innerText)">
-                @if (doc.copied()) { Copied! }
-                @else {
-                    #&#123;moz.moz-get-color(<span class="secondary">[color]</span>, <span class="secondary">[n]</span>)&#125;
-                }
+            <div class="code-sect">
+                <p class="code" #copyTarget>#&#123;moz.moz-get-color(<span class="secondary">[color]</span>, <span class="secondary">[n]</span>)&#125;</p>
+                <moz-button-icon model="text" (click)="copy('target', copyTarget.innerText)" gap>
+                    @if (copiedId() === 'target') {
+                        <moz-icon color="success">check_circle</moz-icon>
+                    } @else {
+                        <moz-icon>copy</moz-icon>
+                    }
+                </moz-button-icon>
             </div>
             <p class="paragraph">where <span class="code secondary">[color]</span> is the name of the palette and <span class="code secondary">[n]</span> is the numeric value of the desired swatch.</p>
 
             <p class="paragraph mt-2">Example usage in SCSS:</p>
             <div class="sample-code-guide">
-                <p class="code-guide" #copyImport>
+                <p class="code-guide">
                     .my-class&nbsp;&#123;<br>
                     &nbsp;&nbsp;color: <span class="css-violet">#&#123;moz.moz-get-color(<span class="css-yellow">blue</span>, <span class="css-yellow">600</span>)&#125;</span>;<br>
                     &nbsp;&nbsp;background-color: <span class="css-violet">#&#123;moz.moz-get-color(<span class="css-yellow">blue</span>, <span class="css-yellow">50</span>)&#125;</span>;<br>
                     &#125;
                 </p>
             </div>
+            <p>
+                You can change the primary color, button styles, and other design tokens by using the code below.<br>
+                <br>
+            </p>
+            <p>Don't forget to use:</p>
+            <div class="code-sect">
+                <p class="code" #copyImport>&#64;use <span class="secondary">"mozek-angular/src/styles"</span> as moz;</p>
+                <moz-button-icon model="text" (click)="copy('import', copyImport.innerText)" gap>
+                    @if (copiedId() === 'import') {
+                        <moz-icon color="success">check_circle</moz-icon>
+                    } @else {
+                        <moz-icon>copy</moz-icon>
+                    }
+                </moz-button-icon>
+            </div>
+            <p>...at the beginning of your SCSS file.</p>
         </div>
 
         <div class="theme-card container" [class]="screen() === 'mobile' ? 'px-2' : 'px-4'">

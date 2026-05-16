@@ -3,6 +3,7 @@ import {
   inject,
   computed,
   OnInit,
+  HostListener
 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
@@ -40,6 +41,18 @@ export class Icons implements OnInit {
   screen = computed(() => this.responsive.breakpoint());
 
   color: string = 'primary'
+
+  showScrollTop = false;
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    this.showScrollTop = window.scrollY > 200;
+  }
+
+  scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
   ngOnInit(): void {
     this.filter()
   }
@@ -320,7 +333,7 @@ export class Icons implements OnInit {
   copy(text: string) {
     navigator.clipboard.writeText(text)
     .then(() => {
-      this.snackbarQueueService.show(`Copied ${text} to clipboard`, 'success');
+      this.snackbarQueueService.show(`Copied "${text}" to clipboard`, 'success');
     })
     .catch(err => {
       this.snackbarQueueService.show('Failed to copy to clipboard', 'error');

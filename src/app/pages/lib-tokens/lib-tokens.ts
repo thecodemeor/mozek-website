@@ -1,7 +1,8 @@
 import {
     Component,
     inject,
-    computed
+    computed,
+    signal
 } from '@angular/core';
 
 import { ResponsiveService } from 'src/app/services/responsive.service';
@@ -23,4 +24,15 @@ export class LibTokens {
     public doc = inject(DocService);
     screen = computed(() => this.responsive.breakpoint());
 
+    copiedId = signal<string | null>(null);
+
+    copy(id: string, text: string) {
+        this.doc.copy(text);
+        this.copiedId.set(id);
+        setTimeout(() => {
+            if (this.copiedId() === id) {
+                this.copiedId.set(null);
+            }
+        }, 2000);
+    }
 }

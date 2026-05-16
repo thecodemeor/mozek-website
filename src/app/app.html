@@ -97,19 +97,19 @@
 <moz-snackbar-queue />
 @if(!removeFooter()) {
     <div class="footer">
-        <div class="circle-background">
+        <div class="circle-background" [style.border-radius]="screen() === 'mobile' ? '0 0 1.5rem 1.5rem' : '0rem'">
             <div class="blue-blur"></div>
             <div class="violet-blur"></div>
         </div>
-        <div class="head-footer">
+        <div class="head-footer" [class.px-2]="screen() === 'mobile'">
             <div class="space-logo">
                 <img src="assets/images/logo/mozek_banner.svg" alt="Mozek Logo">
                 <p>Your showcase site for the Mozek UI Library.</p>
             </div>
             <span class="spacer"></span>
-            <div class="short-link">
+            <div class="short-link" [class.mt-5]="screen() === 'mobile'">
                 @for (item of landingpage; track item) {
-                    <div class="box">
+                    <div class="box" [class.px-1]="screen() === 'mobile'">
                         <h6>{{item.title}}</h6>
                         @for (link of item.link; track link) {
                             <p class="text-btn" (click)="navigateTo(link.url)">{{link.name}}</p>
@@ -119,7 +119,7 @@
             </div>
         </div>
         <footer>
-            <span class="copyright">© 2024 Mozek. All rights reserved.</span>
+            <span class="copyright" [class.text-center]="screen() === 'mobile'">© 2024 Mozek. All rights reserved.</span>
         </footer>
     </div>
 }

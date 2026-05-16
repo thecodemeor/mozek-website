@@ -128,16 +128,22 @@
     .code { font-family: "Courier Prime", monospace;}
 }
 
-.sample-code {
+.code-sect {
+    display: flex;
     width: 100%; height: fit-content;
-    padding: var(--moz-space-2);
-    border: solid 0.1rem var(--moz-color-secondary);
+    padding: var(--moz-space-1) var(--moz-space-2);
+    border: solid 0.1rem var(--moz-color-secondary-lite);
     border-radius: var(--moz-radius-default);
-    background-color: var(--moz-color-secondary-lite);
-    font-family: "Courier Prime", monospace;
-    font-weight: 500 !important;
-    cursor: pointer;
-    @include moz.moz-typography('label-sm');
+    background-color: color-mix(in srgb, var(--moz-color-secondary) 10%, white);
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--moz-space-1);
+
+    .code {
+        font-family: 'Courier New', Courier, monospace;
+        color: var(--moz-color-text);
+        font-weight: 600;
+    }
 }
 
 .secondary { color: var(--moz-color-secondary);}
