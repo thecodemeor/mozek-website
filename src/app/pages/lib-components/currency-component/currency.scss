@@ -3,11 +3,36 @@
 :host {
     --moz-color-orange: #{moz.moz-get-color(tangerine, 600)};
     --moz-color-orange-lite: #{moz.moz-get-color(tangerine, 200)};
+
+    .symbol {
+        color: #808080;
+    }
+
+    .tag {
+        color: #569dd6;
+    }
+
+    .orange {
+        color: #ce9178;
+    }
+
+    .yellow {
+        color: #ffffa2ff;
+    }
+
+    .blue {
+        color: #9bdbfe;
+    }
+
+    .white {
+        color: #ffffff;
+    }
 }
 
 .grid-symbols {
     display: grid;
-    width: 100%; height: fit-content;
+    width: 100%;
+    height: fit-content;
     margin: 0 0 var(--moz-space-1);
     padding: var(--moz-space-2);
     border-radius: var(--moz-radius-default);
@@ -16,7 +41,7 @@
     grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
     gap: var(--moz-space-3);
 
-    .orange { 
+    .orange {
         font-weight: 700;
         color: var(--moz-color-orange);
     }

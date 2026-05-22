@@ -24,10 +24,10 @@ type MozButtonModel =
 @Component({
     selector: 'app-lib-component',
     imports: [
-    CommonModule,
-    MozButton,
-    MozIcon,
-    MozekCode,
+        CommonModule,
+        MozButton,
+        MozIcon,
+        MozekCode,
         MozekDividerFileCode
     ],
     templateUrl: './button.html',
@@ -42,7 +42,7 @@ export class Button {
     screen = computed(() => this.responsive.breakpoint());
 
     models: MozButtonModel[] = ['fill', 'flavor', 'outline', 'text', 'tonal', 'elevated', 'glass'];
-    colors = [ 'primary', 'secondary', 'success', 'warn', 'danger',]
+    colors = ['primary', 'secondary', 'success', 'warn', 'danger', '#ff9100']
     icons = ['home', 'settings', 'favorite', 'add', 'check_circle']
 
     openMap: Record<string, boolean> = {};

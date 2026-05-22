@@ -98,7 +98,7 @@ export class Icons implements OnInit {
 
   search: string = '';
   iconsDisplay: any[] = [];
-  
+
   iconSynonyms: Record<string, string[]> = {
     // Navigation & UI
     'exit': ['logout', 'door', 'leave', 'quit', 'sign out'],
@@ -112,7 +112,7 @@ export class Icons implements OnInit {
     'settings': ['gear', 'options', 'preferences', 'config', 'setup'],
     'filter': ['sort', 'funnel', 'refine', 'narrow'],
     'sort': ['order', 'arrange', 'list', 'filter'],
-    
+
     // Vehicles & Travel
     'bus': ['vehicle', 'transport', 'travel', 'public', 'transit'],
     'train': ['vehicle', 'transport', 'travel', 'railway', 'subway'],
@@ -204,10 +204,12 @@ export class Icons implements OnInit {
     'charity': ['donate', 'give', 'heart', 'care', 'support'],
 
     // Feedback & Status
+    'check': ['success', 'done', 'tick', 'complete', 'ok', 'yes', 'correct'],
     'check_circle': ['success', 'done', 'tick', 'complete', 'ok', 'yes'],
     'check_square': ['success', 'done', 'tick', 'complete', 'ok', 'yes'],
     'check_read': ['success', 'done', 'tick', 'seen', 'double'],
     'checklist': ['tasks', 'todo', 'list', 'done'],
+    'close': ['cancel', 'remove', 'delete', 'x', 'no', 'error'],
     'close_circle': ['cancel', 'remove', 'delete', 'x', 'no', 'error'],
     'close_square': ['cancel', 'remove', 'delete', 'x', 'no', 'error'],
     'danger_circle': ['warning', 'error', 'alert', 'important', 'caution'],
@@ -217,8 +219,10 @@ export class Icons implements OnInit {
     'question_circle': ['help', 'support', 'ask', 'unknown', 'faq'],
     'question_square': ['help', 'support', 'ask', 'unknown', 'faq'],
     'forbidden_circle': ['stop', 'block', 'ban', 'not allowed'],
+    'add': ['plus', 'new', 'create', 'insert'],
     'add_circle': ['plus', 'new', 'create', 'insert'],
     'add_square': ['plus', 'new', 'create', 'insert'],
+    'minus': ['remove', 'delete', 'subtract', 'less', '-'],
     'minus_circle': ['remove', 'delete', 'subtract', 'less'],
     'minus_square': ['remove', 'delete', 'subtract', 'less'],
 
@@ -291,7 +295,7 @@ export class Icons implements OnInit {
     'arrow_chevron_down': ['direction', 'point', 'bottom', 'collapse'],
     'arrow_chevron_left': ['direction', 'point', 'back', 'previous'],
     'arrow_chevron_right': ['direction', 'point', 'forward', 'next'],
-    
+
     // Office & Misc
     'box': ['package', 'parcel', 'shipping', 'container'],
     'case_1': ['briefcase', 'work', 'business', 'office', 'portfolio'],
@@ -311,7 +315,7 @@ export class Icons implements OnInit {
   filter(value?: string) {
     const input = this.search.toLowerCase().trim();
     this.iconsDisplay = [];
-    
+
     if (!this.search.length) {
       this.iconsDisplay = this.icons;
       return;
@@ -320,10 +324,10 @@ export class Icons implements OnInit {
     for (const icon of this.icons) {
       const iconlabel = this.labelString(icon).toLowerCase();
       const synonyms = this.iconSynonyms[icon] || [];
-      
+
       const matchesLabel = iconlabel.includes(input);
       const matchesSynonym = synonyms.some(synonym => synonym.toLowerCase().includes(input));
-      
+
       if (matchesLabel || matchesSynonym) {
         this.iconsDisplay.push(icon);
       }
@@ -332,17 +336,18 @@ export class Icons implements OnInit {
 
   copy(text: string) {
     navigator.clipboard.writeText(text)
-    .then(() => {
-      this.snackbarQueueService.show(`Copied "${text}" to clipboard`, 'success');
-    })
-    .catch(err => {
-      this.snackbarQueueService.show('Failed to copy to clipboard', 'error');
-      console.error('Copy failed', err);
-    });
+      .then(() => {
+        this.snackbarQueueService.show(`Copied "${text}" to clipboard`, 'success');
+      })
+      .catch(err => {
+        this.snackbarQueueService.show('Failed to copy to clipboard', 'error');
+        console.error('Copy failed', err);
+      });
   }
 
 
   icons = [
+    'add', 'minus', 'close', 'check',
     'bus', 'building', 'box', 'bookmark', 'bookmark_square',
     'book', 'bell', 'backspace', 'backpack',
     'atom', 'archive', 'crown', 'copy', 'compass', 'code',
