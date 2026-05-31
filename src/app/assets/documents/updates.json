@@ -1,5 +1,16 @@
 [
     {
+        "name": "Dependency Updates",
+        "version": "1.0.1",
+        "date": "May 2026",
+        "contents": [
+            "Update to Angular v21 core libraries.",
+            "Update RxJS, tslib and zone.js.",
+            "Update dev dependencies to support latest builds.",
+            "Fix test runners utilizing latest versions of rimraf and glob."
+        ]
+    },
+    {
         "name": "Initial Release",
         "version": "0.0.1",
         "date": "Dec 2025",
