@@ -4,7 +4,7 @@ import {
     computed,
     Inject
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { TitleCasePipe } from '@angular/common';
 
 import { MozDialogService, MozDialogRef, MozButton, MozIcon } from 'mozek-angular';
 
@@ -16,12 +16,12 @@ import { MozekDividerFileCode } from "src/app/assets/components/codedividersampl
 @Component({
     selector: 'app-lib-component',
     imports: [
-        CommonModule,
-        MozButton,
-        MozIcon,
-        MozekCode,
-        MozekDividerFileCode
-    ],
+    MozButton,
+    MozIcon,
+    MozekCode,
+    MozekDividerFileCode,
+    TitleCasePipe
+],
     templateUrl: './dialog.html',
     styleUrls: ['./dialog.scss', '../lib-components.scss'],
     standalone: true

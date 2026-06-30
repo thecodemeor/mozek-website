@@ -35,5 +35,16 @@
             "MozButton color fixed",
             "Add License and Code of Conduct"
         ]
+    },
+    {
+        "name": "Angular 21 Update",
+        "version": "1.0.9",
+        "date": "June 2026",
+        "contents": [
+            "Update to Angular 21 Core",
+            "Migrate control flow to block syntax",
+            "Fix dialog component breaking change due to TitleCasePipe import missing",
+            "Update dev dependencies for Angular CLI, compiler, and build tools"
+        ]
     }
 ]

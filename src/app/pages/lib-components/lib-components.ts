@@ -2,7 +2,7 @@ import { Component, inject, computed, signal, OnInit } from '@angular/core';
 import { Router, RouterModule, ActivatedRoute, NavigationEnd } from '@angular/router';
 
 import { filter, map } from 'rxjs/operators';
-import { CommonModule } from '@angular/common';
+
 import { MozIcon, MozButton } from 'mozek-angular';
 
 import { ResponsiveService } from 'src/app/services/responsive.service';
@@ -12,11 +12,10 @@ import { DocService } from 'src/app/services/doc.service';
     selector: 'app-lib-component',
     standalone: true,
     imports: [
-        RouterModule,
-        CommonModule,
-        MozButton,
-        MozIcon
-    ],
+    RouterModule,
+    MozButton,
+    MozIcon
+],
     templateUrl: './lib-components.html',
     styleUrl: './lib-components.scss',
 })
